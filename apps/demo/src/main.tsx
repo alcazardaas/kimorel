@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { exercises, assetReviewRecords } from '@kimorel/data';
 import { ExerciseViewer } from '@kimorel/react';
 import './style.css';
+import { Catalog } from './Catalog';
 function App() {
   const [selected, setSelected] = useState(exercises[0]!);
   const [review, setReview] = useState(false);
@@ -51,26 +52,11 @@ function App() {
             <p className="muted">
               Three original animated exercises, pending human visual approval.
             </p>
-            <ul className="catalog">
-              {exercises.map((exercise, index) => (
-                <li key={exercise.id}>
-                  <button
-                    aria-pressed={selected.id === exercise.id}
-                    onClick={() => setSelected(exercise)}
-                  >
-                    <span className="number">0{index + 1}</span>
-                    <span>
-                      <strong>{exercise.name}</strong>
-                      <small>
-                        {exercise.movementPattern} ·{' '}
-                        {exercise.equipment.join(', ')}
-                      </small>
-                    </span>
-                    <span aria-hidden="true">↗</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
+            <Catalog
+              exercises={exercises}
+              selectedId={selected.id}
+              onSelect={setSelected}
+            />
             <div className="note">
               <strong>Three movements, one reusable character.</strong>
               <p>
