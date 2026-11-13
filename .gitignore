@@ -1,0 +1,34 @@
+node_modules/
+dist/
+.pnpm-store/
+.cache/
+.codegraph/
+# Local implementation/recovery notes, not project source or documentation.
+/odd/
+/.atl/
+/.claude/settings.json
+/.claude/settings.local.json
+coverage/
+*.tsbuildinfo
+.DS_Store
+.env*
+!.env.example
+!.env.*.example
+# Local credentials must never be included; .npmrc is intentionally retained.
+/.aws/
+/.ssh/
+/.gnupg/
+/.netrc
+/.pypirc
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.blend[0-9]*
+*.log
+*.swp
+*.swo
+*~
+playwright-report/
+test-results/

@@ -1,0 +1,10 @@
+KIMOREL_PROJECT_SPEC.md
+pnpm-lock.yaml
+dist/
+node_modules/
+.pnpm-store/
+.cache/
+.codegraph/
+odd/
+.venv/
+.atl/

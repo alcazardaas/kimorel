@@ -1,0 +1,58 @@
+[
+  {
+    "assetId": "neutral-human-v1",
+    "file": "characters/neutral-human.glb",
+    "status": "needs-review",
+    "bytes": 611384,
+    "sha256": "d00e88cfea93777c6d67de22ac54b5b968800226f9c4f90c56b3e3004fbe60d8"
+  },
+  {
+    "assetId": "bodyweight-squat-v1",
+    "file": "exercises/bodyweight-squat.glb",
+    "status": "needs-review",
+    "bytes": 637464,
+    "sha256": "3e8162da32336b5746441b6435a9cc786654095de3bea9a2f8691bf154ce8674"
+  },
+  {
+    "assetId": "bodyweight-squat-thumbnail-v1",
+    "file": "thumbnails/bodyweight-squat.png",
+    "status": "needs-review",
+    "bytes": 22336,
+    "sha256": "2424c8ab1c3cbd73410ab4cbc0d8d4ede682a59110aea0d6eeb10f4028c18934"
+  },
+  {
+    "assetId": "push-up-v1",
+    "file": "exercises/push-up.glb",
+    "status": "needs-review",
+    "bytes": 633216,
+    "sha256": "8a2432794e3642cd48092fee3d3591c501de627a2b9330334c27024f1cf25d68"
+  },
+  {
+    "assetId": "dumbbell-biceps-curl-v1",
+    "file": "exercises/dumbbell-biceps-curl.glb",
+    "status": "needs-review",
+    "bytes": 629252,
+    "sha256": "c785b07d49b26c90eab4206b3f3c905a6f0cf390ad5c787e2b5698a0896f9c96"
+  },
+  {
+    "assetId": "dumbbell-v1",
+    "file": "equipment/dumbbell.glb",
+    "status": "needs-review",
+    "bytes": 4308,
+    "sha256": "0d9cc87183a1aa14dd4ad212e016c9247e6649e91ea6471930bb7e3e96b8028b"
+  },
+  {
+    "assetId": "push-up-thumbnail-v1",
+    "file": "thumbnails/push-up.png",
+    "status": "needs-review",
+    "bytes": 11129,
+    "sha256": "973dea875e7b9e732456d15590c4bfab96b67c3739b4251adf6deb18199a9d7e"
+  },
+  {
+    "assetId": "dumbbell-biceps-curl-thumbnail-v1",
+    "file": "thumbnails/dumbbell-biceps-curl.png",
+    "status": "needs-review",
+    "bytes": 20939,
+    "sha256": "8855bb9930c0b36582185d3e7ae574cf82fd711eb816cf64f92b0e305cc4d6a1"
+  }
+]

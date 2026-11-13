@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kimorel documentation</title>
+    <style>
+      body {
+        font:
+          18px/1.7 system-ui,
+          sans-serif;
+        max-width: 760px;
+        margin: 60px auto;
+        padding: 0 24px;
+        color: #183c30;
+        background: #f6f7f2;
+      }
+      a {
+        color: inherit;
+      }
+      code {
+        background: #e3ebdf;
+        padding: 3px 6px;
+      }
+      h1 {
+        line-height: 1.2;
+      }
+      a:focus-visible {
+        outline: 3px solid #996123;
+        outline-offset: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="../">← Back to Kimorel</a>
+    <main>
+      <h1>Human movement, openly animated.</h1>
+      <p>
+        Kimorel is a static, self-hostable TypeScript library with a
+        React/Three.js viewer. The catalog includes original skinned squat,
+        push-up and dumbbell curl GLBs using one character and rig.
+        Browser/visual approval is pending; no clinical validation is claimed.
+      </p>
+      <h2>Run locally</h2>
+      <p>
+        Use the exact runtime in <code>.nvmrc</code>, install the pinned pnpm in
+        <code>package.json</code>, then run <code>pnpm install</code> and
+        <code>pnpm dev</code>.
+      </p>
+      <h2>Package boundaries</h2>
+      <p>
+        <code>@kimorel/schemas</code> owns validation and inferred types.
+        <code>@kimorel/core</code> owns framework-independent utilities.
+        <code>@kimorel/data</code> owns the catalog.
+        <code>@kimorel/react</code> resolves stable exercise IDs or
+        host-supplied metadata and loads independently hosted GLBs.
+      </p>
+      <h2>Contribute responsibly</h2>
+      <p>
+        Run lint, formatting, type checks, tests, metadata validation and build
+        before requesting review. Do not submit assets without verified
+        redistribution rights. Original software uses MIT; original example
+        metadata is CC0.
+      </p>
+      <h2>Next: visually review all three movements</h2>
+      <p>
+        Review the original human and squat in a real browser on desktop/mobile,
+        confirm loading and playback behavior, then approve assets before a
+        public release.
+      </p>
+      <p>
+        Detailed architecture, roadmap, pipeline and licensing guides are in the
+        repository's <code>docs/</code> directory alongside
+        <code>CONTRIBUTING.md</code> and <code>SECURITY.md</code>. No public
+        repository URL or deployment is configured yet.
+      </p>
+    </main>
+  </body>
+</html>

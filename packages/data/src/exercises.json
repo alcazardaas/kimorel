@@ -1,0 +1,146 @@
+[
+  {
+    "schemaVersion": "1.0.0",
+    "id": "bodyweight-squat",
+    "slug": "bodyweight-squat",
+    "name": "Bodyweight Squat",
+    "description": "A lower-body squat without external resistance.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "squat",
+    "bodyRegions": ["lower-body"],
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "Standing",
+    "muscles": {
+      "primary": ["quadriceps", "gluteus-maximus"],
+      "secondary": []
+    },
+    "instructions": [
+      "Stand with feet approximately shoulder-width apart.",
+      "Bend at the hips and knees in a comfortable range.",
+      "Return to the starting position with control."
+    ],
+    "techniqueCues": ["Use controlled movement within a comfortable range."],
+    "commonMistakes": ["Rushing the movement."],
+    "animation": {
+      "assetId": "bodyweight-squat-v1",
+      "file": "exercises/bodyweight-squat.glb",
+      "clip": "rep",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel educational metadata and manually authored squat keyframes; pending visual review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "push-up",
+    "slug": "push-up",
+    "name": "Push-up",
+    "description": "A bodyweight pushing movement from the floor.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "push",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "Supported plank",
+    "muscles": {
+      "primary": ["pectoralis-major", "triceps"],
+      "secondary": ["abdominals", "deltoids"]
+    },
+    "instructions": [
+      "Begin in a supported plank position.",
+      "Bend the elbows to lower with control.",
+      "Press back to the starting position."
+    ],
+    "techniqueCues": ["Use controlled movement within a comfortable range."],
+    "commonMistakes": ["Rushing the movement."],
+    "animation": {
+      "assetId": "push-up-v1",
+      "file": "exercises/push-up.glb",
+      "clip": "rep",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.35, 0],
+      "position": [2.5, 1.5, 2.6]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel educational metadata and manually authored push-up keyframes; pending visual review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "dumbbell-biceps-curl",
+    "slug": "dumbbell-biceps-curl",
+    "name": "Dumbbell Biceps Curl",
+    "description": "A standing elbow-flexion movement with a dumbbell in each hand.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "pull",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["dumbbell"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "Standing with arms beside the torso",
+    "muscles": {
+      "primary": ["biceps"],
+      "secondary": ["forearms"]
+    },
+    "instructions": [
+      "Stand with a dumbbell held in each hand.",
+      "Bend the elbows while keeping the upper arms near the torso.",
+      "Lower with control."
+    ],
+    "techniqueCues": ["Use controlled movement within a comfortable range."],
+    "commonMistakes": ["Rushing the movement."],
+    "animation": {
+      "assetId": "dumbbell-biceps-curl-v1",
+      "file": "exercises/dumbbell-biceps-curl.glb",
+      "clip": "rep",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel educational metadata, manually authored curl and original dumbbell; pending visual review."
+    }
+  }
+]

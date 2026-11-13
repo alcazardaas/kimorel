@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["node", "vitest/globals"],
+    "resolveJsonModule": true
+  },
+  "include": [
+    "packages/**/*.test.ts",
+    "packages/**/*.test.tsx",
+    "vitest.config.ts"
+  ]
+}

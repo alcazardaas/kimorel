@@ -1,0 +1,113 @@
+"""CPU preview of the actual generated skin and bones; no optional packages."""
+import importlib.util
+import math
+import struct
+import zlib
+from pathlib import Path
+
+spec = importlib.util.spec_from_file_location('character', Path(__file__).with_name('build.py'))
+character = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(character)
+
+
+def rotate(point, angle):
+    x, y, z = point
+    return (x, y*math.cos(angle)-z*math.sin(angle), y*math.sin(angle)+z*math.cos(angle))
+
+
+def render(time, width=400, height=480, exercise='bodyweight-squat', geometry=None, highlights=False):
+    positions, _normals, indices = geometry or character.mesh()
+    pose = character.motion_pose(character.BONES,time,exercise,character.pose)
+    forward,quaternion_rotate = character.motions.forward,character.motions.rotate
+    world, rotations = forward(character.BONES,pose)
+    vertices = []
+    for point in positions:
+        joints, weights = character.weights(point)
+        transformed = [0, 0, 0]
+        for joint, weight in zip(joints, weights):
+            relative = quaternion_rotate(character.sub(point, character.BONES[joint][2]), rotations[joint])
+            for k in range(3):
+                transformed[k] += (world[joint][k]+relative[k])*weight
+        x,y,z = transformed
+        # View from +X,+Z toward the human's front, matching demo framing.
+        screen_x = .8*x-.6*z
+        depth = .6*x+.8*z
+        vertices.append((width/2+screen_x*(170 if exercise=='push-up' else 220), height-70-y*220, depth*220))
+    human_index_count = len(indices)
+    colors_by_region = {}
+    if highlights:
+        import json
+        records = json.loads((Path(__file__).resolve().parents[2]/'packages/data/src/exercises.json').read_text())
+        muscles = next(record['muscles'] for record in records if record['id'] == exercise)
+        for region in character.REGION_DEFINITION['regions'].values():
+            if any(m in muscles['primary'] for m in region['muscles']):
+                colors_by_region[region['code']] = [255,85,56]
+            elif any(m in muscles['secondary'] for m in region['muscles']):
+                colors_by_region[region['code']] = [242,183,123]
+    if exercise == 'dumbbell-biceps-curl':
+        add = character.motions.add
+        dv,_dn,di = character.dumbbell_geometry()
+        indices = list(indices)
+        for joint,sign in [(14,1),(17,-1)]:
+            start = len(vertices)
+            for point in dv:
+                transformed = add(world[joint],quaternion_rotate(add(point,(sign*.02,-.055,.005)),rotations[joint]))
+                x,y,z = transformed
+                vertices.append((width/2+(.8*x-.6*z)*220,height-70-y*220,(.6*x+.8*z)*220))
+            indices.extend(start+i for i in di)
+    pixels = bytearray([232,237,232]*width*height)
+    depths = [-float('inf')]*(width*height)
+    for i in range(0,len(indices),3):
+        a,b,c = [vertices[index] for index in indices[i:i+3]]
+        denominator = (b[1]-c[1])*(a[0]-c[0])+(c[0]-b[0])*(a[1]-c[1])
+        if abs(denominator)<1e-8:
+            continue
+        # Flat Lambert lighting highlights the actual silhouette and deformation.
+        u,v = character.sub(b,a),character.sub(c,a)
+        n = (u[1]*v[2]-u[2]*v[1],u[2]*v[0]-u[0]*v[2],u[0]*v[1]-u[1]*v[0])
+        light = .6+.35*abs(n[2])/max(character.length(n),1e-8)
+        base_color = [50,60,70] if i >= human_index_count else [125,151,145]
+        if i < human_index_count and highlights:
+            base_color = colors_by_region.get(character.muscle_region(positions[indices[i]]), base_color)
+        color = [int(channel*light) for channel in base_color]
+        for y in range(max(0,int(min(a[1],b[1],c[1]))),min(height,int(max(a[1],b[1],c[1]))+1)):
+            for x in range(max(0,int(min(a[0],b[0],c[0]))),min(width,int(max(a[0],b[0],c[0]))+1)):
+                wa = ((b[1]-c[1])*(x-c[0])+(c[0]-b[0])*(y-c[1]))/denominator
+                wb = ((c[1]-a[1])*(x-c[0])+(a[0]-c[0])*(y-c[1]))/denominator
+                wc = 1-wa-wb
+                if min(wa,wb,wc)<0:
+                    continue
+                depth = wa*a[2]+wb*b[2]+wc*c[2]
+                index = y*width+x
+                if depth > depths[index]:
+                    depths[index] = depth
+                    pixels[index*3:index*3+3] = bytes(color)
+    return pixels
+
+
+def png(path, pixels, width, height):
+    def chunk(kind, data):
+        return struct.pack('>I',len(data))+kind+data+struct.pack('>I',zlib.crc32(kind+data))
+    rows = b''.join(b'\0'+pixels[y*width*3:(y+1)*width*3] for y in range(height))
+    path.parent.mkdir(parents=True,exist_ok=True)
+    path.write_bytes(b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>IIBBBBB',width,height,8,2,0,0,0))+chunk(b'IDAT',zlib.compress(rows))+chunk(b'IEND',b''))
+
+
+if __name__ == '__main__':
+    root = Path(__file__).resolve().parents[2]
+    geometry = character.mesh()
+    for exercise in ('bodyweight-squat','push-up','dumbbell-biceps-curl'):
+        height = 280 if exercise == 'push-up' else 480
+        frames = [render(time,height=height,exercise=exercise,geometry=geometry) for time in [0,1,2,3,4]]
+        strip = bytearray()
+        for row in range(height):
+            for frame in frames:
+                strip.extend(frame[row*400*3:(row+1)*400*3])
+        png(root/f'docs/reviews/{exercise}-contact-sheet.png',strip,2000,height)
+        png(root/f'assets/thumbnails/{exercise}.png',frames[2],400,height)
+        highlighted = [render(time,height=height,exercise=exercise,geometry=geometry,highlights=True) for time in [0,1,2,3,4]]
+        strip = bytearray()
+        for row in range(height):
+            for frame in highlighted:
+                strip.extend(frame[row*400*3:(row+1)*400*3])
+        png(root/f'docs/reviews/{exercise}-muscle-contact-sheet.png',strip,2000,height)

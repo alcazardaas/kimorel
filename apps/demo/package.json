@@ -1,0 +1,22 @@
+{
+  "name": "@kimorel/demo",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@kimorel/core": "workspace:*",
+    "@kimorel/data": "workspace:*",
+    "@kimorel/react": "workspace:*",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "three": "0.187.0"
+  },
+  "devDependencies": {
+    "vite": "8.3.8"
+  }
+}
