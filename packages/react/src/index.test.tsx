@@ -199,6 +199,62 @@ it('reports loading/clip failures and recovers on exercise switch', async () => 
   expect(observed.props?.url).toContain('push-up.glb');
   expect(observed.props?.cameraTarget).toEqual(exercises[1]!.camera.target);
 });
+
+it('recovers when host metadata corrects the clip on the same exercise and file', async () => {
+  vi.spyOn(console, 'error').mockImplementation(() => {});
+  const exercise = exercises[1]!;
+  const invalid = {
+    ...exercise,
+    animation: { ...exercise.animation!, clip: 'missing' },
+  };
+  const onError = vi.fn();
+  const { rerender } = render(
+    <ExerciseViewer exercise={invalid} onError={onError} />,
+  );
+  fireEvent.click(await screen.findByText('Fail mock GLB'));
+  expect(screen.getByRole('alert').textContent).toContain('Missing clip');
+  expect(onError).toHaveBeenCalledOnce();
+  rerender(<ExerciseViewer exercise={exercise} onError={onError} />);
+  expect(screen.queryByRole('alert')).toBeNull();
+  expect(screen.getByRole('status').textContent).toContain('Loading');
+  expect(
+    (screen.getByRole('button', { name: 'Play' }) as HTMLButtonElement)
+      .disabled,
+  ).toBe(true);
+  fireEvent.click(await screen.findByText('Load mock GLB'));
+  expect(observed.props?.clip).toBe(exercise.animation!.clip);
+  expect(observed.props?.url).toContain(exercise.animation!.file);
+});
+
+it('resets readiness only for a new clip, not ordinary viewer props', async () => {
+  const exercise = exercises[1]!;
+  const { rerender } = render(<ExerciseViewer exercise={exercise} />);
+  fireEvent.click(await screen.findByText('Load mock GLB'));
+  const mounts = observed.mounts;
+  const updated = {
+    ...exercise,
+    animation: { ...exercise.animation!, clip: 'alternate' },
+  };
+  rerender(<ExerciseViewer exercise={updated} />);
+  expect(screen.getByRole('status').textContent).toContain('Loading');
+  fireEvent.click(await screen.findByText('Load mock GLB'));
+  expect(observed.mounts).toBe(mounts + 1);
+  expect(observed.props?.clip).toBe('alternate');
+  rerender(
+    <ExerciseViewer
+      exercise={updated}
+      playbackSpeed={0.75}
+      loop={false}
+      review
+      showMuscles
+    />,
+  );
+  expect(observed.mounts).toBe(mounts + 1);
+  expect(screen.queryByText('Loading exercise animation…')).toBeNull();
+  expect(observed.props?.speed).toBe(0.75);
+  expect(observed.props?.loop).toBe(false);
+  expect(observed.props?.restart).toBe(0);
+});
 it('handles unknown exercise IDs and no-asset examples without fake playback', () => {
   const { rerender } = render(<ExerciseViewer exercise="unknown" />);
   expect(screen.getByRole('alert').textContent).toContain('not found');

@@ -353,7 +353,7 @@ export function ExerciseViewer(props: ExerciseViewerProps) {
       <AnimatedViewer
         {...props}
         exercise={exercise}
-        key={`${exercise.id}:${exercise.animation?.file ?? ''}:${props.assetBaseUrl ?? ''}`}
+        key={`${exercise.id}:${exercise.animation?.file ?? ''}:${exercise.animation?.clip ?? ''}:${props.assetBaseUrl ?? ''}`}
       />
     </section>
   );
