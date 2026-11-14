@@ -4,6 +4,7 @@ import { exercises, assetReviewRecords } from '@kimorel/data';
 import { ExerciseViewer } from '@kimorel/react';
 import './style.css';
 import { Catalog } from './Catalog';
+import { ExerciseDetails } from './ExerciseDetails';
 function App() {
   const [selected, setSelected] = useState(exercises[0]!);
   const [review, setReview] = useState(false);
@@ -126,31 +127,7 @@ function App() {
               loop
               controls
             />
-            <div className="description">
-              <h3>About this movement</h3>
-              <p>{selected.description}</p>
-              <p>
-                <strong>Primary muscles:</strong>{' '}
-                {selected.muscles.primary.join(', ')}
-              </p>
-              <p>
-                <strong>Secondary muscles:</strong>{' '}
-                {selected.muscles.secondary.join(', ')}
-              </p>
-              <p>
-                <strong>Equipment:</strong> {selected.equipment.join(', ')}
-              </p>
-              <h3>Movement instructions</h3>
-              <ol>
-                {selected.instructions.map((instruction) => (
-                  <li key={instruction}>{instruction}</li>
-                ))}
-              </ol>
-              <p className="muted">
-                Educational example only. Not medical advice or a treatment
-                prescription.
-              </p>
-            </div>
+            <ExerciseDetails exercise={selected} />
           </article>
         </section>
         <section className="principles">
