@@ -47,6 +47,121 @@ afterEach(() => {
   observed.failure = null;
   observed.mounts = 0;
   vi.restoreAllMocks();
+  vi.unstubAllGlobals();
+});
+
+function mockIntersections() {
+  const observers: {
+    observe: ReturnType<typeof vi.fn>;
+    disconnect: ReturnType<typeof vi.fn>;
+    setVisible: (visible: boolean) => void;
+  }[] = [];
+  vi.stubGlobal(
+    'IntersectionObserver',
+    class {
+      observe = vi.fn();
+      disconnect = vi.fn();
+      constructor(private callback: IntersectionObserverCallback) {
+        observers.push(this);
+      }
+      setVisible(visible: boolean) {
+        act(() =>
+          this.callback(
+            [{ isIntersecting: visible } as IntersectionObserverEntry],
+            this as unknown as IntersectionObserver,
+          ),
+        );
+      }
+    },
+  );
+  return observers;
+}
+
+it('suspends autoplay while hidden or offscreen and resumes only when both are visible', async () => {
+  const hidden = vi.spyOn(document, 'hidden', 'get').mockReturnValue(false);
+  const observers = mockIntersections();
+  render(<ExerciseViewer exercise="push-up" autoPlay />);
+  fireEvent.click(await screen.findByText('Load mock GLB'));
+  const mounts = observed.mounts;
+  expect(observed.props?.playing).toBe(true);
+  observers[0]!.setVisible(false);
+  expect(observed.props?.playing).toBe(false);
+  hidden.mockReturnValue(true);
+  fireEvent(document, new Event('visibilitychange'));
+  observers[0]!.setVisible(true);
+  expect(observed.props?.playing).toBe(false);
+  hidden.mockReturnValue(false);
+  fireEvent(document, new Event('visibilitychange'));
+  expect(observed.props?.playing).toBe(true);
+  hidden.mockReturnValue(true);
+  fireEvent(document, new Event('visibilitychange'));
+  expect(observed.props?.playing).toBe(false);
+  observers[0]!.setVisible(false);
+  hidden.mockReturnValue(false);
+  fireEvent(document, new Event('visibilitychange'));
+  expect(observed.props?.playing).toBe(false);
+  observers[0]!.setVisible(true);
+  expect(observed.props?.playing).toBe(true);
+  expect(observed.mounts).toBe(mounts);
+  expect(observed.props?.restart).toBe(0);
+});
+
+it.each([true, false])(
+  'preserves explicit Pause through visibility changes (observer: %s)',
+  async (withObserver) => {
+    const hidden = vi.spyOn(document, 'hidden', 'get').mockReturnValue(false);
+    const observers = withObserver ? mockIntersections() : [];
+    if (!withObserver) vi.stubGlobal('IntersectionObserver', undefined);
+    render(<ExerciseViewer exercise="push-up" autoPlay />);
+    fireEvent.click(await screen.findByText('Load mock GLB'));
+    fireEvent.click(screen.getByRole('button', { name: 'Pause' }));
+    hidden.mockReturnValue(true);
+    fireEvent(document, new Event('visibilitychange'));
+    observers[0]?.setVisible(false);
+    hidden.mockReturnValue(false);
+    fireEvent(document, new Event('visibilitychange'));
+    observers[0]?.setVisible(true);
+    expect(observed.props?.playing).toBe(false);
+    expect(screen.getByRole('button', { name: 'Play' })).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', { name: 'Play' }));
+    expect(observed.props?.playing).toBe(true);
+    hidden.mockReturnValue(true);
+    fireEvent(document, new Event('visibilitychange'));
+    expect(observed.props?.playing).toBe(false);
+    hidden.mockReturnValue(false);
+    fireEvent(document, new Event('visibilitychange'));
+    expect(observed.props?.playing).toBe(true);
+  },
+);
+
+it('disconnects observers and removes matching visibility listeners on replacement and unmount', async () => {
+  vi.spyOn(document, 'hidden', 'get').mockReturnValue(false);
+  const observers = mockIntersections();
+  const add = vi.spyOn(document, 'addEventListener');
+  const remove = vi.spyOn(document, 'removeEventListener');
+  const { rerender, unmount } = render(<ExerciseViewer exercise="push-up" />);
+  fireEvent.click(await screen.findByText('Load mock GLB'));
+  const firstContainer = screen.getByRole('group', {
+    name: 'Push-up animation',
+  });
+  const listeners = () =>
+    add.mock.calls.filter(([type]) => type === 'visibilitychange');
+  const firstListener = listeners()[0]![1];
+  expect(observers[0]!.observe).toHaveBeenCalledWith(firstContainer);
+  rerender(<ExerciseViewer exercise="bodyweight-squat" />);
+  fireEvent.click(await screen.findByText('Load mock GLB'));
+  expect(observers[0]!.disconnect).toHaveBeenCalledOnce();
+  expect(remove).toHaveBeenCalledWith('visibilitychange', firstListener);
+  const secondContainer = screen.getByRole('group', {
+    name: 'Bodyweight Squat animation',
+  });
+  expect(secondContainer).not.toBe(firstContainer);
+  expect(observers[1]!.observe).toHaveBeenCalledWith(secondContainer);
+  const secondListener = listeners()[1]![1];
+  expect(secondListener).not.toBe(firstListener);
+  unmount();
+  expect(observers[1]!.disconnect).toHaveBeenCalledOnce();
+  expect(remove).toHaveBeenCalledWith('visibilitychange', secondListener);
 });
 
 it('provides normal-mode scrubbing and camera presets without remounting the scene', async () => {
