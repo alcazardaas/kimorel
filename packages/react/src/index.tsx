@@ -132,6 +132,9 @@ function AnimatedViewer({
   }
   if (!Number.isFinite(speed) || speed <= 0 || speed > 4)
     return <p role="alert">Playback speed must be between 0 and 4.</p>;
+  const speedOptions = [...new Set([0.25, 0.5, 1, 1.5, 2, speed])].sort(
+    (a, b) => a - b,
+  );
   return (
     <>
       <div
@@ -215,7 +218,7 @@ function AnimatedViewer({
               value={speed}
               onChange={(event) => setSpeed(Number(event.target.value))}
             >
-              {[0.25, 0.5, 1, 1.5, 2].map((value) => (
+              {speedOptions.map((value) => (
                 <option key={value} value={value}>
                   {value}×
                 </option>

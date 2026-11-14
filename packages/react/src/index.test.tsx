@@ -103,6 +103,51 @@ it('never submits a surrounding host form from standard or review buttons', asyn
   expect(screen.getAllByLabelText('Animation timeline')).toHaveLength(1);
   expect(screen.getAllByLabelText('Camera preset')).toHaveLength(1);
 });
+
+it('displays custom metadata and prop speeds without restarting the scene', async () => {
+  const exercise = {
+    ...exercises[1]!,
+    animation: { ...exercises[1]!.animation!, defaultPlaybackSpeed: 0.75 },
+  };
+  const { rerender } = render(<ExerciseViewer exercise={exercise} />);
+  fireEvent.click(await screen.findByText('Load mock GLB'));
+  const mounts = observed.mounts;
+  for (const speed of [0.75, 4, 0.1, 1]) {
+    if (speed !== 0.75) {
+      rerender(<ExerciseViewer exercise={exercise} playbackSpeed={speed} />);
+    }
+    const selector = screen.getByLabelText(
+      'Playback speed',
+    ) as HTMLSelectElement;
+    expect(selector.value).toBe(String(speed));
+    expect(
+      (
+        within(selector).getByRole('option', {
+          name: `${speed}×`,
+        }) as HTMLOptionElement
+      ).selected,
+    ).toBe(true);
+    expect(observed.props?.speed).toBe(speed);
+    expect(observed.props?.restart).toBe(0);
+    expect(observed.mounts).toBe(mounts);
+  }
+  fireEvent.change(screen.getByLabelText('Playback speed'), {
+    target: { value: '0.5' },
+  });
+  expect(observed.props?.speed).toBe(0.5);
+  expect(screen.getAllByRole('option', { name: '1×' })).toHaveLength(1);
+});
+
+it.each([0, -1, 4.01, NaN, Infinity])(
+  'rejects invalid playback speed %s',
+  (playbackSpeed) => {
+    render(<ExerciseViewer exercise="push-up" playbackSpeed={playbackSpeed} />);
+    expect(screen.getByRole('alert').textContent).toContain(
+      'Playback speed must be between 0 and 4',
+    );
+    expect(screen.queryByLabelText('Playback speed')).toBeNull();
+  },
+);
 it('resolves stable IDs and self-hosted GLBs, loads and controls playback', async () => {
   const ready = vi.fn();
   render(
