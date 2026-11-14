@@ -163,7 +163,11 @@ function AnimatedViewer({
                 showMuscles={highlights}
                 muscles={exercise.muscles}
                 seek={seek}
-                onTimeline={(time, duration) => setTimeline({ time, duration })}
+                onTimeline={(time, duration) => {
+                  setTimeline({ time, duration });
+                  if (!repeating && duration > 0 && time >= duration)
+                    setPlaying(false);
+                }}
                 {...(exercise.camera.target
                   ? { cameraTarget: exercise.camera.target }
                   : {})}

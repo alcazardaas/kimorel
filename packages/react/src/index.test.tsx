@@ -219,6 +219,18 @@ it('never submits a surrounding host form from standard or review buttons', asyn
   expect(screen.getAllByLabelText('Camera preset')).toHaveLength(1);
 });
 
+it('returns to Play when a non-looping clip completes', async () => {
+  render(<ExerciseViewer exercise="push-up" loop={false} />);
+  fireEvent.click(await screen.findByText('Load mock GLB'));
+  fireEvent.click(screen.getByRole('button', { name: 'Play' }));
+  act(() => observed.props?.onTimeline?.(4, 4));
+  expect(screen.getByRole('button', { name: 'Play' })).toBeTruthy();
+  expect(observed.props?.playing).toBe(false);
+  fireEvent.click(screen.getByRole('button', { name: 'Play' }));
+  expect(observed.props?.playing).toBe(true);
+  expect(observed.props?.restart).toBe(0);
+});
+
 it('displays custom metadata and prop speeds without restarting the scene', async () => {
   const exercise = {
     ...exercises[1]!,
