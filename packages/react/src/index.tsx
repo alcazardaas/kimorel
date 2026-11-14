@@ -184,12 +184,14 @@ function AnimatedViewer({
       {controls && (
         <div role="group" aria-label="Animation controls">
           <button
+            type="button"
             disabled={!ready || !!error}
             onClick={() => setPlaying(!playing)}
           >
             {playing ? 'Pause' : 'Play'}
           </button>{' '}
           <button
+            type="button"
             disabled={!ready || !!error}
             onClick={() => {
               setRestart((value) => value + 1);
@@ -198,6 +200,7 @@ function AnimatedViewer({
             Restart
           </button>{' '}
           <button
+            type="button"
             onClick={() => {
               setPreset(exercise.camera.preset);
               setResetCamera((value) => value + 1);
@@ -242,48 +245,57 @@ function AnimatedViewer({
               colored.
             </p>
           )}
+          <fieldset disabled={!ready || !!error}>
+            <legend>Playback and camera</legend>
+            <label>
+              Timeline{' '}
+              <input
+                aria-label="Animation timeline"
+                type="range"
+                min={0}
+                max={timeline.duration}
+                step={1 / 30}
+                value={timeline.time}
+                onChange={(event) => inspectTime(Number(event.target.value))}
+              />
+            </label>
+            <output role="timer" aria-live="off" aria-label="Animation time">
+              {timeline.time.toFixed(3)} / {timeline.duration.toFixed(3)} s
+            </output>
+            <label>
+              Camera{' '}
+              <select
+                aria-label="Camera preset"
+                value={preset}
+                onChange={(event) =>
+                  setPreset(event.target.value as CameraPreset)
+                }
+              >
+                {(['front', 'side', 'back', 'three-quarter'] as const).map(
+                  (value) => (
+                    <option key={value} value={value}>
+                      {value}
+                    </option>
+                  ),
+                )}
+              </select>
+            </label>
+          </fieldset>
           {review && (
             <fieldset disabled={!ready || !!error}>
               <legend>Visual review</legend>
-              <label>
-                Timeline{' '}
-                <input
-                  aria-label="Animation timeline"
-                  type="range"
-                  min={0}
-                  max={timeline.duration}
-                  step={1 / 30}
-                  value={timeline.time}
-                  onChange={(event) => inspectTime(Number(event.target.value))}
-                />
-              </label>
-              <output aria-label="Animation time">
-                {timeline.time.toFixed(3)} / {timeline.duration.toFixed(3)} s
-              </output>
-              <button onClick={() => inspectTime(timeline.time - 1 / 30)}>
+              <button
+                type="button"
+                onClick={() => inspectTime(timeline.time - 1 / 30)}
+              >
                 Previous frame
               </button>
-              <button onClick={() => inspectTime(timeline.time + 1 / 30)}>
+              <button
+                type="button"
+                onClick={() => inspectTime(timeline.time + 1 / 30)}
+              >
                 Next frame
               </button>
-              <label>
-                Camera{' '}
-                <select
-                  aria-label="Camera preset"
-                  value={preset}
-                  onChange={(event) =>
-                    setPreset(event.target.value as CameraPreset)
-                  }
-                >
-                  {(['front', 'side', 'back', 'three-quarter'] as const).map(
-                    (value) => (
-                      <option key={value} value={value}>
-                        {value}
-                      </option>
-                    ),
-                  )}
-                </select>
-              </label>
               <label>
                 <input
                   type="checkbox"
@@ -300,10 +312,11 @@ function AnimatedViewer({
                 />
                 Ground grid
               </label>
-              <button onClick={() => setBookmark(timeline.time)}>
+              <button type="button" onClick={() => setBookmark(timeline.time)}>
                 Remember pose
               </button>
               <button
+                type="button"
                 disabled={bookmark === null}
                 onClick={() => bookmark !== null && inspectTime(bookmark)}
               >

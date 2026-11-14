@@ -60,7 +60,7 @@ const viewer = (
 );
 ```
 
-The viewer resolves stable IDs through the bundled metadata catalog and also accepts an `Exercise` object for host-owned metadata. This intentionally extends the M0 host-only API; core remains framework-independent. Asset URLs are resolved from metadata beneath the host's base URL. Play/pause/restart, speed, loop, orbit/zoom and reset are real controls over the loaded GLB, not a placeholder animation. GLB bytes stay outside JavaScript and npm package exports. The demo copies its three independently cacheable preview assets during build. Reduced-motion preferences disable autoplay; hidden/offscreen viewers pause rendering.
+The viewer resolves stable IDs through the bundled metadata catalog and also accepts an `Exercise` object for host-owned metadata. This intentionally extends the M0 host-only API; core remains framework-independent. Asset URLs are resolved from metadata beneath the host's base URL. Play/pause/restart, speed, loop, timeline scrubbing, camera presets, orbit/zoom and reset are real controls over the loaded GLB, not a placeholder animation. Timeline and camera presets are available without review mode; frame stepping, pose bookmarks, skeleton and grid toggles remain review-only. Viewer buttons do not submit a surrounding host form. GLB bytes stay outside JavaScript and npm package exports. The demo copies its three independently cacheable preview assets during build. Reduced-motion preferences disable autoplay; hidden/offscreen viewers pause rendering.
 
 ## Documentation and contributing
 

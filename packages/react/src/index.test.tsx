@@ -1,32 +1,107 @@
 // @vitest-environment jsdom
 import { afterEach, expect, it, vi } from 'vitest';
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import {
+  act,
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+  within,
+} from '@testing-library/react';
 import { exercises } from '@kimorel/data';
 import { ExerciseViewer } from './index.js';
 import type { SceneProps } from './Scene.js';
 const observed = vi.hoisted(() => ({
   props: null as SceneProps | null,
   failure: null as Error | null,
+  mounts: 0,
 }));
-vi.mock('./Scene.js', () => ({
-  default: (props: SceneProps) => {
-    if (observed.failure) throw observed.failure;
-    observed.props = props;
-    return (
-      <>
-        <button onClick={props.onReady}>Load mock GLB</button>
-        <button onClick={() => props.onError(new Error('Missing clip'))}>
-          Fail mock GLB
-        </button>
-      </>
-    );
-  },
-}));
+vi.mock('./Scene.js', async () => {
+  const { useEffect } = await import('react');
+  return {
+    default: (props: SceneProps) => {
+      useEffect(() => {
+        observed.mounts += 1;
+      }, []);
+      if (observed.failure) throw observed.failure;
+      observed.props = props;
+      return (
+        <>
+          <button type="button" onClick={props.onReady}>
+            Load mock GLB
+          </button>
+          <button
+            type="button"
+            onClick={() => props.onError(new Error('Missing clip'))}
+          >
+            Fail mock GLB
+          </button>
+        </>
+      );
+    },
+  };
+});
 afterEach(() => {
   cleanup();
   observed.props = null;
   observed.failure = null;
+  observed.mounts = 0;
   vi.restoreAllMocks();
+});
+
+it('provides normal-mode scrubbing and camera presets without remounting the scene', async () => {
+  render(<ExerciseViewer exercise="push-up" autoPlay />);
+  expect(screen.getByLabelText('Animation timeline').matches(':disabled')).toBe(
+    true,
+  );
+  fireEvent.click(await screen.findByText('Load mock GLB'));
+  act(() => observed.props?.onTimeline?.(1, 4));
+  const mounts = observed.mounts;
+  fireEvent.change(screen.getByLabelText('Animation timeline'), {
+    target: { value: '2' },
+  });
+  expect(observed.props?.seek?.time).toBe(2);
+  expect(observed.props?.playing).toBe(false);
+  fireEvent.change(screen.getByLabelText('Camera preset'), {
+    target: { value: 'back' },
+  });
+  expect(observed.props?.cameraPreset).toBe('back');
+  fireEvent.click(screen.getByRole('button', { name: 'Reset camera' }));
+  expect(observed.props?.cameraPreset).toBe(exercises[1]!.camera.preset);
+  expect(observed.mounts).toBe(mounts);
+  for (const name of [
+    'Previous frame',
+    'Next frame',
+    'Remember pose',
+    'Recall pose',
+  ]) {
+    expect(screen.queryByRole('button', { name })).toBeNull();
+  }
+  expect(screen.queryByLabelText('Skeleton')).toBeNull();
+  expect(screen.queryByLabelText('Ground grid')).toBeNull();
+});
+
+it('never submits a surrounding host form from standard or review buttons', async () => {
+  const submit = vi.fn((event) => event.preventDefault());
+  render(
+    <form onSubmit={submit}>
+      <ExerciseViewer exercise="push-up" review />
+    </form>,
+  );
+  fireEvent.click(await screen.findByText('Load mock GLB'));
+  act(() => observed.props?.onTimeline?.(1, 4));
+  const controls = within(
+    screen.getByRole('group', { name: 'Animation controls' }),
+  );
+  const buttons = controls.getAllByRole('button');
+  expect(buttons).toHaveLength(7);
+  for (const button of buttons) {
+    expect(button.getAttribute('type')).toBe('button');
+    fireEvent.click(button);
+  }
+  expect(submit).not.toHaveBeenCalled();
+  expect(screen.getAllByLabelText('Animation timeline')).toHaveLength(1);
+  expect(screen.getAllByLabelText('Camera preset')).toHaveLength(1);
 });
 it('resolves stable IDs and self-hosted GLBs, loads and controls playback', async () => {
   const ready = vi.fn();
