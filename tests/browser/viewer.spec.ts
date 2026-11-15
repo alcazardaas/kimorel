@@ -1,5 +1,6 @@
 import type { Page, TestInfo } from '@playwright/test';
 import { test, expect } from './fixtures';
+import catalog from '../../packages/data/src/exercises.json' with { type: 'json' };
 
 const assetBase = 'http://127.0.0.1:4176/library';
 const squat = `${assetBase}/exercises/bodyweight-squat.glb`;
@@ -41,9 +42,10 @@ async function evidence(page: Page, info: TestInfo) {
   });
 }
 
-test('prefixed production demo loads all three real clips and supports keyboard controls', async ({
+test('prefixed production demo loads every registered real clip and supports keyboard controls', async ({
   page,
 }, info) => {
+  test.setTimeout(120_000);
   await page.goto('/kimorel/');
   await ready(page);
   await page.getByRole('button', { name: 'Pause', exact: true }).focus();
@@ -59,7 +61,7 @@ test('prefixed production demo loads all three real clips and supports keyboard 
   await page.getByLabel('Camera preset').selectOption('side');
   await expect(page.getByLabel('Camera preset')).toHaveValue('side');
   await evidence(page, info);
-  for (const name of ['Push-up', 'Dumbbell Biceps Curl']) {
+  for (const { name } of catalog.slice(1)) {
     await page
       .getByRole('list', { name: 'Movements' })
       .getByRole('button', { name: new RegExp(name) })
@@ -73,9 +75,13 @@ test('prefixed production demo loads all three real clips and supports keyboard 
   await page
     .getByRole('combobox', { name: 'Equipment', exact: true })
     .selectOption('dumbbell');
-  await expect(page.getByRole('status')).toContainText('1 of 3 movements');
+  await expect(page.getByRole('status')).toContainText(
+    `${catalog.filter((e) => e.equipment.includes('dumbbell')).length} of ${catalog.length} movements`,
+  );
   await page.getByRole('button', { name: 'Reset filters' }).click();
-  await expect(page.getByRole('status')).toContainText('3 of 3 movements');
+  await expect(page.getByRole('status')).toContainText(
+    `${catalog.length} of ${catalog.length} movements`,
+  );
 });
 
 test('reduced motion prevents autoplay but allows explicit keyboard play', async ({

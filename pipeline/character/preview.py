@@ -15,8 +15,44 @@ def rotate(point, angle):
     return (x, y*math.cos(angle)-z*math.sin(angle), y*math.sin(angle)+z*math.cos(angle))
 
 
+_FRAMES = {}
+
+
+def view_frame(exercise, positions, width, height):
+    """One stable orthographic fit over the entire new clip, never per-frame zoom."""
+    key = (exercise, width, height)
+    if key not in _FRAMES:
+        projected = []
+        for time in (0, 1, 2, 3, 4):
+            pose = character.motion_pose(character.BONES, time, exercise, character.pose)
+            world, rotations = character.motions.forward(character.BONES, pose)
+            for point in positions:
+                joints, weights = character.weights(point)
+                p = [0, 0, 0]
+                for joint, weight in zip(joints, weights):
+                    relative = character.motions.rotate(character.sub(point, character.BONES[joint][2]), rotations[joint])
+                    for k in range(3):
+                        p[k] += (world[joint][k]+relative[k])*weight
+                projected.append((.8*p[0]-.6*p[2], p[1]))
+            if character.motions.PROFILES[exercise].get('equipment'):
+                for joint in (14, 17):
+                    x, y, z = world[joint]
+                    projected.extend([(.8*x-.6*z-.2, y-.2), (.8*x-.6*z+.2, y+.2)])
+        lo = [min(p[i] for p in projected) for i in range(2)]
+        hi = [max(p[i] for p in projected) for i in range(2)]
+        scale = min((width-60)/(hi[0]-lo[0]), (height-70)/(hi[1]-lo[1]))
+        _FRAMES[key] = ((hi[0]+lo[0])/2, (hi[1]+lo[1])/2, scale)
+    return _FRAMES[key]
+
+
 def render(time, width=400, height=480, exercise='bodyweight-squat', geometry=None, highlights=False):
     positions, _normals, indices = geometry or character.mesh()
+    frame = None if 'previewScale' in character.motions.PROFILES[exercise] else view_frame(exercise, positions, width, height)
+    def project(x, y, z):
+        if frame:
+            cx, cy, scale = frame
+            return (width/2+(.8*x-.6*z-cx)*scale, height/2-(y-cy)*scale, (.6*x+.8*z)*scale)
+        return (width/2+(.8*x-.6*z)*character.motions.PROFILES[exercise]['previewScale'], height-70-y*220, (.6*x+.8*z)*220)
     pose = character.motion_pose(character.BONES,time,exercise,character.pose)
     forward,quaternion_rotate = character.motions.forward,character.motions.rotate
     world, rotations = forward(character.BONES,pose)
@@ -30,9 +66,7 @@ def render(time, width=400, height=480, exercise='bodyweight-squat', geometry=No
                 transformed[k] += (world[joint][k]+relative[k])*weight
         x,y,z = transformed
         # View from +X,+Z toward the human's front, matching demo framing.
-        screen_x = .8*x-.6*z
-        depth = .6*x+.8*z
-        vertices.append((width/2+screen_x*(170 if exercise=='push-up' else 220), height-70-y*220, depth*220))
+        vertices.append(project(x, y, z))
     human_index_count = len(indices)
     colors_by_region = {}
     if highlights:
@@ -44,7 +78,7 @@ def render(time, width=400, height=480, exercise='bodyweight-squat', geometry=No
                 colors_by_region[region['code']] = [255,85,56]
             elif any(m in muscles['secondary'] for m in region['muscles']):
                 colors_by_region[region['code']] = [242,183,123]
-    if exercise == 'dumbbell-biceps-curl':
+    if character.motions.PROFILES[exercise].get('equipment'):
         add = character.motions.add
         dv,_dn,di = character.dumbbell_geometry()
         indices = list(indices)
@@ -53,7 +87,7 @@ def render(time, width=400, height=480, exercise='bodyweight-squat', geometry=No
             for point in dv:
                 transformed = add(world[joint],quaternion_rotate(add(point,(sign*.02,-.055,.005)),rotations[joint]))
                 x,y,z = transformed
-                vertices.append((width/2+(.8*x-.6*z)*220,height-70-y*220,(.6*x+.8*z)*220))
+                vertices.append(project(x, y, z))
             indices.extend(start+i for i in di)
     pixels = bytearray([232,237,232]*width*height)
     depths = [-float('inf')]*(width*height)
@@ -94,10 +128,16 @@ def png(path, pixels, width, height):
 
 
 if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('exercises', nargs='*', help='Registered IDs; omit to render the full catalog.')
+    selected = parser.parse_args().exercises or character.motions.EXERCISES
+    if any(exercise not in character.motions.EXERCISES for exercise in selected):
+        parser.error('Unknown exercise ID')
     root = Path(__file__).resolve().parents[2]
     geometry = character.mesh()
-    for exercise in ('bodyweight-squat','push-up','dumbbell-biceps-curl'):
-        height = 280 if exercise == 'push-up' else 480
+    for exercise in selected:
+        height = character.motions.PROFILES[exercise].get('previewHeight', 480)
         frames = [render(time,height=height,exercise=exercise,geometry=geometry) for time in [0,1,2,3,4]]
         strip = bytearray()
         for row in range(height):

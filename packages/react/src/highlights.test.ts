@@ -44,3 +44,32 @@ it('colors metadata primary and secondary regions differently and restores owned
   geometry.dispose();
   material.dispose();
 });
+
+it('highlights hip abductors without relabeling gluteus maximus', () => {
+  const geometry = new BufferGeometry();
+  geometry.setAttribute(
+    '_muscle_region',
+    new BufferAttribute(
+      new Uint16Array([
+        muscleRegionDefinition.regions['lateral-hip'].code,
+        muscleRegionDefinition.regions.glutes.code,
+      ]),
+      1,
+    ),
+  );
+  const material = new MeshStandardMaterial({ color: '#789080' });
+  const root = new Group();
+  root.add(new Mesh(geometry, material));
+  applyMuscleHighlights(
+    root,
+    { primary: ['hip-abductors'], secondary: [] },
+    true,
+  );
+  const colors = geometry.getAttribute('color');
+  expect(colors.getX(0)).not.toBe(colors.getX(1));
+  expect(muscleRegionDefinition.regions['lateral-hip'].muscles).toEqual([
+    'hip-abductors',
+  ]);
+  geometry.dispose();
+  material.dispose();
+});

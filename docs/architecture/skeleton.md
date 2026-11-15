@@ -29,7 +29,7 @@ Squat constraints: fixed ankles, two-bone sagittal leg solve with positive knee 
 
 The optional Blender bridge imports the generated GLB and saves a `.blend`; Blender maps glTF axes on import. Preserve object/bone names and clip name. Re-export as GLB with skins and animations, meters, no external textures, and run exported-file QA again. Blender re-export is not bitwise deterministic and has not been tested here.
 
-Muscle highlighting is not implemented. Future region masks can be authored on this neutral surface independently of exercise IDs; skinning territories alone are not medically precise activation maps.
+Thirteen broad rest-space surface regions now drive metadata-based educational highlighting. They are not muscle activation measurements.
 
 ## Three-exercise compatibility update
 
@@ -39,4 +39,8 @@ The 18 joint names, parent hierarchy, meter scale, rest pose and mesh topology a
 
 Eighteen joints suffice for these stylized squat/push-up/curl previews. They are NOT a complete physiotherapy rig: no clavicle/scapula articulation, forearm twist distribution, finger grip, toe joints or detailed spinal segmentation. Shoulder rotation and future rehab motions need a concrete deformation/kinematics audit before deciding whether a versioned rig extension is necessary. Do not infer anatomical fidelity from a bone count.
 
-Camera target and position are optional validated metadata, applied by the generic viewer and reset control. Horizontal exercises do not select an exercise-specific renderer. Muscle-region highlighting remains unimplemented; it requires reviewed surface masks rather than pretending skinning territories are precise muscle activation regions.
+Camera target and position are optional validated metadata, applied by the generic viewer and reset control. Horizontal exercises do not select an exercise-specific renderer. Broad muscle-region highlighting is implemented; human review of surface boundaries remains pending.
+
+## Thirteen-preview expansion
+
+The ten additional original clips preserve this rig, mesh and weights. Generic profile-driven dumbbell attachment is shared by curl, lateral/front raise, Romanian deadlift and bent-over row. Two non-skeletal forefoot markers in the calf-raise GLB document its rigid-foot pivot; they do not extend or rename skin joints. New floor poses use the same kinematics layer with explicit support profiles. Passing technical constraints is not a rig-sufficiency or anatomical-fidelity certificate: shoulder/scapula, toe, finger and spinal simplifications still need exact-asset human review.

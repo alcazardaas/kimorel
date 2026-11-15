@@ -3,15 +3,15 @@
     "assetId": "neutral-human-v1",
     "file": "characters/neutral-human.glb",
     "status": "needs-review",
-    "bytes": 611384,
-    "sha256": "d00e88cfea93777c6d67de22ac54b5b968800226f9c4f90c56b3e3004fbe60d8"
+    "bytes": 611400,
+    "sha256": "eaaa3e913c61402831cc558a6a179f5de50ec4a28e89ae800eccf10d49aad6ca"
   },
   {
     "assetId": "bodyweight-squat-v1",
     "file": "exercises/bodyweight-squat.glb",
     "status": "needs-review",
-    "bytes": 637464,
-    "sha256": "3e8162da32336b5746441b6435a9cc786654095de3bea9a2f8691bf154ce8674"
+    "bytes": 637480,
+    "sha256": "ffa40b0cc3dd3f364ce17c3cc0a1a9f3081282da0c6cae6ac7ab6c18eaa4abbb"
   },
   {
     "assetId": "bodyweight-squat-thumbnail-v1",
@@ -24,15 +24,15 @@
     "assetId": "push-up-v1",
     "file": "exercises/push-up.glb",
     "status": "needs-review",
-    "bytes": 633216,
-    "sha256": "8a2432794e3642cd48092fee3d3591c501de627a2b9330334c27024f1cf25d68"
+    "bytes": 633232,
+    "sha256": "40f416b6a5eebfeba333264d9d4c4c0f4d4719e62a51df38276a5e21fe3b1447"
   },
   {
     "assetId": "dumbbell-biceps-curl-v1",
     "file": "exercises/dumbbell-biceps-curl.glb",
     "status": "needs-review",
-    "bytes": 629252,
-    "sha256": "c785b07d49b26c90eab4206b3f3c905a6f0cf390ad5c787e2b5698a0896f9c96"
+    "bytes": 629268,
+    "sha256": "f0796d735934d954df61235ba4ee5c5d0d9305686d2c84e0bfe350bb7f8111b6"
   },
   {
     "assetId": "dumbbell-v1",
@@ -54,5 +54,145 @@
     "status": "needs-review",
     "bytes": 20939,
     "sha256": "8855bb9930c0b36582185d3e7ae574cf82fd711eb816cf64f92b0e305cc4d6a1"
+  },
+  {
+    "assetId": "dumbbell-lateral-raise-v1",
+    "file": "exercises/dumbbell-lateral-raise.glb",
+    "status": "needs-review",
+    "bytes": 629268,
+    "sha256": "2d434f43dd7ccb228035f980f14341be399bed5f205ec31c018ba7e5633fa704"
+  },
+  {
+    "assetId": "dumbbell-lateral-raise-thumbnail-v1",
+    "file": "thumbnails/dumbbell-lateral-raise.png",
+    "status": "needs-review",
+    "bytes": 22494,
+    "sha256": "7feae7e7def8e2c4c9342e2934c9914b98d8dc615d28cc6a0afc5605b6928e14"
+  },
+  {
+    "assetId": "dumbbell-romanian-deadlift-v1",
+    "file": "exercises/dumbbell-romanian-deadlift.glb",
+    "status": "needs-review",
+    "bytes": 646060,
+    "sha256": "9292a310907ba47fa1c8fa6e4fb320509e11ff2bc44fcbc1396d06639657da4b"
+  },
+  {
+    "assetId": "dumbbell-romanian-deadlift-thumbnail-v1",
+    "file": "thumbnails/dumbbell-romanian-deadlift.png",
+    "status": "needs-review",
+    "bytes": 22829,
+    "sha256": "e473800529392b7afd6469ca0aaade58d31f6dc6b6c2335e76611a7114bbb318"
+  },
+  {
+    "assetId": "reverse-lunge-v1",
+    "file": "exercises/reverse-lunge.glb",
+    "status": "needs-review",
+    "bytes": 641788,
+    "sha256": "ae5702838ff48d5fe3f3e3dd00398ff4f8648eb42e3c3573e94b6f60f25b4a62"
+  },
+  {
+    "assetId": "reverse-lunge-thumbnail-v1",
+    "file": "thumbnails/reverse-lunge.png",
+    "status": "needs-review",
+    "bytes": 21181,
+    "sha256": "98eae505cc876f52f6f1f42a630e4f58925f3dc95419cd77f3006ef9bf428082"
+  },
+  {
+    "assetId": "standing-calf-raise-v1",
+    "file": "exercises/standing-calf-raise.glb",
+    "status": "needs-review",
+    "bytes": 641976,
+    "sha256": "665423c310b9403563784851ad3134905622a49cc0aab185b716dc92706a3cf3"
+  },
+  {
+    "assetId": "standing-calf-raise-thumbnail-v1",
+    "file": "thumbnails/standing-calf-raise.png",
+    "status": "needs-review",
+    "bytes": 21348,
+    "sha256": "67a2d4f6ea44e393d3e119610395aebc10d07f393067b88fab905a1724dfb6d8"
+  },
+  {
+    "assetId": "dumbbell-front-raise-v1",
+    "file": "exercises/dumbbell-front-raise.glb",
+    "status": "needs-review",
+    "bytes": 629268,
+    "sha256": "237430bb27cd999402b155919f6bd3f70e0a894fb8643feac63c79bea852e235"
+  },
+  {
+    "assetId": "dumbbell-front-raise-thumbnail-v1",
+    "file": "thumbnails/dumbbell-front-raise.png",
+    "status": "needs-review",
+    "bytes": 20974,
+    "sha256": "1a0d80e98e7f396200813603c5e3bc51308a67b3883d6abbd74c7765e955770c"
+  },
+  {
+    "assetId": "bent-over-dumbbell-row-v1",
+    "file": "exercises/bent-over-dumbbell-row.glb",
+    "status": "needs-review",
+    "bytes": 646060,
+    "sha256": "e13201ee4cb8c093c2bf2095e939939d838814205e074193a7b7e334c21a427c"
+  },
+  {
+    "assetId": "bent-over-dumbbell-row-thumbnail-v1",
+    "file": "thumbnails/bent-over-dumbbell-row.png",
+    "status": "needs-review",
+    "bytes": 27131,
+    "sha256": "4dff5c845b39d8a4374bcb2e75a671c8e5f1e2bb788800043d425559fedb043a"
+  },
+  {
+    "assetId": "glute-bridge-v1",
+    "file": "exercises/glute-bridge.glb",
+    "status": "needs-review",
+    "bytes": 631080,
+    "sha256": "44914f10c5bdab09899bc801373d8e5399ef6e128aaa5cf4d7b7ffe1579d030a"
+  },
+  {
+    "assetId": "glute-bridge-thumbnail-v1",
+    "file": "thumbnails/glute-bridge.png",
+    "status": "needs-review",
+    "bytes": 23545,
+    "sha256": "b4f752d75a94dd96eb9ca4215c7228a3009346361ff6710d6461ec026d8820fe"
+  },
+  {
+    "assetId": "bird-dog-v1",
+    "file": "exercises/bird-dog.glb",
+    "status": "needs-review",
+    "bytes": 641792,
+    "sha256": "5b9b424222b2373b8a06c306ed57d873b5f7f942fd6c4eb766843641b530b85c"
+  },
+  {
+    "assetId": "bird-dog-thumbnail-v1",
+    "file": "thumbnails/bird-dog.png",
+    "status": "needs-review",
+    "bytes": 15941,
+    "sha256": "98c4c878356a6195cef0c6cbbd5118129f1f00eb33dbaf28bac6b40337a93a5a"
+  },
+  {
+    "assetId": "dead-bug-v1",
+    "file": "exercises/dead-bug.glb",
+    "status": "needs-review",
+    "bytes": 641784,
+    "sha256": "58afe0fcec1607c3e39a9180056ef774519a62f60dd6a6ecbe131f9c60778ce7"
+  },
+  {
+    "assetId": "dead-bug-thumbnail-v1",
+    "file": "thumbnails/dead-bug.png",
+    "status": "needs-review",
+    "bytes": 17742,
+    "sha256": "470e29a8b0fdbba245ebe797468f74a854f89ef1ababe39c402bff8f3e1944ee"
+  },
+  {
+    "assetId": "side-lying-hip-abduction-v1",
+    "file": "exercises/side-lying-hip-abduction.glb",
+    "status": "needs-review",
+    "bytes": 635324,
+    "sha256": "a0d2da90625a270186790cfe8d69fcc584c26da3ce7cf2dcdeb0dd67f525329f"
+  },
+  {
+    "assetId": "side-lying-hip-abduction-thumbnail-v1",
+    "file": "thumbnails/side-lying-hip-abduction.png",
+    "status": "needs-review",
+    "bytes": 19036,
+    "sha256": "92879adfaba3427829311d3c7e7bea983aee913e56293fe0f5f9dff2c168c805"
   }
 ]

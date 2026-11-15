@@ -15,7 +15,7 @@ describe('exercise utilities', () => {
         equipment: 'bodyweight',
         muscle: 'quadriceps',
       }).map((e) => e.id),
-    ).toEqual(['bodyweight-squat']);
+    ).toEqual(['bodyweight-squat', 'reverse-lunge']);
     expect(filterExercises(exercises, { equipment: 'barbell' })).toEqual([]);
   });
   it('resolves nested self-hosted asset paths', () => {

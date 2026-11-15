@@ -3,6 +3,7 @@
 Generated geometry and motion are dedicated to CC0-1.0. Generator code is MIT.
 Uses a continuous implicit surface, skin weights and a reusable glTF skeleton.
 """
+from functools import lru_cache
 import importlib.util
 import json
 import math
@@ -145,6 +146,7 @@ def mesh(step=.035):
     return vertices,normals,triangles
 
 
+@lru_cache(maxsize=None)
 def weights(point):
     # Region selection prevents hand/hip proximity from binding unrelated anatomy.
     x,y,_ = point
@@ -259,6 +261,11 @@ def build(output, animated=True, exercise="bodyweight-squat", geometry=None, equ
     document['meshes'] = [{'extras':{'kimorelMuscleRegions':{'version':REGION_DEFINITION['version'],'codes':{key:value['code'] for key,value in REGION_DEFINITION['regions'].items()}}},'name':'neutral-human-skin','primitives':[{'attributes':attributes,'indices':accessor(indices,5125,'SCALAR'),'material':0}]}]
     document['materials'] = [{'name':'neutral-skin','pbrMetallicRoughness':{'baseColorFactor':[.48,.58,.56,1],'metallicFactor':0,'roughnessFactor':.78}}]
     document['nodes'].append({'name':'human','mesh':0,'skin':0})
+    if exercise == 'standing-calf-raise':
+        for foot in (8,11):
+            marker = len(document['nodes'])
+            document['nodes'].append({'name':BONES[foot][0].replace('foot','forefoot'),'translation':[0,-.095,.125]})
+            document['nodes'][foot].setdefault('children',[]).append(marker)
     inverse = []
     for _,_,position in BONES:
         inverse.append([1,0,0,0,0,1,0,0,0,0,1,0,-position[0],-position[1],-position[2],1])
@@ -277,7 +284,7 @@ def build(output, animated=True, exercise="bodyweight-squat", geometry=None, equ
         for bone in poses[0]:
             track(bone,'rotation',[p[bone][1] for p in poses],'VEC4')
         document['animations'] = [animation]
-    if exercise == 'dumbbell-biceps-curl' or equipment_only:
+    if motions.PROFILES.get(exercise, {}).get('equipment') or equipment_only:
         dv,dn,di = dumbbell_geometry()
         document['materials'].append({'name':'dumbbell-metal','pbrMetallicRoughness':{'baseColorFactor':[.12,.15,.18,1],'metallicFactor':.6,'roughnessFactor':.45}})
         document['meshes'].append({'name':'dumbbell','primitives':[{'attributes':{'POSITION':accessor(dv,5126,'VEC3'),'NORMAL':accessor(dn,5126,'VEC3')},'indices':accessor(di,5125,'SCALAR'),'material':1}]})
@@ -322,5 +329,5 @@ if __name__=='__main__':
     geometry = mesh()
     build(ROOT/'assets/characters/neutral-human.glb',False,geometry=geometry)
     build(ROOT/'assets/equipment/dumbbell.glb',False,geometry=geometry,equipment_only=True)
-    for exercise in ('bodyweight-squat','push-up','dumbbell-biceps-curl'):
+    for exercise in motions.EXERCISES:
         build(ROOT/f'assets/exercises/{exercise}.glb',exercise=exercise,geometry=geometry)

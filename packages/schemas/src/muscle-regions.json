@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "regions": {
     "chest": {
       "code": 1,
@@ -48,6 +48,12 @@
       "label": "Spinal erectors",
       "muscles": ["erector-spinae"],
       "bounds": [0, 0.09, 1.04, 1.32, -0.3, -0.025]
+    },
+    "lateral-hip": {
+      "code": 13,
+      "label": "Lateral hip",
+      "muscles": ["hip-abductors"],
+      "bounds": [0.18, 0.29, 0.84, 1.06, -0.12, 0.12]
     },
     "glutes": {
       "code": 9,

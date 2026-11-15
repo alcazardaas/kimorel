@@ -14,7 +14,8 @@
         "Original continuous implicit human surface, 18-joint rig and normalized skin weights authored in pipeline/character/build.py.",
         "Rest-pose reusable character; neutral material; no textures.",
         "Canonical v1 hand-end weighting and shoulder/chest blending corrected; 18 bone names/hierarchy retained.",
-        "Added versioned broad per-vertex rest-space muscle region labels from packages/schemas/src/muscle-regions.json; geometry, weights, rig and motion unchanged. Labels are approximate educational surfaces, not activation measurements."
+        "Added versioned broad per-vertex rest-space muscle region labels from packages/schemas/src/muscle-regions.json; geometry, weights, rig and motion unchanged. Labels are approximate educational surfaces, not activation measurements.",
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -34,7 +35,8 @@
         "Original continuous implicit human surface, 18-joint rig and normalized skin weights authored in pipeline/character/build.py.",
         "Original four-second squat keyframes with fixed ankle IK; no captured or third-party motion.",
         "Canonical v1 hand-end weighting and shoulder/chest blending corrected; 18 bone names/hierarchy retained.",
-        "Added versioned broad per-vertex rest-space muscle region labels from packages/schemas/src/muscle-regions.json; geometry, weights, rig and motion unchanged. Labels are approximate educational surfaces, not activation measurements."
+        "Added versioned broad per-vertex rest-space muscle region labels from packages/schemas/src/muscle-regions.json; geometry, weights, rig and motion unchanged. Labels are approximate educational surfaces, not activation measurements.",
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -70,7 +72,8 @@
       "modifications": [
         "Original fixed-contact push-up keyframes from canonical rig.",
         "Canonical v1 hand-end weighting and shoulder/chest blending corrected; 18 bone names/hierarchy retained.",
-        "Added versioned broad per-vertex rest-space muscle region labels from packages/schemas/src/muscle-regions.json; geometry, weights, rig and motion unchanged. Labels are approximate educational surfaces, not activation measurements."
+        "Added versioned broad per-vertex rest-space muscle region labels from packages/schemas/src/muscle-regions.json; geometry, weights, rig and motion unchanged. Labels are approximate educational surfaces, not activation measurements.",
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -89,7 +92,8 @@
       "modifications": [
         "Original curl keyframes; two instances of canonical dumbbell attached to hand grips.",
         "Canonical v1 hand-end weighting and shoulder/chest blending corrected; 18 bone names/hierarchy retained.",
-        "Added versioned broad per-vertex rest-space muscle region labels from packages/schemas/src/muscle-regions.json; geometry, weights, rig and motion unchanged. Labels are approximate educational surfaces, not activation measurements."
+        "Added versioned broad per-vertex rest-space muscle region labels from packages/schemas/src/muscle-regions.json; geometry, weights, rig and motion unchanged. Labels are approximate educational surfaces, not activation measurements.",
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -138,6 +142,376 @@
       "licenseEvidenceUrl": null,
       "downloadDate": null,
       "modifications": ["CPU preview of original curl skin and equipment."],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-lateral-raise-v1",
+      "file": "exercises/dumbbell-lateral-raise.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second motion from pipeline/character/motions.py on unchanged canonical 18-joint skin; no captured or third-party motion.",
+        "Approximate educational muscle mapping; no visual or clinical approval claimed.",
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-lateral-raise-thumbnail-v1",
+      "file": "thumbnails/dumbbell-lateral-raise.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster preview of the generated canonical skin, created by pipeline/character/preview.py.",
+        "Approximate educational muscle mapping; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-romanian-deadlift-v1",
+      "file": "exercises/dumbbell-romanian-deadlift.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second motion from pipeline/character/motions.py on unchanged canonical 18-joint skin; no captured or third-party motion.",
+        "Approximate educational muscle mapping; no visual or clinical approval claimed.",
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-romanian-deadlift-thumbnail-v1",
+      "file": "thumbnails/dumbbell-romanian-deadlift.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster preview of the generated canonical skin, created by pipeline/character/preview.py.",
+        "Approximate educational muscle mapping; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "reverse-lunge-v1",
+      "file": "exercises/reverse-lunge.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second motion from pipeline/character/motions.py on unchanged canonical 18-joint skin; no captured or third-party motion.",
+        "Approximate educational muscle mapping; no visual or clinical approval claimed.",
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "reverse-lunge-thumbnail-v1",
+      "file": "thumbnails/reverse-lunge.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster preview of the generated canonical skin, created by pipeline/character/preview.py.",
+        "Approximate educational muscle mapping; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "standing-calf-raise-v1",
+      "file": "exercises/standing-calf-raise.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second motion from pipeline/character/motions.py on unchanged canonical 18-joint skin; no captured or third-party motion.",
+        "Approximate educational muscle mapping; no visual or clinical approval claimed.",
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "standing-calf-raise-thumbnail-v1",
+      "file": "thumbnails/standing-calf-raise.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster preview of the generated canonical skin, created by pipeline/character/preview.py.",
+        "Approximate educational muscle mapping; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-front-raise-v1",
+      "file": "exercises/dumbbell-front-raise.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second motion from pipeline/character/motions.py on unchanged canonical 18-joint skin; no captured or third-party motion.",
+        "Approximate educational muscle mapping; no visual or clinical approval claimed.",
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-front-raise-thumbnail-v1",
+      "file": "thumbnails/dumbbell-front-raise.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster preview of the generated canonical skin, created by pipeline/character/preview.py.",
+        "Approximate educational muscle mapping; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "bent-over-dumbbell-row-v1",
+      "file": "exercises/bent-over-dumbbell-row.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second motion from pipeline/character/motions.py on unchanged canonical 18-joint skin; no captured or third-party motion.",
+        "Approximate educational muscle mapping; no visual or clinical approval claimed.",
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "bent-over-dumbbell-row-thumbnail-v1",
+      "file": "thumbnails/bent-over-dumbbell-row.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster preview of the generated canonical skin, created by pipeline/character/preview.py.",
+        "Approximate educational muscle mapping; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "glute-bridge-v1",
+      "file": "exercises/glute-bridge.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second motion from pipeline/character/motions.py on unchanged canonical 18-joint skin; no captured or third-party motion.",
+        "Approximate educational muscle mapping; no visual or clinical approval claimed.",
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "glute-bridge-thumbnail-v1",
+      "file": "thumbnails/glute-bridge.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster preview of the generated canonical skin, created by pipeline/character/preview.py.",
+        "Approximate educational muscle mapping; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "bird-dog-v1",
+      "file": "exercises/bird-dog.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second motion from pipeline/character/motions.py on unchanged canonical 18-joint skin; no captured or third-party motion.",
+        "Approximate educational muscle mapping; no visual or clinical approval claimed.",
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "bird-dog-thumbnail-v1",
+      "file": "thumbnails/bird-dog.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster preview of the generated canonical skin, created by pipeline/character/preview.py.",
+        "Approximate educational muscle mapping; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dead-bug-v1",
+      "file": "exercises/dead-bug.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second motion from pipeline/character/motions.py on unchanged canonical 18-joint skin; no captured or third-party motion.",
+        "Approximate educational muscle mapping; no visual or clinical approval claimed.",
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dead-bug-thumbnail-v1",
+      "file": "thumbnails/dead-bug.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster preview of the generated canonical skin, created by pipeline/character/preview.py.",
+        "Approximate educational muscle mapping; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "side-lying-hip-abduction-v1",
+      "file": "exercises/side-lying-hip-abduction.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second motion from pipeline/character/motions.py on unchanged canonical 18-joint skin; no captured or third-party motion.",
+        "Approximate educational muscle mapping; no visual or clinical approval claimed.",
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "side-lying-hip-abduction-thumbnail-v1",
+      "file": "thumbnails/side-lying-hip-abduction.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster preview of the generated canonical skin, created by pipeline/character/preview.py.",
+        "Approximate educational muscle mapping; no visual or clinical approval claimed."
+      ],
       "commercialUse": true,
       "redistribution": true,
       "attribution": "Not required; see docs/asset-license-cc0.md.",

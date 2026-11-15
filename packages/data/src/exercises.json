@@ -142,5 +142,525 @@
       "creator": "Kimorel contributors",
       "source": "Original Kimorel educational metadata, manually authored curl and original dumbbell; pending visual review."
     }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "dumbbell-lateral-raise",
+    "slug": "dumbbell-lateral-raise",
+    "name": "Dumbbell Lateral Raise",
+    "description": "Original stylized dumbbell lateral raise movement preview; pending human review.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["dumbbell"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "Standing with dumbbells beside the body",
+    "muscles": {
+      "primary": ["deltoids"],
+      "secondary": ["upper-back"]
+    },
+    "instructions": [
+      "Raise both arms outward toward shoulder level.",
+      "Lower the arms with control."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview is educational and has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Rushing the movement or forcing the demonstrated range."
+    ],
+    "animation": {
+      "assetId": "dumbbell-lateral-raise-v1",
+      "file": "exercises/dumbbell-lateral-raise.glb",
+      "clip": "rep",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel educational draft metadata and deterministic dumbbell lateral raise motion on the canonical rig; pending human visual review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "dumbbell-romanian-deadlift",
+    "slug": "dumbbell-romanian-deadlift",
+    "name": "Dumbbell Romanian Deadlift",
+    "description": "Original stylized dumbbell romanian deadlift movement preview; pending human review.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "hinge",
+    "bodyRegions": ["lower-body"],
+    "equipment": ["dumbbell"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "Standing with dumbbells in front of the thighs",
+    "muscles": {
+      "primary": ["hamstrings", "gluteus-maximus"],
+      "secondary": ["erector-spinae", "forearms"]
+    },
+    "instructions": [
+      "Move the hips backward while inclining the torso.",
+      "Return to standing with controlled hip extension."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview is educational and has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Rushing the movement or forcing the demonstrated range."
+    ],
+    "animation": {
+      "assetId": "dumbbell-romanian-deadlift-v1",
+      "file": "exercises/dumbbell-romanian-deadlift.glb",
+      "clip": "rep",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel educational draft metadata and deterministic dumbbell romanian deadlift motion on the canonical rig; pending human visual review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "reverse-lunge",
+    "slug": "reverse-lunge",
+    "name": "Reverse Lunge",
+    "description": "Original stylized reverse lunge movement preview; pending human review.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "lunge",
+    "bodyRegions": ["lower-body"],
+    "equipment": ["bodyweight"],
+    "difficulty": "intermediate",
+    "laterality": "unilateral",
+    "startingPosition": "Standing with feet beneath the hips",
+    "muscles": {
+      "primary": ["quadriceps", "gluteus-maximus"],
+      "secondary": ["hamstrings", "calves"]
+    },
+    "instructions": [
+      "Step the right foot backward while bending both knees.",
+      "Return the right foot to the starting position."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview is educational and has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Rushing the movement or forcing the demonstrated range."
+    ],
+    "animation": {
+      "assetId": "reverse-lunge-v1",
+      "file": "exercises/reverse-lunge.glb",
+      "clip": "rep",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel educational draft metadata and deterministic reverse lunge motion on the canonical rig; pending human visual review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "standing-calf-raise",
+    "slug": "standing-calf-raise",
+    "name": "Standing Calf Raise",
+    "description": "Original stylized standing calf raise movement preview; pending human review.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["lower-body"],
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "Standing with both feet on the floor",
+    "muscles": {
+      "primary": ["calves"],
+      "secondary": []
+    },
+    "instructions": [
+      "Raise the heels while maintaining forefoot support.",
+      "Lower the heels with control."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview is educational and has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Rushing the movement or forcing the demonstrated range."
+    ],
+    "animation": {
+      "assetId": "standing-calf-raise-v1",
+      "file": "exercises/standing-calf-raise.glb",
+      "clip": "rep",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel educational draft metadata and deterministic standing calf raise motion on the canonical rig; pending human visual review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "dumbbell-front-raise",
+    "slug": "dumbbell-front-raise",
+    "name": "Dumbbell Front Raise",
+    "description": "Original stylized dumbbell front raise movement preview; pending human review.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["dumbbell"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "Standing with dumbbells beside the body",
+    "muscles": {
+      "primary": ["deltoids"],
+      "secondary": ["upper-back"]
+    },
+    "instructions": [
+      "Raise both arms forward toward shoulder level.",
+      "Lower the arms with control."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview is educational and has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Rushing the movement or forcing the demonstrated range."
+    ],
+    "animation": {
+      "assetId": "dumbbell-front-raise-v1",
+      "file": "exercises/dumbbell-front-raise.glb",
+      "clip": "rep",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel educational draft metadata and deterministic dumbbell front raise motion on the canonical rig; pending human visual review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "bent-over-dumbbell-row",
+    "slug": "bent-over-dumbbell-row",
+    "name": "Bent-over Dumbbell Row",
+    "description": "Original stylized bent-over dumbbell row movement preview; pending human review.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "pull",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["dumbbell"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "Hip-hinged stance with dumbbells below the shoulders",
+    "muscles": {
+      "primary": ["latissimus-dorsi", "upper-back"],
+      "secondary": ["biceps", "forearms"]
+    },
+    "instructions": [
+      "Draw both dumbbells toward the torso by bending the elbows.",
+      "Extend the arms with control while holding the torso position."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview is educational and has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Rushing the movement or forcing the demonstrated range."
+    ],
+    "animation": {
+      "assetId": "bent-over-dumbbell-row-v1",
+      "file": "exercises/bent-over-dumbbell-row.glb",
+      "clip": "rep",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel educational draft metadata and deterministic bent-over dumbbell row motion on the canonical rig; pending human visual review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "glute-bridge",
+    "slug": "glute-bridge",
+    "name": "Glute Bridge",
+    "description": "Original stylized glute bridge movement preview; pending human review.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "hinge",
+    "bodyRegions": ["lower-body"],
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "Lying face up with knees bent and feet supported",
+    "muscles": {
+      "primary": ["gluteus-maximus"],
+      "secondary": ["hamstrings", "abdominals"]
+    },
+    "instructions": [
+      "Raise the pelvis while maintaining foot and upper-back support.",
+      "Lower the pelvis with control."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview is educational and has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Rushing the movement or forcing the demonstrated range."
+    ],
+    "animation": {
+      "assetId": "glute-bridge-v1",
+      "file": "exercises/glute-bridge.glb",
+      "clip": "rep",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.4, 0],
+      "position": [2.5, 1.8, 3.0]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel educational draft metadata and deterministic glute bridge motion on the canonical rig; pending human visual review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "bird-dog",
+    "slug": "bird-dog",
+    "name": "Bird Dog",
+    "description": "Original stylized bird dog movement preview; pending human review.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["full-body"],
+    "equipment": ["bodyweight"],
+    "difficulty": "intermediate",
+    "laterality": "alternating",
+    "startingPosition": "Hands-and-knees support",
+    "muscles": {
+      "primary": ["erector-spinae", "gluteus-maximus"],
+      "secondary": ["abdominals", "deltoids"]
+    },
+    "instructions": [
+      "Extend one arm and the opposite leg while maintaining the other supports.",
+      "Return to hands and knees, then alternate sides."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview is educational and has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Rushing the movement or forcing the demonstrated range."
+    ],
+    "animation": {
+      "assetId": "bird-dog-v1",
+      "file": "exercises/bird-dog.glb",
+      "clip": "rep",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.4, 0],
+      "position": [2.5, 1.8, 3.0]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel educational draft metadata and deterministic bird dog motion on the canonical rig; pending human visual review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "dead-bug",
+    "slug": "dead-bug",
+    "name": "Dead Bug",
+    "description": "Original stylized dead bug movement preview; pending human review.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["core"],
+    "equipment": ["bodyweight"],
+    "difficulty": "intermediate",
+    "laterality": "alternating",
+    "startingPosition": "Lying face up with arms and bent legs raised",
+    "muscles": {
+      "primary": ["abdominals"],
+      "secondary": []
+    },
+    "instructions": [
+      "Extend one arm and the opposite leg while maintaining back support.",
+      "Return to the raised position, then alternate sides."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview is educational and has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Rushing the movement or forcing the demonstrated range."
+    ],
+    "animation": {
+      "assetId": "dead-bug-v1",
+      "file": "exercises/dead-bug.glb",
+      "clip": "rep",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.4, 0],
+      "position": [2.5, 1.8, 3.0]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel educational draft metadata and deterministic dead bug motion on the canonical rig; pending human visual review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "side-lying-hip-abduction",
+    "slug": "side-lying-hip-abduction",
+    "name": "Side-lying Hip Abduction",
+    "description": "Original stylized side-lying hip abduction movement preview; pending human review.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["lower-body"],
+    "equipment": ["bodyweight"],
+    "difficulty": "intermediate",
+    "laterality": "unilateral",
+    "startingPosition": "Lying on the left side with the upper leg extended",
+    "muscles": {
+      "primary": ["hip-abductors"],
+      "secondary": ["gluteus-maximus"]
+    },
+    "instructions": [
+      "Raise the upper leg away from the lower leg.",
+      "Lower the upper leg with control."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview is educational and has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Rushing the movement or forcing the demonstrated range."
+    ],
+    "animation": {
+      "assetId": "side-lying-hip-abduction-v1",
+      "file": "exercises/side-lying-hip-abduction.glb",
+      "clip": "rep",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.4, 0],
+      "position": [2.5, 1.8, 3.0]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel educational draft metadata and deterministic side-lying hip abduction motion on the canonical rig; pending human visual review."
+    }
   }
 ]

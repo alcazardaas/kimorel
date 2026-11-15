@@ -3,16 +3,8 @@ import { pathToFileURL } from 'node:url';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { AnimationMixer, Vector3 } from 'three';
 import regionDefinition from '../packages/schemas/src/muscle-regions.json' with { type: 'json' };
-export const qaProfiles = {
-  'bodyweight-squat': { contacts: ['left_foot', 'right_foot'] },
-  'push-up': {
-    contacts: ['left_foot', 'right_foot', 'left_hand', 'right_hand'],
-  },
-  'dumbbell-biceps-curl': {
-    contacts: ['left_foot', 'right_foot'],
-    equipment: true,
-  },
-};
+import motionProfiles from '../pipeline/character/motion-profiles.json' with { type: 'json' };
+export const qaProfiles = motionProfiles;
 export const requiredBones = [
   'root',
   'pelvis',
@@ -194,9 +186,25 @@ export async function validateGlb(
   });
   const mixer = new AnimationMixer(loaded.scene);
   const action = mixer.clipAction(clip).play();
-  const contactBones = profile.contacts.map((name) =>
-    loaded.scene.getObjectByName(name),
+  const contactBones = [...profile.contacts, ...(profile.pivots ?? [])].map(
+    (name) => {
+      const bone = loaded.scene.getObjectByName(name);
+      if (!bone) throw new Error(`Missing contact marker: ${name}`);
+      return bone;
+    },
   );
+  const phases = (profile.contactPhases ?? []).map((phase) => {
+    mixer.setTime(clip.duration * phase.from);
+    loaded.scene.updateMatrixWorld(true);
+    return {
+      ...phase,
+      points: phase.bones.map((name) => {
+        const bone = loaded.scene.getObjectByName(name);
+        if (!bone) throw new Error(`Missing phase contact: ${name}`);
+        return { bone, baseline: bone.getWorldPosition(new Vector3()) };
+      }),
+    };
+  });
   mixer.setTime(0);
   loaded.scene.updateMatrixWorld(true);
   const baseline = contactBones.map((bone) =>
@@ -215,7 +223,19 @@ export async function validateGlb(
     for (let index = 0; index < positions.count; index++) {
       const source = new Vector3().fromBufferAttribute(positions, index);
       const position = object.applyBoneTransform(index, source.clone());
-      if (position.y < 0.035)
+      const patch =
+        profile.skinPatches === undefined
+          ? position.y < 0.035
+          : profile.skinPatches.some(
+              ({ bounds }) =>
+                source.x >= bounds[0] &&
+                source.x <= bounds[1] &&
+                source.y >= bounds[2] &&
+                source.y <= bounds[3] &&
+                source.z >= bounds[4] &&
+                source.z <= bounds[5],
+            );
+      if (patch)
         skinContacts.push({
           object,
           index,
@@ -224,7 +244,10 @@ export async function validateGlb(
         });
     }
   });
-  if (!skinContacts.length) throw new Error('No skin ground-contact vertices');
+  if (profile.skinPatches?.length !== 0 && !skinContacts.length)
+    throw new Error('No skin ground-contact vertices');
+  if (!contactBones.length && !phases.length)
+    throw new Error('QA profile has no declared support contacts');
   const equipment = profile.equipment
     ? ['left', 'right'].map((side) => {
         const hand = loaded.scene.getObjectByName(`${side}_hand`);
@@ -240,7 +263,9 @@ export async function validateGlb(
     rootDrift = 0,
     handDrift = 0,
     penetration = 0,
-    attachmentDrift = 0;
+    attachmentDrift = 0,
+    maximumGroundGap = 0,
+    supportDrift = 0;
   for (let i = 0; i <= 120; i++) {
     mixer.setTime((clip.duration * i) / 120);
     loaded.scene.updateMatrixWorld(true);
@@ -250,8 +275,19 @@ export async function validateGlb(
         .getWorldPosition(new Vector3())
         .distanceTo(baseline[index]);
       if (bone.name.endsWith('_hand')) handDrift = Math.max(handDrift, drift);
-      else footDrift = Math.max(footDrift, drift);
+      else if (bone.name.endsWith('foot'))
+        footDrift = Math.max(footDrift, drift);
+      else supportDrift = Math.max(supportDrift, drift);
     });
+    for (const phase of phases) {
+      if (i / 120 >= phase.from && i / 120 <= phase.to)
+        for (const { bone, baseline: point } of phase.points) {
+          const drift = bone.getWorldPosition(new Vector3()).distanceTo(point);
+          if (bone.name.endsWith('_hand'))
+            handDrift = Math.max(handDrift, drift);
+          else supportDrift = Math.max(supportDrift, drift);
+        }
+    }
     for (const contact of skinContacts) {
       const position = contact.object.applyBoneTransform(
         contact.index,
@@ -277,7 +313,8 @@ export async function validateGlb(
         throw new Error(`Joint rotation limit: ${object.name}`);
     });
     // Sample every fourth frame over every actual skinned vertex, not only joint centers.
-    if (i % 4 === 0)
+    if (i % 4 === 0) {
+      let minimumHeight = Infinity;
       for (const skin of skins) {
         const positions = skin.geometry.getAttribute('position');
         for (let j = 0; j < positions.count; j++) {
@@ -288,8 +325,11 @@ export async function validateGlb(
           if (![...p].every(Number.isFinite))
             throw new Error('Non-finite skinned vertex');
           penetration = Math.max(penetration, -p.y);
+          minimumHeight = Math.min(minimumHeight, p.y);
         }
       }
+      maximumGroundGap = Math.max(maximumGroundGap, minimumHeight);
+    }
     rootDrift = Math.max(
       rootDrift,
       loaded.scene
@@ -302,14 +342,16 @@ export async function validateGlb(
   mixer.uncacheRoot(loaded.scene);
   if (
     footDrift > 0.005 ||
+    supportDrift > 0.005 ||
     handDrift > 0.005 ||
     rootDrift > 0.001 ||
     soleDrift > 0.007 ||
     penetration > 0.015 ||
-    attachmentDrift > 0.001
+    attachmentDrift > 0.001 ||
+    maximumGroundGap > 0.035
   )
     throw new Error(
-      `Contact/root/skin/ground/equipment drift: ${footDrift}/${handDrift}/${rootDrift}/${soleDrift}/${penetration}/${attachmentDrift}`,
+      `Contact/root/skin/ground/equipment drift: ${footDrift}/${handDrift}/${rootDrift}/${soleDrift}/${penetration}/${attachmentDrift}/${maximumGroundGap}/${supportDrift}`,
     );
   return {
     bytes: bytes.length,
@@ -323,6 +365,8 @@ export async function validateGlb(
     handDriftMeters: handDrift,
     groundPenetrationMeters: penetration,
     equipmentAttachmentDriftMeters: attachmentDrift,
+    maximumGroundGapMeters: maximumGroundGap,
+    supportDriftMeters: supportDrift,
     profile: profileName,
     clinicalValidation: false,
   };

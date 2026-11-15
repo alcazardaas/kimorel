@@ -7,7 +7,9 @@ import {
   screen,
   within,
 } from '@testing-library/react';
-import { exercises } from '@kimorel/data';
+import { exercises as catalog } from '@kimorel/data';
+// Bounded fixture keeps these filter behavior assertions independent of catalog growth.
+const exercises = catalog.slice(0, 3);
 import { Catalog } from './Catalog';
 
 afterEach(cleanup);

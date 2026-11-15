@@ -30,7 +30,9 @@ function App() {
       </header>
       <main id="main">
         <section className="intro">
-          <p className="eyebrow">OPEN SOURCE · THREE MOVEMENT PREVIEWS</p>
+          <p className="eyebrow">
+            OPEN SOURCE · {exercises.length} MOVEMENT PREVIEWS
+          </p>
           <h1>
             Human movement,
             <br />
@@ -51,7 +53,8 @@ function App() {
             <p className="eyebrow">THE MOVEMENT LIBRARY</p>
             <h2 id="catalog">Start exploring</h2>
             <p className="muted">
-              Three original animated exercises, pending human visual approval.
+              {exercises.length} original animated exercises, pending human
+              visual approval.
             </p>
             <Catalog
               exercises={exercises}
@@ -59,10 +62,13 @@ function App() {
               onSelect={setSelected}
             />
             <div className="note">
-              <strong>Three movements, one reusable character.</strong>
+              <strong>
+                {exercises.length} movements, one reusable character.
+              </strong>
               <p>
-                Squat, push-up and dumbbell curl are available for technical
-                review. No visual approval or clinical validation is claimed.
+                Original standing and floor movements are available for
+                technical review. No visual approval or clinical validation is
+                claimed.
               </p>
             </div>
           </aside>
