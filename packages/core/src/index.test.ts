@@ -15,7 +15,13 @@ describe('exercise utilities', () => {
         equipment: 'bodyweight',
         muscle: 'quadriceps',
       }).map((e) => e.id),
-    ).toEqual(['bodyweight-squat', 'reverse-lunge']);
+    ).toEqual([
+      'bodyweight-squat',
+      'reverse-lunge',
+      'split-squat',
+      'lateral-lunge',
+      'supine-heel-slide',
+    ]);
     expect(filterExercises(exercises, { equipment: 'barbell' })).toEqual([]);
   });
   it('resolves nested self-hosted asset paths', () => {

@@ -44,3 +44,7 @@ Camera target and position are optional validated metadata, applied by the gener
 ## Thirteen-preview expansion
 
 The ten additional original clips preserve this rig, mesh and weights. Generic profile-driven dumbbell attachment is shared by curl, lateral/front raise, Romanian deadlift and bent-over row. Two non-skeletal forefoot markers in the calf-raise GLB document its rigid-foot pivot; they do not extend or rename skin joints. New floor poses use the same kinematics layer with explicit support profiles. Passing technical constraints is not a rig-sufficiency or anatomical-fidelity certificate: shoulder/scapula, toe, finger and spinal simplifications still need exact-asset human review.
+
+## Twenty-five-preview milestone
+
+The next twelve motions reuse this unchanged contract. Static plank clips declare a hold kind. Explicit sliding-foot trajectories, paired-foot offsets and minimum local spine/chest articulation are validated in exported animation space, alongside unchanged contact and penetration tolerances. Motion families separate authoring without exercise-specific viewer branches. No extra joints, props or anatomical accuracy claims are introduced.

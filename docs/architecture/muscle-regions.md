@@ -10,7 +10,7 @@ The regions are chest, deltoids, biceps, triceps, upper-back, latissimus-dorsi, 
 
 ## Mesh contract
 
-Each canonical skin exports a scalar unsigned-short `_MUSCLE_REGION` per vertex. Zero means deliberately unassigned. The mesh's `extras.kimorelMuscleRegions` contains definition version and ID/code pairs. Three's GLTFLoader preserves this as `_muscle_region` and `userData`; QA rejects missing, unknown or mismatched codes and checks all thirteen regions have vertices. All thirteen clips use the same mapping.
+Each canonical skin exports a scalar unsigned-short `_MUSCLE_REGION` per vertex. Zero means deliberately unassigned. The mesh's `extras.kimorelMuscleRegions` contains definition version and ID/code pairs. Three's GLTFLoader preserves this as `_muscle_region` and `userData`; QA rejects missing, unknown or mismatched codes and checks all thirteen regions have vertices. All 25 clips use the same thirteen-region mapping.
 
 Regions are assigned once in meter-based Y-up, +Z-forward rest space. Color follows the same indexed vertices and skinning as the mesh, so it does not slide over the surface during motion. No texture, second character, shader patch or per-exercise rendering branch is required. Export overhead is about 16.8 KB per human GLB.
 

@@ -1,6 +1,6 @@
-# Original character and thirteen-exercise workflow
+# Original character and twenty-five-exercise workflow
 
-The authoritative editable source is `character/build.py`: original anatomical surface recipe, v1 rig, skinning and equipment; `character/motions.py` holds reusable motion math and thirteen clips. Python 3.9+ standard library is enough to regenerate the character, equipment and all registered exercise GLBs; no motion-capture package, motion pack or Blender is required for this authoring route.
+The authoritative editable source is `character/build.py`: original anatomical surface recipe, v1 rig, skinning and equipment; `character/motions.py` holds reusable motion math and dispatches 25 clips through standing, hold, quadruped, floor and frozen legacy families. Python 3.9+ standard library is enough to regenerate the character, equipment and all registered exercise GLBs; no motion-capture package, motion pack or Blender is required for this authoring route.
 
 ```bash
 python3 pipeline/character/build.py
@@ -39,3 +39,7 @@ See [character selection](../docs/architecture/character-selection.md) and [skel
 `character/motion-profiles.json` is the shared authoring/export-QA inventory. It lists equipment reuse, stationary contacts, forefoot pivot markers, alternating support phases and rest-space skin-support patches. Fixed soles and palms retain the existing drift tolerances. A moving lunge foot is not incorrectly locked throughout its swing; the supporting foot is. Calf raises pivot around non-skeletal forefoot markers. Bird dog switches support hands/knees at half-cycle boundaries. Supine/side-lying clips use explicit back/arm support patches, not the entire initially grounded surface. Export QA separately checks floor penetration and maximum support gap for every clip.
 
 The canonical 18 joint names, geometry, weights and region labels are unchanged. New two-bone IK transports the upper-limb orientation before elbow/knee bending to avoid artificial shortest-arc twist. Raised shoulders, simplified fingerless dumbbell grip, rigid forefoot pivots and floor contacts are stylized technical previews; no anatomical or clinical accuracy is inferred. Inspect every diagnostic sheet and exact hash before human approval. Unilateral lunge and hip-abduction clips demonstrate one side; they are not counted twice.
+
+## Holds and constrained movement
+
+Animation metadata optionally declares `kind: repetition | hold`; omitted legacy kinds remain repetitions. Forearm and side planks use an actual static `hold` clip, not artificial oscillation. Export QA rejects moving holds and static repetitions. Heel slides declare a supported trajectory rather than loosening contact tolerances. Clamshell feet retain their paired offset; cat-cow and reverse crunch require local spine/chest excursion. These constraints supplement, not replace, human deformation and motion review. The existing 13 GLBs remain byte-identical.

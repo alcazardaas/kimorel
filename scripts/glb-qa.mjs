@@ -50,11 +50,15 @@ export function readGlb(bytes) {
 }
 export async function validateGlb(
   path,
-  clipName = 'rep',
+  clipName,
   profileName = String(path).split('/').pop().replace('.glb', ''),
 ) {
   const profile = qaProfiles[profileName];
   if (!profile) throw new Error(`Unknown QA profile: ${profileName}`);
+  clipName ??= profile.clip ?? 'rep';
+  const motionKind = profile.kind ?? 'repetition';
+  if (!['repetition', 'hold'].includes(motionKind))
+    throw new Error('Unknown motion kind');
   const bytes = await readFile(path);
   const document = readGlb(bytes);
   for (const name of requiredBones)
@@ -85,10 +89,25 @@ export async function validateGlb(
   );
   if (!clip || clip.duration <= 0)
     throw new Error(`Missing animation clip: ${clipName}`);
+  const authoredClip = document.animations.find(
+    (animation) => animation.name === clipName,
+  );
+  if (
+    motionKind === 'hold' &&
+    authoredClip.extras?.kimorelMotionKind !== 'hold'
+  )
+    throw new Error('Missing explicit isometric hold declaration');
+  let hasMotion = false;
   for (const track of clip.tracks) {
     if (![...track.values, ...track.times].every(Number.isFinite))
       throw new Error('Non-finite animation values');
     const size = track.getValueSize();
+    if (
+      track.values.some(
+        (value, index) => Math.abs(value - track.values[index % size]) > 1e-6,
+      )
+    )
+      hasMotion = true;
     if (track.name.endsWith('.quaternion'))
       for (let i = 0; i < track.values.length; i += 4) {
         const norm = Math.hypot(...track.values.slice(i, i + 4));
@@ -103,6 +122,10 @@ export async function validateGlb(
       )
         throw new Error(`Loop discontinuity: ${track.name}`);
   }
+  if (motionKind === 'hold' && hasMotion)
+    throw new Error('Isometric hold must remain stable');
+  if (motionKind === 'repetition' && !hasMotion)
+    throw new Error('Repetition must contain authored motion');
   let vertexCount = 0;
   loaded.scene.traverse((object) => {
     for (const value of [
@@ -213,6 +236,35 @@ export async function validateGlb(
   const rootBaseline = loaded.scene
     .getObjectByName('root')
     .getWorldPosition(new Vector3());
+  const slides = (profile.slidingContacts ?? []).map((entry) => {
+    const bone = loaded.scene.getObjectByName(entry.bone);
+    if (!bone) throw new Error(`Missing sliding contact: ${entry.bone}`);
+    return {
+      ...entry,
+      bone,
+      from: new Vector3(...entry.from),
+      to: new Vector3(...entry.to),
+      skin: [],
+    };
+  });
+  const pairs = (profile.pairedContacts ?? []).map((entry) => {
+    const a = loaded.scene.getObjectByName(entry.a),
+      b = loaded.scene.getObjectByName(entry.b);
+    if (!a || !b) throw new Error('Missing paired contact');
+    return { a, b, offset: new Vector3(...entry.offset) };
+  });
+  const articulations = (profile.articulations ?? []).map((entry) => {
+    const bone = loaded.scene.getObjectByName(entry.bone);
+    if (!bone) throw new Error(`Missing articulation: ${entry.bone}`);
+    return { ...entry, bone, baseline: [...bone.quaternion], maximum: 0 };
+  });
+  const inside = (point, bounds) =>
+    point.x >= bounds[0] &&
+    point.x <= bounds[1] &&
+    point.y >= bounds[2] &&
+    point.y <= bounds[3] &&
+    point.z >= bounds[4] &&
+    point.z <= bounds[5];
   const skinContacts = [];
   const skins = [];
   loaded.scene.traverse((object) => {
@@ -235,6 +287,14 @@ export async function validateGlb(
                 source.z >= bounds[4] &&
                 source.z <= bounds[5],
             );
+      for (const slide of slides)
+        if (inside(source, slide.skinBounds))
+          slide.skin.push({
+            object,
+            index,
+            source,
+            baseline: position.clone(),
+          });
       if (patch)
         skinContacts.push({
           object,
@@ -246,7 +306,9 @@ export async function validateGlb(
   });
   if (profile.skinPatches?.length !== 0 && !skinContacts.length)
     throw new Error('No skin ground-contact vertices');
-  if (!contactBones.length && !phases.length)
+  if (slides.some((slide) => !slide.skin.length))
+    throw new Error('Missing sliding skin support patch');
+  if (!contactBones.length && !phases.length && !slides.length)
     throw new Error('QA profile has no declared support contacts');
   const equipment = profile.equipment
     ? ['left', 'right'].map((side) => {
@@ -265,7 +327,10 @@ export async function validateGlb(
     penetration = 0,
     attachmentDrift = 0,
     maximumGroundGap = 0,
-    supportDrift = 0;
+    supportDrift = 0,
+    slidingBoneDrift = 0,
+    slidingSkinDrift = 0,
+    pairedDrift = 0;
   for (let i = 0; i <= 120; i++) {
     mixer.setTime((clip.duration * i) / 120);
     loaded.scene.updateMatrixWorld(true);
@@ -287,6 +352,43 @@ export async function validateGlb(
             handDrift = Math.max(handDrift, drift);
           else supportDrift = Math.max(supportDrift, drift);
         }
+    }
+    const progress = (1 - Math.cos((2 * Math.PI * i) / 120)) / 2;
+    for (const slide of slides) {
+      const expected = slide.from.clone().lerp(slide.to, progress);
+      const displacement = expected.clone().sub(slide.from);
+      slidingBoneDrift = Math.max(
+        slidingBoneDrift,
+        slide.bone.getWorldPosition(new Vector3()).distanceTo(expected),
+      );
+      for (const contact of slide.skin) {
+        const actual = contact.object.applyBoneTransform(
+          contact.index,
+          contact.source.clone(),
+        );
+        slidingSkinDrift = Math.max(
+          slidingSkinDrift,
+          actual.distanceTo(contact.baseline.clone().add(displacement)),
+        );
+      }
+    }
+    for (const pair of pairs)
+      pairedDrift = Math.max(
+        pairedDrift,
+        pair.b
+          .getWorldPosition(new Vector3())
+          .sub(pair.a.getWorldPosition(new Vector3()))
+          .distanceTo(pair.offset),
+      );
+    for (const articulation of articulations) {
+      const dot = [...articulation.bone.quaternion].reduce(
+        (sum, value, index) => sum + value * articulation.baseline[index],
+        0,
+      );
+      articulation.maximum = Math.max(
+        articulation.maximum,
+        2 * Math.acos(Math.min(1, Math.abs(dot))),
+      );
     }
     for (const contact of skinContacts) {
       const position = contact.object.applyBoneTransform(
@@ -340,6 +442,17 @@ export async function validateGlb(
   }
   action.stop();
   mixer.uncacheRoot(loaded.scene);
+  for (const articulation of articulations)
+    if (articulation.maximum < articulation.minRadians)
+      throw new Error(
+        `Missing authored articulation: ${articulation.bone.name}`,
+      );
+  if (slidingBoneDrift > 0.005 || slidingSkinDrift > 0.007)
+    throw new Error(
+      `Sliding contact drift: ${slidingBoneDrift}/${slidingSkinDrift}`,
+    );
+  if (pairedDrift > 0.005)
+    throw new Error(`Paired contact separation: ${pairedDrift}`);
   if (
     footDrift > 0.005 ||
     supportDrift > 0.005 ||
@@ -358,6 +471,13 @@ export async function validateGlb(
     vertexCount,
     bones: requiredBones.length,
     clip: clip.name,
+    kind: motionKind,
+    slidingBoneDriftMeters: slidingBoneDrift,
+    slidingSkinDriftMeters: slidingSkinDrift,
+    pairedContactDriftMeters: pairedDrift,
+    articulations: Object.fromEntries(
+      articulations.map((entry) => [entry.bone.name, entry.maximum]),
+    ),
     duration: clip.duration,
     footDriftMeters: footDrift,
     rootDriftMeters: rootDrift,

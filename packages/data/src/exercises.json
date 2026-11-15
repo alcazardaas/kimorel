@@ -662,5 +662,641 @@
       "creator": "Kimorel contributors",
       "source": "Original Kimorel educational draft metadata and deterministic side-lying hip abduction motion on the canonical rig; pending human visual review."
     }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "split-squat",
+    "slug": "split-squat",
+    "name": "Split Squat",
+    "description": "Original stylized split squat movement preview; pending human review.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "lunge",
+    "bodyRegions": ["lower-body"],
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "A fixed split stance",
+    "muscles": {
+      "primary": ["quadriceps", "gluteus-maximus"],
+      "secondary": ["hamstrings"]
+    },
+    "instructions": [
+      "Lower and raise the pelvis while maintaining the split stance.",
+      "Keep both feet at their demonstrated support locations."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized educational preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "split-squat-v1",
+      "file": "exercises/split-squat.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original educational metadata and deterministic split squat authoring on the canonical rig; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "lateral-lunge",
+    "slug": "lateral-lunge",
+    "name": "Lateral Lunge",
+    "description": "Original stylized lateral lunge movement preview; pending human review.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "lunge",
+    "bodyRegions": ["lower-body"],
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "laterality": "unilateral",
+    "startingPosition": "Standing in a wide stance",
+    "muscles": {
+      "primary": ["quadriceps", "gluteus-maximus"],
+      "secondary": ["adductors"]
+    },
+    "instructions": [
+      "Shift the pelvis toward one side while bending that knee.",
+      "Return toward the centered stance."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized educational preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "lateral-lunge-v1",
+      "file": "exercises/lateral-lunge.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original educational metadata and deterministic lateral lunge authoring on the canonical rig; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "forearm-plank",
+    "slug": "forearm-plank",
+    "name": "Forearm Plank",
+    "description": "Original stylized forearm plank isometric hold preview; pending human review.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "isometric",
+    "bodyRegions": ["core"],
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "Prone support on forearms and feet",
+    "muscles": {
+      "primary": ["abdominals"],
+      "secondary": ["deltoids", "gluteus-maximus"]
+    },
+    "instructions": [
+      "Maintain the demonstrated supported pose.",
+      "The animation is an isometric hold, not a repetition or duration prescription."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized educational preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "forearm-plank-v1",
+      "file": "exercises/forearm-plank.glb",
+      "clip": "hold",
+      "kind": "hold",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.4, 0],
+      "position": [2.5, 1.8, 3.0]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original educational metadata and deterministic forearm plank authoring on the canonical rig; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "side-plank",
+    "slug": "side-plank",
+    "name": "Side Plank",
+    "description": "Original stylized side plank isometric hold preview; pending human review.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "isometric",
+    "bodyRegions": ["core"],
+    "equipment": ["bodyweight"],
+    "difficulty": "intermediate",
+    "laterality": "unilateral",
+    "startingPosition": "Side support on one forearm with staggered feet",
+    "muscles": {
+      "primary": ["abdominals"],
+      "secondary": ["hip-abductors", "deltoids"]
+    },
+    "instructions": [
+      "Maintain the demonstrated lateral supported pose.",
+      "The animation is an isometric hold, not a repetition or duration prescription."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized educational preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "side-plank-v1",
+      "file": "exercises/side-plank.glb",
+      "clip": "hold",
+      "kind": "hold",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.4, 0],
+      "position": [2.5, 1.8, 3.0]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original educational metadata and deterministic side plank authoring on the canonical rig; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "quadruped-hip-extension",
+    "slug": "quadruped-hip-extension",
+    "name": "Quadruped Hip Extension",
+    "description": "Original stylized quadruped hip extension movement preview; pending human review.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "hinge",
+    "bodyRegions": ["lower-body"],
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "laterality": "unilateral",
+    "startingPosition": "Hands-and-knees support",
+    "muscles": {
+      "primary": ["gluteus-maximus"],
+      "secondary": ["hamstrings", "abdominals"]
+    },
+    "instructions": [
+      "Move one bent leg backward and upward while maintaining the other supports.",
+      "Return the leg toward the initial position."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized educational preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "quadruped-hip-extension-v1",
+      "file": "exercises/quadruped-hip-extension.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.4, 0],
+      "position": [2.5, 1.8, 3.0]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original educational metadata and deterministic quadruped hip extension authoring on the canonical rig; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "fire-hydrant",
+    "slug": "fire-hydrant",
+    "name": "Fire Hydrant",
+    "description": "Original stylized fire hydrant movement preview; pending human review.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["lower-body"],
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "laterality": "unilateral",
+    "startingPosition": "Hands-and-knees support",
+    "muscles": {
+      "primary": ["hip-abductors"],
+      "secondary": ["gluteus-maximus", "abdominals"]
+    },
+    "instructions": [
+      "Move one bent knee outward while maintaining the other supports.",
+      "Return the knee toward the initial position."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized educational preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "fire-hydrant-v1",
+      "file": "exercises/fire-hydrant.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.4, 0],
+      "position": [2.5, 1.8, 3.0]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original educational metadata and deterministic fire hydrant authoring on the canonical rig; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "prone-hamstring-curl",
+    "slug": "prone-hamstring-curl",
+    "name": "Prone Hamstring Curl",
+    "description": "Original stylized prone hamstring curl movement preview; pending human review.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["lower-body"],
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "laterality": "unilateral",
+    "startingPosition": "Lying face down with the thighs supported",
+    "muscles": {
+      "primary": ["hamstrings"],
+      "secondary": []
+    },
+    "instructions": [
+      "Bend one knee to raise the lower leg.",
+      "Return the lower leg with control."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized educational preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "prone-hamstring-curl-v1",
+      "file": "exercises/prone-hamstring-curl.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.4, 0],
+      "position": [2.5, 1.8, 3.0]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original educational metadata and deterministic prone hamstring curl authoring on the canonical rig; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "supine-heel-slide",
+    "slug": "supine-heel-slide",
+    "name": "Supine Heel Slide",
+    "description": "Original stylized supine heel slide movement preview; pending human review.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["lower-body"],
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "laterality": "unilateral",
+    "startingPosition": "Lying face up with both heels supported",
+    "muscles": {
+      "primary": ["hamstrings"],
+      "secondary": ["quadriceps"]
+    },
+    "instructions": [
+      "Slide one supported foot toward the pelvis while bending the knee.",
+      "Slide the foot back along its demonstrated floor path."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized educational preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "supine-heel-slide-v1",
+      "file": "exercises/supine-heel-slide.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.4, 0],
+      "position": [2.5, 1.8, 3.0]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original educational metadata and deterministic supine heel slide authoring on the canonical rig; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "side-lying-clamshell",
+    "slug": "side-lying-clamshell",
+    "name": "Side-lying Clamshell",
+    "description": "Original stylized side-lying clamshell movement preview; pending human review.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["lower-body"],
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "laterality": "unilateral",
+    "startingPosition": "Lying on one side with hips and knees bent",
+    "muscles": {
+      "primary": ["hip-abductors", "gluteus-maximus"],
+      "secondary": []
+    },
+    "instructions": [
+      "Open the upper knee while keeping the feet apposed.",
+      "Return the knee toward the initial position."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized educational preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "side-lying-clamshell-v1",
+      "file": "exercises/side-lying-clamshell.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.4, 0],
+      "position": [2.5, 1.8, 3.0]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original educational metadata and deterministic side-lying clamshell authoring on the canonical rig; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "reverse-crunch",
+    "slug": "reverse-crunch",
+    "name": "Reverse Crunch",
+    "description": "Original stylized reverse crunch movement preview; pending human review.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["core"],
+    "equipment": ["bodyweight"],
+    "difficulty": "intermediate",
+    "laterality": "bilateral",
+    "startingPosition": "Lying face up with bent legs raised",
+    "muscles": {
+      "primary": ["abdominals"],
+      "secondary": []
+    },
+    "instructions": [
+      "Curl the pelvis upward while keeping upper-back support.",
+      "Return the pelvis and legs with control."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized educational preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "reverse-crunch-v1",
+      "file": "exercises/reverse-crunch.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.4, 0],
+      "position": [2.5, 1.8, 3.0]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original educational metadata and deterministic reverse crunch authoring on the canonical rig; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "standing-hip-extension",
+    "slug": "standing-hip-extension",
+    "name": "Standing Hip Extension",
+    "description": "Original stylized standing hip extension movement preview; pending human review.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["lower-body"],
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "laterality": "unilateral",
+    "startingPosition": "Standing over one supported foot",
+    "muscles": {
+      "primary": ["gluteus-maximus"],
+      "secondary": ["hamstrings"]
+    },
+    "instructions": [
+      "Move the opposite leg backward without transferring the support foot.",
+      "Return the leg toward the initial position."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized educational preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "standing-hip-extension-v1",
+      "file": "exercises/standing-hip-extension.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original educational metadata and deterministic standing hip extension authoring on the canonical rig; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "cat-cow",
+    "slug": "cat-cow",
+    "name": "Cat-cow",
+    "description": "Original stylized cat-cow movement preview; pending human review.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["core"],
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "Hands-and-knees support",
+    "muscles": {
+      "primary": ["erector-spinae", "abdominals"],
+      "secondary": []
+    },
+    "instructions": [
+      "Alternate a gentle rounded and extended trunk pose.",
+      "Keep the demonstrated hand and knee supports while the pelvis and spine articulate."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized educational preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "cat-cow-v1",
+      "file": "exercises/cat-cow.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.4, 0],
+      "position": [2.5, 1.8, 3.0]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original educational metadata and deterministic cat-cow authoring on the canonical rig; pending exact-asset human review."
+    }
   }
 ]

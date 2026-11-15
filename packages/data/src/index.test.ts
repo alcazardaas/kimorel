@@ -1,13 +1,13 @@
 import { expect, it } from 'vitest';
 import { exercises, getExercise, queryExercises } from './index.js';
-it('registers thirteen real animations through the shared catalog', () => {
-  expect(exercises.length).toBe(13);
-  expect(new Set(exercises.map((e) => e.animation?.file)).size).toBe(13);
+it('registers twenty-five real animations through the shared catalog', () => {
+  expect(exercises.length).toBe(25);
+  expect(new Set(exercises.map((e) => e.animation?.file)).size).toBe(25);
   expect(
     exercises.every(
       (e) =>
         !e.example &&
-        e.animation?.clip === 'rep' &&
+        e.animation?.clip === (e.animation?.kind === 'hold' ? 'hold' : 'rep') &&
         e.review.status === 'pending',
     ),
   ).toBe(true);

@@ -62,6 +62,7 @@ export const animationSchema = z.strictObject({
     'Expected a GLB file',
   ),
   clip: text,
+  kind: z.enum(['repetition', 'hold']).optional(),
   loop: z.boolean(),
   defaultPlaybackSpeed: z.number().positive().max(4),
 });

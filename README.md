@@ -2,7 +2,7 @@
 
 **Human movement, openly animated.** An open-source foundation for reusable 3D exercise visualization, with no CMS, backend, account, paid API or subscription.
 
-Thirteen original animated previews share one rigged human and metadata-driven playback, including standing, dumbbell and floor movements. **Visual/browser approval is pending; no clinical validation is claimed.** The long-term goal is 100 unique validated movements; the first production target is 10.
+Twenty-five original exercise previews share one rigged human and metadata-driven playback, including standing, dumbbell and floor movements. **Visual/browser approval is pending; no clinical validation is claimed.** The long-term goal is 100 unique validated movements; 25 technical previews are implemented, with 50/75/100 staged targets.
 
 ## Local setup
 

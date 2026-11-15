@@ -273,7 +273,9 @@ def build(output, animated=True, exercise="bodyweight-squat", geometry=None, equ
     if animated:
         times = [i/30 for i in range(121)]
         time_index = accessor(times,5126,'SCALAR')
-        animation = {'name':'rep','samplers':[],'channels':[]}
+        animation = {'name':motions.PROFILES[exercise].get('clip','rep'),'samplers':[],'channels':[]}
+        if motions.PROFILES[exercise].get('kind') == 'hold':
+            animation['extras'] = {'kimorelMotionKind':'hold'}
         def track(bone,path,values,kind):
             sampler = len(animation['samplers'])
             animation['samplers'].append({'input':time_index,'output':accessor(values,5126,kind),'interpolation':'LINEAR'})

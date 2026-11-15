@@ -38,7 +38,12 @@ for (const exercise of exercises) {
     throw new Error(`Missing redistribution permissions: ${asset.assetId}`);
   if (asset.status !== 'approved')
     pending.push(`${asset.assetId}: ${asset.status}`);
-  await validateGlb(new URL(asset.file, root), exercise.animation.clip);
+  const report = await validateGlb(
+    new URL(asset.file, root),
+    exercise.animation.clip,
+  );
+  if (report.kind !== (exercise.animation.kind ?? 'repetition'))
+    throw new Error(`Animation kind mismatch: ${exercise.id}`);
 }
 async function checkDirectory(directory, prefix = '') {
   for (const entry of await readdir(directory, { withFileTypes: true })) {
