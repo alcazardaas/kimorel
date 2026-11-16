@@ -61,6 +61,7 @@ test('prefixed production demo loads every registered real clip and supports key
   await page.getByLabel('Camera preset').selectOption('side');
   await expect(page.getByLabel('Camera preset')).toHaveValue('side');
   await evidence(page, info);
+  await page.getByLabel('Movements per page').selectOption('all');
   for (const { name } of catalog.slice(1)) {
     await page
       .getByRole('list', { name: 'Movements' })
@@ -82,6 +83,57 @@ test('prefixed production demo loads every registered real clip and supports key
   await expect(page.getByRole('status')).toContainText(
     `${catalog.length} of ${catalog.length} movements`,
   );
+});
+
+test('catalog pagination preserves the viewer and works with keyboard and responsive layout', async ({
+  page,
+}) => {
+  await page.goto('/kimorel/');
+  await ready(page);
+  const canvas = await page.locator('canvas').elementHandle();
+  const list = page.getByRole('list', { name: 'Movements' });
+  const pages = page.getByRole('navigation', { name: 'Catalog pages' });
+  await expect(list.getByRole('button')).toHaveCount(5);
+  await expect(pages.getByRole('button', { name: 'Previous' })).toBeDisabled();
+  const next = pages.getByRole('button', { name: 'Next' });
+  await next.focus();
+  await page.keyboard.press('Enter');
+  await expect(
+    pages.getByRole('button', { name: 'Page 2', exact: true }),
+  ).toHaveAttribute('aria-current', 'page');
+  await expect(list.getByRole('button').first()).toContainText(
+    catalog[5]!.name,
+  );
+  await expect(
+    page.getByRole('heading', { name: catalog[0]!.name, exact: true }),
+  ).toBeVisible();
+  expect(await canvas!.evaluate((element) => element.isConnected)).toBe(true);
+  await pages.getByRole('button', { name: 'Page 5', exact: true }).click();
+  await expect(next).toBeDisabled();
+  await page.getByLabel('Movements per page').selectOption('10');
+  await expect(list.getByRole('button')).toHaveCount(10);
+  await expect(page.getByRole('status')).toContainText(
+    'Showing 1–10 · Page 1 of 3',
+  );
+  await pages.getByRole('button', { name: 'Next' }).click();
+  await page
+    .getByRole('combobox', { name: 'Equipment', exact: true })
+    .selectOption('dumbbell');
+  await expect(page.getByRole('status')).toContainText('Page 1 of 1');
+  await page.getByRole('button', { name: 'Reset filters' }).click();
+  await page.getByLabel('Movements per page').selectOption('5');
+  await pages.scrollIntoViewIfNeeded();
+  const bounds = await pages.boundingBox();
+  expect(bounds!.x).toBeGreaterThanOrEqual(0);
+  expect(bounds!.x + bounds!.width).toBeLessThanOrEqual(
+    page.viewportSize()!.width,
+  );
+  await pages.getByRole('button', { name: 'Next' }).click();
+  await list.getByRole('button').first().click();
+  await ready(page);
+  await expect(
+    page.getByRole('heading', { name: catalog[5]!.name, exact: true }),
+  ).toBeVisible();
 });
 
 test('reduced motion prevents autoplay but allows explicit keyboard play', async ({

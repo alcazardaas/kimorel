@@ -18,6 +18,118 @@ const choose = (label: string, value: string) =>
 const movements = () => within(screen.getByRole('list', { name: 'Movements' }));
 
 describe('Catalog', () => {
+  it('defaults to five results and navigates without changing selection', () => {
+    const onSelect = vi.fn();
+    render(
+      <Catalog
+        exercises={catalog}
+        selectedId={catalog[0]!.id}
+        onSelect={onSelect}
+      />,
+    );
+    expect(movements().getAllByRole('button')).toHaveLength(5);
+    expect(
+      (screen.getByLabelText('Movements per page') as HTMLSelectElement).value,
+    ).toBe('5');
+    const previous = screen.getByRole('button', {
+      name: 'Previous',
+    }) as HTMLButtonElement;
+    expect(previous.disabled).toBe(true);
+    fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+    expect(
+      screen
+        .getByRole('button', { name: 'Page 2' })
+        .getAttribute('aria-current'),
+    ).toBe('page');
+    expect(movements().getAllByRole('button')[0]!.textContent).toContain(
+      catalog[5]!.name,
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'Page 5' }));
+    expect(
+      (screen.getByRole('button', { name: 'Next' }) as HTMLButtonElement)
+        .disabled,
+    ).toBe(true);
+    fireEvent.click(previous);
+    expect(screen.getByRole('status').textContent).toContain('Page 4 of 5');
+    expect(onSelect).not.toHaveBeenCalled();
+    fireEvent.click(movements().getAllByRole('button')[0]!);
+    expect(onSelect).toHaveBeenCalledWith(catalog[15]);
+  });
+
+  it('changes page size, resets the page and supports the complete catalog', () => {
+    render(
+      <Catalog
+        exercises={catalog}
+        selectedId={catalog[0]!.id}
+        onSelect={vi.fn()}
+      />,
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'Page 3' }));
+    choose('Movements per page', '10');
+    expect(movements().getAllByRole('button')).toHaveLength(10);
+    expect(screen.getByRole('status').textContent).toContain(
+      'Showing 1–10 · Page 1 of 3',
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'Page 3' }));
+    expect(movements().getAllByRole('button')).toHaveLength(5);
+    for (const size of ['25', 'all']) {
+      choose('Movements per page', size);
+      expect(movements().getAllByRole('button')).toHaveLength(25);
+      expect(screen.getByRole('status').textContent).toContain('Page 1 of 1');
+    }
+  });
+
+  it('resets pagination for filters and reset, and paginates only matching results', () => {
+    render(
+      <Catalog
+        exercises={catalog}
+        selectedId={catalog[0]!.id}
+        onSelect={vi.fn()}
+      />,
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'Page 4' }));
+    choose('Equipment', 'bodyweight');
+    expect(screen.getByRole('status').textContent).toContain('Page 1 of');
+    const matches = catalog.filter((exercise) =>
+      exercise.equipment.includes('bodyweight'),
+    );
+    expect(screen.getByRole('status').textContent).toContain(
+      `${matches.length} of 25 movements`,
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'Page 2' }));
+    expect(movements().getAllByRole('button')[0]!.textContent).toContain(
+      matches[5]!.name,
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'Reset filters' }));
+    expect(screen.getByRole('status').textContent).toContain(
+      'Showing 1–5 · Page 1 of 5',
+    );
+    choose('Equipment', 'barbell');
+    expect(movements().queryAllByRole('button')).toHaveLength(0);
+    expect(
+      screen.queryByRole('navigation', { name: 'Catalog pages' }),
+    ).toBeNull();
+    expect(screen.getByRole('status').textContent).toContain(
+      '0 of 25 movements',
+    );
+  });
+
+  it('clamps the page when data shrinks without reviving a stale page later', () => {
+    const props = { selectedId: catalog[0]!.id, onSelect: vi.fn() };
+    const { rerender } = render(<Catalog {...props} exercises={catalog} />);
+    fireEvent.click(screen.getByRole('button', { name: 'Page 5' }));
+    rerender(<Catalog {...props} exercises={catalog.slice(0, 7)} />);
+    expect(movements().getAllByRole('button')).toHaveLength(2);
+    expect(screen.getByRole('status').textContent).toContain(
+      'Showing 6–7 · Page 2 of 2',
+    );
+    rerender(<Catalog {...props} exercises={catalog} />);
+    expect(screen.getByRole('status').textContent).toContain('Page 2 of 5');
+    rerender(<Catalog {...props} exercises={[]} />);
+    expect(screen.getByText('No movements match these filters.')).toBeTruthy();
+    expect(props.onSelect).not.toHaveBeenCalled();
+  });
+
   it('combines filters, reports an empty state and resets all controls', () => {
     render(
       <Catalog
