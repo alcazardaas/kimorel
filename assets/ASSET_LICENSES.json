@@ -15,7 +15,8 @@
         "Rest-pose reusable character; neutral material; no textures.",
         "Canonical v1 hand-end weighting and shoulder/chest blending corrected; 18 bone names/hierarchy retained.",
         "Added versioned broad per-vertex rest-space muscle region labels from packages/schemas/src/muscle-regions.json; geometry, weights, rig and motion unchanged. Labels are approximate educational surfaces, not activation measurements.",
-        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -36,7 +37,8 @@
         "Original four-second squat keyframes with fixed ankle IK; no captured or third-party motion.",
         "Canonical v1 hand-end weighting and shoulder/chest blending corrected; 18 bone names/hierarchy retained.",
         "Added versioned broad per-vertex rest-space muscle region labels from packages/schemas/src/muscle-regions.json; geometry, weights, rig and motion unchanged. Labels are approximate educational surfaces, not activation measurements.",
-        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -73,7 +75,8 @@
         "Original fixed-contact push-up keyframes from canonical rig.",
         "Canonical v1 hand-end weighting and shoulder/chest blending corrected; 18 bone names/hierarchy retained.",
         "Added versioned broad per-vertex rest-space muscle region labels from packages/schemas/src/muscle-regions.json; geometry, weights, rig and motion unchanged. Labels are approximate educational surfaces, not activation measurements.",
-        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -93,7 +96,8 @@
         "Original curl keyframes; two instances of canonical dumbbell attached to hand grips.",
         "Canonical v1 hand-end weighting and shoulder/chest blending corrected; 18 bone names/hierarchy retained.",
         "Added versioned broad per-vertex rest-space muscle region labels from packages/schemas/src/muscle-regions.json; geometry, weights, rig and motion unchanged. Labels are approximate educational surfaces, not activation measurements.",
-        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -159,7 +163,8 @@
       "modifications": [
         "Original deterministic four-second motion from pipeline/character/motions.py on unchanged canonical 18-joint skin; no captured or third-party motion.",
         "Approximate educational muscle mapping; no visual or clinical approval claimed.",
-        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -196,7 +201,8 @@
       "modifications": [
         "Original deterministic four-second motion from pipeline/character/motions.py on unchanged canonical 18-joint skin; no captured or third-party motion.",
         "Approximate educational muscle mapping; no visual or clinical approval claimed.",
-        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -233,7 +239,8 @@
       "modifications": [
         "Original deterministic four-second motion from pipeline/character/motions.py on unchanged canonical 18-joint skin; no captured or third-party motion.",
         "Approximate educational muscle mapping; no visual or clinical approval claimed.",
-        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -270,7 +277,8 @@
       "modifications": [
         "Original deterministic four-second motion from pipeline/character/motions.py on unchanged canonical 18-joint skin; no captured or third-party motion.",
         "Approximate educational muscle mapping; no visual or clinical approval claimed.",
-        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -307,7 +315,8 @@
       "modifications": [
         "Original deterministic four-second motion from pipeline/character/motions.py on unchanged canonical 18-joint skin; no captured or third-party motion.",
         "Approximate educational muscle mapping; no visual or clinical approval claimed.",
-        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -344,7 +353,8 @@
       "modifications": [
         "Original deterministic four-second motion from pipeline/character/motions.py on unchanged canonical 18-joint skin; no captured or third-party motion.",
         "Approximate educational muscle mapping; no visual or clinical approval claimed.",
-        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -381,7 +391,8 @@
       "modifications": [
         "Original deterministic four-second motion from pipeline/character/motions.py on unchanged canonical 18-joint skin; no captured or third-party motion.",
         "Approximate educational muscle mapping; no visual or clinical approval claimed.",
-        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -418,7 +429,8 @@
       "modifications": [
         "Original deterministic four-second motion from pipeline/character/motions.py on unchanged canonical 18-joint skin; no captured or third-party motion.",
         "Approximate educational muscle mapping; no visual or clinical approval claimed.",
-        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -455,7 +467,8 @@
       "modifications": [
         "Original deterministic four-second motion from pipeline/character/motions.py on unchanged canonical 18-joint skin; no captured or third-party motion.",
         "Approximate educational muscle mapping; no visual or clinical approval claimed.",
-        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -492,7 +505,8 @@
       "modifications": [
         "Original deterministic four-second motion from pipeline/character/motions.py on unchanged canonical 18-joint skin; no captured or third-party motion.",
         "Approximate educational muscle mapping; no visual or clinical approval claimed.",
-        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending."
+        "Shared muscle-region definition v1.1.0 adds approximate lateral-hip code 13 for hip-abductors; geometry, weights, bones and existing motion tracks unchanged. Exact file hashes intentionally regenerated; human review remains pending.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -528,7 +542,8 @@
       "downloadDate": null,
       "modifications": [
         "Original deterministic repetition authored in pipeline/character/motion_*.py using unchanged canonical bones, mesh, weights and broad region definition 1.1.0.",
-        "Educational preview only; no visual or clinical approval claimed."
+        "Educational preview only; no visual or clinical approval claimed.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -564,7 +579,8 @@
       "downloadDate": null,
       "modifications": [
         "Original deterministic repetition authored in pipeline/character/motion_*.py using unchanged canonical bones, mesh, weights and broad region definition 1.1.0.",
-        "Educational preview only; no visual or clinical approval claimed."
+        "Educational preview only; no visual or clinical approval claimed.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -600,7 +616,8 @@
       "downloadDate": null,
       "modifications": [
         "Original deterministic hold authored in pipeline/character/motion_*.py using unchanged canonical bones, mesh, weights and broad region definition 1.1.0.",
-        "Educational preview only; no visual or clinical approval claimed."
+        "Educational preview only; no visual or clinical approval claimed.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -636,7 +653,8 @@
       "downloadDate": null,
       "modifications": [
         "Original deterministic hold authored in pipeline/character/motion_*.py using unchanged canonical bones, mesh, weights and broad region definition 1.1.0.",
-        "Educational preview only; no visual or clinical approval claimed."
+        "Educational preview only; no visual or clinical approval claimed.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -672,7 +690,8 @@
       "downloadDate": null,
       "modifications": [
         "Original deterministic repetition authored in pipeline/character/motion_*.py using unchanged canonical bones, mesh, weights and broad region definition 1.1.0.",
-        "Educational preview only; no visual or clinical approval claimed."
+        "Educational preview only; no visual or clinical approval claimed.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -708,7 +727,8 @@
       "downloadDate": null,
       "modifications": [
         "Original deterministic repetition authored in pipeline/character/motion_*.py using unchanged canonical bones, mesh, weights and broad region definition 1.1.0.",
-        "Educational preview only; no visual or clinical approval claimed."
+        "Educational preview only; no visual or clinical approval claimed.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -744,7 +764,8 @@
       "downloadDate": null,
       "modifications": [
         "Original deterministic repetition authored in pipeline/character/motion_*.py using unchanged canonical bones, mesh, weights and broad region definition 1.1.0.",
-        "Educational preview only; no visual or clinical approval claimed."
+        "Educational preview only; no visual or clinical approval claimed.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -780,7 +801,8 @@
       "downloadDate": null,
       "modifications": [
         "Original deterministic repetition authored in pipeline/character/motion_*.py using unchanged canonical bones, mesh, weights and broad region definition 1.1.0.",
-        "Educational preview only; no visual or clinical approval claimed."
+        "Educational preview only; no visual or clinical approval claimed.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -816,7 +838,8 @@
       "downloadDate": null,
       "modifications": [
         "Original deterministic repetition authored in pipeline/character/motion_*.py using unchanged canonical bones, mesh, weights and broad region definition 1.1.0.",
-        "Educational preview only; no visual or clinical approval claimed."
+        "Educational preview only; no visual or clinical approval claimed.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -852,7 +875,8 @@
       "downloadDate": null,
       "modifications": [
         "Original deterministic repetition authored in pipeline/character/motion_*.py using unchanged canonical bones, mesh, weights and broad region definition 1.1.0.",
-        "Educational preview only; no visual or clinical approval claimed."
+        "Educational preview only; no visual or clinical approval claimed.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -888,7 +912,8 @@
       "downloadDate": null,
       "modifications": [
         "Original deterministic repetition authored in pipeline/character/motion_*.py using unchanged canonical bones, mesh, weights and broad region definition 1.1.0.",
-        "Educational preview only; no visual or clinical approval claimed."
+        "Educational preview only; no visual or clinical approval claimed.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -924,7 +949,8 @@
       "downloadDate": null,
       "modifications": [
         "Original deterministic repetition authored in pipeline/character/motion_*.py using unchanged canonical bones, mesh, weights and broad region definition 1.1.0.",
-        "Educational preview only; no visual or clinical approval claimed."
+        "Educational preview only; no visual or clinical approval claimed.",
+        "Broad anterior-hip region label extension v1.2.0 only; existing non-region skin, bones and motion data preserved. Exact review identity superseded; remains unapproved."
       ],
       "commercialUse": true,
       "redistribution": true,
@@ -943,6 +969,960 @@
       "modifications": [
         "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
         "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "standing-hip-abduction-v1",
+      "file": "exercises/standing-hip-abduction.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "standing-hip-abduction-thumbnail-v1",
+      "file": "thumbnails/standing-hip-abduction.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "standing-hip-flexion-v1",
+      "file": "exercises/standing-hip-flexion.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "standing-hip-flexion-thumbnail-v1",
+      "file": "thumbnails/standing-hip-flexion.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "straight-leg-raise-v1",
+      "file": "exercises/straight-leg-raise.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "straight-leg-raise-thumbnail-v1",
+      "file": "thumbnails/straight-leg-raise.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "supine-pelvic-tilt-v1",
+      "file": "exercises/supine-pelvic-tilt.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "supine-pelvic-tilt-thumbnail-v1",
+      "file": "thumbnails/supine-pelvic-tilt.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "supine-trunk-rotation-v1",
+      "file": "exercises/supine-trunk-rotation.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "supine-trunk-rotation-thumbnail-v1",
+      "file": "thumbnails/supine-trunk-rotation.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "thoracic-open-book-v1",
+      "file": "exercises/thoracic-open-book.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "thoracic-open-book-thumbnail-v1",
+      "file": "thumbnails/thoracic-open-book.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "quadruped-thoracic-rotation-v1",
+      "file": "exercises/quadruped-thoracic-rotation.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "quadruped-thoracic-rotation-thumbnail-v1",
+      "file": "thumbnails/quadruped-thoracic-rotation.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "seated-trunk-rotation-v1",
+      "file": "exercises/seated-trunk-rotation.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "seated-trunk-rotation-thumbnail-v1",
+      "file": "thumbnails/seated-trunk-rotation.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "curl-up-v1",
+      "file": "exercises/curl-up.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "curl-up-thumbnail-v1",
+      "file": "thumbnails/curl-up.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "bicycle-crunch-v1",
+      "file": "exercises/bicycle-crunch.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "bicycle-crunch-thumbnail-v1",
+      "file": "thumbnails/bicycle-crunch.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "hollow-body-hold-v1",
+      "file": "exercises/hollow-body-hold.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "hollow-body-hold-thumbnail-v1",
+      "file": "thumbnails/hollow-body-hold.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "superman-v1",
+      "file": "exercises/superman.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "superman-thumbnail-v1",
+      "file": "thumbnails/superman.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "prone-hip-extension-v1",
+      "file": "exercises/prone-hip-extension.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "prone-hip-extension-thumbnail-v1",
+      "file": "thumbnails/prone-hip-extension.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "seated-knee-extension-v1",
+      "file": "exercises/seated-knee-extension.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "seated-knee-extension-thumbnail-v1",
+      "file": "thumbnails/seated-knee-extension.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "standing-hamstring-stretch-v1",
+      "file": "exercises/standing-hamstring-stretch.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "standing-hamstring-stretch-thumbnail-v1",
+      "file": "thumbnails/standing-hamstring-stretch.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "seated-calf-raise-v1",
+      "file": "exercises/seated-calf-raise.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "seated-calf-raise-thumbnail-v1",
+      "file": "thumbnails/seated-calf-raise.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "sit-to-stand-v1",
+      "file": "exercises/sit-to-stand.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "sit-to-stand-thumbnail-v1",
+      "file": "thumbnails/sit-to-stand.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "step-up-v1",
+      "file": "exercises/step-up.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "step-up-thumbnail-v1",
+      "file": "thumbnails/step-up.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "bulgarian-split-squat-v1",
+      "file": "exercises/bulgarian-split-squat.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "bulgarian-split-squat-thumbnail-v1",
+      "file": "thumbnails/bulgarian-split-squat.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "wall-sit-v1",
+      "file": "exercises/wall-sit.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "wall-sit-thumbnail-v1",
+      "file": "thumbnails/wall-sit.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "single-leg-glute-bridge-v1",
+      "file": "exercises/single-leg-glute-bridge.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "single-leg-glute-bridge-thumbnail-v1",
+      "file": "thumbnails/single-leg-glute-bridge.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "single-leg-romanian-deadlift-v1",
+      "file": "exercises/single-leg-romanian-deadlift.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "single-leg-romanian-deadlift-thumbnail-v1",
+      "file": "thumbnails/single-leg-romanian-deadlift.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-floor-press-v1",
+      "file": "exercises/dumbbell-floor-press.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-floor-press-thumbnail-v1",
+      "file": "thumbnails/dumbbell-floor-press.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-chest-fly-v1",
+      "file": "exercises/dumbbell-chest-fly.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-chest-fly-thumbnail-v1",
+      "file": "thumbnails/dumbbell-chest-fly.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-triceps-kickback-v1",
+      "file": "exercises/dumbbell-triceps-kickback.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original deterministic four-second animation authored on the shared canonical 18-joint rig.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-triceps-kickback-thumbnail-v1",
+      "file": "thumbnails/dumbbell-triceps-kickback.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster thumbnail generated by pipeline/character/preview.py.",
+        "Educational preview only; no visual or clinical approval claimed."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "bench-v1",
+      "file": "equipment/bench.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original meter-scaled indexed cuboid equipment authored by pipeline/character/props.py.",
+        "Technical preview only; needs exact-asset human review."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "box-v1",
+      "file": "equipment/box.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original meter-scaled indexed cuboid equipment authored by pipeline/character/props.py.",
+        "Technical preview only; needs exact-asset human review."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "wall-v1",
+      "file": "equipment/wall.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original meter-scaled indexed cuboid equipment authored by pipeline/character/props.py.",
+        "Technical preview only; needs exact-asset human review."
       ],
       "commercialUse": true,
       "redistribution": true,

@@ -164,7 +164,8 @@ _API = SimpleNamespace(
     hanging_arms=hanging_arms,
 )
 _FAMILIES = [_load_family(name) for name in (
-    'motion_legacy', 'motion_standing', 'motion_holds', 'motion_quadruped', 'motion_floor'
+    'motion_legacy', 'motion_standing', 'motion_holds', 'motion_quadruped', 'motion_floor',
+    'motion_mobility', 'motion_seated', 'motion_strength'
 )]
 _REGISTRY = {}
 for family in _FAMILIES:

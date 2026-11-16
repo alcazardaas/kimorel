@@ -14,6 +14,9 @@ _motion_spec = importlib.util.spec_from_file_location('kimorel_motions', Path(__
 motions = importlib.util.module_from_spec(_motion_spec)
 _motion_spec.loader.exec_module(motions)
 motion_pose = motions.motion_pose
+_props_spec = importlib.util.spec_from_file_location('kimorel_props', Path(__file__).with_name('props.py'))
+props = importlib.util.module_from_spec(_props_spec)
+_props_spec.loader.exec_module(props)
 
 ROOT = Path(__file__).resolve().parents[2]
 REGION_DEFINITION = json.loads((ROOT/'packages/schemas/src/muscle-regions.json').read_text())
@@ -261,7 +264,7 @@ def build(output, animated=True, exercise="bodyweight-squat", geometry=None, equ
     document['meshes'] = [{'extras':{'kimorelMuscleRegions':{'version':REGION_DEFINITION['version'],'codes':{key:value['code'] for key,value in REGION_DEFINITION['regions'].items()}}},'name':'neutral-human-skin','primitives':[{'attributes':attributes,'indices':accessor(indices,5125,'SCALAR'),'material':0}]}]
     document['materials'] = [{'name':'neutral-skin','pbrMetallicRoughness':{'baseColorFactor':[.48,.58,.56,1],'metallicFactor':0,'roughnessFactor':.78}}]
     document['nodes'].append({'name':'human','mesh':0,'skin':0})
-    if exercise == 'standing-calf-raise':
+    if motions.PROFILES.get(exercise, {}).get('pivots'):
         for foot in (8,11):
             marker = len(document['nodes'])
             document['nodes'].append({'name':BONES[foot][0].replace('foot','forefoot'),'translation':[0,-.095,.125]})
@@ -317,6 +320,17 @@ def build(output, animated=True, exercise="bodyweight-squat", geometry=None, equ
             document['scenes'] = [{'nodes':[0]}]
             document.pop('skins',None)
             document.pop('animations',None)
+    if not equipment_only:
+        for instance in motions.PROFILES.get(exercise, {}).get('props', []):
+            kind = instance['id']
+            pv, pn, pi = props.geometry(kind)
+            material = len(document['materials'])
+            document['materials'].append({'name':kind+'-surface','pbrMetallicRoughness':{'baseColorFactor':[.22,.27,.30,1],'metallicFactor':0,'roughnessFactor':.85}})
+            mesh_index = len(document['meshes'])
+            document['meshes'].append({'name':kind,'primitives':[{'attributes':{'POSITION':accessor(pv,5126,'VEC3'),'NORMAL':accessor(pn,5126,'VEC3')},'indices':accessor(pi,5125,'SCALAR'),'material':material}]})
+            node_index = len(document['nodes'])
+            document['nodes'].append({'name':'equipment_'+kind,'mesh':mesh_index,'translation':instance['translation'],'extras':{'kimorelRigidEquipment':kind}})
+            document['scenes'][0]['nodes'].append(node_index)
     document['buffers'] = [{'byteLength':len(binary)}]
     encoded = json.dumps(document,separators=(',',':')).encode()
     encoded += b' '*((-len(encoded))%4)
@@ -327,9 +341,37 @@ def build(output, animated=True, exercise="bodyweight-squat", geometry=None, equ
     print(f'{output.name}: {len(dv) if equipment_only else len(positions)} vertices, {len(di)//3 if equipment_only else len(indices)//3} triangles, {len(glb)} bytes')
 
 
+
+def build_prop(output, kind):
+    positions, normals, indices = props.geometry(kind)
+    binary = bytearray()
+    views, accessors = [], []
+    def add(values, component, width, shape):
+        while len(binary) % 4:
+            binary.append(0)
+        start = len(binary)
+        flat = [v for row in values for v in row] if width > 1 else values
+        binary.extend(struct.pack('<'+('f' if component == 5126 else 'I')*len(flat), *flat))
+        views.append({'buffer':0,'byteOffset':start,'byteLength':len(binary)-start})
+        entry = {'bufferView':len(views)-1,'componentType':component,'count':len(values),'type':shape}
+        if shape == 'VEC3':
+            entry.update(min=[min(v[i] for v in values) for i in range(3)], max=[max(v[i] for v in values) for i in range(3)])
+        accessors.append(entry)
+        return len(accessors)-1
+    attributes = {'POSITION':add(positions,5126,3,'VEC3'),'NORMAL':add(normals,5126,3,'VEC3')}
+    index = add(indices,5125,1,'SCALAR')
+    document = {'asset':{'version':'2.0','generator':'Kimorel original rigid equipment v1','copyright':'Kimorel contributors; CC0-1.0'},'scene':0,'scenes':[{'nodes':[0]}], 'nodes':[{'name':kind,'mesh':0}], 'meshes':[{'name':kind,'primitives':[{'attributes':attributes,'indices':index,'material':0}]}], 'materials':[{'name':kind+'-surface','pbrMetallicRoughness':{'baseColorFactor':[.22,.27,.30,1],'metallicFactor':0,'roughnessFactor':.85}}], 'accessors':accessors,'bufferViews':views,'buffers':[{'byteLength':len(binary)}]}
+    encoded = json.dumps(document,separators=(',',':')).encode()
+    encoded += b' '*((-len(encoded))%4)
+    binary += b'\0'*((-len(binary))%4)
+    output.parent.mkdir(parents=True,exist_ok=True)
+    output.write_bytes(struct.pack('<III',0x46546C67,2,12+8+len(encoded)+8+len(binary))+struct.pack('<II',len(encoded),0x4E4F534A)+encoded+struct.pack('<II',len(binary),0x004E4942)+binary)
+
 if __name__=='__main__':
     geometry = mesh()
     build(ROOT/'assets/characters/neutral-human.glb',False,geometry=geometry)
     build(ROOT/'assets/equipment/dumbbell.glb',False,geometry=geometry,equipment_only=True)
+    for kind in props.DEFINITIONS:
+        build_prop(ROOT/f'assets/equipment/{kind}.glb', kind)
     for exercise in motions.EXERCISES:
         build(ROOT/f'assets/exercises/{exercise}.glb',exercise=exercise,geometry=geometry)

@@ -7,7 +7,9 @@ import {
   screen,
   within,
 } from '@testing-library/react';
-import { exercises as catalog } from '@kimorel/data';
+import { exercises as fullCatalog } from '@kimorel/data';
+// Pagination boundaries use a fixed-size fixture; browser coverage visits every real record.
+const catalog = fullCatalog.slice(0, 25);
 // Bounded fixture keeps these filter behavior assertions independent of catalog growth.
 const exercises = catalog.slice(0, 3);
 import { Catalog } from './Catalog';

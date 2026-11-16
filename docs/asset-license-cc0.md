@@ -5,8 +5,8 @@ To the extent possible under law, Kimorel contributors waive copyright and relat
 ## Scope
 
 - Original character geometry, skeleton, skin weights and broad muscle-region labels in `assets/characters/neutral-human.glb`.
-- Original squat, push-up and dumbbell-curl motion and character data in `assets/exercises/*.glb`.
-- Original dumbbell geometry in `assets/equipment/dumbbell.glb`.
+- Original motion and shared character data in the 50 currently registered `assets/exercises/*.glb` previews, including repetition and explicit hold clips.
+- Original dumbbell, bench, box and wall geometry in `assets/equipment/*.glb`.
 - Original thumbnails in `assets/thumbnails/*.png` and neutral/highlighted contact sheets in `docs/reviews/*.png`.
 - Original exercise metadata in `packages/data/src/exercises.json`, asset identity data in `packages/data/src/asset-review.json`, and region definition data in `packages/schemas/src/muscle-regions.json`.
 - Original geometry, rig, region and motion data encoded in the editable generator; the generator's software implementation remains MIT.

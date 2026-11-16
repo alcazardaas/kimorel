@@ -26,6 +26,30 @@ export const equipmentRegistry = [
     dimensionsMeters: [0.23, 0.14, 0.14],
     reviewStatus: 'needs-review',
   },
+  {
+    id: 'bench',
+    assetId: 'bench-v1',
+    file: 'equipment/bench.glb',
+    gripOrigin: [0, 0, 0],
+    dimensionsMeters: [0.65, 0.45, 0.4],
+    reviewStatus: 'needs-review',
+  },
+  {
+    id: 'box',
+    assetId: 'box-v1',
+    file: 'equipment/box.glb',
+    gripOrigin: [0, 0, 0],
+    dimensionsMeters: [0.65, 0.25, 0.55],
+    reviewStatus: 'needs-review',
+  },
+  {
+    id: 'wall',
+    assetId: 'wall-v1',
+    file: 'equipment/wall.glb',
+    gripOrigin: [0, 0, 0],
+    dimensionsMeters: [1.2, 2, 0.1],
+    reviewStatus: 'needs-review',
+  },
 ] as const;
 
 import reviewRecords from './asset-review.json' with { type: 'json' };

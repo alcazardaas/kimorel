@@ -2,6 +2,7 @@ import { readFile } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { AnimationMixer, Vector3 } from 'three';
+import { createSupportChecks, equipmentDefinitions } from './support-qa.mjs';
 import regionDefinition from '../packages/schemas/src/muscle-regions.json' with { type: 'json' };
 import motionProfiles from '../pipeline/character/motion-profiles.json' with { type: 'json' };
 export const qaProfiles = motionProfiles;
@@ -207,6 +208,7 @@ export async function validateGlb(
         throw new Error('Invalid skin weights');
     }
   });
+  const supportChecks = createSupportChecks(loaded.scene, profile);
   const mixer = new AnimationMixer(loaded.scene);
   const action = mixer.clipAction(clip).play();
   const contactBones = [...profile.contacts, ...(profile.pivots ?? [])].map(
@@ -252,6 +254,11 @@ export async function validateGlb(
       b = loaded.scene.getObjectByName(entry.b);
     if (!a || !b) throw new Error('Missing paired contact');
     return { a, b, offset: new Vector3(...entry.offset) };
+  });
+  const supportSurfaces = (profile.supportSurfaces ?? []).map((entry) => {
+    const bone = loaded.scene.getObjectByName(entry.bone);
+    if (!bone) throw new Error('Missing elevated support bone');
+    return { ...entry, bone };
   });
   const articulations = (profile.articulations ?? []).map((entry) => {
     const bone = loaded.scene.getObjectByName(entry.bone);
@@ -353,6 +360,17 @@ export async function validateGlb(
           else supportDrift = Math.max(supportDrift, drift);
         }
     }
+    for (const surface of supportSurfaces)
+      if (
+        i / 120 >= surface.from &&
+        i / 120 <= surface.to &&
+        Math.abs(
+          surface.bone
+            .getWorldPosition(new Vector3())
+            .getComponent(surface.axis) - surface.height,
+        ) > 0.005
+      )
+        throw new Error('Elevated support bone left its declared plane');
     const progress = (1 - Math.cos((2 * Math.PI * i) / 120)) / 2;
     for (const slide of slides) {
       const expected = slide.from.clone().lerp(slide.to, progress);
@@ -427,10 +445,14 @@ export async function validateGlb(
           if (![...p].every(Number.isFinite))
             throw new Error('Non-finite skinned vertex');
           penetration = Math.max(penetration, -p.y);
-          minimumHeight = Math.min(minimumHeight, p.y);
+          minimumHeight = Math.min(
+            minimumHeight,
+            supportChecks.distanceToSupport(p),
+          );
         }
       }
       maximumGroundGap = Math.max(maximumGroundGap, minimumHeight);
+      supportChecks.sample(i / 120, skins);
     }
     rootDrift = Math.max(
       rootDrift,
@@ -466,7 +488,9 @@ export async function validateGlb(
     throw new Error(
       `Contact/root/skin/ground/equipment drift: ${footDrift}/${handDrift}/${rootDrift}/${soleDrift}/${penetration}/${attachmentDrift}/${maximumGroundGap}/${supportDrift}`,
     );
+  const supportReport = supportChecks.finish();
   return {
+    ...supportReport,
     bytes: bytes.length,
     vertexCount,
     bones: requiredBones.length,
@@ -504,6 +528,31 @@ export async function validateEquipment(
     bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength),
     '',
   );
+  const id = String(path).split('/').pop().replace('.glb', '');
+  if (equipmentDefinitions[id]) {
+    const mesh = loaded.scene.getObjectByName(id);
+    if (!mesh?.isMesh || mesh.isSkinnedMesh)
+      throw new Error('Missing rigid equipment geometry');
+    const position = mesh.geometry.getAttribute('position');
+    if (![...position.array].every(Number.isFinite))
+      throw new Error('Invalid equipment vertices');
+    mesh.geometry.computeBoundingBox();
+    const size = mesh.geometry.boundingBox.getSize(new Vector3());
+    if (
+      size
+        .toArray()
+        .some(
+          (v, axis) =>
+            Math.abs(v - equipmentDefinitions[id].dimensions[axis]) > 0.0001,
+        )
+    )
+      throw new Error('Invalid equipment meter scale');
+    return {
+      bytes: bytes.length,
+      vertices: position.count,
+      dimensionsMeters: size.toArray(),
+    };
+  }
   const mesh = loaded.scene.getObjectByName('dumbbell');
   if (!mesh?.isMesh) throw new Error('Missing dumbbell mesh');
   const position = mesh.geometry.getAttribute('position');
@@ -527,8 +576,17 @@ if (
   const paths = process.argv[2]
     ? [process.argv[2]]
     : Object.keys(qaProfiles).map((id) => `assets/exercises/${id}.glb`);
-  if (!process.argv[2])
+  if (!process.argv[2]) {
     console.log(JSON.stringify(await validateEquipment(), null, 2));
+    for (const id of Object.keys(equipmentDefinitions))
+      console.log(
+        JSON.stringify(
+          await validateEquipment(`assets/equipment/${id}.glb`),
+          null,
+          2,
+        ),
+      );
+  }
   for (const path of paths)
     console.log(JSON.stringify(await validateGlb(path), null, 2));
 }

@@ -1,16 +1,16 @@
 # Broad muscle surface regions
 
-Kimorel uses thirteen versioned **educational surface labels**, not anatomical segmentation or measured muscle activation. The original 18-joint skeleton, mesh positions, skin weights and motion curves are unchanged by this extension.
+Kimorel uses fourteen versioned **educational surface labels**, not anatomical segmentation or measured muscle activation. The original 18-joint skeleton, mesh positions, skin weights and motion curves are unchanged by this extension.
 
 ## One definition, two consumers
 
 `packages/schemas/src/muscle-regions.json` owns the stable region keys, numeric codes, labels, source-muscle aliases and ordered bind-pose bounds. TypeScript derives the `MuscleRegion` key union directly from that JSON; the Python generator reads the same file. Do not maintain a second region table.
 
-The regions are chest, deltoids, biceps, triceps, upper-back, latissimus-dorsi, abdominals, spinal-erectors, glutes, quadriceps, hamstrings, calves and lateral-hip. Existing exercise taxonomy aliases such as `pectoralis-major`, `erector-spinae` and `gluteus-maximus` map through each region's `muscles` array. Forearms, adductors, hands, face and other unmapped areas remain neutral. Missing mappings do not imply that a muscle is inactive.
+The regions are chest, deltoids, biceps, triceps, upper-back, latissimus-dorsi, abdominals, spinal-erectors, glutes, quadriceps, hamstrings, calves, lateral-hip and anterior-hip. Existing exercise taxonomy aliases such as `pectoralis-major`, `erector-spinae` and `gluteus-maximus` map through each region's `muscles` array. Forearms, adductors, hands, face and other unmapped areas remain neutral. Missing mappings do not imply that a muscle is inactive.
 
 ## Mesh contract
 
-Each canonical skin exports a scalar unsigned-short `_MUSCLE_REGION` per vertex. Zero means deliberately unassigned. The mesh's `extras.kimorelMuscleRegions` contains definition version and ID/code pairs. Three's GLTFLoader preserves this as `_muscle_region` and `userData`; QA rejects missing, unknown or mismatched codes and checks all thirteen regions have vertices. All 25 clips use the same thirteen-region mapping.
+Each canonical skin exports a scalar unsigned-short `_MUSCLE_REGION` per vertex. Zero means deliberately unassigned. The mesh's `extras.kimorelMuscleRegions` contains definition version and ID/code pairs. Three's GLTFLoader preserves this as `_muscle_region` and `userData`; QA rejects missing, unknown or mismatched codes and checks all fourteen regions have vertices. All 50 clips use the same fourteen-region mapping.
 
 Regions are assigned once in meter-based Y-up, +Z-forward rest space. Color follows the same indexed vertices and skinning as the mesh, so it does not slide over the surface during motion. No texture, second character, shader patch or per-exercise rendering branch is required. Export overhead is about 16.8 KB per human GLB.
 
@@ -29,3 +29,7 @@ Changing labels/export bytes invalidates any existing hash-bound approval. Curre
 ## Lateral-hip extension (version 1.1.0)
 
 Code 13 adds an approximate lateral-hip surface for the existing hip-abductors taxonomy; it is not an alias for gluteus-maximus and does not isolate individual gluteal muscles. It precedes overlapping gluteal bounds in deterministic assignment order. This supports side-lying hip-abduction previews without fabricating precise anatomy. Every canonical human export is regenerated with the same labels; original positions, normals, indices, bones, weights and original three animation tracks are preserved. Region labels/extras and exact SHA identities intentionally change; previous hashes cannot authorize these bytes. All assets remain needs-review.
+
+## Anterior-hip extension (version 1.2.0)
+
+Code 14 adds a broad anterior-hip surface for the new `hip-flexors` taxonomy. It is not an alias for quadriceps or gluteus maximus and does not isolate deep individual muscles. The same new labels are exported for every human GLB. Original 25 animations, mesh positions/normals/indices, bones and weights remain unchanged outside this label/extras extension; SHA identities intentionally change. Previous identities cannot approve the new bytes, and every record remains needs-review.

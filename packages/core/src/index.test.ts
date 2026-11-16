@@ -21,6 +21,7 @@ describe('exercise utilities', () => {
       'split-squat',
       'lateral-lunge',
       'supine-heel-slide',
+      'straight-leg-raise',
     ]);
     expect(filterExercises(exercises, { equipment: 'barbell' })).toEqual([]);
   });

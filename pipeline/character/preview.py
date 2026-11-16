@@ -38,6 +38,10 @@ def view_frame(exercise, positions, width, height):
                 for joint in (14, 17):
                     x, y, z = world[joint]
                     projected.extend([(.8*x-.6*z-.2, y-.2), (.8*x-.6*z+.2, y+.2)])
+        for instance in character.motions.PROFILES[exercise].get('props', []):
+            for point in character.props.geometry(instance['id'])[0]:
+                x,y,z = character.motions.add(point, instance['translation'])
+                projected.append((.8*x-.6*z, y))
         lo = [min(p[i] for p in projected) for i in range(2)]
         hi = [max(p[i] for p in projected) for i in range(2)]
         scale = min((width-60)/(hi[0]-lo[0]), (height-70)/(hi[1]-lo[1]))
@@ -89,6 +93,13 @@ def render(time, width=400, height=480, exercise='bodyweight-squat', geometry=No
                 x,y,z = transformed
                 vertices.append(project(x, y, z))
             indices.extend(start+i for i in di)
+    for instance in character.motions.PROFILES[exercise].get('props', []):
+        pv,_pn,pi = character.props.geometry(instance['id'])
+        start = len(vertices)
+        indices = list(indices)
+        for point in pv:
+            vertices.append(project(*character.motions.add(point, instance['translation'])))
+        indices.extend(start+i for i in pi)
     pixels = bytearray([232,237,232]*width*height)
     depths = [-float('inf')]*(width*height)
     for i in range(0,len(indices),3):

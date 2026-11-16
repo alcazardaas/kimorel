@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "regions": {
     "chest": {
       "code": 1,
@@ -78,6 +78,12 @@
       "label": "Calves",
       "muscles": ["calves"],
       "bounds": [0.04, 0.25, 0.18, 0.48, -0.3, 0.02]
+    },
+    "anterior-hip": {
+      "code": 14,
+      "label": "Anterior hip",
+      "muscles": ["hip-flexors"],
+      "bounds": [0, 0.18, 0.86, 1.04, 0.025, 0.3]
     }
   }
 }

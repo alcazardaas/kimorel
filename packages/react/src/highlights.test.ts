@@ -73,3 +73,34 @@ it('highlights hip abductors without relabeling gluteus maximus', () => {
   geometry.dispose();
   material.dispose();
 });
+
+it('maps hip flexors to anterior hip instead of falsely relabeling quadriceps', () => {
+  const definition = muscleRegionDefinition.regions['anterior-hip'];
+  expect(definition.muscles).toEqual(['hip-flexors']);
+  expect(definition.code).not.toBe(
+    muscleRegionDefinition.regions.quadriceps.code,
+  );
+  const geometry = new BufferGeometry();
+  geometry.setAttribute(
+    '_muscle_region',
+    new BufferAttribute(
+      new Uint16Array([
+        definition.code,
+        muscleRegionDefinition.regions.quadriceps.code,
+      ]),
+      1,
+    ),
+  );
+  const material = new MeshStandardMaterial({ color: '#789080' });
+  const root = new Group();
+  root.add(new Mesh(geometry, material));
+  applyMuscleHighlights(
+    root,
+    { primary: ['hip-flexors'], secondary: [] },
+    true,
+  );
+  const colors = geometry.getAttribute('color');
+  expect(colors.getX(0)).not.toBe(colors.getX(1));
+  geometry.dispose();
+  material.dispose();
+});

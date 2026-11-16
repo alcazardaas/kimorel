@@ -45,7 +45,7 @@ async function evidence(page: Page, info: TestInfo) {
 test('prefixed production demo loads every registered real clip and supports keyboard controls', async ({
   page,
 }, info) => {
-  test.setTimeout(120_000);
+  test.setTimeout(180_000);
   await page.goto('/kimorel/');
   await ready(page);
   await page.getByRole('button', { name: 'Pause', exact: true }).focus();
@@ -108,12 +108,17 @@ test('catalog pagination preserves the viewer and works with keyboard and respon
     page.getByRole('heading', { name: catalog[0]!.name, exact: true }),
   ).toBeVisible();
   expect(await canvas!.evaluate((element) => element.isConnected)).toBe(true);
-  await pages.getByRole('button', { name: 'Page 5', exact: true }).click();
+  await pages
+    .getByRole('button', {
+      name: `Page ${Math.ceil(catalog.length / 5)}`,
+      exact: true,
+    })
+    .click();
   await expect(next).toBeDisabled();
   await page.getByLabel('Movements per page').selectOption('10');
   await expect(list.getByRole('button')).toHaveCount(10);
   await expect(page.getByRole('status')).toContainText(
-    'Showing 1–10 · Page 1 of 3',
+    `Showing 1–10 · Page 1 of ${Math.ceil(catalog.length / 10)}`,
   );
   await pages.getByRole('button', { name: 'Next' }).click();
   await page

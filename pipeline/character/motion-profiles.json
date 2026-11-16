@@ -221,5 +221,390 @@
         "minRadians": 0.08
       }
     ]
+  },
+  "standing-hip-abduction": {
+    "contacts": ["left_foot"],
+    "skinPatches": [
+      {
+        "bounds": [0.08, 0.23, 0, 0.035, -0.1, 0.3]
+      }
+    ]
+  },
+  "standing-hip-flexion": {
+    "contacts": ["left_foot"],
+    "skinPatches": [
+      {
+        "bounds": [0.08, 0.23, 0, 0.035, -0.1, 0.3]
+      }
+    ]
+  },
+  "straight-leg-raise": {
+    "contacts": ["pelvis", "chest"],
+    "skinPatches": [
+      {
+        "bounds": [-0.15, 0.15, 1.08, 1.5, -0.3, -0.085]
+      }
+    ]
+  },
+  "supine-pelvic-tilt": {
+    "contacts": ["chest", "left_foot", "right_foot"],
+    "skinPatches": [
+      {
+        "bounds": [-0.15, 0.15, 1.47, 1.5, -0.2, -0.085]
+      }
+    ],
+    "articulations": [
+      {
+        "bone": "spine",
+        "minRadians": 0.06
+      }
+    ]
+  },
+  "supine-trunk-rotation": {
+    "contacts": ["chest"],
+    "skinPatches": [
+      {
+        "bounds": [-0.15, 0.15, 1.47, 1.5, -0.2, -0.085]
+      }
+    ],
+    "articulations": [
+      {
+        "bone": "spine",
+        "minRadians": 0.3
+      }
+    ]
+  },
+  "thoracic-open-book": {
+    "contacts": ["pelvis", "left_foot", "right_foot"],
+    "skinPatches": [],
+    "articulations": [
+      {
+        "bone": "chest",
+        "minRadians": 0.3
+      }
+    ]
+  },
+  "quadruped-thoracic-rotation": {
+    "contacts": [
+      "left_hand",
+      "left_shin",
+      "right_shin",
+      "left_foot",
+      "right_foot"
+    ],
+    "skinPatches": [
+      {
+        "bounds": [0.08, 0.23, 0, 0.035, -0.1, 0.3]
+      }
+    ],
+    "articulations": [
+      {
+        "bone": "chest",
+        "minRadians": 0.4
+      }
+    ]
+  },
+  "seated-trunk-rotation": {
+    "contacts": ["pelvis", "left_foot", "right_foot"],
+    "skinPatches": [],
+    "articulations": [
+      {
+        "bone": "chest",
+        "minRadians": 0.25
+      }
+    ],
+    "props": [
+      {
+        "id": "bench",
+        "translation": [0, 0, -0.16]
+      }
+    ],
+    "surfaceContacts": [
+      {
+        "prop": "bench",
+        "axis": 1,
+        "from": 0,
+        "to": 1,
+        "skinBounds": [-0.18, 0.18, 0.84, 0.94, -0.18, -0.02]
+      }
+    ]
+  },
+  "curl-up": {
+    "contacts": ["pelvis", "left_foot", "right_foot"],
+    "skinPatches": [],
+    "articulations": [
+      {
+        "bone": "spine",
+        "minRadians": 0.2
+      }
+    ]
+  },
+  "bicycle-crunch": {
+    "contacts": ["pelvis"],
+    "skinPatches": [],
+    "articulations": [
+      {
+        "bone": "spine",
+        "minRadians": 0.1
+      }
+    ]
+  },
+  "hollow-body-hold": {
+    "kind": "hold",
+    "clip": "hold",
+    "contacts": ["pelvis"],
+    "skinPatches": []
+  },
+  "superman": {
+    "contacts": ["pelvis"],
+    "skinPatches": [],
+    "articulations": [
+      {
+        "bone": "chest",
+        "minRadians": 0.1
+      }
+    ]
+  },
+  "prone-hip-extension": {
+    "contacts": ["pelvis", "chest"],
+    "skinPatches": [
+      {
+        "bounds": [-0.15, 0.15, 1.04, 1.5, 0.06, 0.3]
+      }
+    ]
+  },
+  "seated-knee-extension": {
+    "contacts": ["pelvis", "right_foot"],
+    "skinPatches": [],
+    "props": [
+      {
+        "id": "bench",
+        "translation": [0, 0, -0.16]
+      }
+    ],
+    "surfaceContacts": [
+      {
+        "prop": "bench",
+        "axis": 1,
+        "from": 0,
+        "to": 1,
+        "skinBounds": [-0.18, 0.18, 0.84, 0.94, -0.18, -0.02]
+      }
+    ]
+  },
+  "standing-hamstring-stretch": {
+    "kind": "hold",
+    "clip": "hold",
+    "contacts": ["left_foot", "right_foot"]
+  },
+  "seated-calf-raise": {
+    "contacts": ["pelvis"],
+    "pivots": ["left_forefoot", "right_forefoot"],
+    "skinPatches": [],
+    "props": [
+      {
+        "id": "bench",
+        "translation": [0, 0, -0.16]
+      }
+    ],
+    "surfaceContacts": [
+      {
+        "prop": "bench",
+        "axis": 1,
+        "from": 0,
+        "to": 1,
+        "skinBounds": [-0.18, 0.18, 0.84, 0.94, -0.18, -0.02]
+      }
+    ]
+  },
+  "sit-to-stand": {
+    "contacts": ["left_foot", "right_foot"],
+    "props": [
+      {
+        "id": "bench",
+        "translation": [0, 0, -0.12]
+      }
+    ],
+    "supportSurfaces": [
+      {
+        "bone": "pelvis",
+        "axis": 1,
+        "height": 0.62,
+        "from": 0,
+        "to": 0
+      },
+      {
+        "bone": "pelvis",
+        "axis": 1,
+        "height": 0.62,
+        "from": 1,
+        "to": 1
+      }
+    ],
+    "surfaceContacts": [
+      {
+        "prop": "bench",
+        "axis": 1,
+        "from": 0,
+        "to": 0,
+        "skinBounds": [-0.15, 0.15, 0.94, 1.01, -0.18, -0.06]
+      },
+      {
+        "prop": "bench",
+        "axis": 1,
+        "from": 1,
+        "to": 1,
+        "skinBounds": [-0.15, 0.15, 0.94, 1.01, -0.18, -0.06]
+      }
+    ]
+  },
+  "step-up": {
+    "contacts": [],
+    "skinPatches": [],
+    "contactPhases": [
+      {
+        "bones": ["right_foot"],
+        "from": 0,
+        "to": 0.16666666666666666
+      },
+      {
+        "bones": ["left_foot"],
+        "from": 0.16666666666666666,
+        "to": 0.8333333333333334
+      },
+      {
+        "bones": ["right_foot"],
+        "from": 0.8333333333333334,
+        "to": 1
+      }
+    ],
+    "props": [
+      {
+        "id": "box",
+        "translation": [0, 0, 0.5]
+      }
+    ],
+    "supportSurfaces": [
+      {
+        "bone": "left_foot",
+        "axis": 1,
+        "height": 0.35,
+        "from": 0.16666666666666666,
+        "to": 0.8333333333333334
+      },
+      {
+        "bone": "right_foot",
+        "axis": 1,
+        "height": 0.35,
+        "from": 0.5,
+        "to": 0.5
+      }
+    ],
+    "surfaceContacts": [
+      {
+        "prop": "box",
+        "axis": 1,
+        "from": 0.16666666666666666,
+        "to": 0.8333333333333334,
+        "skinBounds": [0.08, 0.23, 0, 0.035, -0.1, 0.3]
+      },
+      {
+        "prop": "box",
+        "axis": 1,
+        "from": 0.5,
+        "to": 0.5,
+        "skinBounds": [-0.23, -0.08, 0, 0.035, -0.1, 0.3]
+      }
+    ]
+  },
+  "bulgarian-split-squat": {
+    "contacts": ["left_foot", "right_foot"],
+    "skinPatches": [
+      {
+        "bounds": [0.08, 0.23, 0, 0.035, -0.1, 0.3]
+      }
+    ],
+    "props": [
+      {
+        "id": "bench",
+        "translation": [0, 0, -0.75]
+      }
+    ],
+    "supportSurfaces": [
+      {
+        "bone": "right_foot",
+        "axis": 1,
+        "height": 0.55,
+        "from": 0,
+        "to": 1
+      }
+    ],
+    "surfaceContacts": [
+      {
+        "prop": "bench",
+        "axis": 1,
+        "from": 0,
+        "to": 1,
+        "skinBounds": [-0.23, -0.08, 0, 0.035, -0.1, 0.3]
+      }
+    ]
+  },
+  "wall-sit": {
+    "kind": "hold",
+    "clip": "hold",
+    "contacts": ["left_foot", "right_foot", "pelvis"],
+    "props": [
+      {
+        "id": "wall",
+        "translation": [0, 0, -0.24]
+      }
+    ],
+    "surfaceContacts": [
+      {
+        "prop": "wall",
+        "axis": 2,
+        "from": 0,
+        "to": 1,
+        "skinBounds": [-0.15, 0.15, 1.1, 1.45, -0.3, -0.085]
+      }
+    ]
+  },
+  "single-leg-glute-bridge": {
+    "contacts": ["chest", "left_foot"],
+    "skinPatches": [
+      {
+        "bounds": [-0.15, 0.15, 1.47, 1.5, -0.2, -0.085]
+      }
+    ]
+  },
+  "single-leg-romanian-deadlift": {
+    "contacts": ["left_foot"],
+    "skinPatches": [
+      {
+        "bounds": [0.08, 0.23, 0, 0.035, -0.1, 0.3]
+      }
+    ]
+  },
+  "dumbbell-floor-press": {
+    "contacts": ["pelvis", "chest", "left_foot", "right_foot"],
+    "skinPatches": [
+      {
+        "bounds": [-0.15, 0.15, 1.08, 1.5, -0.3, -0.085]
+      }
+    ],
+    "equipment": true
+  },
+  "dumbbell-chest-fly": {
+    "contacts": ["pelvis", "chest", "left_foot", "right_foot"],
+    "skinPatches": [
+      {
+        "bounds": [-0.15, 0.15, 1.08, 1.5, -0.3, -0.085]
+      }
+    ],
+    "equipment": true
+  },
+  "dumbbell-triceps-kickback": {
+    "contacts": ["left_foot", "right_foot"],
+    "equipment": true
   }
 }

@@ -63,8 +63,8 @@ class MotionTests(unittest.TestCase):
 class MuscleRegionTests(unittest.TestCase):
     def test_region_codes_are_unique_and_broad_regions_are_present(self):
         regions = character.REGION_DEFINITION['regions']
-        self.assertEqual(len(regions), 13)
-        self.assertEqual(len({r['code'] for r in regions.values()}), 13)
+        self.assertEqual(len(regions), 14)
+        self.assertEqual(len({r['code'] for r in regions.values()}), 14)
         self.assertEqual(character.muscle_region((.22, .98, 0)), regions['lateral-hip']['code'])
         self.assertEqual(character.muscle_region((0, 1.4, .1)), regions['chest']['code'])
         self.assertEqual(character.muscle_region((0, 1.7, 0)), 0)
@@ -79,8 +79,8 @@ class ExpandedMotionTests(unittest.TestCase):
         return character.motions.forward(
             character.BONES, character.motion_pose(character.BONES, time, exercise, character.pose))
 
-    def test_twenty_five_distinct_clips_keep_rigid_segment_lengths(self):
-        self.assertEqual(len(character.motions.EXERCISES), 25)
+    def test_fifty_distinct_clips_keep_rigid_segment_lengths(self):
+        self.assertEqual(len(character.motions.EXERCISES), 50)
         signatures = set()
         for exercise in character.motions.EXERCISES:
             signature = []
@@ -96,7 +96,7 @@ class ExpandedMotionTests(unittest.TestCase):
                 if frame in (0, 30, 60, 90):
                     signature.extend(round(v, 4) for point in points for v in point)
             signatures.add(tuple(signature))
-        self.assertEqual(len(signatures), 25)
+        self.assertEqual(len(signatures), 50)
 
     def test_raises_hinge_and_row_have_distinct_movement_directions(self):
         for exercise, coordinate in [('dumbbell-lateral-raise', 0), ('dumbbell-front-raise', 2)]:

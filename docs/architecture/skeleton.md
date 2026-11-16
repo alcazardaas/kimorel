@@ -29,7 +29,7 @@ Squat constraints: fixed ankles, two-bone sagittal leg solve with positive knee 
 
 The optional Blender bridge imports the generated GLB and saves a `.blend`; Blender maps glTF axes on import. Preserve object/bone names and clip name. Re-export as GLB with skins and animations, meters, no external textures, and run exported-file QA again. Blender re-export is not bitwise deterministic and has not been tested here.
 
-Thirteen broad rest-space surface regions now drive metadata-based educational highlighting. They are not muscle activation measurements.
+Fourteen broad rest-space surface regions now drive metadata-based educational highlighting. They are not muscle activation measurements.
 
 ## Three-exercise compatibility update
 
@@ -48,3 +48,9 @@ The ten additional original clips preserve this rig, mesh and weights. Generic p
 ## Twenty-five-preview milestone
 
 The next twelve motions reuse this unchanged contract. Static plank clips declare a hold kind. Explicit sliding-foot trajectories, paired-foot offsets and minimum local spine/chest articulation are validated in exported animation space, alongside unchanged contact and penetration tolerances. Motion families separate authoring without exercise-specific viewer branches. No extra joints, props or anatomical accuracy claims are introduced.
+
+## Fifty-preview milestone
+
+The next 25 clips preserve the same 18-joint hierarchy, skin and geometry. Seated and elevated movements embed original rigid bench/box/wall instances from shared equipment definitions; the viewer remains generic. QA checks matching prop geometry/transforms, skin penetration, actual surface contact and declared elevated support planes. Step-up lifts a foot clear before forward travel, transfers support, then reverses the path. Static holds remain genuinely still. This is technical constraint evidence, not physical simulation or anatomical/clinical approval.
+
+Region definition 1.2.0 adds broad anterior hip/hip-flexor labels. Original 25 GLBs and neutral character preserve non-region JSON and binary bytes; their label/extras versions and exact identities intentionally change. Standalone dumbbell and original PNGs remain byte-identical. Forearm, shoulder/scapula, finger/toe and distributed spine limits remain unchanged; later overhead/cervical work still requires its capability audit.

@@ -15,3 +15,7 @@ Run `pnpm assets:build`, `pnpm assets:preview`, `pnpm assets:qa` and `pnpm valid
 ## Formal human checklist
 
 Record observations for anatomical plausibility, movement recognition, stable contact, equipment grip, deformation/intersections, camera framing, loop seam, region boundary plausibility and license provenance. Record browser/device and exact SHA256. Inspect neutral character, equipment and thumbnail records as well. Follow `docs/asset-licensing.md` only after explicit human review; no UI action writes an approval. Clinical review is a separate qualified process.
+
+## Supported and elevated previews
+
+For bench/box/wall exercises, inspect seat/back/rear-foot contact, actual support height, body/prop intersections and step clearance through the entire path, not just the five sheet samples. Confirm floor-press and fly are distinct elbow/shoulder paths; kickback should retain its authored upper-arm position while the elbow extends. Current 50 previews include five explicit static holds. Exact-hash human approval remains required for all 105 asset records, including the three new standalone props.
