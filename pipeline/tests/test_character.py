@@ -80,23 +80,24 @@ class ExpandedMotionTests(unittest.TestCase):
             character.BONES, character.motion_pose(character.BONES, time, exercise, character.pose))
 
     def test_fifty_distinct_clips_keep_rigid_segment_lengths(self):
-        self.assertEqual(len(character.motions.EXERCISES), 50)
+        self.assertEqual(len(character.motions.EXERCISES), 54)
         signatures = set()
         for exercise in character.motions.EXERCISES:
             signature = []
             for frame in range(121):
                 points, rotations = self.pose(exercise, frame/30)
-                for index, (_, parent, rest) in enumerate(character.BONES):
+                bones = character.motions.enhanced_bones(character.BONES) if character.motions.PROFILES[exercise].get('rig') else character.BONES
+                for index, (_, parent, rest) in enumerate(bones):
                     self.assertTrue(all(math.isfinite(v) for v in (*points[index], *rotations[index])))
                     self.assertAlmostEqual(sum(v*v for v in rotations[index]), 1, places=6)
-                    if parent is not None and index != 1:
+                    if parent is not None and index not in (1,18,19):
                         self.assertAlmostEqual(
                             character.length(character.sub(points[index], points[parent])),
-                            character.length(character.sub(rest, character.BONES[parent][2])), places=6)
+                            character.length(character.sub(rest, bones[parent][2])), places=6)
                 if frame in (0, 30, 60, 90):
-                    signature.extend(round(v, 4) for point in points for v in point)
+                    signature.extend(round(v, 4) for point in points+rotations for v in point)
             signatures.add(tuple(signature))
-        self.assertEqual(len(signatures), 50)
+        self.assertEqual(len(signatures), 54)
 
     def test_raises_hinge_and_row_have_distinct_movement_directions(self):
         for exercise, coordinate in [('dumbbell-lateral-raise', 0), ('dumbbell-front-raise', 2)]:

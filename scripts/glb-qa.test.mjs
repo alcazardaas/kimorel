@@ -69,7 +69,8 @@ test('exported region labels stay identical on the canonical skin across clips',
     loaded.scene.traverse((object) => {
       if (object.isSkinnedMesh) skin = object;
     });
-    definitions.push([...skin.geometry.getAttribute('_muscle_region').array]);
+    if (qaProfiles[id].regionVersion !== '1.3.0')
+      definitions.push([...skin.geometry.getAttribute('_muscle_region').array]);
   }
   for (const definition of definitions)
     assert.deepEqual(definition, definitions[0]);
@@ -111,8 +112,8 @@ test('rejects missing or invalid exported muscle-region labels', async () => {
   }
 });
 
-test('all fifty original clips pass their declared contact, pivot and equipment profiles', async () => {
-  assert.equal(Object.keys(qaProfiles).length, 50);
+test('all registered original clips pass their declared contact, pivot and equipment profiles', async () => {
+  assert.equal(Object.keys(qaProfiles).length, 54);
   const fingerprints = new Set();
   for (const id of Object.keys(qaProfiles)) {
     const bytes = await readFile(`assets/exercises/${id}.glb`);
@@ -132,14 +133,14 @@ test('all fifty original clips pass their declared contact, pivot and equipment 
     fingerprints.add(digest.digest('hex'));
     const report = await validateGlb(`assets/exercises/${id}.glb`);
     assert.equal(report.duration, 4);
-    assert.equal(report.bones, 18);
+    assert.equal(report.bones, qaProfiles[id].rig ? 20 : 18);
     assert.ok(report.groundPenetrationMeters <= 0.015, id);
     assert.ok(report.maximumGroundGapMeters < 0.035, id);
     assert.equal(report.clinicalValidation, false);
   }
   assert.equal(
     fingerprints.size,
-    50,
+    54,
     'Every exported clip must contain distinct animation data',
   );
 });

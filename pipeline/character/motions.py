@@ -75,18 +75,42 @@ def solve_chain(start, end, upper, lower, pole):
     return add(start,add(scale(direction,a),scale(bend,h)))
 
 
+def enhanced_bones(bones):
+    """Append shoulder-girdle joints without renumbering canonical limb indices."""
+    if len(bones) > 18:
+        return bones
+    result = list(bones)
+    for arm, side in ((12, 'left'), (15, 'right')):
+        name, _, rest = result[arm]
+        result[arm] = (name, len(result), rest)
+        result.append((side+'_clavicle', 3, rest))
+    return result
+
+
 def forward(bones, pose):
-    world, rotations = [],[]
-    for i,(_,parent,rest) in enumerate(bones):
-        local = sub(rest,bones[parent][2]) if parent is not None else rest
-        translation, rotation = pose.get(i,(None,IDENTITY))
+    if any(index >= len(bones) for index in pose):
+        bones = enhanced_bones(bones)
+    world, rotations = [None]*len(bones), [None]*len(bones)
+    visiting = set()
+    def evaluate(i):
+        if world[i] is not None:
+            return
+        if i in visiting:
+            raise ValueError('Cyclic skeleton hierarchy')
+        visiting.add(i)
+        _, parent, rest = bones[i]
+        local = sub(rest, bones[parent][2]) if parent is not None else rest
+        translation, rotation = pose.get(i, (None, IDENTITY))
         local = translation if translation is not None else local
         if parent is None:
-            world.append(local)
-            rotations.append(rotation)
+            world[i], rotations[i] = local, rotation
         else:
-            world.append(add(world[parent],rotate(local,rotations[parent])))
-            rotations.append(multiply(rotations[parent],rotation))
+            evaluate(parent)
+            world[i] = add(world[parent], rotate(local, rotations[parent]))
+            rotations[i] = multiply(rotations[parent], rotation)
+        visiting.remove(i)
+    for i in range(len(bones)):
+        evaluate(i)
     return world, rotations
 
 
@@ -165,7 +189,7 @@ _API = SimpleNamespace(
 )
 _FAMILIES = [_load_family(name) for name in (
     'motion_legacy', 'motion_standing', 'motion_holds', 'motion_quadruped', 'motion_floor',
-    'motion_mobility', 'motion_seated', 'motion_strength'
+    'motion_mobility', 'motion_seated', 'motion_strength', 'motion_upper_quarter'
 )]
 _REGISTRY = {}
 for family in _FAMILIES:
@@ -182,4 +206,6 @@ def motion_pose(bones, t, exercise, squat_pose):
         author = _REGISTRY[exercise]
     except KeyError as error:
         raise ValueError(f'Unknown motion: {exercise}') from error
+    if PROFILES[exercise].get('rig') == 'upper-quarter-v2':
+        bones = enhanced_bones(bones)
     return author(bones, t, exercise, _API, squat_pose)

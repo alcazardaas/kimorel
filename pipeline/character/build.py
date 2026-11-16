@@ -21,10 +21,15 @@ _props_spec.loader.exec_module(props)
 ROOT = Path(__file__).resolve().parents[2]
 REGION_DEFINITION = json.loads((ROOT/'packages/schemas/src/muscle-regions.json').read_text())
 
-def muscle_region(point):
+UPPER_REGION_DEFINITION = json.loads((ROOT/'packages/schemas/src/muscle-regions-upper-quarter.json').read_text())
+
+def region_definition(exercise):
+    return UPPER_REGION_DEFINITION if motions.PROFILES.get(exercise, {}).get('rig') == 'upper-quarter-v2' else REGION_DEFINITION
+
+def muscle_region(point, definition=None):
     """First matching broad rest-space surface label; zero deliberately unassigned."""
     x,y,z = abs(point[0]),point[1],point[2]
-    for region in REGION_DEFINITION['regions'].values():
+    for region in (definition or REGION_DEFINITION)['regions'].values():
         a,b,c,d,e,f = region['bounds']
         if a <= x < b and c <= y < d and e <= z < f:
             return region['code']
@@ -232,10 +237,12 @@ def dumbbell_geometry():
 
 
 def build(output, animated=True, exercise="bodyweight-squat", geometry=None, equipment_only=False):
+    bones = motions.enhanced_bones(BONES) if motions.PROFILES.get(exercise, {}).get('rig') == 'upper-quarter-v2' else BONES
+    definition = region_definition(exercise)
     positions,normals,indices = geometry or mesh()
     joints,skin_weights = zip(*(weights(p) for p in positions))
     binary = bytearray()
-    document = {'asset':{'version':'2.0','generator':'Kimorel original human v1','copyright':'Kimorel contributors; geometry and motion CC0-1.0'},'scene':0,'scenes':[{'nodes':[0,18]}],'nodes':[],'bufferViews':[],'accessors':[]}
+    document = {'asset':{'version':'2.0','generator':'Kimorel original human v1','copyright':'Kimorel contributors; geometry and motion CC0-1.0'},'scene':0,'scenes':[{'nodes':[0,len(bones)]}],'nodes':[],'bufferViews':[],'accessors':[]}
     def accessor(values,component,kind):
         flat = [n for row in values for n in row] if isinstance(values[0],(list,tuple)) else values
         while len(binary)%4:
@@ -252,27 +259,27 @@ def build(output, animated=True, exercise="bodyweight-squat", geometry=None, equ
             entry.update(min=[min(flat)],max=[max(flat)])
         document['accessors'].append(entry)
         return len(document['accessors'])-1
-    for i,(name,parent,world) in enumerate(BONES):
-        local = sub(world,BONES[parent][2]) if parent is not None else world
+    for i,(name,parent,world) in enumerate(bones):
+        local = sub(world,bones[parent][2]) if parent is not None else world
         node = {'name':name,'translation':local}
-        children = [j for j,bone in enumerate(BONES) if bone[1]==i]
+        children = [j for j,bone in enumerate(bones) if bone[1]==i]
         if children:
             node['children'] = children
         document['nodes'].append(node)
     attributes = {'POSITION':accessor(positions,5126,'VEC3'),'NORMAL':accessor(normals,5126,'VEC3'),'JOINTS_0':accessor(joints,5123,'VEC4'),'WEIGHTS_0':accessor(skin_weights,5126,'VEC4')}
-    attributes['_MUSCLE_REGION'] = accessor([muscle_region(p) for p in positions],5123,'SCALAR')
-    document['meshes'] = [{'extras':{'kimorelMuscleRegions':{'version':REGION_DEFINITION['version'],'codes':{key:value['code'] for key,value in REGION_DEFINITION['regions'].items()}}},'name':'neutral-human-skin','primitives':[{'attributes':attributes,'indices':accessor(indices,5125,'SCALAR'),'material':0}]}]
+    attributes['_MUSCLE_REGION'] = accessor([muscle_region(p, definition) for p in positions],5123,'SCALAR')
+    document['meshes'] = [{'extras':{'kimorelMuscleRegions':{'version':definition['version'],'codes':{key:value['code'] for key,value in definition['regions'].items()}}},'name':'neutral-human-skin','primitives':[{'attributes':attributes,'indices':accessor(indices,5125,'SCALAR'),'material':0}]}]
     document['materials'] = [{'name':'neutral-skin','pbrMetallicRoughness':{'baseColorFactor':[.48,.58,.56,1],'metallicFactor':0,'roughnessFactor':.78}}]
     document['nodes'].append({'name':'human','mesh':0,'skin':0})
     if motions.PROFILES.get(exercise, {}).get('pivots'):
         for foot in (8,11):
             marker = len(document['nodes'])
-            document['nodes'].append({'name':BONES[foot][0].replace('foot','forefoot'),'translation':[0,-.095,.125]})
+            document['nodes'].append({'name':bones[foot][0].replace('foot','forefoot'),'translation':[0,-.095,.125]})
             document['nodes'][foot].setdefault('children',[]).append(marker)
     inverse = []
-    for _,_,position in BONES:
+    for _,_,position in bones:
         inverse.append([1,0,0,0,0,1,0,0,0,0,1,0,-position[0],-position[1],-position[2],1])
-    document['skins'] = [{'name':'kimorel-v1','joints':list(range(len(BONES))),'skeleton':0,'inverseBindMatrices':accessor(inverse,5126,'MAT4')}]
+    document['skins'] = [{'name':motions.PROFILES.get(exercise, {}).get('rig', 'kimorel-v1'),'joints':list(range(len(bones))),'skeleton':0,'inverseBindMatrices':accessor(inverse,5126,'MAT4')}]
     if animated:
         times = [i/30 for i in range(121)]
         time_index = accessor(times,5126,'SCALAR')
@@ -283,9 +290,10 @@ def build(output, animated=True, exercise="bodyweight-squat", geometry=None, equ
             sampler = len(animation['samplers'])
             animation['samplers'].append({'input':time_index,'output':accessor(values,5126,kind),'interpolation':'LINEAR'})
             animation['channels'].append({'sampler':sampler,'target':{'node':bone,'path':path}})
-        poses = [motion_pose(BONES,t,exercise,pose) for t in times]
-        if 1 in poses[0] and poses[0][1][0] is not None:
-            track(1,'translation',[p[1][0] for p in poses],'VEC3')
+        poses = [motion_pose(bones,t,exercise,pose) for t in times]
+        for bone in poses[0]:
+            if poses[0][bone][0] is not None:
+                track(bone,'translation',[p[bone][0] for p in poses],'VEC3')
         for bone in poses[0]:
             track(bone,'rotation',[p[bone][1] for p in poses],'VEC4')
         document['animations'] = [animation]
@@ -295,8 +303,8 @@ def build(output, animated=True, exercise="bodyweight-squat", geometry=None, equ
         document['meshes'].append({'name':'dumbbell','primitives':[{'attributes':{'POSITION':accessor(dv,5126,'VEC3'),'NORMAL':accessor(dn,5126,'VEC3')},'indices':accessor(di,5125,'SCALAR'),'material':1}]})
         for hand,sign in [(14,1),(17,-1)]:
             node = len(document['nodes'])
-            document['nodes'].append({'name':f'{BONES[hand][0]}_grip','translation':[sign*.02,-.055,.005],'children':[node+1]})
-            document['nodes'].append({'name':f'{BONES[hand][0]}_dumbbell','mesh':1})
+            document['nodes'].append({'name':f'{bones[hand][0]}_grip','translation':[sign*.02,-.055,.005],'children':[node+1]})
+            document['nodes'].append({'name':f'{bones[hand][0]}_dumbbell','mesh':1})
             document['nodes'][hand]['children'] = [node]
         if equipment_only:
             # Compact standalone export: no unreachable human mesh, rig or binary data.

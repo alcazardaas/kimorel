@@ -4,6 +4,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { AnimationMixer, Vector3 } from 'three';
 import { createSupportChecks, equipmentDefinitions } from './support-qa.mjs';
 import regionDefinition from '../packages/schemas/src/muscle-regions.json' with { type: 'json' };
+import upperRegionDefinition from '../packages/schemas/src/muscle-regions-upper-quarter.json' with { type: 'json' };
 import motionProfiles from '../pipeline/character/motion-profiles.json' with { type: 'json' };
 export const qaProfiles = motionProfiles;
 export const requiredBones = [
@@ -58,6 +59,10 @@ export async function validateGlb(
   if (!profile) throw new Error(`Unknown QA profile: ${profileName}`);
   clipName ??= profile.clip ?? 'rep';
   const motionKind = profile.kind ?? 'repetition';
+  const expectedRegions =
+    profile.regionVersion === '1.3.0'
+      ? upperRegionDefinition
+      : regionDefinition;
   if (!['repetition', 'hold'].includes(motionKind))
     throw new Error('Unknown motion kind');
   const bytes = await readFile(path);
@@ -167,11 +172,11 @@ export async function validateGlb(
       throw new Error('Missing muscle-region mapping');
     const definition = object.userData.kimorelMuscleRegions;
     if (
-      definition?.version !== regionDefinition.version ||
+      definition?.version !== expectedRegions.version ||
       JSON.stringify(definition.codes) !==
         JSON.stringify(
           Object.fromEntries(
-            Object.entries(regionDefinition.regions).map(([id, region]) => [
+            Object.entries(expectedRegions.regions).map(([id, region]) => [
               id,
               region.code,
             ]),
@@ -180,7 +185,7 @@ export async function validateGlb(
     )
       throw new Error('Muscle-region definition mismatch');
     const expected = new Set(
-      Object.values(regionDefinition.regions).map((region) => region.code),
+      Object.values(expectedRegions.regions).map((region) => region.code),
     );
     const seen = new Set();
     for (let i = 0; i < regions.count; i++) {
@@ -260,6 +265,34 @@ export async function validateGlb(
     if (!bone) throw new Error('Missing elevated support bone');
     return { ...entry, bone };
   });
+  const translations = (profile.translations ?? []).map((entry) => {
+    const bone = loaded.scene.getObjectByName(entry.bone);
+    if (
+      !bone ||
+      !clip.tracks.some((track) => track.name === `${entry.bone}.position`)
+    )
+      throw new Error(`Missing authored translation: ${entry.bone}`);
+    return {
+      ...entry,
+      bone,
+      baseline: bone.position.getComponent(entry.axis),
+      maximum: 0,
+    };
+  });
+  if (profile.rig === 'upper-quarter-v2') {
+    if (document.skins[0].name !== 'upper-quarter-v2')
+      throw new Error('Missing versioned upper-quarter rig');
+    for (const side of ['left', 'right']) {
+      const clavicle = loaded.scene.getObjectByName(`${side}_clavicle`);
+      const arm = loaded.scene.getObjectByName(`${side}_upper_arm`);
+      if (
+        !clavicle?.isBone ||
+        arm.parent !== clavicle ||
+        clavicle.parent.name !== 'chest'
+      )
+        throw new Error('Invalid shoulder-girdle hierarchy');
+    }
+  }
   const articulations = (profile.articulations ?? []).map((entry) => {
     const bone = loaded.scene.getObjectByName(entry.bone);
     if (!bone) throw new Error(`Missing articulation: ${entry.bone}`);
@@ -398,6 +431,14 @@ export async function validateGlb(
           .sub(pair.a.getWorldPosition(new Vector3()))
           .distanceTo(pair.offset),
       );
+    for (const translation of translations)
+      translation.maximum = Math.max(
+        translation.maximum,
+        Math.abs(
+          translation.bone.position.getComponent(translation.axis) -
+            translation.baseline,
+        ),
+      );
     for (const articulation of articulations) {
       const dot = [...articulation.bone.quaternion].reduce(
         (sum, value, index) => sum + value * articulation.baseline[index],
@@ -464,6 +505,12 @@ export async function validateGlb(
   }
   action.stop();
   mixer.uncacheRoot(loaded.scene);
+  for (const translation of translations)
+    if (
+      translation.maximum < translation.minMeters ||
+      translation.maximum > translation.maxMeters
+    )
+      throw new Error(`Translation range: ${translation.bone.name}`);
   for (const articulation of articulations)
     if (articulation.maximum < articulation.minRadians)
       throw new Error(
@@ -493,7 +540,7 @@ export async function validateGlb(
     ...supportReport,
     bytes: bytes.length,
     vertexCount,
-    bones: requiredBones.length,
+    bones: document.skins[0].joints.length,
     clip: clip.name,
     kind: motionKind,
     slidingBoneDriftMeters: slidingBoneDrift,

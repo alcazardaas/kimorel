@@ -31,3 +31,11 @@ The direct standard-library Python GLB exporter is the current reproducible rout
 ## Approval
 
 Run technical checks first, then inspect all phases in the browser. Follow [asset review instructions](asset-licensing.md). Source provenance, exported QA, human visual approval and clinical review remain separate decisions. `pnpm validate:data` is the strict release gate; passing preview validation never approves an asset.
+
+## Optional upper-quarter pilot
+
+The original fifty assets retain the canonical 18-joint rig and surface labels v1.2.0 byte-for-byte. Four additional previews opt into `upper-quarter-v2`: standing dumbbell shoulder press, wrist curl, reverse wrist curl and supine serratus punch. Two appended clavicle joints preserve existing limb indices while providing explicit shoulder-girdle elevation/protraction. Hierarchical evaluation follows parents rather than numeric order. This simplified girdle is not an anatomically segmented scapula or a measured activation model; hands remain stylized mittens without individual fingers.
+
+The exporter emits every explicitly authored translation channel, not only pelvis translation. CPU diagnostics use the same hierarchy and translation semantics. New clips use the additive surface definition v1.3.0 (approximate forearm and lateral-chest/serratus surfaces); old mappings remain unchanged. The renderer recognizes both sets of stable codes. QA requires the versioned clavicle hierarchy, wrist rotation, shoulder articulation and declared translation excursion, with negative fixtures that remove those channels. Global contact/ground tolerances remain unchanged. Forearm pronation is an authored whole-segment orientation, not a distributed anatomical twist rig.
+
+These four clips, their thumbnails and their new exact hashes remain unapproved previews. Supine serratus punch uses no external load. Wrist previews keep elbows and wrist origins stationary while rotating the hands; they do not imitate biceps curls. Original artifacts must remain unchanged when regenerating the full catalog.

@@ -20,6 +20,7 @@ export const muscles = [
   'abdominals',
   'latissimus-dorsi',
   'forearms',
+  'serratus-anterior',
   'upper-back',
   'hip-abductors',
   'hip-flexors',

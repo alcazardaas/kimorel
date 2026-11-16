@@ -77,7 +77,7 @@ def render(time, width=400, height=480, exercise='bodyweight-squat', geometry=No
         import json
         records = json.loads((Path(__file__).resolve().parents[2]/'packages/data/src/exercises.json').read_text())
         muscles = next(record['muscles'] for record in records if record['id'] == exercise)
-        for region in character.REGION_DEFINITION['regions'].values():
+        for region in character.region_definition(exercise)['regions'].values():
             if any(m in muscles['primary'] for m in region['muscles']):
                 colors_by_region[region['code']] = [255,85,56]
             elif any(m in muscles['secondary'] for m in region['muscles']):
@@ -113,7 +113,7 @@ def render(time, width=400, height=480, exercise='bodyweight-squat', geometry=No
         light = .6+.35*abs(n[2])/max(character.length(n),1e-8)
         base_color = [50,60,70] if i >= human_index_count else [125,151,145]
         if i < human_index_count and highlights:
-            base_color = colors_by_region.get(character.muscle_region(positions[indices[i]]), base_color)
+            base_color = colors_by_region.get(character.muscle_region(positions[indices[i]], character.region_definition(exercise)), base_color)
         color = [int(channel*light) for channel in base_color]
         for y in range(max(0,int(min(a[1],b[1],c[1]))),min(height,int(max(a[1],b[1],c[1]))+1)):
             for x in range(max(0,int(min(a[0],b[0],c[0]))),min(width,int(max(a[0],b[0],c[0]))+1)):

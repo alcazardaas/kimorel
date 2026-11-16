@@ -733,5 +733,61 @@
     "status": "needs-review",
     "bytes": 1656,
     "sha256": "0414381dcfcba343d6d6e7b13c0def1ab0c0f0dfa6067371dda411b1a6744774"
+  },
+  {
+    "assetId": "dumbbell-shoulder-press-v1",
+    "file": "exercises/dumbbell-shoulder-press.glb",
+    "status": "needs-review",
+    "bytes": 637396,
+    "sha256": "ff961bce175308c17eea4e30e152623db5abeaefd1378926073eaffc094471f1"
+  },
+  {
+    "assetId": "dumbbell-shoulder-press-thumbnail-v1",
+    "file": "thumbnails/dumbbell-shoulder-press.png",
+    "status": "needs-review",
+    "bytes": 19955,
+    "sha256": "02c036bda4374de7e7a6f4d542069599a109996f0aecd86844094d5d662e26c1"
+  },
+  {
+    "assetId": "dumbbell-wrist-curl-v1",
+    "file": "exercises/dumbbell-wrist-curl.glb",
+    "status": "needs-review",
+    "bytes": 633908,
+    "sha256": "075caa589efb15b67dc580b66014718ecc120597732d3816e987464a736d4811"
+  },
+  {
+    "assetId": "dumbbell-wrist-curl-thumbnail-v1",
+    "file": "thumbnails/dumbbell-wrist-curl.png",
+    "status": "needs-review",
+    "bytes": 21541,
+    "sha256": "0d48d6b7f169131d9dd8827c902f8c9561201c32294cc5b357fbf95db9ea0b81"
+  },
+  {
+    "assetId": "dumbbell-reverse-wrist-curl-v1",
+    "file": "exercises/dumbbell-reverse-wrist-curl.glb",
+    "status": "needs-review",
+    "bytes": 633908,
+    "sha256": "18293e37c3ac1b743cdd0932f74e8f27ab62bacfdbee303587bb458979007122"
+  },
+  {
+    "assetId": "dumbbell-reverse-wrist-curl-thumbnail-v1",
+    "file": "thumbnails/dumbbell-reverse-wrist-curl.png",
+    "status": "needs-review",
+    "bytes": 21672,
+    "sha256": "3fae886fe345e439068ba52718a003e4956a082c67baabcaea6a5909f4c54800"
+  },
+  {
+    "assetId": "supine-serratus-punch-v1",
+    "file": "exercises/supine-serratus-punch.glb",
+    "status": "needs-review",
+    "bytes": 649928,
+    "sha256": "3d37afc9ef0f517c4c3633c44b0b1be642dee92a1c11898e31b42530a0fa66a5"
+  },
+  {
+    "assetId": "supine-serratus-punch-thumbnail-v1",
+    "file": "thumbnails/supine-serratus-punch.png",
+    "status": "needs-review",
+    "bytes": 26384,
+    "sha256": "9729a371e48d7f4929fed9c22adc6937d9216588e8f559ffad07f5d403498fa4"
   }
 ]

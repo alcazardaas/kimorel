@@ -2623,5 +2623,221 @@
       "creator": "Kimorel contributors",
       "source": "Original educational metadata and deterministic dumbbell-triceps-kickback authoring on the canonical rig; pending exact-asset human review."
     }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "dumbbell-shoulder-press",
+    "slug": "dumbbell-shoulder-press",
+    "name": "Dumbbell Shoulder Press",
+    "description": "A standing overhead press with coordinated shoulder-girdle elevation.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "push",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["dumbbell"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "Standing",
+    "muscles": {
+      "primary": ["deltoids", "triceps"],
+      "secondary": ["upper-back"]
+    },
+    "instructions": [
+      "Start with the dumbbells near shoulder height.",
+      "Press overhead through a comfortable range.",
+      "Lower with control."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "dumbbell-shoulder-press-v1",
+      "file": "exercises/dumbbell-shoulder-press.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 1.05, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original manually authored upper-quarter-v2 educational motion and approximate surface labels; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "dumbbell-wrist-curl",
+    "slug": "dumbbell-wrist-curl",
+    "name": "Dumbbell Wrist Curl",
+    "description": "Wrist flexion with palms facing upward and stationary forearms.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["dumbbell"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "Standing with elbows bent",
+    "muscles": {
+      "primary": ["forearms"],
+      "secondary": []
+    },
+    "instructions": [
+      "Hold the forearms steady with palms upward.",
+      "Flex the wrists through a comfortable range.",
+      "Return with control."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "dumbbell-wrist-curl-v1",
+      "file": "exercises/dumbbell-wrist-curl.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 1.05, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original manually authored upper-quarter-v2 educational motion and approximate surface labels; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "dumbbell-reverse-wrist-curl",
+    "slug": "dumbbell-reverse-wrist-curl",
+    "name": "Dumbbell Reverse Wrist Curl",
+    "description": "Wrist extension with palms facing downward and stationary forearms.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["dumbbell"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "Standing with elbows bent",
+    "muscles": {
+      "primary": ["forearms"],
+      "secondary": []
+    },
+    "instructions": [
+      "Hold the forearms steady with palms downward.",
+      "Extend the wrists through a comfortable range.",
+      "Return with control."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "dumbbell-reverse-wrist-curl-v1",
+      "file": "exercises/dumbbell-reverse-wrist-curl.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 1.05, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original manually authored upper-quarter-v2 educational motion and approximate surface labels; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "supine-serratus-punch",
+    "slug": "supine-serratus-punch",
+    "name": "Supine Serratus Punch",
+    "description": "A supine shoulder-girdle reach with nearly straight elbows.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "push",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "Supine with knees bent",
+    "muscles": {
+      "primary": ["serratus-anterior"],
+      "secondary": ["deltoids"]
+    },
+    "instructions": [
+      "Lie on the back with arms reaching upward.",
+      "Reach toward the ceiling without bending the elbows.",
+      "Lower the shoulder girdle with control."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "supine-serratus-punch-v1",
+      "file": "exercises/supine-serratus-punch.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.4, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original manually authored upper-quarter-v2 educational motion and approximate surface labels; pending exact-asset human review."
+    }
   }
 ]

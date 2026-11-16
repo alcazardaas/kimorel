@@ -1928,6 +1928,142 @@
       "redistribution": true,
       "attribution": "Not required; see docs/asset-license-cc0.md.",
       "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-shoulder-press-v1",
+      "file": "exercises/dumbbell-shoulder-press.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original Kimorel upper-quarter-v2 pilot with appended clavicle joints and explicit translation tracks; approximate educational motion, no clinical validation."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-shoulder-press-thumbnail-v1",
+      "file": "thumbnails/dumbbell-shoulder-press.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster preview of the exported-motion authoring model."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-wrist-curl-v1",
+      "file": "exercises/dumbbell-wrist-curl.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original Kimorel upper-quarter-v2 pilot with appended clavicle joints and explicit translation tracks; approximate educational motion, no clinical validation."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-wrist-curl-thumbnail-v1",
+      "file": "thumbnails/dumbbell-wrist-curl.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster preview of the exported-motion authoring model."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-reverse-wrist-curl-v1",
+      "file": "exercises/dumbbell-reverse-wrist-curl.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original Kimorel upper-quarter-v2 pilot with appended clavicle joints and explicit translation tracks; approximate educational motion, no clinical validation."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-reverse-wrist-curl-thumbnail-v1",
+      "file": "thumbnails/dumbbell-reverse-wrist-curl.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster preview of the exported-motion authoring model."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "supine-serratus-punch-v1",
+      "file": "exercises/supine-serratus-punch.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original Kimorel upper-quarter-v2 pilot with appended clavicle joints and explicit translation tracks; approximate educational motion, no clinical validation."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "supine-serratus-punch-thumbnail-v1",
+      "file": "thumbnails/supine-serratus-punch.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster preview of the exported-motion authoring model."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
     }
   ]
 }

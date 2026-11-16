@@ -124,7 +124,13 @@ test('catalog pagination preserves the viewer and works with keyboard and respon
   await page
     .getByRole('combobox', { name: 'Equipment', exact: true })
     .selectOption('dumbbell');
-  await expect(page.getByRole('status')).toContainText('Page 1 of 1');
+  const dumbbellPages = Math.ceil(
+    catalog.filter((exercise) => exercise.equipment.includes('dumbbell'))
+      .length / 10,
+  );
+  await expect(page.getByRole('status')).toContainText(
+    `Page 1 of ${dumbbellPages}`,
+  );
   await page.getByRole('button', { name: 'Reset filters' }).click();
   await page.getByLabel('Movements per page').selectOption('5');
   await pages.scrollIntoViewIfNeeded();
