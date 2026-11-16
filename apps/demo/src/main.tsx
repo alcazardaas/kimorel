@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client';
 import { exercises, assetReviewRecords } from '@kimorel/data';
 import { ExerciseViewer } from '@kimorel/react';
 import './style.css';
+import { Catalog } from './Catalog';
+import { ExerciseDetails } from './ExerciseDetails';
 function App() {
   const [selected, setSelected] = useState(exercises[0]!);
   const [review, setReview] = useState(false);
@@ -28,7 +30,9 @@ function App() {
       </header>
       <main id="main">
         <section className="intro">
-          <p className="eyebrow">OPEN SOURCE · THREE MOVEMENT PREVIEWS</p>
+          <p className="eyebrow">
+            OPEN SOURCE · {exercises.length} MOVEMENT PREVIEWS
+          </p>
           <h1>
             Human movement,
             <br />
@@ -49,33 +53,22 @@ function App() {
             <p className="eyebrow">THE MOVEMENT LIBRARY</p>
             <h2 id="catalog">Start exploring</h2>
             <p className="muted">
-              Three original animated exercises, pending human visual approval.
+              {exercises.length} original animated exercises, pending human
+              visual approval.
             </p>
-            <ul className="catalog">
-              {exercises.map((exercise, index) => (
-                <li key={exercise.id}>
-                  <button
-                    aria-pressed={selected.id === exercise.id}
-                    onClick={() => setSelected(exercise)}
-                  >
-                    <span className="number">0{index + 1}</span>
-                    <span>
-                      <strong>{exercise.name}</strong>
-                      <small>
-                        {exercise.movementPattern} ·{' '}
-                        {exercise.equipment.join(', ')}
-                      </small>
-                    </span>
-                    <span aria-hidden="true">↗</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
+            <Catalog
+              exercises={exercises}
+              selectedId={selected.id}
+              onSelect={setSelected}
+            />
             <div className="note">
-              <strong>Three movements, one reusable character.</strong>
+              <strong>
+                {exercises.length} movements, one reusable character.
+              </strong>
               <p>
-                Squat, push-up and dumbbell curl are available for technical
-                review. No visual approval or clinical validation is claimed.
+                Original standing and floor movements are available for
+                technical review. No visual approval or clinical validation is
+                claimed.
               </p>
             </div>
           </aside>
@@ -140,31 +133,7 @@ function App() {
               loop
               controls
             />
-            <div className="description">
-              <h3>About this movement</h3>
-              <p>{selected.description}</p>
-              <p>
-                <strong>Primary muscles:</strong>{' '}
-                {selected.muscles.primary.join(', ')}
-              </p>
-              <p>
-                <strong>Secondary muscles:</strong>{' '}
-                {selected.muscles.secondary.join(', ')}
-              </p>
-              <p>
-                <strong>Equipment:</strong> {selected.equipment.join(', ')}
-              </p>
-              <h3>Movement instructions</h3>
-              <ol>
-                {selected.instructions.map((instruction) => (
-                  <li key={instruction}>{instruction}</li>
-                ))}
-              </ol>
-              <p className="muted">
-                Educational example only. Not medical advice or a treatment
-                prescription.
-              </p>
-            </div>
+            <ExerciseDetails exercise={selected} />
           </article>
         </section>
         <section className="principles">

@@ -16,11 +16,13 @@ a {
   color: inherit;
   text-underline-offset: 4px;
 }
-button {
+button,
+select {
   font: inherit;
 }
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+select:focus-visible {
   outline: 3px solid #996123;
   outline-offset: 5px;
 }
@@ -332,4 +334,55 @@ fieldset label {
 fieldset input[type='range'] {
   max-width: 100%;
   width: 12rem;
+}
+
+.catalog-filters {
+  display: grid;
+  min-width: 0;
+  padding: 12px;
+}
+.catalog-filters label {
+  display: grid;
+  font-size: 13px;
+}
+.catalog-filters select,
+.catalog-filters button {
+  width: 100%;
+  min-width: 0;
+  padding: 8px;
+  border: 1px solid #b8c8b8;
+  border-radius: 6px;
+  color: inherit;
+  background: #fff;
+}
+
+.catalog-page-size {
+  display: grid;
+  gap: 0.4rem;
+  font-size: 13px;
+}
+.catalog-page-size select,
+.catalog-pagination button {
+  font: inherit;
+  color: inherit;
+  border: 1px solid #b8c8b8;
+  border-radius: 6px;
+  background: #fff;
+  padding: 8px;
+  min-height: 44px;
+}
+.catalog-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.catalog-pagination button {
+  min-width: 44px;
+}
+.catalog-pagination button[aria-current='page'] {
+  color: #fff;
+  background: #254d40;
+}
+.catalog-pagination button:disabled {
+  opacity: 0.5;
 }

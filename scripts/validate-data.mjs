@@ -3,7 +3,7 @@ import { readFile, readdir } from 'node:fs/promises';
 import { assetManifestSchema } from '../packages/schemas/dist/index.js';
 import { exercises, equipmentRegistry } from '../packages/data/dist/index.js';
 import { validateAssetFile } from './asset-files.mjs';
-import { validateGlb } from './glb-qa.mjs';
+import { validateGlb, validateEquipment } from './glb-qa.mjs';
 const preview = process.argv.includes('--preview');
 const pending = [];
 const root = new URL('../assets/', import.meta.url);
@@ -28,6 +28,14 @@ for (const equipment of equipmentRegistry) {
   const asset = assets.get(equipment.assetId);
   if (!asset || asset.file !== equipment.file)
     throw new Error(`Invalid equipment asset: ${equipment.id}`);
+  const report = await validateEquipment(new URL(equipment.file, root));
+  if (
+    report.dimensionsMeters.some(
+      (value, axis) =>
+        Math.abs(value - equipment.dimensionsMeters[axis]) > 0.0001,
+    )
+  )
+    throw new Error(`Equipment registry dimensions mismatch: ${equipment.id}`);
 }
 for (const exercise of exercises) {
   if (!exercise.animation) continue;
@@ -38,7 +46,12 @@ for (const exercise of exercises) {
     throw new Error(`Missing redistribution permissions: ${asset.assetId}`);
   if (asset.status !== 'approved')
     pending.push(`${asset.assetId}: ${asset.status}`);
-  await validateGlb(new URL(asset.file, root), exercise.animation.clip);
+  const report = await validateGlb(
+    new URL(asset.file, root),
+    exercise.animation.clip,
+  );
+  if (report.kind !== (exercise.animation.kind ?? 'repetition'))
+    throw new Error(`Animation kind mismatch: ${exercise.id}`);
 }
 async function checkDirectory(directory, prefix = '') {
   for (const entry of await readdir(directory, { withFileTypes: true })) {

@@ -16,14 +16,15 @@
     "lint": "eslint . --max-warnings 0",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
-    "typecheck": "pnpm build:packages && tsc --noEmit -p tsconfig.json && pnpm --filter @kimorel/demo typecheck",
+    "typecheck": "pnpm build:packages && tsc --noEmit -p tsconfig.json && pnpm --filter @kimorel/demo typecheck && tsc -p tsconfig.browser.json",
     "test": "pnpm build:packages && vitest run && node --test scripts/*.test.mjs",
     "validate:data": "pnpm build:packages && node scripts/validate-data.mjs",
     "assets:build": "python3 pipeline/character/build.py && pnpm assets:hashes",
     "assets:qa": "node scripts/glb-qa.mjs",
     "validate:preview": "pnpm build:packages && node scripts/validate-data.mjs --preview && node scripts/review-manifest.mjs --check",
     "assets:preview": "python3 pipeline/character/preview.py && pnpm assets:hashes",
-    "assets:hashes": "node scripts/review-manifest.mjs"
+    "assets:hashes": "node scripts/review-manifest.mjs",
+    "test:browser": "pnpm build && vite build --config vite.browser.config.ts && playwright test"
   },
   "devDependencies": {
     "@eslint/js": "9.39.5",
@@ -31,6 +32,7 @@
     "@kimorel/data": "workspace:*",
     "@kimorel/react": "workspace:*",
     "@kimorel/schemas": "workspace:*",
+    "@playwright/test": "1.65.1",
     "@testing-library/dom": "10.4.1",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.2",

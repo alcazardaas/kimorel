@@ -104,8 +104,26 @@ it('requires a recorded human review before approving an asset', () => {
 it('keeps broad region codes unique and source muscle references in the taxonomy', async () => {
   const { muscleRegionDefinition, muscles } = await import('./index.js');
   const regions = Object.values(muscleRegionDefinition.regions);
-  expect(regions).toHaveLength(12);
-  expect(new Set(regions.map((region) => region.code)).size).toBe(12);
+  expect(regions).toHaveLength(14);
+  expect(new Set(regions.map((region) => region.code)).size).toBe(14);
   for (const region of regions)
     for (const muscle of region.muscles) expect(muscles).toContain(muscle);
+});
+
+it('accepts explicit hold semantics while preserving legacy repetition metadata', async () => {
+  const { animationSchema } = await import('./index.js');
+  const animation = {
+    assetId: 'plank-v1',
+    file: 'exercises/plank.glb',
+    clip: 'hold',
+    loop: true,
+    defaultPlaybackSpeed: 1,
+  };
+  expect(animationSchema.parse({ ...animation, kind: 'hold' }).kind).toBe(
+    'hold',
+  );
+  expect(animationSchema.parse(animation).kind).toBeUndefined();
+  expect(
+    animationSchema.safeParse({ ...animation, kind: 'oscillation' }).success,
+  ).toBe(false);
 });

@@ -3,15 +3,15 @@
     "assetId": "neutral-human-v1",
     "file": "characters/neutral-human.glb",
     "status": "needs-review",
-    "bytes": 611384,
-    "sha256": "d00e88cfea93777c6d67de22ac54b5b968800226f9c4f90c56b3e3004fbe60d8"
+    "bytes": 611416,
+    "sha256": "58e6b6695d71925785f5c733e9c70e230ab51949bb9e4cdb06ed961b88ce6e6e"
   },
   {
     "assetId": "bodyweight-squat-v1",
     "file": "exercises/bodyweight-squat.glb",
     "status": "needs-review",
-    "bytes": 637464,
-    "sha256": "3e8162da32336b5746441b6435a9cc786654095de3bea9a2f8691bf154ce8674"
+    "bytes": 637496,
+    "sha256": "b225d7512d484f1e5234dcaed1c45dbfcd59d2ea3a8a8397b6550dbf63ccccd7"
   },
   {
     "assetId": "bodyweight-squat-thumbnail-v1",
@@ -24,15 +24,15 @@
     "assetId": "push-up-v1",
     "file": "exercises/push-up.glb",
     "status": "needs-review",
-    "bytes": 633216,
-    "sha256": "8a2432794e3642cd48092fee3d3591c501de627a2b9330334c27024f1cf25d68"
+    "bytes": 633252,
+    "sha256": "1d4b39035b6866d7818a4f97e4bddf6880b55ed71ef028b8f115f3d45bb1ad2f"
   },
   {
     "assetId": "dumbbell-biceps-curl-v1",
     "file": "exercises/dumbbell-biceps-curl.glb",
     "status": "needs-review",
-    "bytes": 629252,
-    "sha256": "c785b07d49b26c90eab4206b3f3c905a6f0cf390ad5c787e2b5698a0896f9c96"
+    "bytes": 629288,
+    "sha256": "43689fa4b9db49c039ff129d446abe830657c6ff0a520debdce7696116e3a3fe"
   },
   {
     "assetId": "dumbbell-v1",
@@ -54,5 +54,684 @@
     "status": "needs-review",
     "bytes": 20939,
     "sha256": "8855bb9930c0b36582185d3e7ae574cf82fd711eb816cf64f92b0e305cc4d6a1"
+  },
+  {
+    "assetId": "dumbbell-lateral-raise-v1",
+    "file": "exercises/dumbbell-lateral-raise.glb",
+    "status": "needs-review",
+    "bytes": 629288,
+    "sha256": "c0d862eb2b9942b4d55ff283d8fd94410d726ef8886761d7188c7a13edf62b5b"
+  },
+  {
+    "assetId": "dumbbell-lateral-raise-thumbnail-v1",
+    "file": "thumbnails/dumbbell-lateral-raise.png",
+    "status": "needs-review",
+    "bytes": 22494,
+    "sha256": "7feae7e7def8e2c4c9342e2934c9914b98d8dc615d28cc6a0afc5605b6928e14"
+  },
+  {
+    "assetId": "dumbbell-romanian-deadlift-v1",
+    "file": "exercises/dumbbell-romanian-deadlift.glb",
+    "status": "needs-review",
+    "bytes": 646076,
+    "sha256": "5109a49a3b666b2628a4c9aee0b922c370ce5625679e68a67f598e4fd8ec0447"
+  },
+  {
+    "assetId": "dumbbell-romanian-deadlift-thumbnail-v1",
+    "file": "thumbnails/dumbbell-romanian-deadlift.png",
+    "status": "needs-review",
+    "bytes": 22829,
+    "sha256": "e473800529392b7afd6469ca0aaade58d31f6dc6b6c2335e76611a7114bbb318"
+  },
+  {
+    "assetId": "reverse-lunge-v1",
+    "file": "exercises/reverse-lunge.glb",
+    "status": "needs-review",
+    "bytes": 641808,
+    "sha256": "37d660a3ce2a27733b77dfe348873eca6a2121fa6bfaa32f3dc8f9f78141637a"
+  },
+  {
+    "assetId": "reverse-lunge-thumbnail-v1",
+    "file": "thumbnails/reverse-lunge.png",
+    "status": "needs-review",
+    "bytes": 21181,
+    "sha256": "98eae505cc876f52f6f1f42a630e4f58925f3dc95419cd77f3006ef9bf428082"
+  },
+  {
+    "assetId": "standing-calf-raise-v1",
+    "file": "exercises/standing-calf-raise.glb",
+    "status": "needs-review",
+    "bytes": 641992,
+    "sha256": "c9b41a083fdb1244d24e865fadd5e19224a1b3319dde52903ca5357ad6357ab7"
+  },
+  {
+    "assetId": "standing-calf-raise-thumbnail-v1",
+    "file": "thumbnails/standing-calf-raise.png",
+    "status": "needs-review",
+    "bytes": 21348,
+    "sha256": "67a2d4f6ea44e393d3e119610395aebc10d07f393067b88fab905a1724dfb6d8"
+  },
+  {
+    "assetId": "dumbbell-front-raise-v1",
+    "file": "exercises/dumbbell-front-raise.glb",
+    "status": "needs-review",
+    "bytes": 629288,
+    "sha256": "5f7e45f5e0b635fadbfeec8907b51eb73a86c343326f3e5cb0c0e02fccde06d5"
+  },
+  {
+    "assetId": "dumbbell-front-raise-thumbnail-v1",
+    "file": "thumbnails/dumbbell-front-raise.png",
+    "status": "needs-review",
+    "bytes": 20974,
+    "sha256": "1a0d80e98e7f396200813603c5e3bc51308a67b3883d6abbd74c7765e955770c"
+  },
+  {
+    "assetId": "bent-over-dumbbell-row-v1",
+    "file": "exercises/bent-over-dumbbell-row.glb",
+    "status": "needs-review",
+    "bytes": 646076,
+    "sha256": "5aa36f72be74dc5513ad2723eb3d970de180bc3d18a5ce806005a0c19b208764"
+  },
+  {
+    "assetId": "bent-over-dumbbell-row-thumbnail-v1",
+    "file": "thumbnails/bent-over-dumbbell-row.png",
+    "status": "needs-review",
+    "bytes": 27131,
+    "sha256": "4dff5c845b39d8a4374bcb2e75a671c8e5f1e2bb788800043d425559fedb043a"
+  },
+  {
+    "assetId": "glute-bridge-v1",
+    "file": "exercises/glute-bridge.glb",
+    "status": "needs-review",
+    "bytes": 631100,
+    "sha256": "cfe5b79282955a8bd49aa9233890986435cc5ca04745ab1dd3bddc56c581d208"
+  },
+  {
+    "assetId": "glute-bridge-thumbnail-v1",
+    "file": "thumbnails/glute-bridge.png",
+    "status": "needs-review",
+    "bytes": 23545,
+    "sha256": "b4f752d75a94dd96eb9ca4215c7228a3009346361ff6710d6461ec026d8820fe"
+  },
+  {
+    "assetId": "bird-dog-v1",
+    "file": "exercises/bird-dog.glb",
+    "status": "needs-review",
+    "bytes": 641808,
+    "sha256": "1be835a6ac79a6992fcc188276f236d7b7f192e6c8203bf7eb1c1c1eccf3d1bf"
+  },
+  {
+    "assetId": "bird-dog-thumbnail-v1",
+    "file": "thumbnails/bird-dog.png",
+    "status": "needs-review",
+    "bytes": 15941,
+    "sha256": "98c4c878356a6195cef0c6cbbd5118129f1f00eb33dbaf28bac6b40337a93a5a"
+  },
+  {
+    "assetId": "dead-bug-v1",
+    "file": "exercises/dead-bug.glb",
+    "status": "needs-review",
+    "bytes": 641800,
+    "sha256": "1d2834871515e4f481a397f75c613c4b84f434eac1855008d51eabf5687b5fb1"
+  },
+  {
+    "assetId": "dead-bug-thumbnail-v1",
+    "file": "thumbnails/dead-bug.png",
+    "status": "needs-review",
+    "bytes": 17742,
+    "sha256": "470e29a8b0fdbba245ebe797468f74a854f89ef1ababe39c402bff8f3e1944ee"
+  },
+  {
+    "assetId": "side-lying-hip-abduction-v1",
+    "file": "exercises/side-lying-hip-abduction.glb",
+    "status": "needs-review",
+    "bytes": 635340,
+    "sha256": "908b1ae11f4b446558d604cfd77c43b481964155ceed900962a32b59c2d50b3a"
+  },
+  {
+    "assetId": "side-lying-hip-abduction-thumbnail-v1",
+    "file": "thumbnails/side-lying-hip-abduction.png",
+    "status": "needs-review",
+    "bytes": 19036,
+    "sha256": "92879adfaba3427829311d3c7e7bea983aee913e56293fe0f5f9dff2c168c805"
+  },
+  {
+    "assetId": "split-squat-v1",
+    "file": "exercises/split-squat.glb",
+    "status": "needs-review",
+    "bytes": 641808,
+    "sha256": "e12ca471b6eefcfa054295e3f41213ac8c5565c4427ba0943cc03419de535952"
+  },
+  {
+    "assetId": "split-squat-thumbnail-v1",
+    "file": "thumbnails/split-squat.png",
+    "status": "needs-review",
+    "bytes": 22002,
+    "sha256": "0b351c026d57c22c6f786fabd4a6d78e5cee9b77cfd1dd2b01e06d52ea03f1d3"
+  },
+  {
+    "assetId": "lateral-lunge-v1",
+    "file": "exercises/lateral-lunge.glb",
+    "status": "needs-review",
+    "bytes": 641804,
+    "sha256": "6dbb983b29ddeedac1d2897b11918c9a97c2b2481cb3075b617be20e44df3111"
+  },
+  {
+    "assetId": "lateral-lunge-thumbnail-v1",
+    "file": "thumbnails/lateral-lunge.png",
+    "status": "needs-review",
+    "bytes": 24623,
+    "sha256": "a545b6f2719b0d0d9f2937138f9517ab6fe775864adc0f535abf707fc81d3bb1"
+  },
+  {
+    "assetId": "forearm-plank-v1",
+    "file": "exercises/forearm-plank.glb",
+    "status": "needs-review",
+    "bytes": 633296,
+    "sha256": "53a62fcf59f0bbb8a416f329d22c3b00e26c55be5374e77e73b7bad055c67e84"
+  },
+  {
+    "assetId": "forearm-plank-thumbnail-v1",
+    "file": "thumbnails/forearm-plank.png",
+    "status": "needs-review",
+    "bytes": 17863,
+    "sha256": "3b5d77e935a47e6afbd8894838af1d1877628645c5aa783c4938e12e114c8cb8"
+  },
+  {
+    "assetId": "side-plank-v1",
+    "file": "exercises/side-plank.glb",
+    "status": "needs-review",
+    "bytes": 641868,
+    "sha256": "4dfc03975511ba96a188dd152c3d9b50a7608ec4d57d18c9d891fdd48dd80dd9"
+  },
+  {
+    "assetId": "side-plank-thumbnail-v1",
+    "file": "thumbnails/side-plank.png",
+    "status": "needs-review",
+    "bytes": 21669,
+    "sha256": "8864fef69c1b248a794390a6aef51f32bad2e8ea0c22ee9fb76008b6bcc59c48"
+  },
+  {
+    "assetId": "quadruped-hip-extension-v1",
+    "file": "exercises/quadruped-hip-extension.glb",
+    "status": "needs-review",
+    "bytes": 641808,
+    "sha256": "222be17bc03c4742a99cca68aef059dc999106747ca72b639a56a478f3b9f6fa"
+  },
+  {
+    "assetId": "quadruped-hip-extension-thumbnail-v1",
+    "file": "thumbnails/quadruped-hip-extension.png",
+    "status": "needs-review",
+    "bytes": 20906,
+    "sha256": "efd62e98f7a87d9b8d91324dac3c4a5f62a530e923ca9f6598ebdcef7ac43197"
+  },
+  {
+    "assetId": "fire-hydrant-v1",
+    "file": "exercises/fire-hydrant.glb",
+    "status": "needs-review",
+    "bytes": 641808,
+    "sha256": "a25e488ee30a3ca8ff785d4ae756fe76035ab9c19050b081d574d3062e115435"
+  },
+  {
+    "assetId": "fire-hydrant-thumbnail-v1",
+    "file": "thumbnails/fire-hydrant.png",
+    "status": "needs-review",
+    "bytes": 22818,
+    "sha256": "4f4b98fd0c6ca4d477b78a664bb5062559e34df9523ed5e65dc89a8d6e7e8a9b"
+  },
+  {
+    "assetId": "prone-hamstring-curl-v1",
+    "file": "exercises/prone-hamstring-curl.glb",
+    "status": "needs-review",
+    "bytes": 624568,
+    "sha256": "c7b71b630974134a0770196536380e6e74ee285157687fd3cc4dc4f2cedd4529"
+  },
+  {
+    "assetId": "prone-hamstring-curl-thumbnail-v1",
+    "file": "thumbnails/prone-hamstring-curl.png",
+    "status": "needs-review",
+    "bytes": 14244,
+    "sha256": "da6c6c0575e2828c9b0e4299f1befe13b478332d49bcd261da6a15f488414989"
+  },
+  {
+    "assetId": "supine-heel-slide-v1",
+    "file": "exercises/supine-heel-slide.glb",
+    "status": "needs-review",
+    "bytes": 628872,
+    "sha256": "933f07e9af352873f4b89944b9608c5deafbfaf58758c551a8b58a69ad0a0360"
+  },
+  {
+    "assetId": "supine-heel-slide-thumbnail-v1",
+    "file": "thumbnails/supine-heel-slide.png",
+    "status": "needs-review",
+    "bytes": 17959,
+    "sha256": "fe280425a86484c83b62e768bda6dff57ff642bee4781985c2e79b0ede9967c3"
+  },
+  {
+    "assetId": "side-lying-clamshell-v1",
+    "file": "exercises/side-lying-clamshell.glb",
+    "status": "needs-review",
+    "bytes": 641804,
+    "sha256": "72d3e6fc0c214a101825e8f4c6acd15f8aca9ac3945fbcd14cd04bdc4231b0df"
+  },
+  {
+    "assetId": "side-lying-clamshell-thumbnail-v1",
+    "file": "thumbnails/side-lying-clamshell.png",
+    "status": "needs-review",
+    "bytes": 21465,
+    "sha256": "b4c4eabffc84dadacaefb0a305e7b3ec20389db474df0f01516d589dbfd2116b"
+  },
+  {
+    "assetId": "reverse-crunch-v1",
+    "file": "exercises/reverse-crunch.glb",
+    "status": "needs-review",
+    "bytes": 633252,
+    "sha256": "f0d6146cdf94849f176221e8c86acd657c5273e2471f6fccee51706713a87183"
+  },
+  {
+    "assetId": "reverse-crunch-thumbnail-v1",
+    "file": "thumbnails/reverse-crunch.png",
+    "status": "needs-review",
+    "bytes": 23805,
+    "sha256": "24ff8179014ab68e887bc1373e7ce0c54053463dd3abb17328ef5da0f871e623"
+  },
+  {
+    "assetId": "standing-hip-extension-v1",
+    "file": "exercises/standing-hip-extension.glb",
+    "status": "needs-review",
+    "bytes": 641808,
+    "sha256": "5a7df38d047a4f30d8b55fc454e6e80668899f24a83ca0829d8b4350c779873d"
+  },
+  {
+    "assetId": "standing-hip-extension-thumbnail-v1",
+    "file": "thumbnails/standing-hip-extension.png",
+    "status": "needs-review",
+    "bytes": 21999,
+    "sha256": "727696cf72d3a9c3bce8ff20e6f785542f92fbf89e650e37ce719d7f1b0507e0"
+  },
+  {
+    "assetId": "cat-cow-v1",
+    "file": "exercises/cat-cow.glb",
+    "status": "needs-review",
+    "bytes": 648332,
+    "sha256": "bf2e74db53d8873f846024f718c786c3fa75b74c0f30665fa9b253135d4a078e"
+  },
+  {
+    "assetId": "cat-cow-thumbnail-v1",
+    "file": "thumbnails/cat-cow.png",
+    "status": "needs-review",
+    "bytes": 21878,
+    "sha256": "9dd98971d0d941eedd0f3a91604d4dc7365ef203fc1d345be52861939a7e823e"
+  },
+  {
+    "assetId": "standing-hip-abduction-v1",
+    "file": "exercises/standing-hip-abduction.glb",
+    "status": "needs-review",
+    "bytes": 641808,
+    "sha256": "8ae035a5fe51505dd5f019fe04dba4187c0a78f1cb8d6fcd2e241f3f94eabc5e"
+  },
+  {
+    "assetId": "standing-hip-abduction-thumbnail-v1",
+    "file": "thumbnails/standing-hip-abduction.png",
+    "status": "needs-review",
+    "bytes": 23234,
+    "sha256": "248411583ae3608a1306cbf0eaa700b96b357acff72977db26d65bb97e267c14"
+  },
+  {
+    "assetId": "standing-hip-flexion-v1",
+    "file": "exercises/standing-hip-flexion.glb",
+    "status": "needs-review",
+    "bytes": 641808,
+    "sha256": "37e3a1eb7e4f531b1598ea3e11d488b6977b619138b2e7404e974ad05707c9c1"
+  },
+  {
+    "assetId": "standing-hip-flexion-thumbnail-v1",
+    "file": "thumbnails/standing-hip-flexion.png",
+    "status": "needs-review",
+    "bytes": 22971,
+    "sha256": "d61edb2d1fa1b0e3b4a84c6e16ecf09644887a8f6af9c3fe54432e308e655079"
+  },
+  {
+    "assetId": "straight-leg-raise-v1",
+    "file": "exercises/straight-leg-raise.glb",
+    "status": "needs-review",
+    "bytes": 628872,
+    "sha256": "0c224fcf3e754f48e35800d2772ce891c1c6cbb89c015dffc1a597fe6b23715d"
+  },
+  {
+    "assetId": "straight-leg-raise-thumbnail-v1",
+    "file": "thumbnails/straight-leg-raise.png",
+    "status": "needs-review",
+    "bytes": 17940,
+    "sha256": "936cfbb0cfbe736f862ae11e493f8d34c70122ab9cf82c49ca70613228fa2647"
+  },
+  {
+    "assetId": "supine-pelvic-tilt-v1",
+    "file": "exercises/supine-pelvic-tilt.glb",
+    "status": "needs-review",
+    "bytes": 633252,
+    "sha256": "42874192229b750b787e0d39c44c674f5f879bbc6a5f8172cd63244ddd03b30d"
+  },
+  {
+    "assetId": "supine-pelvic-tilt-thumbnail-v1",
+    "file": "thumbnails/supine-pelvic-tilt.png",
+    "status": "needs-review",
+    "bytes": 22354,
+    "sha256": "33686482a0ee0a58fd43217589bd3887503bc73ee1f30111e7ecbc2ba9f2bc67"
+  },
+  {
+    "assetId": "supine-trunk-rotation-v1",
+    "file": "exercises/supine-trunk-rotation.glb",
+    "status": "needs-review",
+    "bytes": 631140,
+    "sha256": "d04c3386fd1165eed4f90101686ac4397e7ca58094549949d8b57195993301d9"
+  },
+  {
+    "assetId": "supine-trunk-rotation-thumbnail-v1",
+    "file": "thumbnails/supine-trunk-rotation.png",
+    "status": "needs-review",
+    "bytes": 19271,
+    "sha256": "92c7cac3bd2db69dc99c2507c5c75a18947ae66c64dd83062d26d04675b05de6"
+  },
+  {
+    "assetId": "thoracic-open-book-v1",
+    "file": "exercises/thoracic-open-book.glb",
+    "status": "needs-review",
+    "bytes": 646112,
+    "sha256": "b6a55d1e9f97a7facb1ea0626e69aeef69a6829adeca004f90e973977392074f"
+  },
+  {
+    "assetId": "thoracic-open-book-thumbnail-v1",
+    "file": "thumbnails/thoracic-open-book.png",
+    "status": "needs-review",
+    "bytes": 23928,
+    "sha256": "df97f6220fa1e4e5f913cb9b1c8ff3005a0a721036aaf71b595f557ffee214c1"
+  },
+  {
+    "assetId": "quadruped-thoracic-rotation-v1",
+    "file": "exercises/quadruped-thoracic-rotation.glb",
+    "status": "needs-review",
+    "bytes": 646116,
+    "sha256": "117a18c877a1641ddc94de4b5ee4d7fc1870e67bc653e70d0dc4e98380ddfb0a"
+  },
+  {
+    "assetId": "quadruped-thoracic-rotation-thumbnail-v1",
+    "file": "thumbnails/quadruped-thoracic-rotation.png",
+    "status": "needs-review",
+    "bytes": 23685,
+    "sha256": "e71ef081f036e76d685f358d1f7bb69c4ddf6641d33fb4895893060a60673948"
+  },
+  {
+    "assetId": "seated-trunk-rotation-v1",
+    "file": "exercises/seated-trunk-rotation.glb",
+    "status": "needs-review",
+    "bytes": 650504,
+    "sha256": "733c911c11e5634e499887b33c7901283a9ab719099de56630714bef0f424029"
+  },
+  {
+    "assetId": "seated-trunk-rotation-thumbnail-v1",
+    "file": "thumbnails/seated-trunk-rotation.png",
+    "status": "needs-review",
+    "bytes": 28809,
+    "sha256": "05198a40735a7b070fe79b9a2da1e4a098c05673e7738db724d579817cd4d7ec"
+  },
+  {
+    "assetId": "curl-up-v1",
+    "file": "exercises/curl-up.glb",
+    "status": "needs-review",
+    "bytes": 646108,
+    "sha256": "86ac35a00d83aed746bbdc7ee28064488adcbfb47735789ebc91720abc1d68f7"
+  },
+  {
+    "assetId": "curl-up-thumbnail-v1",
+    "file": "thumbnails/curl-up.png",
+    "status": "needs-review",
+    "bytes": 23485,
+    "sha256": "5f30e20c2f80e5163db4adff9581cb9aba6dbbada67dae4fb540421c26ece0e7"
+  },
+  {
+    "assetId": "bicycle-crunch-v1",
+    "file": "exercises/bicycle-crunch.glb",
+    "status": "needs-review",
+    "bytes": 646108,
+    "sha256": "b7a7f0a33b976c9f3f893f901baa5512a2c9ac58dc51e1399d7115d26aa4c2b6"
+  },
+  {
+    "assetId": "bicycle-crunch-thumbnail-v1",
+    "file": "thumbnails/bicycle-crunch.png",
+    "status": "needs-review",
+    "bytes": 19168,
+    "sha256": "362e7fc512bb2e9e4cd79aab3ce506fb08009f6224099c25db0e401ee14a9741"
+  },
+  {
+    "assetId": "hollow-body-hold-v1",
+    "file": "exercises/hollow-body-hold.glb",
+    "status": "needs-review",
+    "bytes": 646148,
+    "sha256": "088dd9c4c24a8190646853c80380aa8d17a2e840a2781b6cbec4420cebff0746"
+  },
+  {
+    "assetId": "hollow-body-hold-thumbnail-v1",
+    "file": "thumbnails/hollow-body-hold.png",
+    "status": "needs-review",
+    "bytes": 16063,
+    "sha256": "9487c0201d2c6699506aeeedf164d5752991127d63fc871b81aecddf40123e19"
+  },
+  {
+    "assetId": "superman-v1",
+    "file": "exercises/superman.glb",
+    "status": "needs-review",
+    "bytes": 646108,
+    "sha256": "11b0b6b94e4f99a5bf19118eeab54ddb25759fcffb145fb23cf683f4311e951b"
+  },
+  {
+    "assetId": "superman-thumbnail-v1",
+    "file": "thumbnails/superman.png",
+    "status": "needs-review",
+    "bytes": 14850,
+    "sha256": "134c656c68a6bb6659bf5449f381d4412f788f67718e1090b4d766e3338902a6"
+  },
+  {
+    "assetId": "prone-hip-extension-v1",
+    "file": "exercises/prone-hip-extension.glb",
+    "status": "needs-review",
+    "bytes": 628872,
+    "sha256": "0cc528caa0eb8bc33ba718b24a95fa3208cb5cdc98f4457d2524fe4fab1483b2"
+  },
+  {
+    "assetId": "prone-hip-extension-thumbnail-v1",
+    "file": "thumbnails/prone-hip-extension.png",
+    "status": "needs-review",
+    "bytes": 15655,
+    "sha256": "d21228441e0248249a7b9942ddfa5eab825466b01c93ee88f96c7b63d508e261"
+  },
+  {
+    "assetId": "seated-knee-extension-v1",
+    "file": "exercises/seated-knee-extension.glb",
+    "status": "needs-review",
+    "bytes": 646196,
+    "sha256": "1de7ae9154af03aefa9855ac6ab11c861f74275f94d3c1fc6c2dc29f5920503c"
+  },
+  {
+    "assetId": "seated-knee-extension-thumbnail-v1",
+    "file": "thumbnails/seated-knee-extension.png",
+    "status": "needs-review",
+    "bytes": 27407,
+    "sha256": "0a96afc3d5958131617398d1f821cea8fefde7e0cc77adb823f5fd5bf58caf25"
+  },
+  {
+    "assetId": "standing-hamstring-stretch-v1",
+    "file": "exercises/standing-hamstring-stretch.glb",
+    "status": "needs-review",
+    "bytes": 641848,
+    "sha256": "487bd8fdeb7e10c5a8f728ab7092a2d1f03f3ad8eedf4e5814f5c10d29e67870"
+  },
+  {
+    "assetId": "standing-hamstring-stretch-thumbnail-v1",
+    "file": "thumbnails/standing-hamstring-stretch.png",
+    "status": "needs-review",
+    "bytes": 25765,
+    "sha256": "e628c28d9f4f3757fa58a4471b6555437c55ca2455d0a640e80a9e161ae626a7"
+  },
+  {
+    "assetId": "seated-calf-raise-v1",
+    "file": "exercises/seated-calf-raise.glb",
+    "status": "needs-review",
+    "bytes": 646340,
+    "sha256": "e5a891a322afc73262532b4d6b05c4ec57993f4020139d9a3a7d0a84d48fe08d"
+  },
+  {
+    "assetId": "seated-calf-raise-thumbnail-v1",
+    "file": "thumbnails/seated-calf-raise.png",
+    "status": "needs-review",
+    "bytes": 29596,
+    "sha256": "093f9b92689bd5c4a3e7d6f8bee5cfa50d43f014b6588e9c7399685e4ef754d8"
+  },
+  {
+    "assetId": "sit-to-stand-v1",
+    "file": "exercises/sit-to-stand.glb",
+    "status": "needs-review",
+    "bytes": 646192,
+    "sha256": "ea72107b5b9014f59e5309b423c2f25eee47f2cf4b510eda0ad07cf98488fc72"
+  },
+  {
+    "assetId": "sit-to-stand-thumbnail-v1",
+    "file": "thumbnails/sit-to-stand.png",
+    "status": "needs-review",
+    "bytes": 24715,
+    "sha256": "8713d116f24fecd4da7077108a0d1a36329f48dea187f6629f1436273655d6a3"
+  },
+  {
+    "assetId": "step-up-v1",
+    "file": "exercises/step-up.glb",
+    "status": "needs-review",
+    "bytes": 643300,
+    "sha256": "9e9bc2ac8e1664fa6fb17b645892253bdcac30b1535faf12cee5441dc8e7d7fb"
+  },
+  {
+    "assetId": "step-up-thumbnail-v1",
+    "file": "thumbnails/step-up.png",
+    "status": "needs-review",
+    "bytes": 21627,
+    "sha256": "221a939b00603ab41da9b0eebabd1a956800fef09d64a70e62337039c4630917"
+  },
+  {
+    "assetId": "bulgarian-split-squat-v1",
+    "file": "exercises/bulgarian-split-squat.glb",
+    "status": "needs-review",
+    "bytes": 646208,
+    "sha256": "e8ac5643e4854e2e1187e08a24fb7cff5ae3300ae65ab2db5bc3f3cad8c9e588"
+  },
+  {
+    "assetId": "bulgarian-split-squat-thumbnail-v1",
+    "file": "thumbnails/bulgarian-split-squat.png",
+    "status": "needs-review",
+    "bytes": 22640,
+    "sha256": "96d553ad0f7353038c43bf7f5bf92e60074658f87a9e48a0bc648cbd6322f2e0"
+  },
+  {
+    "assetId": "wall-sit-v1",
+    "file": "exercises/wall-sit.glb",
+    "status": "needs-review",
+    "bytes": 643340,
+    "sha256": "d6a2d90ba4cc50a7964cd02046746fb76b72472ba7dd1b7a1bfb2eb6b1b5ef70"
+  },
+  {
+    "assetId": "wall-sit-thumbnail-v1",
+    "file": "thumbnails/wall-sit.png",
+    "status": "needs-review",
+    "bytes": 21335,
+    "sha256": "5dedb1bb249bf9196ce76657f74f437915161b97a4b970f50082817f1fbe0424"
+  },
+  {
+    "assetId": "single-leg-glute-bridge-v1",
+    "file": "exercises/single-leg-glute-bridge.glb",
+    "status": "needs-review",
+    "bytes": 631100,
+    "sha256": "f4e4fde2f92e2d381a9069109e46ff7e051783e1ad4da51011802f1b75716184"
+  },
+  {
+    "assetId": "single-leg-glute-bridge-thumbnail-v1",
+    "file": "thumbnails/single-leg-glute-bridge.png",
+    "status": "needs-review",
+    "bytes": 24424,
+    "sha256": "86dff0c020a8230ad944b8a37729f5a353c6892c77bf0521d5c0ec9de3da1d1d"
+  },
+  {
+    "assetId": "single-leg-romanian-deadlift-v1",
+    "file": "exercises/single-leg-romanian-deadlift.glb",
+    "status": "needs-review",
+    "bytes": 641812,
+    "sha256": "5fe943c02749f4e48eac15e2e266dd9a31f01b7d084accddcbc35087b8a5b12a"
+  },
+  {
+    "assetId": "single-leg-romanian-deadlift-thumbnail-v1",
+    "file": "thumbnails/single-leg-romanian-deadlift.png",
+    "status": "needs-review",
+    "bytes": 22275,
+    "sha256": "99c657b469d355f4a0fbcfde47e8c6c8ff66b5ba5944ba1bf9b5fca6fa4504ae"
+  },
+  {
+    "assetId": "dumbbell-floor-press-v1",
+    "file": "exercises/dumbbell-floor-press.glb",
+    "status": "needs-review",
+    "bytes": 646068,
+    "sha256": "8627e865ccc6df38ee5fc168511c2085a92d4d145d83c433ea770ab5a01eb742"
+  },
+  {
+    "assetId": "dumbbell-floor-press-thumbnail-v1",
+    "file": "thumbnails/dumbbell-floor-press.png",
+    "status": "needs-review",
+    "bytes": 21063,
+    "sha256": "2293e556549e3085beadabed76b1a993cd419183325e39e60e20652eadd125a2"
+  },
+  {
+    "assetId": "dumbbell-chest-fly-v1",
+    "file": "exercises/dumbbell-chest-fly.glb",
+    "status": "needs-review",
+    "bytes": 646068,
+    "sha256": "64d52e3687eaa5fc941b433ba55fd55c085201cca7ddfba9b55843237d312e8f"
+  },
+  {
+    "assetId": "dumbbell-chest-fly-thumbnail-v1",
+    "file": "thumbnails/dumbbell-chest-fly.png",
+    "status": "needs-review",
+    "bytes": 17460,
+    "sha256": "3180b0a75c968588d83fea2959340caa97d3eceb7cb4ec225723b237290bc6c4"
+  },
+  {
+    "assetId": "dumbbell-triceps-kickback-v1",
+    "file": "exercises/dumbbell-triceps-kickback.glb",
+    "status": "needs-review",
+    "bytes": 646072,
+    "sha256": "e6aecfbdc5c770a013e439b42597f9c1d9b76d79fbfe4f7455f998b91ffc485c"
+  },
+  {
+    "assetId": "dumbbell-triceps-kickback-thumbnail-v1",
+    "file": "thumbnails/dumbbell-triceps-kickback.png",
+    "status": "needs-review",
+    "bytes": 25956,
+    "sha256": "74108ed2837bb3c5a4a6bd7362d2ead08fa74cb272429a36a4b0aaa5858f2bb2"
+  },
+  {
+    "assetId": "bench-v1",
+    "file": "equipment/bench.glb",
+    "status": "needs-review",
+    "bytes": 4548,
+    "sha256": "7ab42ca98cec3383f5c52cfcec454ed14438932e366f5430f6573c74e50138a7"
+  },
+  {
+    "assetId": "box-v1",
+    "file": "equipment/box.glb",
+    "status": "needs-review",
+    "bytes": 1660,
+    "sha256": "dc63af4571e123e270648c2d6c77750f48411225a85bb1b2bd3e01ba100317db"
+  },
+  {
+    "assetId": "wall-v1",
+    "file": "equipment/wall.glb",
+    "status": "needs-review",
+    "bytes": 1656,
+    "sha256": "0414381dcfcba343d6d6e7b13c0def1ab0c0f0dfa6067371dda411b1a6744774"
   }
 ]

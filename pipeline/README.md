@@ -1,6 +1,6 @@
-# Original character and three-exercise workflow
+# Original character and fifty-exercise workflow
 
-The authoritative editable source is `character/build.py`: original anatomical surface recipe, v1 rig, skinning and equipment; `character/motions.py` holds reusable motion math and three clips. Python 3.9+ standard library is enough to regenerate the character, equipment and three exercise GLBs; no motion-capture package, motion pack or Blender is required for this authoring route.
+The authoritative editable source is `character/build.py`: original anatomical surface recipe, v1 rig, skinning and equipment; `character/motions.py` holds reusable motion math and dispatches 50 clips through standing, hold, quadruped, floor, mobility, seated, strength and frozen legacy families. Python 3.9+ standard library is enough to regenerate the character, equipment and all registered exercise GLBs; no motion-capture package, motion pack or Blender is required for this authoring route.
 
 ```bash
 python3 pipeline/character/build.py
@@ -33,3 +33,19 @@ blender --background --python pipeline/character/export_blender.py
 This imports the generated squat and saves an editable `.blend`; the bridge was not executed here because Blender is unavailable. Register its generated source file in the provenance inventory before checking it in. Do not silently publish regenerated or Blender-edited files without QA and visual review.
 
 See [character selection](../docs/architecture/character-selection.md) and [skeleton contract](../docs/architecture/skeleton.md).
+
+## Expanded motion and contact profiles
+
+`character/motion-profiles.json` is the shared authoring/export-QA inventory. It lists equipment reuse, stationary contacts, forefoot pivot markers, alternating support phases and rest-space skin-support patches. Fixed soles and palms retain the existing drift tolerances. A moving lunge foot is not incorrectly locked throughout its swing; the supporting foot is. Calf raises pivot around non-skeletal forefoot markers. Bird dog switches support hands/knees at half-cycle boundaries. Supine/side-lying clips use explicit back/arm support patches, not the entire initially grounded surface. Export QA separately checks floor penetration and maximum support gap for every clip.
+
+The canonical 18 joint names, geometry and weights are unchanged. Region definition 1.2.0 adds a broad anterior-hip label; original non-region animation/skin bytes are preserved. New two-bone IK transports the upper-limb orientation before elbow/knee bending to avoid artificial shortest-arc twist. Raised shoulders, simplified fingerless dumbbell grip, rigid forefoot pivots and floor contacts are stylized technical previews; no anatomical or clinical accuracy is inferred. Inspect every diagnostic sheet and exact hash before human approval. Unilateral lunge and hip-abduction clips demonstrate one side; they are not counted twice.
+
+## Holds and constrained movement
+
+Animation metadata optionally declares `kind: repetition | hold`; omitted legacy kinds remain repetitions. Forearm and side planks use an actual static `hold` clip, not artificial oscillation. Export QA rejects moving holds and static repetitions. Heel slides declare a supported trajectory rather than loosening contact tolerances. Clamshell feet retain their paired offset; cat-cow and reverse crunch require local spine/chest excursion. These constraints supplement, not replace, human deformation and motion review. The existing 13 GLBs remained byte-identical during milestone 25; milestone 50 intentionally updates only their region labels/extras and hash identities.
+
+## Physical support equipment
+
+`character/equipment-profiles.json` owns original meter-scaled cuboid definitions for bench, box and wall. Python writes compact standalone exports and profile-positioned instances inside exercise GLBs; no human rig or mesh is duplicated in standalone equipment files. `scripts/support-qa.mjs` checks embedded vertex geometry, dimensions and transforms against those definitions, tests actual skinned vertices against solid boxes, and requires selected support patches to lie near real faces. Elevated-contact bone planes and phased step transfers are checked separately. Deliberately corrupted exported fixtures exercise these boundaries. Existing 15 mm penetration and 35 mm support-gap engineering limits are unchanged; these tolerances are not physical or clinical accuracy claims.
+
+The milestone-50 catalog adds 25 real motions/holds, for 50 implemented IDs and 105 pending asset records. Diagnostic sheets fit both character motion and static equipment over all five phases; `preview.py <id>` can rerender selected registered IDs. The remaining 50 target IDs are recovery-plan entries only, never placeholders in the runtime catalog.

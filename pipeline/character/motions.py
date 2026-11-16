@@ -1,8 +1,12 @@
 """Original reusable quaternion motion clips; meters, Y-up, +Z forward."""
 import math
+import json
+from pathlib import Path
+from types import SimpleNamespace
 
 IDENTITY = (0, 0, 0, 1)
-EXERCISES = ('bodyweight-squat', 'push-up', 'dumbbell-biceps-curl')
+PROFILES = json.loads(Path(__file__).with_name('motion-profiles.json').read_text())
+EXERCISES = tuple(PROFILES)
 
 
 def add(a, b):
@@ -86,40 +90,96 @@ def forward(bones, pose):
     return world, rotations
 
 
+def axis_z(angle):
+    return (0, 0, math.sin(angle/2), math.cos(angle/2))
+
+
+def limb(bones, pose, start, target, pole, end_rotation=IDENTITY):
+    """Aim a canonical two-segment limb at a reachable world-space target."""
+    world, rotations = forward(bones, pose)
+    first = sub(bones[start+1][2], bones[start][2])
+    second = sub(bones[start+2][2], bones[start+1][2])
+    upper_length, lower_length = math.sqrt(dot(first, first)), math.sqrt(dot(second, second))
+    distance = math.sqrt(dot(sub(target, world[start]), sub(target, world[start])))
+    if not abs(upper_length-lower_length) < distance <= upper_length+lower_length+1e-8:
+        raise ValueError(f'Unreachable target for {bones[start][0]}: {distance}')
+    elbow = solve_chain(world[start], target, upper_length, lower_length, pole)
+    upper = align(first, sub(elbow, world[start]))
+    # Transport the upper orientation before bending the elbow/knee. Independent
+    # shortest-arc alignments can introduce a half-turn of artificial limb twist.
+    lower = multiply(align(rotate(second, upper), sub(target, elbow)), upper)
+    pose[start] = (None, multiply(inverse(rotations[bones[start][1]]), upper))
+    pose[start+1] = (None, multiply(inverse(upper), lower))
+    pose[start+2] = (None, multiply(inverse(lower), end_rotation))
+
+
+def planted_legs(bones, pose):
+    for start in (6, 9):
+        limb(bones, pose, start, bones[start+2][2], (0, 0, 1))
+
+
+def hanging_arms(bones, pose, raise_angle=0, lateral=False):
+    """World-space arm directions independent of a leaning trunk."""
+    for start, sign in ((12, 1), (15, -1)):
+        world, rotations = forward(bones, pose)
+        upper_direction = ((sign*math.sin(raise_angle), -math.cos(raise_angle), 0)
+                           if lateral else (sign*.06, -math.cos(raise_angle), math.sin(raise_angle)))
+        first = sub(bones[start+1][2], bones[start][2])
+        second = sub(bones[start+2][2], bones[start+1][2])
+        upper = align(first, upper_direction)
+        lower = align(second, upper_direction)
+        pose[start] = (None, multiply(inverse(rotations[bones[start][1]]), upper))
+        pose[start+1] = (None, multiply(inverse(upper), lower))
+        pose[start+2] = (None, IDENTITY)
+
+
+
+def _load_family(name):
+    """Load sibling authoring modules without mutating import search paths."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(name, Path(__file__).with_name(name+'.py'))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+_API = SimpleNamespace(
+    IDENTITY=IDENTITY,
+    add=add,
+    sub=sub,
+    scale=scale,
+    dot=dot,
+    unit=unit,
+    cross=cross,
+    multiply=multiply,
+    inverse=inverse,
+    rotate=rotate,
+    axis_x=axis_x,
+    align=align,
+    solve_chain=solve_chain,
+    forward=forward,
+    axis_z=axis_z,
+    limb=limb,
+    planted_legs=planted_legs,
+    hanging_arms=hanging_arms,
+)
+_FAMILIES = [_load_family(name) for name in (
+    'motion_legacy', 'motion_standing', 'motion_holds', 'motion_quadruped', 'motion_floor',
+    'motion_mobility', 'motion_seated', 'motion_strength'
+)]
+_REGISTRY = {}
+for family in _FAMILIES:
+    for exercise in family.EXERCISES:
+        if exercise in _REGISTRY:
+            raise ValueError(f'Duplicate authored motion: {exercise}')
+        _REGISTRY[exercise] = family.pose
+if set(_REGISTRY) != set(PROFILES):
+    raise ValueError('Authored motion families and QA profiles must match exactly')
+
+
 def motion_pose(bones, t, exercise, squat_pose):
-    amount = (1-math.cos(2*math.pi*t/4))/2
-    if exercise == 'bodyweight-squat':
-        return {i:(p,axis_x(a)) for i,(p,a) in squat_pose(t).items()}
-    if exercise == 'dumbbell-biceps-curl':
-        pose = {}
-        for start in (12,15):
-            # Keep upper arms close to the torso; elbow flexion is not shoulder swing.
-            sign = 1 if start == 12 else -1
-            rest = sub(bones[start+1][2],bones[start][2])
-            pose[start] = (None,multiply(align(rest,(sign*.10,-.278,0)),axis_x(-.08)))
-            pose[start+1] = (None,axis_x(-1.95*amount))
-            pose[start+2] = (None,IDENTITY)
-        return pose
-    if exercise != 'push-up':
-        raise ValueError(f'Unknown motion: {exercise}')
-    lean = 1.35+.16*amount
-    ankle = (0,.10,-1.13)
-    pelvis = add(ankle,rotate((0,.88,-.035),axis_x(lean)))
-    pose = {1:(pelvis,axis_x(lean))}
-    for foot in (8,11):
-        pose[foot] = (None,axis_x(-lean))
-    # Fixed ankle and wrist targets. Full-body pose is solved from the same rest rig.
-    targets = [(12,(.39,.045,.29),(1,0,-.5)),
-               (15,(-.39,.045,.29),(-1,0,-.5))]
-    for start,target,pole in targets:
-        world, rotations = forward(bones,pose)
-        first,second = sub(bones[start+1][2],bones[start][2]),sub(bones[start+2][2],bones[start+1][2])
-        elbow = solve_chain(world[start],target,math.sqrt(dot(first,first)),math.sqrt(dot(second,second)),pole)
-        parent = bones[start][1]
-        upper_world = align(first,sub(elbow,world[start]))
-        pose[start] = (None,multiply(inverse(rotations[parent]),upper_world))
-        lower_world = align(second,sub(target,elbow))
-        pose[start+1] = (None,multiply(inverse(upper_world),lower_world))
-        # Hands and soles stay in a fixed world orientation, not bent with the forearm/shin.
-        pose[start+2] = (None,multiply(inverse(lower_world),axis_x(-math.pi/2)))
-    return pose
+    try:
+        author = _REGISTRY[exercise]
+    except KeyError as error:
+        raise ValueError(f'Unknown motion: {exercise}') from error
+    return author(bones, t, exercise, _API, squat_pose)

@@ -132,6 +132,9 @@ function AnimatedViewer({
   }
   if (!Number.isFinite(speed) || speed <= 0 || speed > 4)
     return <p role="alert">Playback speed must be between 0 and 4.</p>;
+  const speedOptions = [...new Set([0.25, 0.5, 1, 1.5, 2, speed])].sort(
+    (a, b) => a - b,
+  );
   return (
     <>
       <div
@@ -160,7 +163,11 @@ function AnimatedViewer({
                 showMuscles={highlights}
                 muscles={exercise.muscles}
                 seek={seek}
-                onTimeline={(time, duration) => setTimeline({ time, duration })}
+                onTimeline={(time, duration) => {
+                  setTimeline({ time, duration });
+                  if (!repeating && duration > 0 && time >= duration)
+                    setPlaying(false);
+                }}
                 {...(exercise.camera.target
                   ? { cameraTarget: exercise.camera.target }
                   : {})}
@@ -184,12 +191,14 @@ function AnimatedViewer({
       {controls && (
         <div role="group" aria-label="Animation controls">
           <button
+            type="button"
             disabled={!ready || !!error}
             onClick={() => setPlaying(!playing)}
           >
             {playing ? 'Pause' : 'Play'}
           </button>{' '}
           <button
+            type="button"
             disabled={!ready || !!error}
             onClick={() => {
               setRestart((value) => value + 1);
@@ -198,6 +207,7 @@ function AnimatedViewer({
             Restart
           </button>{' '}
           <button
+            type="button"
             onClick={() => {
               setPreset(exercise.camera.preset);
               setResetCamera((value) => value + 1);
@@ -212,7 +222,7 @@ function AnimatedViewer({
               value={speed}
               onChange={(event) => setSpeed(Number(event.target.value))}
             >
-              {[0.25, 0.5, 1, 1.5, 2].map((value) => (
+              {speedOptions.map((value) => (
                 <option key={value} value={value}>
                   {value}×
                 </option>
@@ -242,48 +252,57 @@ function AnimatedViewer({
               colored.
             </p>
           )}
+          <fieldset disabled={!ready || !!error}>
+            <legend>Playback and camera</legend>
+            <label>
+              Timeline{' '}
+              <input
+                aria-label="Animation timeline"
+                type="range"
+                min={0}
+                max={timeline.duration}
+                step={1 / 30}
+                value={timeline.time}
+                onChange={(event) => inspectTime(Number(event.target.value))}
+              />
+            </label>
+            <output role="timer" aria-live="off" aria-label="Animation time">
+              {timeline.time.toFixed(3)} / {timeline.duration.toFixed(3)} s
+            </output>
+            <label>
+              Camera{' '}
+              <select
+                aria-label="Camera preset"
+                value={preset}
+                onChange={(event) =>
+                  setPreset(event.target.value as CameraPreset)
+                }
+              >
+                {(['front', 'side', 'back', 'three-quarter'] as const).map(
+                  (value) => (
+                    <option key={value} value={value}>
+                      {value}
+                    </option>
+                  ),
+                )}
+              </select>
+            </label>
+          </fieldset>
           {review && (
             <fieldset disabled={!ready || !!error}>
               <legend>Visual review</legend>
-              <label>
-                Timeline{' '}
-                <input
-                  aria-label="Animation timeline"
-                  type="range"
-                  min={0}
-                  max={timeline.duration}
-                  step={1 / 30}
-                  value={timeline.time}
-                  onChange={(event) => inspectTime(Number(event.target.value))}
-                />
-              </label>
-              <output aria-label="Animation time">
-                {timeline.time.toFixed(3)} / {timeline.duration.toFixed(3)} s
-              </output>
-              <button onClick={() => inspectTime(timeline.time - 1 / 30)}>
+              <button
+                type="button"
+                onClick={() => inspectTime(timeline.time - 1 / 30)}
+              >
                 Previous frame
               </button>
-              <button onClick={() => inspectTime(timeline.time + 1 / 30)}>
+              <button
+                type="button"
+                onClick={() => inspectTime(timeline.time + 1 / 30)}
+              >
                 Next frame
               </button>
-              <label>
-                Camera{' '}
-                <select
-                  aria-label="Camera preset"
-                  value={preset}
-                  onChange={(event) =>
-                    setPreset(event.target.value as CameraPreset)
-                  }
-                >
-                  {(['front', 'side', 'back', 'three-quarter'] as const).map(
-                    (value) => (
-                      <option key={value} value={value}>
-                        {value}
-                      </option>
-                    ),
-                  )}
-                </select>
-              </label>
               <label>
                 <input
                   type="checkbox"
@@ -300,10 +319,11 @@ function AnimatedViewer({
                 />
                 Ground grid
               </label>
-              <button onClick={() => setBookmark(timeline.time)}>
+              <button type="button" onClick={() => setBookmark(timeline.time)}>
                 Remember pose
               </button>
               <button
+                type="button"
                 disabled={bookmark === null}
                 onClick={() => bookmark !== null && inspectTime(bookmark)}
               >
@@ -337,7 +357,7 @@ export function ExerciseViewer(props: ExerciseViewerProps) {
       <AnimatedViewer
         {...props}
         exercise={exercise}
-        key={`${exercise.id}:${exercise.animation?.file ?? ''}:${props.assetBaseUrl ?? ''}`}
+        key={`${exercise.id}:${exercise.animation?.file ?? ''}:${exercise.animation?.clip ?? ''}:${props.assetBaseUrl ?? ''}`}
       />
     </section>
   );
