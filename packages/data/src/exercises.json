@@ -3163,5 +3163,437 @@
       "creator": "Kimorel contributors",
       "source": "Original manually authored upper-quarter-v2 educational motion with declared support and grip constraints; pending exact-asset human review."
     }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "barbell-back-squat",
+    "slug": "barbell-back-squat",
+    "name": "Barbell Back Squat",
+    "description": "A squat with one shared rigid bar held across the upper back.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "squat",
+    "bodyRegions": ["full-body"],
+    "equipment": ["barbell", "weight-plate"],
+    "difficulty": "intermediate",
+    "laterality": "bilateral",
+    "startingPosition": "Standing rear rack",
+    "muscles": {
+      "primary": ["quadriceps", "gluteus-maximus"],
+      "secondary": ["erector-spinae"]
+    },
+    "instructions": [
+      "Hold the shared bar across the upper back below the neck.",
+      "Bend the hips and knees while keeping the feet planted.",
+      "Return to standing with both grips steady."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "barbell-back-squat-v1",
+      "file": "exercises/barbell-back-squat.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel shared-rigid-bar motion, two-hand constraints and generated original equipment; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "barbell-front-squat",
+    "slug": "barbell-front-squat",
+    "name": "Barbell Front Squat",
+    "description": "An upright squat with the shared bar held in a front rack.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "squat",
+    "bodyRegions": ["full-body"],
+    "equipment": ["barbell", "weight-plate"],
+    "difficulty": "intermediate",
+    "laterality": "bilateral",
+    "startingPosition": "Standing front rack",
+    "muscles": {
+      "primary": ["quadriceps", "gluteus-maximus"],
+      "secondary": ["abdominals"]
+    },
+    "instructions": [
+      "Hold the bar in a front rack with the torso upright.",
+      "Bend the hips and knees while maintaining the front rack.",
+      "Return to standing with control."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "barbell-front-squat-v1",
+      "file": "exercises/barbell-front-squat.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel shared-rigid-bar motion, two-hand constraints and generated original equipment; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "barbell-conventional-deadlift",
+    "slug": "barbell-conventional-deadlift",
+    "name": "Barbell Conventional Deadlift",
+    "description": "A floor-to-standing pull with coordinated knee and hip extension.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "hinge",
+    "bodyRegions": ["full-body"],
+    "equipment": ["barbell", "weight-plate"],
+    "difficulty": "intermediate",
+    "laterality": "bilateral",
+    "startingPosition": "Standing bent to floor bar",
+    "muscles": {
+      "primary": ["gluteus-maximus", "hamstrings"],
+      "secondary": ["erector-spinae", "quadriceps"]
+    },
+    "instructions": [
+      "Set both hands on the bar with the plates on the floor.",
+      "Extend the hips and knees while keeping the bar path nearly vertical.",
+      "Lower the bar back to the floor with control."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "barbell-conventional-deadlift-v1",
+      "file": "exercises/barbell-conventional-deadlift.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel shared-rigid-bar motion, two-hand constraints and generated original equipment; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "barbell-good-morning",
+    "slug": "barbell-good-morning",
+    "name": "Barbell Good Morning",
+    "description": "A hip hinge with the shared bar held across the upper back.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "hinge",
+    "bodyRegions": ["full-body"],
+    "equipment": ["barbell", "weight-plate"],
+    "difficulty": "intermediate",
+    "laterality": "bilateral",
+    "startingPosition": "Standing rear rack",
+    "muscles": {
+      "primary": ["hamstrings", "gluteus-maximus"],
+      "secondary": ["erector-spinae"]
+    },
+    "instructions": [
+      "Hold the bar across the upper back with a slight knee bend.",
+      "Hinge at the hips without turning the movement into a deep squat.",
+      "Return the trunk to upright with control."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "barbell-good-morning-v1",
+      "file": "exercises/barbell-good-morning.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel shared-rigid-bar motion, two-hand constraints and generated original equipment; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "barbell-bench-press",
+    "slug": "barbell-bench-press",
+    "name": "Barbell Bench Press",
+    "description": "A two-hand shared-bar press on the supported flat bench.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "push",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["barbell", "weight-plate", "bench"],
+    "difficulty": "intermediate",
+    "laterality": "bilateral",
+    "startingPosition": "Supine on flat bench",
+    "muscles": {
+      "primary": ["pectoralis-major", "triceps"],
+      "secondary": ["deltoids"]
+    },
+    "instructions": [
+      "Lie on the bench with the head and back supported and feet on the floor.",
+      "Lower the shared bar toward the chest with both hands steady.",
+      "Press the bar away from the chest with control."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "barbell-bench-press-v1",
+      "file": "exercises/barbell-bench-press.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.6, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel shared-rigid-bar motion, two-hand constraints and generated original equipment; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "barbell-overhead-press",
+    "slug": "barbell-overhead-press",
+    "name": "Barbell Overhead Press",
+    "description": "A standing press with a bar path that clears the head.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "push",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["barbell", "weight-plate"],
+    "difficulty": "intermediate",
+    "laterality": "bilateral",
+    "startingPosition": "Standing front rack",
+    "muscles": {
+      "primary": ["deltoids", "triceps"],
+      "secondary": ["upper-back"]
+    },
+    "instructions": [
+      "Begin with the bar in front of the shoulders.",
+      "Press upward, clearing the head before bringing the bar overhead.",
+      "Return to the front rack with control."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "barbell-overhead-press-v1",
+      "file": "exercises/barbell-overhead-press.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel shared-rigid-bar motion, two-hand constraints and generated original equipment; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "barbell-bent-over-row",
+    "slug": "barbell-bent-over-row",
+    "name": "Barbell Bent-over Row",
+    "description": "A shared-bar rowing movement with the hip hinge held steady.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "pull",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["barbell", "weight-plate"],
+    "difficulty": "intermediate",
+    "laterality": "bilateral",
+    "startingPosition": "Standing hip hinge",
+    "muscles": {
+      "primary": ["latissimus-dorsi", "upper-back"],
+      "secondary": ["biceps"]
+    },
+    "instructions": [
+      "Maintain a steady hip hinge with the bar below the shoulders.",
+      "Pull the bar toward the lower torso by bending the elbows.",
+      "Extend the elbows to lower the bar without standing up."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "barbell-bent-over-row-v1",
+      "file": "exercises/barbell-bent-over-row.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel shared-rigid-bar motion, two-hand constraints and generated original equipment; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "hip-thrust",
+    "slug": "hip-thrust",
+    "name": "Barbell Hip Thrust",
+    "description": "Hip extension with upper-back bench support and a padded shared bar across the hips.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "hinge",
+    "bodyRegions": ["lower-body"],
+    "equipment": ["barbell", "weight-plate", "bench"],
+    "difficulty": "intermediate",
+    "laterality": "bilateral",
+    "startingPosition": "Upper back supported on bench",
+    "muscles": {
+      "primary": ["gluteus-maximus"],
+      "secondary": ["hamstrings"]
+    },
+    "instructions": [
+      "Support the upper back on the bench with feet planted and the padded bar across the hips.",
+      "Extend the hips to raise the pelvis while keeping upper-back support.",
+      "Lower the hips with control while the pad stays centered."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "hip-thrust-v1",
+      "file": "exercises/hip-thrust.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.6, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel shared-rigid-bar motion, two-hand constraints and generated original equipment; pending exact-asset human review."
+    }
   }
 ]

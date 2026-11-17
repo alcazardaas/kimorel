@@ -17,6 +17,9 @@ motion_pose = motions.motion_pose
 _props_spec = importlib.util.spec_from_file_location('kimorel_props', Path(__file__).with_name('props.py'))
 props = importlib.util.module_from_spec(_props_spec)
 _props_spec.loader.exec_module(props)
+_bar_spec = importlib.util.spec_from_file_location('kimorel_barbell', Path(__file__).with_name('barbell.py'))
+barbell = importlib.util.module_from_spec(_bar_spec)
+_bar_spec.loader.exec_module(barbell)
 
 ROOT = Path(__file__).resolve().parents[2]
 REGION_DEFINITION = json.loads((ROOT/'packages/schemas/src/muscle-regions.json').read_text())
@@ -345,6 +348,36 @@ def build(output, animated=True, exercise="bodyweight-squat", geometry=None, equ
             node_index = len(document['nodes'])
             document['nodes'].append({'name':'equipment_'+kind,'mesh':mesh_index,'translation':instance['translation'],'extras':{'kimorelRigidEquipment':kind}})
             document['scenes'][0]['nodes'].append(node_index)
+    if motions.PROFILES.get(exercise,{}).get('sharedBar'):
+        bv,bn,bi=barbell.geometry()
+        material=len(document['materials'])
+        document['materials'].append({'name':'barbell-metal','pbrMetallicRoughness':{'baseColorFactor':[.12,.15,.18,1],'metallicFactor':.6,'roughnessFactor':.45}})
+        mesh_index=len(document['meshes'])
+        document['meshes'].append({'name':'barbell','primitives':[{'attributes':{'POSITION':accessor(bv,5126,'VEC3'),'NORMAL':accessor(bn,5126,'VEC3')},'indices':accessor(bi,5125,'SCALAR'),'material':material}]})
+        bar_node=len(document['nodes'])
+        initial=motions.equipment_pose(bones,0,exercise,pose)['barbell']
+        document['nodes'].append({'name':'barbell','mesh':mesh_index,**initial,'children':[]})
+        document['scenes'][0]['nodes'].append(bar_node)
+        for hand,sign in ((14,1),(17,-1)):
+            hand_marker=len(document['nodes'])
+            document['nodes'].append({'name':bones[hand][0]+'_bar_grip','translation':[sign*.02,-.055,.005]})
+            document['nodes'][hand].setdefault('children',[]).append(hand_marker)
+            marker=len(document['nodes'])
+            document['nodes'].append({'name':('left' if sign==1 else 'right')+'_bar_grip','translation':[sign*motions.PROFILES[exercise].get('barGripSpan',barbell.GRIP_SPAN),0,0]})
+            document['nodes'][bar_node]['children'].append(marker)
+        if motions.PROFILES[exercise].get('barPad'):
+            pv,pn,pi=barbell.geometry(barbell.PAD)
+            pad_material=len(document['materials'])
+            document['materials'].append({'name':'hip-pad','pbrMetallicRoughness':{'baseColorFactor':[.25,.28,.27,1],'metallicFactor':0,'roughnessFactor':.95}})
+            mesh_index=len(document['meshes'])
+            document['meshes'].append({'name':'barbell-pad','primitives':[{'attributes':{'POSITION':accessor(pv,5126,'VEC3'),'NORMAL':accessor(pn,5126,'VEC3')},'indices':accessor(pi,5125,'SCALAR'),'material':pad_material}]})
+            pad_node=len(document['nodes'])
+            document['nodes'].append({'name':'barbell_pad','mesh':mesh_index})
+            document['nodes'][bar_node]['children'].append(pad_node)
+        if animated:
+            bar_poses=[motions.equipment_pose(bones,t,exercise,pose)['barbell'] for t in times]
+            track(bar_node,'translation',[p['translation'] for p in bar_poses],'VEC3')
+            track(bar_node,'rotation',[p['rotation'] for p in bar_poses],'VEC4')
     document['buffers'] = [{'byteLength':len(binary)}]
     encoded = json.dumps(document,separators=(',',':')).encode()
     encoded += b' '*((-len(encoded))%4)
@@ -356,8 +389,8 @@ def build(output, animated=True, exercise="bodyweight-squat", geometry=None, equ
 
 
 
-def build_prop(output, kind):
-    positions, normals, indices = props.geometry(kind)
+def build_prop(output, kind, geometry=None):
+    positions, normals, indices = geometry or props.geometry(kind)
     binary = bytearray()
     views, accessors = [], []
     def add(values, component, width, shape):
@@ -387,5 +420,7 @@ if __name__=='__main__':
     build(ROOT/'assets/equipment/dumbbell.glb',False,geometry=geometry,equipment_only=True)
     for kind in props.DEFINITIONS:
         build_prop(ROOT/f'assets/equipment/{kind}.glb', kind)
+    build_prop(ROOT/'assets/equipment/barbell.glb','barbell',barbell.geometry())
+    build_prop(ROOT/'assets/equipment/barbell-pad.glb','barbell-pad',barbell.geometry(barbell.PAD))
     for exercise in motions.EXERCISES:
         build(ROOT/f'assets/exercises/{exercise}.glb',exercise=exercise,geometry=geometry)

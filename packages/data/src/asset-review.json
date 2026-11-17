@@ -880,5 +880,131 @@
     "status": "needs-review",
     "bytes": 5284,
     "sha256": "fc259c6279632eddb70a3fbb440a1df717a900d2bd90105293aef1db06120ca7"
+  },
+  {
+    "assetId": "barbell-back-squat-v1",
+    "file": "exercises/barbell-back-squat.glb",
+    "status": "needs-review",
+    "bytes": 654744,
+    "sha256": "accbdd668613c4263d8f75ac6e5dee78682e038267842483f2abf1932817fbb6"
+  },
+  {
+    "assetId": "barbell-back-squat-thumbnail-v1",
+    "file": "thumbnails/barbell-back-squat.png",
+    "status": "needs-review",
+    "bytes": 22213,
+    "sha256": "46853716962b3a37804d27a862b5063394d8f1bd36d35dd1779e162a2a47ce08"
+  },
+  {
+    "assetId": "barbell-front-squat-v1",
+    "file": "exercises/barbell-front-squat.glb",
+    "status": "needs-review",
+    "bytes": 654768,
+    "sha256": "b1b0d959ed7414ef0f965a0408e8aeb2705bca66e79b6c787dcda8bb3bc51882"
+  },
+  {
+    "assetId": "barbell-front-squat-thumbnail-v1",
+    "file": "thumbnails/barbell-front-squat.png",
+    "status": "needs-review",
+    "bytes": 21956,
+    "sha256": "c53cc18018ce0577f748dceec04c0be0250018ddfc606a11b4f76692bd2dd6d9"
+  },
+  {
+    "assetId": "barbell-conventional-deadlift-v1",
+    "file": "exercises/barbell-conventional-deadlift.glb",
+    "status": "needs-review",
+    "bytes": 654732,
+    "sha256": "6f76f07cce028d93f05e7db033ef9e66f91c5f544d92f79e76ad44df3b43f829"
+  },
+  {
+    "assetId": "barbell-conventional-deadlift-thumbnail-v1",
+    "file": "thumbnails/barbell-conventional-deadlift.png",
+    "status": "needs-review",
+    "bytes": 23695,
+    "sha256": "8dac0731bda98a2a257901b8b662cfa5fbfd9efbea8488a95cf81d24d485265d"
+  },
+  {
+    "assetId": "barbell-good-morning-v1",
+    "file": "exercises/barbell-good-morning.glb",
+    "status": "needs-review",
+    "bytes": 654752,
+    "sha256": "1a9fa52ac280e85caafa85a5c3b8fd2d0fac97aeff70462080dc4039ecd22c0e"
+  },
+  {
+    "assetId": "barbell-good-morning-thumbnail-v1",
+    "file": "thumbnails/barbell-good-morning.png",
+    "status": "needs-review",
+    "bytes": 22676,
+    "sha256": "16a43faa9fb1c9099cb1603b97185270f59e95bc124e1080a6f196da74e8c75f"
+  },
+  {
+    "assetId": "barbell-bench-press-v1",
+    "file": "exercises/barbell-bench-press.glb",
+    "status": "needs-review",
+    "bytes": 659820,
+    "sha256": "c4de31c40941b9c756ba49bbd6abcdf63170b3825dac44415d1266b1ffb6dd5f"
+  },
+  {
+    "assetId": "barbell-bench-press-thumbnail-v1",
+    "file": "thumbnails/barbell-bench-press.png",
+    "status": "needs-review",
+    "bytes": 19039,
+    "sha256": "2b2489abc3556f380b1c53ce97ab697e26edc1cb4f81858cc6174b095e5f7b05"
+  },
+  {
+    "assetId": "barbell-overhead-press-v1",
+    "file": "exercises/barbell-overhead-press.glb",
+    "status": "needs-review",
+    "bytes": 641400,
+    "sha256": "8ef36c9416d6d99e1df056302ce75a0eb877f6810c1a06c9f5f86f69848f49e2"
+  },
+  {
+    "assetId": "barbell-overhead-press-thumbnail-v1",
+    "file": "thumbnails/barbell-overhead-press.png",
+    "status": "needs-review",
+    "bytes": 20680,
+    "sha256": "a3a03aa9f56ce96a7c82a9bffdcc53fdc7b79b7e93c46bd1dd3e120195ca1a9e"
+  },
+  {
+    "assetId": "barbell-bent-over-row-v1",
+    "file": "exercises/barbell-bent-over-row.glb",
+    "status": "needs-review",
+    "bytes": 654716,
+    "sha256": "cd384965daf7f7fbb6af8168cf9ffeb9b96983dd3f74bc31222a7cbf490b5b1f"
+  },
+  {
+    "assetId": "barbell-bent-over-row-thumbnail-v1",
+    "file": "thumbnails/barbell-bent-over-row.png",
+    "status": "needs-review",
+    "bytes": 25253,
+    "sha256": "e3eea9f1a8f5ae453f3e0b6fea9a999db6870cb55c37affaa752faece0dd498b"
+  },
+  {
+    "assetId": "hip-thrust-v1",
+    "file": "exercises/hip-thrust.glb",
+    "status": "needs-review",
+    "bytes": 663224,
+    "sha256": "09519a52c49fc2b7c3278cf3165a6becdeb343da74e9cb7b77c15d5f0b8e8edb"
+  },
+  {
+    "assetId": "hip-thrust-thumbnail-v1",
+    "file": "thumbnails/hip-thrust.png",
+    "status": "needs-review",
+    "bytes": 19719,
+    "sha256": "ee902aab4e52b657c9c35f992ac8477d56bb049f3715547934c6209e8e98abfc"
+  },
+  {
+    "assetId": "barbell-v1",
+    "file": "equipment/barbell.glb",
+    "status": "needs-review",
+    "bytes": 4272,
+    "sha256": "e1c0ea8cdaba2dc4252f31560d367248f64b371ee942505b966896467c5a5263"
+  },
+  {
+    "assetId": "barbell-pad-v1",
+    "file": "equipment/barbell-pad.glb",
+    "status": "needs-review",
+    "bytes": 2076,
+    "sha256": "bfeaec04eb3b31372635e85bbbc764c8e8ffa4aa4442fe5c6dd10ce4301c516f"
   }
 ]

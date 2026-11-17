@@ -23,7 +23,18 @@ describe('exercise utilities', () => {
       'supine-heel-slide',
       'straight-leg-raise',
     ]);
-    expect(filterExercises(exercises, { equipment: 'barbell' })).toEqual([]);
+    expect(
+      filterExercises(exercises, { equipment: 'barbell' }).map((e) => e.id),
+    ).toEqual([
+      'barbell-back-squat',
+      'barbell-front-squat',
+      'barbell-conventional-deadlift',
+      'barbell-good-morning',
+      'barbell-bench-press',
+      'barbell-overhead-press',
+      'barbell-bent-over-row',
+      'hip-thrust',
+    ]);
   });
   it('resolves nested self-hosted asset paths', () => {
     expect(

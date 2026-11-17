@@ -2,6 +2,7 @@ import { readFile } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { AnimationMixer, Vector3 } from 'three';
+import { createBarbellChecks, validateBarGeometry } from './barbell-qa.mjs';
 import { createDumbbellChecks } from './dumbbell-clearance.mjs';
 import { createSupportChecks, equipmentDefinitions } from './support-qa.mjs';
 import regionDefinition from '../packages/schemas/src/muscle-regions.json' with { type: 'json' };
@@ -219,6 +220,7 @@ export async function validateGlb(
   });
   const supportChecks = createSupportChecks(loaded.scene, profile);
   const dumbbellChecks = createDumbbellChecks(loaded.scene, profile);
+  const barbellChecks = createBarbellChecks(loaded.scene, profile);
   const mixer = new AnimationMixer(loaded.scene);
   const action = mixer.clipAction(clip).play();
   const contactBones = [...profile.contacts, ...(profile.pivots ?? [])].map(
@@ -527,6 +529,7 @@ export async function validateGlb(
       supportChecks.sample(i / 120, skins);
       dumbbellChecks.sample();
     }
+    barbellChecks.sample(i / 120);
     rootDrift = Math.max(
       rootDrift,
       loaded.scene
@@ -579,6 +582,7 @@ export async function validateGlb(
   return {
     ...supportReport,
     ...dumbbellChecks.finish(),
+    ...barbellChecks.finish(),
     bytes: bytes.length,
     vertexCount,
     bones: document.skins[0].joints.length,
@@ -617,6 +621,14 @@ export async function validateEquipment(
     '',
   );
   const id = String(path).split('/').pop().replace('.glb', '');
+  if (id === 'barbell' || id === 'barbell-pad')
+    return {
+      bytes: bytes.length,
+      ...validateBarGeometry(
+        loaded.scene.getObjectByName(id),
+        id === 'barbell-pad',
+      ),
+    };
   if (equipmentDefinitions[id]) {
     const mesh = loaded.scene.getObjectByName(id);
     if (!mesh?.isMesh || mesh.isSkinnedMesh)
@@ -666,7 +678,11 @@ if (
     : Object.keys(qaProfiles).map((id) => `assets/exercises/${id}.glb`);
   if (!process.argv[2]) {
     console.log(JSON.stringify(await validateEquipment(), null, 2));
-    for (const id of Object.keys(equipmentDefinitions))
+    for (const id of [
+      ...Object.keys(equipmentDefinitions),
+      'barbell',
+      'barbell-pad',
+    ])
       console.log(
         JSON.stringify(
           await validateEquipment(`assets/equipment/${id}.glb`),

@@ -168,6 +168,7 @@ def _load_family(name):
 
 
 _API = SimpleNamespace(
+    profiles=PROFILES,
     IDENTITY=IDENTITY,
     add=add,
     sub=sub,
@@ -189,14 +190,17 @@ _API = SimpleNamespace(
 )
 _FAMILIES = [_load_family(name) for name in (
     'motion_legacy', 'motion_standing', 'motion_holds', 'motion_quadruped', 'motion_floor',
-    'motion_mobility', 'motion_seated', 'motion_strength', 'motion_upper_quarter', 'motion_dumbbell'
+    'motion_mobility', 'motion_seated', 'motion_strength', 'motion_upper_quarter', 'motion_dumbbell', 'motion_barbell'
 )]
 _REGISTRY = {}
+_EQUIPMENT_REGISTRY = {}
 for family in _FAMILIES:
     for exercise in family.EXERCISES:
         if exercise in _REGISTRY:
             raise ValueError(f'Duplicate authored motion: {exercise}')
         _REGISTRY[exercise] = family.pose
+        if hasattr(family,'equipment_pose'):
+            _EQUIPMENT_REGISTRY[exercise] = family.equipment_pose
 if set(_REGISTRY) != set(PROFILES):
     raise ValueError('Authored motion families and QA profiles must match exactly')
 
@@ -209,3 +213,10 @@ def motion_pose(bones, t, exercise, squat_pose):
     if PROFILES[exercise].get('rig') == 'upper-quarter-v2':
         bones = enhanced_bones(bones)
     return author(bones, t, exercise, _API, squat_pose)
+
+
+def equipment_pose(bones,t,exercise,squat_pose=None):
+    author=_EQUIPMENT_REGISTRY.get(exercise)
+    if author is None:return {}
+    if PROFILES[exercise].get('rig')=='upper-quarter-v2':bones=enhanced_bones(bones)
+    return author(bones,t,exercise,_API,squat_pose)

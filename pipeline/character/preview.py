@@ -34,6 +34,11 @@ def view_frame(exercise, positions, width, height):
                     for k in range(3):
                         p[k] += (world[joint][k]+relative[k])*weight
                 projected.append((.8*p[0]-.6*p[2], p[1]))
+            if character.motions.PROFILES[exercise].get('sharedBar'):
+                transform=character.motions.equipment_pose(character.BONES,time,exercise,character.pose)['barbell']
+                for point in character.barbell.geometry()[0]:
+                    x,y,z=character.motions.add(character.motions.rotate(point,transform['rotation']),transform['translation'])
+                    projected.append((.8*x-.6*z,y))
             if character.motions.PROFILES[exercise].get('equipment'):
                 for joint in (14, 17):
                     if character.BONES[joint][0].split('_')[0] not in character.motions.PROFILES[exercise].get('equipmentHands', ['left','right']):
@@ -104,6 +109,17 @@ def render(time, width=400, height=480, exercise='bodyweight-squat', geometry=No
         for point in pv:
             vertices.append(project(*character.motions.add(point, instance['translation'])))
         indices.extend(start+i for i in pi)
+    if character.motions.PROFILES[exercise].get('sharedBar'):
+        transform=character.motions.equipment_pose(character.BONES,time,exercise,character.pose)['barbell']
+        groups=[character.barbell.SEGMENTS]
+        if character.motions.PROFILES[exercise].get('barPad'):groups.append(character.barbell.PAD)
+        for group in groups:
+            pv,_pn,pi=character.barbell.geometry(group)
+            start=len(vertices)
+            indices=list(indices)
+            for point in pv:
+                vertices.append(project(*character.motions.add(character.motions.rotate(point,transform['rotation']),transform['translation'])))
+            indices.extend(start+i for i in pi)
     pixels = bytearray([232,237,232]*width*height)
     depths = [-float('inf')]*(width*height)
     for i in range(0,len(indices),3):

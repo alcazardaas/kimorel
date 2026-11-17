@@ -2285,6 +2285,312 @@
       "redistribution": true,
       "attribution": "Not required; see docs/asset-license-cc0.md.",
       "status": "needs-review"
+    },
+    {
+      "assetId": "barbell-back-squat-v1",
+      "file": "exercises/barbell-back-squat.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original manually authored barbell-back-squat clip with one shared bar, two grip constraints and physical support/clearance QA."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "barbell-back-squat-thumbnail-v1",
+      "file": "thumbnails/barbell-back-squat.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU preview of the actual authored skin and shared-bar transforms."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "barbell-front-squat-v1",
+      "file": "exercises/barbell-front-squat.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original manually authored barbell-front-squat clip with one shared bar, two grip constraints and physical support/clearance QA."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "barbell-front-squat-thumbnail-v1",
+      "file": "thumbnails/barbell-front-squat.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU preview of the actual authored skin and shared-bar transforms."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "barbell-conventional-deadlift-v1",
+      "file": "exercises/barbell-conventional-deadlift.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original manually authored barbell-conventional-deadlift clip with one shared bar, two grip constraints and physical support/clearance QA."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "barbell-conventional-deadlift-thumbnail-v1",
+      "file": "thumbnails/barbell-conventional-deadlift.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU preview of the actual authored skin and shared-bar transforms."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "barbell-good-morning-v1",
+      "file": "exercises/barbell-good-morning.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original manually authored barbell-good-morning clip with one shared bar, two grip constraints and physical support/clearance QA."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "barbell-good-morning-thumbnail-v1",
+      "file": "thumbnails/barbell-good-morning.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU preview of the actual authored skin and shared-bar transforms."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "barbell-bench-press-v1",
+      "file": "exercises/barbell-bench-press.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original manually authored barbell-bench-press clip with one shared bar, two grip constraints and physical support/clearance QA."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "barbell-bench-press-thumbnail-v1",
+      "file": "thumbnails/barbell-bench-press.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU preview of the actual authored skin and shared-bar transforms."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "barbell-overhead-press-v1",
+      "file": "exercises/barbell-overhead-press.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original manually authored barbell-overhead-press clip with one shared bar, two grip constraints and physical support/clearance QA."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "barbell-overhead-press-thumbnail-v1",
+      "file": "thumbnails/barbell-overhead-press.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU preview of the actual authored skin and shared-bar transforms."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "barbell-bent-over-row-v1",
+      "file": "exercises/barbell-bent-over-row.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original manually authored barbell-bent-over-row clip with one shared bar, two grip constraints and physical support/clearance QA."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "barbell-bent-over-row-thumbnail-v1",
+      "file": "thumbnails/barbell-bent-over-row.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU preview of the actual authored skin and shared-bar transforms."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "hip-thrust-v1",
+      "file": "exercises/hip-thrust.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original manually authored hip-thrust clip with one shared bar, two grip constraints and physical support/clearance QA."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "hip-thrust-thumbnail-v1",
+      "file": "thumbnails/hip-thrust.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU preview of the actual authored skin and shared-bar transforms."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "barbell-v1",
+      "file": "equipment/barbell.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original closed twelve-sided bar shaft and paired plates; one meter-scaled rigid mesh."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "barbell-pad-v1",
+      "file": "equipment/barbell-pad.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original reusable cylindrical hip pad for the shared bar; no third-party geometry."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
     }
   ]
 }
