@@ -21,6 +21,8 @@ export const muscles = [
   'latissimus-dorsi',
   'forearms',
   'serratus-anterior',
+  'rotator-cuff',
+  'obliques',
   'upper-back',
   'hip-abductors',
   'hip-flexors',

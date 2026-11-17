@@ -69,7 +69,7 @@ test('exported region labels stay identical on the canonical skin across clips',
     loaded.scene.traverse((object) => {
       if (object.isSkinnedMesh) skin = object;
     });
-    if (qaProfiles[id].regionVersion !== '1.3.0')
+    if (!qaProfiles[id].regionVersion)
       definitions.push([...skin.geometry.getAttribute('_muscle_region').array]);
   }
   for (const definition of definitions)
@@ -113,7 +113,7 @@ test('rejects missing or invalid exported muscle-region labels', async () => {
 });
 
 test('all registered original clips pass their declared contact, pivot and equipment profiles', async () => {
-  assert.equal(Object.keys(qaProfiles).length, 54);
+  assert.equal(Object.keys(qaProfiles).length, 60);
   const fingerprints = new Set();
   for (const id of Object.keys(qaProfiles)) {
     const bytes = await readFile(`assets/exercises/${id}.glb`);
@@ -140,7 +140,7 @@ test('all registered original clips pass their declared contact, pivot and equip
   }
   assert.equal(
     fingerprints.size,
-    54,
+    60,
     'Every exported clip must contain distinct animation data',
   );
 });

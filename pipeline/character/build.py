@@ -23,7 +23,11 @@ REGION_DEFINITION = json.loads((ROOT/'packages/schemas/src/muscle-regions.json')
 
 UPPER_REGION_DEFINITION = json.loads((ROOT/'packages/schemas/src/muscle-regions-upper-quarter.json').read_text())
 
+DUMBBELL_REGION_DEFINITION = json.loads((ROOT/'packages/schemas/src/muscle-regions-dumbbell.json').read_text())
+
 def region_definition(exercise):
+    if motions.PROFILES.get(exercise, {}).get('regionVersion') == '1.4.0':
+        return DUMBBELL_REGION_DEFINITION
     return UPPER_REGION_DEFINITION if motions.PROFILES.get(exercise, {}).get('rig') == 'upper-quarter-v2' else REGION_DEFINITION
 
 def muscle_region(point, definition=None):
@@ -302,6 +306,8 @@ def build(output, animated=True, exercise="bodyweight-squat", geometry=None, equ
         document['materials'].append({'name':'dumbbell-metal','pbrMetallicRoughness':{'baseColorFactor':[.12,.15,.18,1],'metallicFactor':.6,'roughnessFactor':.45}})
         document['meshes'].append({'name':'dumbbell','primitives':[{'attributes':{'POSITION':accessor(dv,5126,'VEC3'),'NORMAL':accessor(dn,5126,'VEC3')},'indices':accessor(di,5125,'SCALAR'),'material':1}]})
         for hand,sign in [(14,1),(17,-1)]:
+            if not equipment_only and BONES[hand][0].split('_')[0] not in motions.PROFILES[exercise].get('equipmentHands', ['left','right']):
+                continue
             node = len(document['nodes'])
             document['nodes'].append({'name':f'{bones[hand][0]}_grip','translation':[sign*.02,-.055,.005],'children':[node+1]})
             document['nodes'].append({'name':f'{bones[hand][0]}_dumbbell','mesh':1})

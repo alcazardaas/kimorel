@@ -104,8 +104,8 @@ it('requires a recorded human review before approving an asset', () => {
 it('keeps broad region codes unique and source muscle references in the taxonomy', async () => {
   const { muscleRegionDefinition, muscles } = await import('./index.js');
   const regions = Object.values(muscleRegionDefinition.regions);
-  expect(regions).toHaveLength(16);
-  expect(new Set(regions.map((region) => region.code)).size).toBe(16);
+  expect(regions).toHaveLength(18);
+  expect(new Set(regions.map((region) => region.code)).size).toBe(18);
   for (const region of regions)
     for (const muscle of region.muscles) expect(muscles).toContain(muscle);
 });

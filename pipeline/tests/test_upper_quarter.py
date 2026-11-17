@@ -52,7 +52,7 @@ class UpperQuarterTests(unittest.TestCase):
         self.assertEqual(character.region_definition('dumbbell-wrist-curl')['version'],'1.3.0')
 
     def test_loops_and_finite_pose_values(self):
-        for name in character.motions._FAMILIES[-1].EXERCISES:
+        for name in ('dumbbell-shoulder-press','dumbbell-wrist-curl','dumbbell-reverse-wrist-curl','supine-serratus-punch'):
             self.assertEqual(character.motion_pose(character.BONES,0,name,character.pose),character.motion_pose(character.BONES,4,name,character.pose))
             for t in (0,1,2,3,4):
                 points,rotations=self.points(name,t)

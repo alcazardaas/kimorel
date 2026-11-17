@@ -1,0 +1,113 @@
+{
+  "version": "1.4.0",
+  "regions": {
+    "posterior-shoulder": {
+      "code": 17,
+      "label": "Posterior shoulder",
+      "muscles": ["rotator-cuff"],
+      "bounds": [0.17, 0.3, 1.3, 1.44, -0.3, -0.025]
+    },
+    "lateral-trunk": {
+      "code": 18,
+      "label": "Lateral trunk",
+      "muscles": ["obliques"],
+      "bounds": [0.11, 0.23, 1.04, 1.25, -0.02, 0.12]
+    },
+    "serratus-anterior": {
+      "code": 15,
+      "label": "Lateral chest",
+      "muscles": ["serratus-anterior"],
+      "bounds": [0.14, 0.25, 1.2, 1.32, 0.025, 0.3]
+    },
+    "forearms": {
+      "code": 16,
+      "label": "Forearms",
+      "muscles": ["forearms"],
+      "bounds": [0.3, 0.48, 0.99, 1.15, -0.3, 0.3]
+    },
+    "chest": {
+      "code": 1,
+      "label": "Chest",
+      "muscles": ["pectoralis-major"],
+      "bounds": [0, 0.24, 1.27, 1.49, 0.025, 0.3]
+    },
+    "deltoids": {
+      "code": 2,
+      "label": "Deltoids",
+      "muscles": ["deltoids"],
+      "bounds": [0.23, 0.36, 1.32, 1.53, -0.3, 0.3]
+    },
+    "biceps": {
+      "code": 3,
+      "label": "Biceps",
+      "muscles": ["biceps"],
+      "bounds": [0.27, 0.43, 1.15, 1.32, 0, 0.3]
+    },
+    "triceps": {
+      "code": 4,
+      "label": "Triceps",
+      "muscles": ["triceps"],
+      "bounds": [0.27, 0.43, 1.15, 1.32, -0.3, 0]
+    },
+    "upper-back": {
+      "code": 5,
+      "label": "Upper back",
+      "muscles": ["upper-back"],
+      "bounds": [0, 0.24, 1.32, 1.49, -0.3, -0.025]
+    },
+    "latissimus-dorsi": {
+      "code": 6,
+      "label": "Latissimus dorsi",
+      "muscles": ["latissimus-dorsi"],
+      "bounds": [0.09, 0.25, 1.09, 1.32, -0.3, -0.025]
+    },
+    "abdominals": {
+      "code": 7,
+      "label": "Abdominals",
+      "muscles": ["abdominals"],
+      "bounds": [0, 0.19, 1.04, 1.27, 0.025, 0.3]
+    },
+    "spinal-erectors": {
+      "code": 8,
+      "label": "Spinal erectors",
+      "muscles": ["erector-spinae"],
+      "bounds": [0, 0.09, 1.04, 1.32, -0.3, -0.025]
+    },
+    "lateral-hip": {
+      "code": 13,
+      "label": "Lateral hip",
+      "muscles": ["hip-abductors"],
+      "bounds": [0.18, 0.29, 0.84, 1.06, -0.12, 0.12]
+    },
+    "glutes": {
+      "code": 9,
+      "label": "Glutes",
+      "muscles": ["gluteus-maximus"],
+      "bounds": [0, 0.27, 0.84, 1.04, -0.3, -0.015]
+    },
+    "quadriceps": {
+      "code": 10,
+      "label": "Quadriceps",
+      "muscles": ["quadriceps"],
+      "bounds": [0.04, 0.28, 0.48, 0.84, 0.01, 0.3]
+    },
+    "hamstrings": {
+      "code": 11,
+      "label": "Hamstrings",
+      "muscles": ["hamstrings"],
+      "bounds": [0.04, 0.28, 0.48, 0.84, -0.3, 0.01]
+    },
+    "calves": {
+      "code": 12,
+      "label": "Calves",
+      "muscles": ["calves"],
+      "bounds": [0.04, 0.25, 0.18, 0.48, -0.3, 0.02]
+    },
+    "anterior-hip": {
+      "code": 14,
+      "label": "Anterior hip",
+      "muscles": ["hip-flexors"],
+      "bounds": [0, 0.18, 0.86, 1.04, 0.025, 0.3]
+    }
+  }
+}

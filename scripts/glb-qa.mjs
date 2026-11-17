@@ -2,8 +2,10 @@ import { readFile } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { AnimationMixer, Vector3 } from 'three';
+import { createDumbbellChecks } from './dumbbell-clearance.mjs';
 import { createSupportChecks, equipmentDefinitions } from './support-qa.mjs';
 import regionDefinition from '../packages/schemas/src/muscle-regions.json' with { type: 'json' };
+import dumbbellRegionDefinition from '../packages/schemas/src/muscle-regions-dumbbell.json' with { type: 'json' };
 import upperRegionDefinition from '../packages/schemas/src/muscle-regions-upper-quarter.json' with { type: 'json' };
 import motionProfiles from '../pipeline/character/motion-profiles.json' with { type: 'json' };
 export const qaProfiles = motionProfiles;
@@ -60,9 +62,11 @@ export async function validateGlb(
   clipName ??= profile.clip ?? 'rep';
   const motionKind = profile.kind ?? 'repetition';
   const expectedRegions =
-    profile.regionVersion === '1.3.0'
-      ? upperRegionDefinition
-      : regionDefinition;
+    profile.regionVersion === '1.4.0'
+      ? dumbbellRegionDefinition
+      : profile.regionVersion === '1.3.0'
+        ? upperRegionDefinition
+        : regionDefinition;
   if (!['repetition', 'hold'].includes(motionKind))
     throw new Error('Unknown motion kind');
   const bytes = await readFile(path);
@@ -214,6 +218,7 @@ export async function validateGlb(
     }
   });
   const supportChecks = createSupportChecks(loaded.scene, profile);
+  const dumbbellChecks = createDumbbellChecks(loaded.scene, profile);
   const mixer = new AnimationMixer(loaded.scene);
   const action = mixer.clipAction(clip).play();
   const contactBones = [...profile.contacts, ...(profile.pivots ?? [])].map(
@@ -351,7 +356,7 @@ export async function validateGlb(
   if (!contactBones.length && !phases.length && !slides.length)
     throw new Error('QA profile has no declared support contacts');
   const equipment = profile.equipment
-    ? ['left', 'right'].map((side) => {
+    ? (profile.equipmentHands ?? ['left', 'right']).map((side) => {
         const hand = loaded.scene.getObjectByName(`${side}_hand`);
         const grip = loaded.scene.getObjectByName(`${side}_hand_grip`);
         const prop = loaded.scene.getObjectByName(`${side}_hand_dumbbell`);
@@ -360,6 +365,24 @@ export async function validateGlb(
         return { grip, prop };
       })
     : [];
+  for (const side of ['left', 'right'])
+    if (
+      (!profile.equipment ||
+        !(profile.equipmentHands ?? ['left', 'right']).includes(side)) &&
+      loaded.scene.getObjectByName(`${side}_hand_dumbbell`)
+    )
+      throw new Error('Undeclared dumbbell load side');
+  const travel = (profile.jointTravel ?? []).map((entry) => {
+    const bone = loaded.scene.getObjectByName(entry.bone);
+    if (!bone || ![0, 1, 2].includes(entry.axis))
+      throw new Error('Invalid joint travel profile');
+    return {
+      ...entry,
+      bone,
+      baseline: bone.getWorldPosition(new Vector3()).getComponent(entry.axis),
+      maximum: 0,
+    };
+  });
   let soleDrift = 0,
     footDrift = 0,
     rootDrift = 0,
@@ -431,6 +454,14 @@ export async function validateGlb(
           .sub(pair.a.getWorldPosition(new Vector3()))
           .distanceTo(pair.offset),
       );
+    for (const goal of travel)
+      goal.maximum = Math.max(
+        goal.maximum,
+        Math.abs(
+          goal.bone.getWorldPosition(new Vector3()).getComponent(goal.axis) -
+            goal.baseline,
+        ),
+      );
     for (const translation of translations)
       translation.maximum = Math.max(
         translation.maximum,
@@ -494,6 +525,7 @@ export async function validateGlb(
       }
       maximumGroundGap = Math.max(maximumGroundGap, minimumHeight);
       supportChecks.sample(i / 120, skins);
+      dumbbellChecks.sample();
     }
     rootDrift = Math.max(
       rootDrift,
@@ -505,17 +537,25 @@ export async function validateGlb(
   }
   action.stop();
   mixer.uncacheRoot(loaded.scene);
+  for (const goal of travel)
+    if (goal.maximum < goal.minMeters || goal.maximum > goal.maxMeters)
+      throw new Error(`Joint travel range: ${goal.bone.name}`);
   for (const translation of translations)
     if (
       translation.maximum < translation.minMeters ||
       translation.maximum > translation.maxMeters
     )
       throw new Error(`Translation range: ${translation.bone.name}`);
-  for (const articulation of articulations)
+  for (const articulation of articulations) {
     if (articulation.maximum < articulation.minRadians)
       throw new Error(
         `Missing authored articulation: ${articulation.bone.name}`,
       );
+    if (articulation.maximum > (articulation.maxRadians ?? Infinity))
+      throw new Error(
+        `Excess authored articulation: ${articulation.bone.name}`,
+      );
+  }
   if (slidingBoneDrift > 0.005 || slidingSkinDrift > 0.007)
     throw new Error(
       `Sliding contact drift: ${slidingBoneDrift}/${slidingSkinDrift}`,
@@ -538,6 +578,7 @@ export async function validateGlb(
   const supportReport = supportChecks.finish();
   return {
     ...supportReport,
+    ...dumbbellChecks.finish(),
     bytes: bytes.length,
     vertexCount,
     bones: document.skins[0].joints.length,

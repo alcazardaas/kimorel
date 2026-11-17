@@ -789,5 +789,96 @@
     "status": "needs-review",
     "bytes": 26384,
     "sha256": "9729a371e48d7f4929fed9c22adc6937d9216588e8f559ffad07f5d403498fa4"
+  },
+  {
+    "assetId": "dumbbell-pullover-v1",
+    "file": "exercises/dumbbell-pullover.glb",
+    "status": "needs-review",
+    "bytes": 655860,
+    "sha256": "e00193cb7a89ba5eb66162562e8c4923fa2c59645fd4aae69cb057f89bfaf2f1"
+  },
+  {
+    "assetId": "dumbbell-pullover-thumbnail-v1",
+    "file": "thumbnails/dumbbell-pullover.png",
+    "status": "needs-review",
+    "bytes": 16921,
+    "sha256": "66ed55b4886691d8cf2645190055e8fc291511618b620a49fc58c96bfd3a8f0f"
+  },
+  {
+    "assetId": "dumbbell-reverse-fly-v1",
+    "file": "exercises/dumbbell-reverse-fly.glb",
+    "status": "needs-review",
+    "bytes": 654244,
+    "sha256": "68d61e7741115385ea6def7e3447089333f487a0e7c4df842a6a7ed8cd4247b9"
+  },
+  {
+    "assetId": "dumbbell-reverse-fly-thumbnail-v1",
+    "file": "thumbnails/dumbbell-reverse-fly.png",
+    "status": "needs-review",
+    "bytes": 24816,
+    "sha256": "e78d5915ce06f25e0231f8261ecaca7ca87517766b77c925160b05aa00becf42"
+  },
+  {
+    "assetId": "lying-triceps-extension-v1",
+    "file": "exercises/lying-triceps-extension.glb",
+    "status": "needs-review",
+    "bytes": 655860,
+    "sha256": "23df0dff3133bf63f8401b5ad3902e974b57b3b12a8b2333cc93eac3208deca4"
+  },
+  {
+    "assetId": "lying-triceps-extension-thumbnail-v1",
+    "file": "thumbnails/lying-triceps-extension.png",
+    "status": "needs-review",
+    "bytes": 17874,
+    "sha256": "14cc9dbac0f55888bacc9b300041ff795912a4cc7ddb4905971e400797ecdf9d"
+  },
+  {
+    "assetId": "overhead-triceps-extension-v1",
+    "file": "exercises/overhead-triceps-extension.glb",
+    "status": "needs-review",
+    "bytes": 633948,
+    "sha256": "3ae6523acab213aee6128fdc162cd1d6ff2b9b72799b6e55160488488cf7cea1"
+  },
+  {
+    "assetId": "overhead-triceps-extension-thumbnail-v1",
+    "file": "thumbnails/overhead-triceps-extension.png",
+    "status": "needs-review",
+    "bytes": 19156,
+    "sha256": "e63d66101cf6ef4a55271020a43c23f9cd5c974823d83e3a03ccd0f7326562dd"
+  },
+  {
+    "assetId": "dumbbell-side-bend-v1",
+    "file": "exercises/dumbbell-side-bend.glb",
+    "status": "needs-review",
+    "bytes": 638124,
+    "sha256": "38832eacd12c25d0ff5421c7ce5da7bac749306a0cbabd6d58e3fc0e3eb4ed54"
+  },
+  {
+    "assetId": "dumbbell-side-bend-thumbnail-v1",
+    "file": "thumbnails/dumbbell-side-bend.png",
+    "status": "needs-review",
+    "bytes": 22620,
+    "sha256": "d08f9fbe07c0cfc7444556959199d9081b9590627367f87b7384b3dc6716f4e3"
+  },
+  {
+    "assetId": "side-lying-dumbbell-external-rotation-v1",
+    "file": "exercises/side-lying-dumbbell-external-rotation.glb",
+    "status": "needs-review",
+    "bytes": 650604,
+    "sha256": "423e08bdb9db40a112e4e1ebe3af4d9a214cb9b879294a93bd012d67026948a9"
+  },
+  {
+    "assetId": "side-lying-dumbbell-external-rotation-thumbnail-v1",
+    "file": "thumbnails/side-lying-dumbbell-external-rotation.png",
+    "status": "needs-review",
+    "bytes": 21934,
+    "sha256": "9d254e9fa4f9236775623a5070486575e920b078959700febea7fb0e8e4f3245"
+  },
+  {
+    "assetId": "flat-bench-v1",
+    "file": "equipment/flat-bench.glb",
+    "status": "needs-review",
+    "bytes": 5284,
+    "sha256": "fc259c6279632eddb70a3fbb440a1df717a900d2bd90105293aef1db06120ca7"
   }
 ]

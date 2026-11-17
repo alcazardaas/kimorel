@@ -2064,6 +2064,227 @@
       "redistribution": true,
       "attribution": "Not required; see docs/asset-license-cc0.md.",
       "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-pullover-v1",
+      "file": "exercises/dumbbell-pullover.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original Kimorel manually authored dumbbell-pullover motion with explicit support, joint and load-side constraints."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-pullover-thumbnail-v1",
+      "file": "thumbnails/dumbbell-pullover.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster preview of the actual authored skin and equipment transforms."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-reverse-fly-v1",
+      "file": "exercises/dumbbell-reverse-fly.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original Kimorel manually authored dumbbell-reverse-fly motion with explicit support, joint and load-side constraints."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-reverse-fly-thumbnail-v1",
+      "file": "thumbnails/dumbbell-reverse-fly.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster preview of the actual authored skin and equipment transforms."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "lying-triceps-extension-v1",
+      "file": "exercises/lying-triceps-extension.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original Kimorel manually authored lying-triceps-extension motion with explicit support, joint and load-side constraints."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "lying-triceps-extension-thumbnail-v1",
+      "file": "thumbnails/lying-triceps-extension.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster preview of the actual authored skin and equipment transforms."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "overhead-triceps-extension-v1",
+      "file": "exercises/overhead-triceps-extension.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original Kimorel manually authored overhead-triceps-extension motion with explicit support, joint and load-side constraints."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "overhead-triceps-extension-thumbnail-v1",
+      "file": "thumbnails/overhead-triceps-extension.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster preview of the actual authored skin and equipment transforms."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-side-bend-v1",
+      "file": "exercises/dumbbell-side-bend.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original Kimorel manually authored dumbbell-side-bend motion with explicit support, joint and load-side constraints."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "dumbbell-side-bend-thumbnail-v1",
+      "file": "thumbnails/dumbbell-side-bend.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster preview of the actual authored skin and equipment transforms."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "side-lying-dumbbell-external-rotation-v1",
+      "file": "exercises/side-lying-dumbbell-external-rotation.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original Kimorel manually authored side-lying-dumbbell-external-rotation motion with explicit support, joint and load-side constraints."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "side-lying-dumbbell-external-rotation-thumbnail-v1",
+      "file": "thumbnails/side-lying-dumbbell-external-rotation.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU raster preview of the actual authored skin and equipment transforms."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "flat-bench-v1",
+      "file": "equipment/flat-bench.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original meter-scaled full-length flat bench with a1.5meter support surface, four legs and a raised head pad; generated from original cuboid faces."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
     }
   ]
 }

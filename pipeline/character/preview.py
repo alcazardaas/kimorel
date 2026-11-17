@@ -36,6 +36,8 @@ def view_frame(exercise, positions, width, height):
                 projected.append((.8*p[0]-.6*p[2], p[1]))
             if character.motions.PROFILES[exercise].get('equipment'):
                 for joint in (14, 17):
+                    if character.BONES[joint][0].split('_')[0] not in character.motions.PROFILES[exercise].get('equipmentHands', ['left','right']):
+                        continue
                     x, y, z = world[joint]
                     projected.extend([(.8*x-.6*z-.2, y-.2), (.8*x-.6*z+.2, y+.2)])
         for instance in character.motions.PROFILES[exercise].get('props', []):
@@ -87,6 +89,8 @@ def render(time, width=400, height=480, exercise='bodyweight-squat', geometry=No
         dv,_dn,di = character.dumbbell_geometry()
         indices = list(indices)
         for joint,sign in [(14,1),(17,-1)]:
+            if character.BONES[joint][0].split('_')[0] not in character.motions.PROFILES[exercise].get('equipmentHands', ['left','right']):
+                continue
             start = len(vertices)
             for point in dv:
                 transformed = add(world[joint],quaternion_rotate(add(point,(sign*.02,-.055,.005)),rotations[joint]))

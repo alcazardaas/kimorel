@@ -679,5 +679,215 @@
         "maxMeters": 0.06
       }
     ]
+  },
+  "dumbbell-pullover": {
+    "contacts": ["pelvis", "chest", "left_foot", "right_foot"],
+    "equipment": true,
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.4.0",
+    "skinPatches": [],
+    "props": [
+      {
+        "id": "flat-bench",
+        "translation": [0, 0, -0.55]
+      }
+    ],
+    "surfaceContacts": [
+      {
+        "prop": "flat-bench",
+        "axis": 1,
+        "from": 0,
+        "to": 1,
+        "skinBounds": [-0.15, 0.15, 1.08, 1.5, -0.3, -0.085]
+      },
+      {
+        "prop": "flat-bench",
+        "box": 5,
+        "axis": 1,
+        "from": 0,
+        "to": 1,
+        "skinBounds": [-0.1, 0.1, 1.62, 1.83, -0.3, -0.07]
+      }
+    ],
+    "jointTravel": [
+      {
+        "bone": "left_hand",
+        "axis": 2,
+        "minMeters": 0.45,
+        "maxMeters": 0.52
+      }
+    ],
+    "equipmentBodyClearance": true
+  },
+  "dumbbell-reverse-fly": {
+    "contacts": ["left_foot", "right_foot"],
+    "equipment": true,
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.4.0",
+    "jointTravel": [
+      {
+        "bone": "left_hand",
+        "axis": 0,
+        "minMeters": 0.4,
+        "maxMeters": 0.55
+      }
+    ],
+    "equipmentBodyClearance": true
+  },
+  "lying-triceps-extension": {
+    "contacts": ["pelvis", "chest", "left_foot", "right_foot"],
+    "equipment": true,
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.4.0",
+    "skinPatches": [],
+    "props": [
+      {
+        "id": "flat-bench",
+        "translation": [0, 0, -0.55]
+      }
+    ],
+    "surfaceContacts": [
+      {
+        "prop": "flat-bench",
+        "axis": 1,
+        "from": 0,
+        "to": 1,
+        "skinBounds": [-0.15, 0.15, 1.08, 1.5, -0.3, -0.085]
+      },
+      {
+        "prop": "flat-bench",
+        "box": 5,
+        "axis": 1,
+        "from": 0,
+        "to": 1,
+        "skinBounds": [-0.1, 0.1, 1.62, 1.83, -0.3, -0.07]
+      }
+    ],
+    "articulations": [
+      {
+        "bone": "left_forearm",
+        "minRadians": 1.2
+      },
+      {
+        "bone": "right_forearm",
+        "minRadians": 1.2
+      },
+      {
+        "bone": "left_upper_arm",
+        "minRadians": 0,
+        "maxRadians": 0.001
+      },
+      {
+        "bone": "right_upper_arm",
+        "minRadians": 0,
+        "maxRadians": 0.001
+      }
+    ],
+    "equipmentBodyClearance": true
+  },
+  "overhead-triceps-extension": {
+    "contacts": ["left_foot", "right_foot"],
+    "equipment": true,
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.4.0",
+    "articulations": [
+      {
+        "bone": "left_forearm",
+        "minRadians": 1.2
+      },
+      {
+        "bone": "right_forearm",
+        "minRadians": 1.2
+      },
+      {
+        "bone": "left_upper_arm",
+        "minRadians": 0,
+        "maxRadians": 0.001
+      },
+      {
+        "bone": "right_upper_arm",
+        "minRadians": 0,
+        "maxRadians": 0.001
+      }
+    ],
+    "equipmentBodyClearance": true
+  },
+  "dumbbell-side-bend": {
+    "contacts": ["left_foot", "right_foot"],
+    "equipment": true,
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.4.0",
+    "equipmentHands": ["right"],
+    "jointTravel": [
+      {
+        "bone": "head",
+        "axis": 0,
+        "minMeters": 0.12,
+        "maxMeters": 0.2
+      }
+    ],
+    "articulations": [
+      {
+        "bone": "spine",
+        "minRadians": 0.2
+      },
+      {
+        "bone": "chest",
+        "minRadians": 0.1
+      }
+    ],
+    "equipmentBodyClearance": true
+  },
+  "side-lying-dumbbell-external-rotation": {
+    "contacts": ["pelvis", "left_foot", "right_foot"],
+    "skinPatches": [
+      {
+        "bounds": [0.255, 0.275, 1.22, 1.3, -0.08, 0.08]
+      }
+    ],
+    "pairedContacts": [
+      {
+        "a": "left_foot",
+        "b": "right_foot",
+        "offset": [0, 0.125, 0]
+      }
+    ],
+    "equipment": true,
+    "equipmentHands": ["right"],
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.4.0",
+    "jointTravel": [
+      {
+        "bone": "right_hand",
+        "axis": 1,
+        "minMeters": 0.15,
+        "maxMeters": 0.23
+      },
+      {
+        "bone": "right_forearm",
+        "axis": 0,
+        "minMeters": 0,
+        "maxMeters": 0.001
+      },
+      {
+        "bone": "right_forearm",
+        "axis": 1,
+        "minMeters": 0,
+        "maxMeters": 0.001
+      },
+      {
+        "bone": "right_forearm",
+        "axis": 2,
+        "minMeters": 0,
+        "maxMeters": 0.001
+      }
+    ],
+    "articulations": [
+      {
+        "bone": "right_upper_arm",
+        "minRadians": 0.9
+      }
+    ],
+    "equipmentBodyClearance": true
   }
 }

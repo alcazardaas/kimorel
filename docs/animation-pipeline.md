@@ -1,6 +1,6 @@
-# Reproduce the three exercise previews
+# Reproduce the original exercise previews
 
-One editable canonical human, one 18-joint rig, one weight generator and one deterministic GLB exporter produce all three exercises. Original geometry, motion and equipment are CC0; source code is MIT. These are technical review previews, not approved clinical movement demonstrations.
+One editable canonical human, a preserved 18-joint rig plus an opt-in 20-joint upper-quarter rig, one weight generator and one deterministic GLB exporter produce the technical exercise catalog. Original geometry, motion and equipment are CC0; source code is MIT. These are technical review previews, not approved clinical movement demonstrations.
 
 ```bash
 pnpm assets:build
@@ -39,3 +39,11 @@ The original fifty assets retain the canonical 18-joint rig and surface labels v
 The exporter emits every explicitly authored translation channel, not only pelvis translation. CPU diagnostics use the same hierarchy and translation semantics. New clips use the additive surface definition v1.3.0 (approximate forearm and lateral-chest/serratus surfaces); old mappings remain unchanged. The renderer recognizes both sets of stable codes. QA requires the versioned clavicle hierarchy, wrist rotation, shoulder articulation and declared translation excursion, with negative fixtures that remove those channels. Global contact/ground tolerances remain unchanged. Forearm pronation is an authored whole-segment orientation, not a distributed anatomical twist rig.
 
 These four clips, their thumbnails and their new exact hashes remain unapproved previews. Supine serratus punch uses no external load. Wrist previews keep elbows and wrist origins stationary while rotating the hands; they do not imitate biceps curls. Original artifacts must remain unchanged when regenerating the full catalog.
+
+## Six additional dumbbell motions
+
+Unit B adds a two-dumbbell bench pullover, bent-over reverse fly, lying and standing overhead triceps extensions, a one-dumbbell side bend, and side-lying dumbbell external rotation. Pullover uses a shoulder arc with constant elbow bend; triceps extensions keep the upper arms stationary while bending the elbows. External rotation twists the humerus around its long axis without moving the bent elbow; it is not a disguised elbow curl.
+
+The original `flat-bench` prop is1.5meters long, distinct from the existing short seat. Its front edge stays behind the descending thighs, a raised head pad supports the back of the head, and exported QA samples both back and head skin patches against their actual physical faces. Profiles declare stationary supports, hand travel ranges, upper-arm rotation maxima and explicit loaded hand sides. The exporter, CPU renderer and QA agree on unilateral loads; no unused second dumbbell is attached. Opt-in dumbbell clearance QA verifies the actual twelve-sided equipment geometry and samples skinned non-grip vertices against its three convex volumes; only the intended loaded-hand grip patch is exempt. It caught a side-bend load/thigh collision that attachment-origin checks alone missed. Deliberate frozen-motion, moving-upper-arm, missing-bench, wrong-load and body-penetrating-grip fixtures must fail. This sampled surface check is not a complete self-collision or anatomical grip proof.
+
+These six clips opt into region1.4.0, adding broad posterior-shoulder and lateral-trunk surfaces for rotator-cuff and oblique metadata. Earlier1.2.0/1.3.0 definitions and all54 prior assets remain unchanged. Surface labels are educational approximations, not deep-muscle segmentation or activation measurements. The external-rotation muscle classification is consistent with [AAOS shoulder conditioning guidance](https://www.orthoinfo.org/bodypart/shoulder/rotator-cuff-and-shoulder-conditioning-program/), which identifies the infraspinatus and teres minor; neither that reference nor the software checks clinically validates these animations. All new exact-hash assets remain needs-review.

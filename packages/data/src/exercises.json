@@ -2839,5 +2839,329 @@
       "creator": "Kimorel contributors",
       "source": "Original manually authored upper-quarter-v2 educational motion and approximate surface labels; pending exact-asset human review."
     }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "dumbbell-pullover",
+    "slug": "dumbbell-pullover",
+    "name": "Dumbbell Pullover",
+    "description": "A two-dumbbell shoulder arc while supported on a flat bench.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "pull",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["dumbbell", "bench"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "Supine on flat bench",
+    "muscles": {
+      "primary": ["latissimus-dorsi", "pectoralis-major"],
+      "secondary": ["triceps"]
+    },
+    "instructions": [
+      "Hold one dumbbell in each hand above the chest.",
+      "Move the arms toward overhead without changing the slight elbow bend.",
+      "Return with control."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "dumbbell-pullover-v1",
+      "file": "exercises/dumbbell-pullover.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.6, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original manually authored upper-quarter-v2 educational motion with declared support and grip constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "dumbbell-reverse-fly",
+    "slug": "dumbbell-reverse-fly",
+    "name": "Dumbbell Reverse Fly",
+    "description": "A bent-over lateral arm opening with controlled shoulder-girdle retraction.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "pull",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["dumbbell"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "Standing hip hinge",
+    "muscles": {
+      "primary": ["upper-back", "deltoids"],
+      "secondary": ["erector-spinae"]
+    },
+    "instructions": [
+      "Maintain a stable hip hinge with the dumbbells below the shoulders.",
+      "Open the arms to the sides with a slight elbow bend.",
+      "Lower with control."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "dumbbell-reverse-fly-v1",
+      "file": "exercises/dumbbell-reverse-fly.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 1.05, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original manually authored upper-quarter-v2 educational motion with declared support and grip constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "lying-triceps-extension",
+    "slug": "lying-triceps-extension",
+    "name": "Lying Triceps Extension",
+    "description": "Elbow flexion and extension on a flat bench with stationary upper arms.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "push",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["dumbbell", "bench"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "Supine on flat bench",
+    "muscles": {
+      "primary": ["triceps"],
+      "secondary": []
+    },
+    "instructions": [
+      "Hold the dumbbells above the shoulders.",
+      "Bend the elbows while keeping the upper arms steady.",
+      "Extend the elbows with control."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "lying-triceps-extension-v1",
+      "file": "exercises/lying-triceps-extension.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.6, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original manually authored upper-quarter-v2 educational motion with declared support and grip constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "overhead-triceps-extension",
+    "slug": "overhead-triceps-extension",
+    "name": "Overhead Triceps Extension",
+    "description": "Standing elbow extension with upper arms held overhead.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "push",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["dumbbell"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "Standing with arms overhead",
+    "muscles": {
+      "primary": ["triceps"],
+      "secondary": ["deltoids"]
+    },
+    "instructions": [
+      "Hold a dumbbell in each hand with the upper arms overhead.",
+      "Bend the elbows to lower behind the head within a comfortable range.",
+      "Extend the elbows without swinging the upper arms."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "overhead-triceps-extension-v1",
+      "file": "exercises/overhead-triceps-extension.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 1.05, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original manually authored upper-quarter-v2 educational motion with declared support and grip constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "dumbbell-side-bend",
+    "slug": "dumbbell-side-bend",
+    "name": "Dumbbell Side Bend",
+    "description": "Lateral trunk flexion with a single right-hand load and stable pelvis.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["dumbbell"],
+    "difficulty": "beginner",
+    "laterality": "unilateral",
+    "startingPosition": "Standing",
+    "muscles": {
+      "primary": ["obliques", "erector-spinae"],
+      "secondary": []
+    },
+    "instructions": [
+      "Hold one dumbbell at the right side.",
+      "Bend the trunk toward the loaded side while keeping the pelvis steady.",
+      "Return to upright with control."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "dumbbell-side-bend-v1",
+      "file": "exercises/dumbbell-side-bend.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 1.05, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original manually authored upper-quarter-v2 educational motion with declared support and grip constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "side-lying-dumbbell-external-rotation",
+    "slug": "side-lying-dumbbell-external-rotation",
+    "name": "Side-lying Dumbbell External Rotation",
+    "description": "External rotation of the upper shoulder with the elbow kept beside the trunk.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["dumbbell"],
+    "difficulty": "beginner",
+    "laterality": "unilateral",
+    "startingPosition": "Side-lying on the left side",
+    "muscles": {
+      "primary": ["rotator-cuff"],
+      "secondary": ["deltoids"]
+    },
+    "instructions": [
+      "Lie on the left side with the right elbow bent beside the trunk.",
+      "Rotate the right forearm upward without moving the elbow.",
+      "Lower with control."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "side-lying-dumbbell-external-rotation-v1",
+      "file": "exercises/side-lying-dumbbell-external-rotation.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0.05, 0.55, 0],
+      "position": [2.5, 1.7, 3.2]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original manually authored upper-quarter-v2 educational motion with declared support and grip constraints; pending exact-asset human review."
+    }
   }
 ]
