@@ -17,11 +17,13 @@ a {
   text-underline-offset: 4px;
 }
 button,
+input,
 select {
   font: inherit;
 }
 a:focus-visible,
 button:focus-visible,
+input:focus-visible,
 select:focus-visible {
   outline: 3px solid #996123;
   outline-offset: 5px;
@@ -345,6 +347,7 @@ fieldset input[type='range'] {
   display: grid;
   font-size: 13px;
 }
+.catalog-filters input,
 .catalog-filters select,
 .catalog-filters button {
   width: 100%;

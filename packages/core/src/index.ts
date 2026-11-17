@@ -21,6 +21,7 @@ export function findExercise(
   return exercises.find((exercise) => exercise.id === id);
 }
 export interface ExerciseFilter {
+  nameQuery?: string;
   category?: Exercise['categories'][number];
   equipment?: Equipment;
   muscle?: Muscle;
@@ -29,8 +30,10 @@ export function filterExercises(
   exercises: readonly Exercise[],
   filter: ExerciseFilter,
 ): Exercise[] {
+  const nameQuery = filter.nameQuery?.trim().toLowerCase();
   return exercises.filter(
     (exercise) =>
+      (!nameQuery || exercise.name.toLowerCase().includes(nameQuery)) &&
       (!filter.category || exercise.categories.includes(filter.category)) &&
       (!filter.equipment || exercise.equipment.includes(filter.equipment)) &&
       (!filter.muscle ||

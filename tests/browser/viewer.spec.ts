@@ -147,6 +147,66 @@ test('catalog pagination preserves the viewer and works with keyboard and respon
   ).toBeVisible();
 });
 
+test('name search combines filters, resets pagination and keeps the viewer mounted', async ({
+  page,
+}) => {
+  await page.goto('/kimorel/');
+  await ready(page);
+  const canvas = await page.locator('canvas').elementHandle();
+  const list = page.getByRole('list', { name: 'Movements' });
+  const selected = page.getByRole('heading', {
+    name: catalog[0]!.name,
+    exact: true,
+  });
+  await page.getByRole('button', { name: 'Page 3', exact: true }).click();
+  const search = page.getByRole('searchbox', { name: 'Search by name' });
+  await search.fill('  CuRL  ');
+  const matches = catalog.filter((exercise) =>
+    exercise.name.toLowerCase().includes('curl'),
+  );
+  await expect(list.getByRole('button')).toHaveCount(
+    Math.min(5, matches.length),
+  );
+  await expect(page.getByRole('status')).toContainText(
+    `Showing 1–${Math.min(5, matches.length)} · Page 1 of`,
+  );
+  await expect(page.getByRole('status')).toContainText(
+    `Still viewing ${catalog[0]!.name}`,
+  );
+  await page
+    .getByRole('combobox', { name: 'Equipment', exact: true })
+    .selectOption('barbell');
+  await expect(list.getByRole('button')).toHaveCount(0);
+  await expect(
+    page.getByText('No movements match these filters.'),
+  ).toBeVisible();
+  await expect(selected).toBeVisible();
+  expect(await canvas!.evaluate((element) => element.isConnected)).toBe(true);
+  await page.getByRole('button', { name: 'Reset filters' }).click();
+  await expect(search).toHaveValue('');
+  await expect(
+    page.getByRole('combobox', { name: 'Equipment', exact: true }),
+  ).toHaveValue('');
+  await expect(page.getByRole('status')).toContainText(
+    'Showing 1–5 · Page 1 of',
+  );
+  await expect(list.getByRole('button').first()).toHaveAttribute(
+    'aria-pressed',
+    'true',
+  );
+  await expect(selected).toBeVisible();
+  const bounds = await search.boundingBox();
+  expect(bounds!.x).toBeGreaterThanOrEqual(0);
+  expect(bounds!.x + bounds!.width).toBeLessThanOrEqual(
+    page.viewportSize()!.width,
+  );
+  await search.focus();
+  await expect(search).toBeFocused();
+  expect(
+    await search.evaluate((element) => getComputedStyle(element).outlineStyle),
+  ).not.toBe('none');
+});
+
 test('reduced motion prevents autoplay but allows explicit keyboard play', async ({
   page,
 }) => {

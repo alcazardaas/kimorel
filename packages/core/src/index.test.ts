@@ -36,6 +36,37 @@ describe('exercise utilities', () => {
       'hip-thrust',
     ]);
   });
+  it('searches trimmed case-insensitive name substrings without mutating inputs', () => {
+    const source = Object.freeze(exercises.slice(0, 3));
+    const filter = Object.freeze({ nameQuery: '  wEiGhT sQ  ' });
+    expect(filterExercises(source, filter)).toEqual([source[0]]);
+    expect(filterExercises(source, filter)[0]).toBe(source[0]);
+    expect(filter.nameQuery).toBe('  wEiGhT sQ  ');
+    expect(source).toEqual(exercises.slice(0, 3));
+    expect(filterExercises(source, {})).toEqual(source);
+    for (const nameQuery of ['', '  \t ']) {
+      const result = filterExercises(source, { nameQuery });
+      expect(result).toEqual(source);
+      expect(result).not.toBe(source);
+    }
+  });
+  it('matches names only and combines search with all other criteria', () => {
+    expect(filterExercises(exercises, { nameQuery: 'quadriceps' })).toEqual([]);
+    expect(
+      filterExercises(exercises, { nameQuery: 'bodyweight-squat' }),
+    ).toEqual([]);
+    expect(
+      filterExercises(exercises, {
+        nameQuery: 'squat',
+        category: 'home',
+        equipment: 'bodyweight',
+        muscle: 'quadriceps',
+      }).map((exercise) => exercise.id),
+    ).toEqual(['bodyweight-squat', 'split-squat']);
+    expect(
+      filterExercises(exercises, { nameQuery: 'squat', equipment: 'dumbbell' }),
+    ).toEqual([]);
+  });
   it('resolves nested self-hosted asset paths', () => {
     expect(
       resolveAssetUrl('https://example.org/kimorel', 'exercises/squat.glb'),

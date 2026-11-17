@@ -116,6 +116,48 @@ describe('Catalog', () => {
     );
   });
 
+  it('searches names, resets pagination and preserves selection through empty results and reset', () => {
+    const onSelect = vi.fn();
+    render(
+      <Catalog
+        exercises={catalog}
+        selectedId={catalog[0]!.id}
+        onSelect={onSelect}
+      />,
+    );
+    const search = screen.getByRole('searchbox', {
+      name: 'Search by name',
+    }) as HTMLInputElement;
+    fireEvent.click(screen.getByRole('button', { name: 'Page 4' }));
+    choose('Search by name', '  CuRL  ');
+    expect(screen.getByRole('status').textContent).toContain('Page 1 of 1');
+    expect(
+      movements().getByRole('button', { name: /Dumbbell Biceps Curl/ })
+        .textContent,
+    ).toContain('Dumbbell Biceps Curl');
+    expect(screen.getByRole('status').textContent).toContain(
+      `Still viewing ${catalog[0]!.name}`,
+    );
+    choose('Equipment', 'barbell');
+    expect(screen.getByText('No movements match these filters.')).toBeTruthy();
+    expect(screen.getByRole('status').textContent).toContain(
+      '0 of 25 movements',
+    );
+    expect(onSelect).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole('button', { name: 'Reset filters' }));
+    expect(search.value).toBe('');
+    expect(
+      (screen.getByLabelText('Equipment') as HTMLSelectElement).value,
+    ).toBe('');
+    expect(screen.getByRole('status').textContent).toContain(
+      'Showing 1–5 · Page 1 of 5',
+    );
+    expect(
+      movements().getAllByRole('button')[0]!.getAttribute('aria-pressed'),
+    ).toBe('true');
+    expect(onSelect).not.toHaveBeenCalled();
+  });
+
   it('clamps the page when data shrinks without reviving a stale page later', () => {
     const props = { selectedId: catalog[0]!.id, onSelect: vi.fn() };
     const { rerender } = render(<Catalog {...props} exercises={catalog} />);

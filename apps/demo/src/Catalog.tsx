@@ -27,6 +27,20 @@ export function Catalog({ exercises, selectedId, onSelect }: CatalogProps) {
     <>
       <fieldset className="catalog-filters">
         <legend>Filter movements</legend>
+        <label>
+          Search by name
+          <input
+            type="search"
+            value={filter.nameQuery ?? ''}
+            onChange={(event) => {
+              setPage(1);
+              setFilter((current) => ({
+                ...current,
+                nameQuery: event.target.value,
+              }));
+            }}
+          />
+        </label>
         {(
           [
             ['category', 'Category', categories],
