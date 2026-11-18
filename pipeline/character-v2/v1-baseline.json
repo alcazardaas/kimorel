@@ -1,0 +1,4341 @@
+{
+  "schemaVersion": "kimorel.character-baseline/v1",
+  "sourceRevision": "9974c997545e3701ae5a636172a7f3e85a35a2da",
+  "toolchain": {
+    "node": "26.13.1",
+    "pnpm": "pnpm@10.15.0"
+  },
+  "counts": {
+    "exercises": 100,
+    "provenanceRecords": 220,
+    "reviewRecords": 220,
+    "artifacts": 420,
+    "glb": 120,
+    "png": 300,
+    "artifactBytes": 76939780
+  },
+  "rigs": [
+    {
+      "name": "upper-quarter-v2",
+      "joints": [
+        "root",
+        "pelvis",
+        "spine",
+        "chest",
+        "neck",
+        "head",
+        "left_thigh",
+        "left_shin",
+        "left_foot",
+        "right_thigh",
+        "right_shin",
+        "right_foot",
+        "left_upper_arm",
+        "left_forearm",
+        "left_hand",
+        "right_upper_arm",
+        "right_forearm",
+        "right_hand",
+        "left_clavicle",
+        "right_clavicle"
+      ],
+      "assets": 50
+    },
+    {
+      "name": "kimorel-v1",
+      "joints": [
+        "root",
+        "pelvis",
+        "spine",
+        "chest",
+        "neck",
+        "head",
+        "left_thigh",
+        "left_shin",
+        "left_foot",
+        "right_thigh",
+        "right_shin",
+        "right_foot",
+        "left_upper_arm",
+        "left_forearm",
+        "left_hand",
+        "right_upper_arm",
+        "right_forearm",
+        "right_hand"
+      ],
+      "assets": 51
+    }
+  ],
+  "regions": [
+    {
+      "file": "packages/schemas/src/muscle-regions-band.json",
+      "version": "1.5.0"
+    },
+    {
+      "file": "packages/schemas/src/muscle-regions-dumbbell.json",
+      "version": "1.4.0"
+    },
+    {
+      "file": "packages/schemas/src/muscle-regions-final.json",
+      "version": "1.6.0"
+    },
+    {
+      "file": "packages/schemas/src/muscle-regions-upper-quarter.json",
+      "version": "1.3.0"
+    },
+    {
+      "file": "packages/schemas/src/muscle-regions.json",
+      "version": "1.2.0"
+    }
+  ],
+  "permissions": {
+    "origin": {
+      "original": 220
+    },
+    "license": {
+      "CC0-1.0": 220
+    },
+    "status": {
+      "needs-review": 220
+    }
+  },
+  "referenceMetrics": {
+    "file": "assets/characters/neutral-human.glb",
+    "vertices": 8200,
+    "triangles": 16396,
+    "humanJoints": 18,
+    "skinJointCounts": {
+      "2": 13,
+      "18": 51,
+      "20": 50
+    }
+  },
+  "exercises": [
+    {
+      "id": "ab-wheel-rollout",
+      "name": "Kneeling Ab-Wheel Rollout",
+      "animation": {
+        "assetId": "ab-wheel-rollout-v1",
+        "file": "exercises/ab-wheel-rollout.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.5.0",
+      "profileSha256": "40204477fabf9434336c6a4c28f5d1b105d8eab93d30604515868929e4df52e7"
+    },
+    {
+      "id": "ankle-dorsiflexion-rock",
+      "name": "Ankle Dorsiflexion Rock",
+      "animation": {
+        "assetId": "ankle-dorsiflexion-rock-v1",
+        "file": "exercises/ankle-dorsiflexion-rock.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.5.0",
+      "profileSha256": "2da367b314fd7dfb27d3806c058ae2f065e814101fa4f15d5142576cd06c8235"
+    },
+    {
+      "id": "band-ankle-dorsiflexion",
+      "name": "Seated Band Ankle Dorsiflexion",
+      "animation": {
+        "assetId": "band-ankle-dorsiflexion-v1",
+        "file": "exercises/band-ankle-dorsiflexion.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.5.0",
+      "profileSha256": "033d636e29b0db67f9f67830cb42f17c68586732c7299c709034dcf596ce6c05"
+    },
+    {
+      "id": "band-ankle-plantarflexion",
+      "name": "Seated Band Ankle Plantarflexion",
+      "animation": {
+        "assetId": "band-ankle-plantarflexion-v1",
+        "file": "exercises/band-ankle-plantarflexion.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.5.0",
+      "profileSha256": "6e31cbb183905fbb2c7a459c501a59bdd782868420fa96e2e061bcb07ba700da"
+    },
+    {
+      "id": "band-chest-press",
+      "name": "Single-arm Band Chest Press",
+      "animation": {
+        "assetId": "band-chest-press-v1",
+        "file": "exercises/band-chest-press.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.4.0",
+      "profileSha256": "68a4647f490388a5380f54d1c7e43ce9ef26131ae9bc43738142c46b84d4c3e5"
+    },
+    {
+      "id": "band-external-rotation",
+      "name": "Standing Band External Rotation",
+      "animation": {
+        "assetId": "band-external-rotation-v1",
+        "file": "exercises/band-external-rotation.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.4.0",
+      "profileSha256": "f04cb04123b5f8bc9e4bfb87110446060a95d3449f3ad34ee6b57d134e93d1e0"
+    },
+    {
+      "id": "band-face-pull",
+      "name": "Single-arm Band Face Pull",
+      "animation": {
+        "assetId": "band-face-pull-v1",
+        "file": "exercises/band-face-pull.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.4.0",
+      "profileSha256": "50dc22b0dcb538378da3a410572d5ae20a05ce9ba0ec21e5e331b3fc1b3f743e"
+    },
+    {
+      "id": "band-hip-adduction",
+      "name": "Standing Band Hip Adduction",
+      "animation": {
+        "assetId": "band-hip-adduction-v1",
+        "file": "exercises/band-hip-adduction.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.5.0",
+      "profileSha256": "8ebfb6514f1481673b79f312f4db15eeb1fdc66760ea4a4f371740461a9cee4a"
+    },
+    {
+      "id": "band-internal-rotation",
+      "name": "Standing Band Internal Rotation",
+      "animation": {
+        "assetId": "band-internal-rotation-v1",
+        "file": "exercises/band-internal-rotation.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.5.0",
+      "profileSha256": "faf9ef59376101602b142bb681d6a10c36abb468dab73c9d0e8665164b52c237"
+    },
+    {
+      "id": "band-pallof-press",
+      "name": "Band Pallof Press",
+      "animation": {
+        "assetId": "band-pallof-press-v1",
+        "file": "exercises/band-pallof-press.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.5.0",
+      "profileSha256": "5c60ef2fb81cd7d3c203a0c354dd2a56d58bdec01f2ac1eef18c89e274c36f73"
+    },
+    {
+      "id": "band-pull-apart",
+      "name": "Band Pull-apart",
+      "animation": {
+        "assetId": "band-pull-apart-v1",
+        "file": "exercises/band-pull-apart.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.4.0",
+      "profileSha256": "162c2d70a93924df9532d2eb9d07be4d30a2d2b70a366ecf36ce0d73acff35a1"
+    },
+    {
+      "id": "band-row",
+      "name": "Single-arm Band Row",
+      "animation": {
+        "assetId": "band-row-v1",
+        "file": "exercises/band-row.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.4.0",
+      "profileSha256": "6cd2a7842a2070b0e4dc0e54b26316df1483c6c8286f6ac67d9271a3ffb84240"
+    },
+    {
+      "id": "band-terminal-knee-extension",
+      "name": "Band Terminal Knee Extension",
+      "animation": {
+        "assetId": "band-terminal-knee-extension-v1",
+        "file": "exercises/band-terminal-knee-extension.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.5.0",
+      "profileSha256": "5cef0ec6113acf4d321fd139bb9bd7690de817ea54d77ba509ebbc3718c49d22"
+    },
+    {
+      "id": "band-triceps-pushdown",
+      "name": "Band Triceps Pushdown",
+      "animation": {
+        "assetId": "band-triceps-pushdown-v1",
+        "file": "exercises/band-triceps-pushdown.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.5.0",
+      "profileSha256": "428a3df9afacc4fab9f7312cff3fad13de5b093ecabad9744acd3c59e772548c"
+    },
+    {
+      "id": "barbell-back-squat",
+      "name": "Barbell Back Squat",
+      "animation": {
+        "assetId": "barbell-back-squat-v1",
+        "file": "exercises/barbell-back-squat.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.4.0",
+      "profileSha256": "7fc669f394d7231fe5af3d5f8566e0996dab0ffc63b8d4925b46d7f2db6a7338"
+    },
+    {
+      "id": "barbell-bench-press",
+      "name": "Barbell Bench Press",
+      "animation": {
+        "assetId": "barbell-bench-press-v1",
+        "file": "exercises/barbell-bench-press.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.4.0",
+      "profileSha256": "797f07a0737d12a685178c62b2f0022f214e8fc2033915c7afef5cc1071aed77"
+    },
+    {
+      "id": "barbell-bent-over-row",
+      "name": "Barbell Bent-over Row",
+      "animation": {
+        "assetId": "barbell-bent-over-row-v1",
+        "file": "exercises/barbell-bent-over-row.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.4.0",
+      "profileSha256": "58ef36881a22fc5e2084d5b1c914567800ef72fc4e9b8574e2b48aa2d6c5c221"
+    },
+    {
+      "id": "barbell-conventional-deadlift",
+      "name": "Barbell Conventional Deadlift",
+      "animation": {
+        "assetId": "barbell-conventional-deadlift-v1",
+        "file": "exercises/barbell-conventional-deadlift.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.4.0",
+      "profileSha256": "8bbf2eb71041f371ae1a27ce119b31ed88b1634c19bddf3638da428574d896af"
+    },
+    {
+      "id": "barbell-front-squat",
+      "name": "Barbell Front Squat",
+      "animation": {
+        "assetId": "barbell-front-squat-v1",
+        "file": "exercises/barbell-front-squat.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.4.0",
+      "profileSha256": "87ad9b5f7668b12d44f106410de1ff5984ab5b5f65d45ca1f1cd603cbf99c31a"
+    },
+    {
+      "id": "barbell-good-morning",
+      "name": "Barbell Good Morning",
+      "animation": {
+        "assetId": "barbell-good-morning-v1",
+        "file": "exercises/barbell-good-morning.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.4.0",
+      "profileSha256": "636be27f81fca1b172da3dccd95a910dc2aa28f22e1d02131eb9534a9aca1262"
+    },
+    {
+      "id": "barbell-overhead-press",
+      "name": "Barbell Overhead Press",
+      "animation": {
+        "assetId": "barbell-overhead-press-v1",
+        "file": "exercises/barbell-overhead-press.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.4.0",
+      "profileSha256": "ec4c4e514b95df838716df601fe52788c9e9deb6d1adb212ee7a6bfcd4a224e0"
+    },
+    {
+      "id": "bench-dip",
+      "name": "Bench Dip",
+      "animation": {
+        "assetId": "bench-dip-v1",
+        "file": "exercises/bench-dip.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.5.0",
+      "profileSha256": "2dbfa675a5a86c779691088d527d5eae8271ae5f6c00b600dc9f983a75fd974c"
+    },
+    {
+      "id": "bent-over-dumbbell-row",
+      "name": "Bent-over Dumbbell Row",
+      "animation": {
+        "assetId": "bent-over-dumbbell-row-v1",
+        "file": "exercises/bent-over-dumbbell-row.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "8b36bff93f0252e2ab138093d15018580eb27466a4e8ff900f1e6ea590b7b97e"
+    },
+    {
+      "id": "bicycle-crunch",
+      "name": "Bicycle crunch",
+      "animation": {
+        "assetId": "bicycle-crunch-v1",
+        "file": "exercises/bicycle-crunch.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "9bb67d2fd45ace1cfbfa7bbadb1ff0cb5b1131f57b741cf29e248fa45b47f5d5"
+    },
+    {
+      "id": "bird-dog",
+      "name": "Bird Dog",
+      "animation": {
+        "assetId": "bird-dog-v1",
+        "file": "exercises/bird-dog.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "0f1a58e1eeb185ad536c19ef384f9455a3201866d629f5853fc31b97e8b02ca2"
+    },
+    {
+      "id": "bodyweight-squat",
+      "name": "Bodyweight Squat",
+      "animation": {
+        "assetId": "bodyweight-squat-v1",
+        "file": "exercises/bodyweight-squat.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "8fede715aff76c447228765985d599ed08e7505200bf9fa5de367c05e6ffe213"
+    },
+    {
+      "id": "bulgarian-split-squat",
+      "name": "Bulgarian split squat",
+      "animation": {
+        "assetId": "bulgarian-split-squat-v1",
+        "file": "exercises/bulgarian-split-squat.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "36c6535d20b6a8051143f507dbb1820e61988c0f2529ae7e28156ce472cbd3c8"
+    },
+    {
+      "id": "cat-cow",
+      "name": "Cat-cow",
+      "animation": {
+        "assetId": "cat-cow-v1",
+        "file": "exercises/cat-cow.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "ec311574bf0a8029ac5c8cc25962c82fd20e9e9f9309d07de7e1a8d8ca69a0b5"
+    },
+    {
+      "id": "cervical-lateral-flexion",
+      "name": "Cervical Lateral Flexion",
+      "animation": {
+        "assetId": "cervical-lateral-flexion-v1",
+        "file": "exercises/cervical-lateral-flexion.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.6.0",
+      "profileSha256": "fcfef0d7a52e54824ac88dc13929c1a153c1ae9d7cf8bb56d127c4d51570f162"
+    },
+    {
+      "id": "cervical-rotation",
+      "name": "Cervical Rotation",
+      "animation": {
+        "assetId": "cervical-rotation-v1",
+        "file": "exercises/cervical-rotation.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.6.0",
+      "profileSha256": "32dd366c9a21bff903aa537aa767c2f7c1693a9efe47bf91a9dc5336e80e8924"
+    },
+    {
+      "id": "childs-pose",
+      "name": "Child's Pose",
+      "animation": {
+        "assetId": "childs-pose-v1",
+        "file": "exercises/childs-pose.glb",
+        "clip": "hold",
+        "kind": "hold",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.5.0",
+      "profileSha256": "bf666e0347f43babfbfa66a34eab0bffe373ea72e7f9d95a51e2eb981d4f8dfb"
+    },
+    {
+      "id": "chin-tuck",
+      "name": "Chin Tuck",
+      "animation": {
+        "assetId": "chin-tuck-v1",
+        "file": "exercises/chin-tuck.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.6.0",
+      "profileSha256": "09a8e388c4ab9ad21961493ae134163cdb981808f6d662d8cc1a97d3e308f179"
+    },
+    {
+      "id": "curl-up",
+      "name": "Curl-up",
+      "animation": {
+        "assetId": "curl-up-v1",
+        "file": "exercises/curl-up.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "b8b23ef16903281d1463f20619155dac8878e1138af49a9a2907766d87c6055e"
+    },
+    {
+      "id": "dead-bug",
+      "name": "Dead Bug",
+      "animation": {
+        "assetId": "dead-bug-v1",
+        "file": "exercises/dead-bug.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "a6f827d0500e9abc6e0cc48a41059750201fc4d74d6bca0e8381eeb367c57a73"
+    },
+    {
+      "id": "dead-hang",
+      "name": "Dead Hang",
+      "animation": {
+        "assetId": "dead-hang-v1",
+        "file": "exercises/dead-hang.glb",
+        "clip": "hold",
+        "kind": "hold",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.5.0",
+      "profileSha256": "9e9efae6e8ef787d5f6a61dd89431214d39bb8713fd973d18404ec9f21df4c36"
+    },
+    {
+      "id": "dumbbell-biceps-curl",
+      "name": "Dumbbell Biceps Curl",
+      "animation": {
+        "assetId": "dumbbell-biceps-curl-v1",
+        "file": "exercises/dumbbell-biceps-curl.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "6f7c966f94d90f51b052bad2692ba58ea08ee8dc6fef77857d0477cdf6a2fbcd"
+    },
+    {
+      "id": "dumbbell-chest-fly",
+      "name": "Dumbbell chest fly",
+      "animation": {
+        "assetId": "dumbbell-chest-fly-v1",
+        "file": "exercises/dumbbell-chest-fly.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "cf2f313fb6b30c9c5de28b910a29757e950015fe61c503c0473928bdbb850076"
+    },
+    {
+      "id": "dumbbell-floor-press",
+      "name": "Dumbbell floor press",
+      "animation": {
+        "assetId": "dumbbell-floor-press-v1",
+        "file": "exercises/dumbbell-floor-press.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "cf2f313fb6b30c9c5de28b910a29757e950015fe61c503c0473928bdbb850076"
+    },
+    {
+      "id": "dumbbell-front-raise",
+      "name": "Dumbbell Front Raise",
+      "animation": {
+        "assetId": "dumbbell-front-raise-v1",
+        "file": "exercises/dumbbell-front-raise.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "8b36bff93f0252e2ab138093d15018580eb27466a4e8ff900f1e6ea590b7b97e"
+    },
+    {
+      "id": "dumbbell-lateral-raise",
+      "name": "Dumbbell Lateral Raise",
+      "animation": {
+        "assetId": "dumbbell-lateral-raise-v1",
+        "file": "exercises/dumbbell-lateral-raise.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "8b36bff93f0252e2ab138093d15018580eb27466a4e8ff900f1e6ea590b7b97e"
+    },
+    {
+      "id": "dumbbell-pullover",
+      "name": "Dumbbell Pullover",
+      "animation": {
+        "assetId": "dumbbell-pullover-v1",
+        "file": "exercises/dumbbell-pullover.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.4.0",
+      "profileSha256": "a7bc8b11b56229ee6e066bf13046a0f113bff8bf07414ab4990b4a1bba379921"
+    },
+    {
+      "id": "dumbbell-reverse-fly",
+      "name": "Dumbbell Reverse Fly",
+      "animation": {
+        "assetId": "dumbbell-reverse-fly-v1",
+        "file": "exercises/dumbbell-reverse-fly.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.4.0",
+      "profileSha256": "ca9ed849243f31ebbfba9a49072ca6f274215fe7bae71cda38323b03f6da00be"
+    },
+    {
+      "id": "dumbbell-reverse-wrist-curl",
+      "name": "Dumbbell Reverse Wrist Curl",
+      "animation": {
+        "assetId": "dumbbell-reverse-wrist-curl-v1",
+        "file": "exercises/dumbbell-reverse-wrist-curl.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.3.0",
+      "profileSha256": "0db14b20a526b95a6eeb89d08c0e55494660809dee9a5d21beab0709a8e1bc25"
+    },
+    {
+      "id": "dumbbell-romanian-deadlift",
+      "name": "Dumbbell Romanian Deadlift",
+      "animation": {
+        "assetId": "dumbbell-romanian-deadlift-v1",
+        "file": "exercises/dumbbell-romanian-deadlift.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "8b36bff93f0252e2ab138093d15018580eb27466a4e8ff900f1e6ea590b7b97e"
+    },
+    {
+      "id": "dumbbell-shoulder-press",
+      "name": "Dumbbell Shoulder Press",
+      "animation": {
+        "assetId": "dumbbell-shoulder-press-v1",
+        "file": "exercises/dumbbell-shoulder-press.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.3.0",
+      "profileSha256": "9c139bb2e3fd0cbd526422cdf44a4438bec91ff792482e8fc794fb0cac940841"
+    },
+    {
+      "id": "dumbbell-side-bend",
+      "name": "Dumbbell Side Bend",
+      "animation": {
+        "assetId": "dumbbell-side-bend-v1",
+        "file": "exercises/dumbbell-side-bend.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.4.0",
+      "profileSha256": "514139e45b9ae966cbb38233c99ec7e92cbfe2d6c21109017469cf49494c1b1e"
+    },
+    {
+      "id": "dumbbell-triceps-kickback",
+      "name": "Dumbbell triceps kickback",
+      "animation": {
+        "assetId": "dumbbell-triceps-kickback-v1",
+        "file": "exercises/dumbbell-triceps-kickback.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "8b36bff93f0252e2ab138093d15018580eb27466a4e8ff900f1e6ea590b7b97e"
+    },
+    {
+      "id": "dumbbell-wrist-curl",
+      "name": "Dumbbell Wrist Curl",
+      "animation": {
+        "assetId": "dumbbell-wrist-curl-v1",
+        "file": "exercises/dumbbell-wrist-curl.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.3.0",
+      "profileSha256": "0db14b20a526b95a6eeb89d08c0e55494660809dee9a5d21beab0709a8e1bc25"
+    },
+    {
+      "id": "fire-hydrant",
+      "name": "Fire Hydrant",
+      "animation": {
+        "assetId": "fire-hydrant-v1",
+        "file": "exercises/fire-hydrant.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "ec371d7c9a50088a3a7db1df08dce859395d37e3f76027b4530f9c1c92bab5d1"
+    },
+    {
+      "id": "forearm-plank",
+      "name": "Forearm Plank",
+      "animation": {
+        "assetId": "forearm-plank-v1",
+        "file": "exercises/forearm-plank.glb",
+        "clip": "hold",
+        "kind": "hold",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "a8e900e154d3791330bf34029cab7bb96c97d383bb22e393a3e5d2e15d2f846b"
+    },
+    {
+      "id": "forearm-wall-slide",
+      "name": "Forearm Wall Slide",
+      "animation": {
+        "assetId": "forearm-wall-slide-v1",
+        "file": "exercises/forearm-wall-slide.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.5.0",
+      "profileSha256": "87f0a2ed372d282bdad0bc7284d3e812a7dc233e1517e582d437585e4fd381dd"
+    },
+    {
+      "id": "glute-bridge",
+      "name": "Glute Bridge",
+      "animation": {
+        "assetId": "glute-bridge-v1",
+        "file": "exercises/glute-bridge.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "1d69ccb9309072bd92c06160066dd559557d094988e3531c865cbc52ec874a06"
+    },
+    {
+      "id": "half-kneeling-hip-flexor-stretch",
+      "name": "Half-Kneeling Hip Flexor Stretch",
+      "animation": {
+        "assetId": "half-kneeling-hip-flexor-stretch-v1",
+        "file": "exercises/half-kneeling-hip-flexor-stretch.glb",
+        "clip": "hold",
+        "kind": "hold",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.5.0",
+      "profileSha256": "822e5f37063070a1b0d7e132899f571899d5b5c8259c64540656162c0deb53c1"
+    },
+    {
+      "id": "hanging-knee-raise",
+      "name": "Hanging Knee Raise",
+      "animation": {
+        "assetId": "hanging-knee-raise-v1",
+        "file": "exercises/hanging-knee-raise.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.5.0",
+      "profileSha256": "06235e6f0c8f3829c9dc4167b7d30acfdf293d71bf43b0545f151d73087a571d"
+    },
+    {
+      "id": "hip-thrust",
+      "name": "Barbell Hip Thrust",
+      "animation": {
+        "assetId": "hip-thrust-v1",
+        "file": "exercises/hip-thrust.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.4.0",
+      "profileSha256": "bf63ac58fca4ca36ce479baf889e814be6b752234e27ea15caca96f536d33419"
+    },
+    {
+      "id": "hollow-body-hold",
+      "name": "Hollow-body hold",
+      "animation": {
+        "assetId": "hollow-body-hold-v1",
+        "file": "exercises/hollow-body-hold.glb",
+        "clip": "hold",
+        "kind": "hold",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "00375578bb595b2b26eb1d5e9f48c3b57b058c8461e031df10f5bb5dd5e91dd1"
+    },
+    {
+      "id": "inverted-row",
+      "name": "Inverted Row",
+      "animation": {
+        "assetId": "inverted-row-v1",
+        "file": "exercises/inverted-row.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.5.0",
+      "profileSha256": "a890cf9e577b82b4fff73ae52dbd453037f6bf4a9fb6df8bfe733d35c0bfa19b"
+    },
+    {
+      "id": "landmine-press",
+      "name": "Single-arm Landmine Press",
+      "animation": {
+        "assetId": "landmine-press-v1",
+        "file": "exercises/landmine-press.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.4.0",
+      "profileSha256": "671e8fe502b89b093e3822a002419b885e8cda8c3909ffde2905fac4f85ffdc0"
+    },
+    {
+      "id": "landmine-row",
+      "name": "Single-arm Landmine Row",
+      "animation": {
+        "assetId": "landmine-row-v1",
+        "file": "exercises/landmine-row.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.4.0",
+      "profileSha256": "bfd32df664a1aa7307562814fa945df96ecb3488054e055153b94c57b7318541"
+    },
+    {
+      "id": "lateral-lunge",
+      "name": "Lateral Lunge",
+      "animation": {
+        "assetId": "lateral-lunge-v1",
+        "file": "exercises/lateral-lunge.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "0abff16916f4b09df63dbc30b281e4064132ed55a32862cae69ed1ff9830dd85"
+    },
+    {
+      "id": "lying-triceps-extension",
+      "name": "Lying Triceps Extension",
+      "animation": {
+        "assetId": "lying-triceps-extension-v1",
+        "file": "exercises/lying-triceps-extension.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.4.0",
+      "profileSha256": "14034406684665a35ff9f4d137ea99b5c70d92022f9d144673b365a3224aa34a"
+    },
+    {
+      "id": "ninety-ninety-hip-rotation",
+      "name": "Seated Ninety-Ninety Hip Rotation",
+      "animation": {
+        "assetId": "ninety-ninety-hip-rotation-v1",
+        "file": "exercises/ninety-ninety-hip-rotation.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.5.0",
+      "profileSha256": "ce0be025a49399e7a67889c0fd69e0effa9058dee28bc51c9ef98ddd65d7021f"
+    },
+    {
+      "id": "overhead-triceps-extension",
+      "name": "Overhead Triceps Extension",
+      "animation": {
+        "assetId": "overhead-triceps-extension-v1",
+        "file": "exercises/overhead-triceps-extension.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.4.0",
+      "profileSha256": "62567968b82457cfaff8386593e488d71963704c28b615479c15c03b0d85bc79"
+    },
+    {
+      "id": "pike-push-up",
+      "name": "Pike Push-Up",
+      "animation": {
+        "assetId": "pike-push-up-v1",
+        "file": "exercises/pike-push-up.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.5.0",
+      "profileSha256": "4fb5c2684b764ff1915052cd60b4d1749df511c6e9a7011293cabf2d1de3f53b"
+    },
+    {
+      "id": "prone-hamstring-curl",
+      "name": "Prone Hamstring Curl",
+      "animation": {
+        "assetId": "prone-hamstring-curl-v1",
+        "file": "exercises/prone-hamstring-curl.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "38f0a97f400db72829099a9b8645979055b9bd80ac44d2a7a061f71f1470a277"
+    },
+    {
+      "id": "prone-hip-extension",
+      "name": "Prone hip extension",
+      "animation": {
+        "assetId": "prone-hip-extension-v1",
+        "file": "exercises/prone-hip-extension.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "38f0a97f400db72829099a9b8645979055b9bd80ac44d2a7a061f71f1470a277"
+    },
+    {
+      "id": "pull-up",
+      "name": "Pull-Up",
+      "animation": {
+        "assetId": "pull-up-v1",
+        "file": "exercises/pull-up.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.5.0",
+      "profileSha256": "1ddc629f9bee3e6117e09d393ab7dd0ff3d18730a3ba09d45cedd24c7dd7fddd"
+    },
+    {
+      "id": "push-up",
+      "name": "Push-up",
+      "animation": {
+        "assetId": "push-up-v1",
+        "file": "exercises/push-up.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "15382a9c964680a8e3929ab5bdc9fb7e6cdfcd0352cf49b2e4f859a1f01fbeb6"
+    },
+    {
+      "id": "quadruped-hip-extension",
+      "name": "Quadruped Hip Extension",
+      "animation": {
+        "assetId": "quadruped-hip-extension-v1",
+        "file": "exercises/quadruped-hip-extension.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "ec371d7c9a50088a3a7db1df08dce859395d37e3f76027b4530f9c1c92bab5d1"
+    },
+    {
+      "id": "quadruped-thoracic-rotation",
+      "name": "Quadruped thoracic rotation",
+      "animation": {
+        "assetId": "quadruped-thoracic-rotation-v1",
+        "file": "exercises/quadruped-thoracic-rotation.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "6bea18a095d31ea3fba229713c4ba3505b2764db1e100d6ab8bd3df58493a901"
+    },
+    {
+      "id": "reverse-crunch",
+      "name": "Reverse Crunch",
+      "animation": {
+        "assetId": "reverse-crunch-v1",
+        "file": "exercises/reverse-crunch.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "27741d46f9b1522b44ab8a0ff17df596bc9e35de5596e77d9c6226bb85adf313"
+    },
+    {
+      "id": "reverse-lunge",
+      "name": "Reverse Lunge",
+      "animation": {
+        "assetId": "reverse-lunge-v1",
+        "file": "exercises/reverse-lunge.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "2e2497c61f0f843cca817c1e569eff4b058a5ece2f05ca0262cf038869ba452b"
+    },
+    {
+      "id": "scapular-retraction",
+      "name": "Scapular Retraction",
+      "animation": {
+        "assetId": "scapular-retraction-v1",
+        "file": "exercises/scapular-retraction.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.5.0",
+      "profileSha256": "d0c2f66dbaf9072b983c30c41ce2d17da98e110bdaa8560920cc7630ac5d6f64"
+    },
+    {
+      "id": "seated-band-hamstring-curl",
+      "name": "Seated Band Hamstring Curl",
+      "animation": {
+        "assetId": "seated-band-hamstring-curl-v1",
+        "file": "exercises/seated-band-hamstring-curl.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.5.0",
+      "profileSha256": "6f9a0d1d9f1198d610a6a72fb2ed6b6a5e5009d7ec3643f4d231bdb92f7ef82d"
+    },
+    {
+      "id": "seated-calf-raise",
+      "name": "Seated calf raise",
+      "animation": {
+        "assetId": "seated-calf-raise-v1",
+        "file": "exercises/seated-calf-raise.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "3498b20b0d64f04e369688b6f6d563e93c59a3da22f4de682a531f73c54e2a6d"
+    },
+    {
+      "id": "seated-knee-extension",
+      "name": "Seated knee extension",
+      "animation": {
+        "assetId": "seated-knee-extension-v1",
+        "file": "exercises/seated-knee-extension.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "8ab01b5a3dd71a42ccb871907399d432f8cf9d675cadca6ba20f92a8fd8bd936"
+    },
+    {
+      "id": "seated-trunk-rotation",
+      "name": "Seated trunk rotation",
+      "animation": {
+        "assetId": "seated-trunk-rotation-v1",
+        "file": "exercises/seated-trunk-rotation.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "f3ff105b3cb056c93a3c74032f003396412ee1b4e0f2e57ec11a832b13fae3f4"
+    },
+    {
+      "id": "shoulder-pendulum",
+      "name": "Supported Shoulder Pendulum",
+      "animation": {
+        "assetId": "shoulder-pendulum-v1",
+        "file": "exercises/shoulder-pendulum.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.5.0",
+      "profileSha256": "969ace16961a2a86938d5b5d20d549336c90fe3987da0edc16fb445d82579cc4"
+    },
+    {
+      "id": "side-lying-clamshell",
+      "name": "Side-lying Clamshell",
+      "animation": {
+        "assetId": "side-lying-clamshell-v1",
+        "file": "exercises/side-lying-clamshell.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "162411292c85542c445b6e4222001d93c8d49490104932167c09ef1be8036d4b"
+    },
+    {
+      "id": "side-lying-dumbbell-external-rotation",
+      "name": "Side-lying Dumbbell External Rotation",
+      "animation": {
+        "assetId": "side-lying-dumbbell-external-rotation-v1",
+        "file": "exercises/side-lying-dumbbell-external-rotation.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.4.0",
+      "profileSha256": "08be527247d1ffa83437839bd8a13b5e459ac3cab541d6e18a0038d98d57e2bc"
+    },
+    {
+      "id": "side-lying-hip-abduction",
+      "name": "Side-lying Hip Abduction",
+      "animation": {
+        "assetId": "side-lying-hip-abduction-v1",
+        "file": "exercises/side-lying-hip-abduction.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "f9bd3098e9e053db5babfb9901f1fcb269bc63ed04cd6ac6838abb57747c4cdf"
+    },
+    {
+      "id": "side-plank",
+      "name": "Side Plank",
+      "animation": {
+        "assetId": "side-plank-v1",
+        "file": "exercises/side-plank.glb",
+        "clip": "hold",
+        "kind": "hold",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "0fef26a60165f3fca19247dfe735bcd8e8740291e7c3470b79237fda639e5429"
+    },
+    {
+      "id": "single-leg-glute-bridge",
+      "name": "Single-leg glute bridge",
+      "animation": {
+        "assetId": "single-leg-glute-bridge-v1",
+        "file": "exercises/single-leg-glute-bridge.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "fc37f4d14663779492738d00416d629f8c274ef69901fddf014cf1e92dfdc1a1"
+    },
+    {
+      "id": "single-leg-romanian-deadlift",
+      "name": "Single-leg Romanian deadlift",
+      "animation": {
+        "assetId": "single-leg-romanian-deadlift-v1",
+        "file": "exercises/single-leg-romanian-deadlift.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "2e2497c61f0f843cca817c1e569eff4b058a5ece2f05ca0262cf038869ba452b"
+    },
+    {
+      "id": "sit-to-stand",
+      "name": "Sit-to-stand",
+      "animation": {
+        "assetId": "sit-to-stand-v1",
+        "file": "exercises/sit-to-stand.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "371828c40081aaafc55300002d5d56294548b39781f122b9606a0d134ab63bbe"
+    },
+    {
+      "id": "split-squat",
+      "name": "Split Squat",
+      "animation": {
+        "assetId": "split-squat-v1",
+        "file": "exercises/split-squat.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "0abff16916f4b09df63dbc30b281e4064132ed55a32862cae69ed1ff9830dd85"
+    },
+    {
+      "id": "standing-calf-raise",
+      "name": "Standing Calf Raise",
+      "animation": {
+        "assetId": "standing-calf-raise-v1",
+        "file": "exercises/standing-calf-raise.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "f4d0b6b69d7cfb3eadf8006bc59a08aa4f219073f41ac5783d396e83c79aca66"
+    },
+    {
+      "id": "standing-hamstring-stretch",
+      "name": "Standing hamstring stretch",
+      "animation": {
+        "assetId": "standing-hamstring-stretch-v1",
+        "file": "exercises/standing-hamstring-stretch.glb",
+        "clip": "hold",
+        "kind": "hold",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "ceb72a2b0f6c8e438412ddf54eefef816b67d656f1f7b4472dffba3534fb98a2"
+    },
+    {
+      "id": "standing-hip-abduction",
+      "name": "Standing hip abduction",
+      "animation": {
+        "assetId": "standing-hip-abduction-v1",
+        "file": "exercises/standing-hip-abduction.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "2e2497c61f0f843cca817c1e569eff4b058a5ece2f05ca0262cf038869ba452b"
+    },
+    {
+      "id": "standing-hip-extension",
+      "name": "Standing Hip Extension",
+      "animation": {
+        "assetId": "standing-hip-extension-v1",
+        "file": "exercises/standing-hip-extension.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "2e2497c61f0f843cca817c1e569eff4b058a5ece2f05ca0262cf038869ba452b"
+    },
+    {
+      "id": "standing-hip-flexion",
+      "name": "Standing hip flexion",
+      "animation": {
+        "assetId": "standing-hip-flexion-v1",
+        "file": "exercises/standing-hip-flexion.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "2e2497c61f0f843cca817c1e569eff4b058a5ece2f05ca0262cf038869ba452b"
+    },
+    {
+      "id": "step-up",
+      "name": "Step-up",
+      "animation": {
+        "assetId": "step-up-v1",
+        "file": "exercises/step-up.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "1a39e3f0342b44e91cf2f07abf6ea4c96b0a470eadb22229efa85559ca9d7893"
+    },
+    {
+      "id": "straight-leg-raise",
+      "name": "Straight-leg raise",
+      "animation": {
+        "assetId": "straight-leg-raise-v1",
+        "file": "exercises/straight-leg-raise.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "3a320bec82de64b22716c97cd402ac8d1b2eb08aec27b115fbcfad09388d9073"
+    },
+    {
+      "id": "superman",
+      "name": "Superman",
+      "animation": {
+        "assetId": "superman-v1",
+        "file": "exercises/superman.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "9e44465f9d290c762e5bf42e592b37cfc5519173a468a390fc993f69d3d6610d"
+    },
+    {
+      "id": "supine-heel-slide",
+      "name": "Supine Heel Slide",
+      "animation": {
+        "assetId": "supine-heel-slide-v1",
+        "file": "exercises/supine-heel-slide.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "b19f97af8d016631f4bf22e46d895f400c9022e6b0ad01cd1512638eea391f54"
+    },
+    {
+      "id": "supine-pelvic-tilt",
+      "name": "Supine pelvic tilt",
+      "animation": {
+        "assetId": "supine-pelvic-tilt-v1",
+        "file": "exercises/supine-pelvic-tilt.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "dd7eebea3da341d06313fad9104046b784df9cb67fe5a198458b381722275e73"
+    },
+    {
+      "id": "supine-serratus-punch",
+      "name": "Supine Serratus Punch",
+      "animation": {
+        "assetId": "supine-serratus-punch-v1",
+        "file": "exercises/supine-serratus-punch.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "upper-quarter-v2",
+      "regionVersion": "1.3.0",
+      "profileSha256": "bdb8c42069047108bd0825caa9d256dcdeb6e7a85fd061bfc78f1955161ed8e8"
+    },
+    {
+      "id": "supine-trunk-rotation",
+      "name": "Supine trunk rotation",
+      "animation": {
+        "assetId": "supine-trunk-rotation-v1",
+        "file": "exercises/supine-trunk-rotation.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "c416faa736b98e2d5c13fdb41c38d3efb80fda7c4b16bc3bd84b0f7ce9610077"
+    },
+    {
+      "id": "thoracic-open-book",
+      "name": "Thoracic open book",
+      "animation": {
+        "assetId": "thoracic-open-book-v1",
+        "file": "exercises/thoracic-open-book.glb",
+        "clip": "rep",
+        "kind": "repetition",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "65fc0fa81f959a940836cb248c73615e3233826db93b80d1072f739e91b8f5d0"
+    },
+    {
+      "id": "wall-sit",
+      "name": "Wall sit",
+      "animation": {
+        "assetId": "wall-sit-v1",
+        "file": "exercises/wall-sit.glb",
+        "clip": "hold",
+        "kind": "hold",
+        "loop": true,
+        "durationSeconds": 4
+      },
+      "rig": "canonical-v1",
+      "regionVersion": "1.2.0",
+      "profileSha256": "41b4951ddd9d4af5a17b73761fd1ac32c5284cd93cfc7dc3abfeb70e7ff70227"
+    }
+  ],
+  "files": [
+    {
+      "path": ".nvmrc",
+      "role": "source",
+      "bytes": 8,
+      "sha256": "5c293036fc0a61ad76e15d85f454c3c7cec157e181e035b69f95058a2c239144"
+    },
+    {
+      "path": "assets/ASSET_LICENSES.json",
+      "role": "source",
+      "bytes": 148771,
+      "sha256": "a8aceedf3288e50a17f8be3d7676a72397d030b0689f16364dade372cded1ef1"
+    },
+    {
+      "path": "assets/characters/neutral-human.glb",
+      "role": "artifact",
+      "bytes": 611416,
+      "sha256": "58e6b6695d71925785f5c733e9c70e230ab51949bb9e4cdb06ed961b88ce6e6e"
+    },
+    {
+      "path": "assets/equipment/ab-wheel.glb",
+      "role": "artifact",
+      "bytes": 3172,
+      "sha256": "0385ab34c615c037b0259dbe8e0d1bb2ff4c99468dc07cadd827cdbe9f04fba9"
+    },
+    {
+      "path": "assets/equipment/band-anchor.glb",
+      "role": "artifact",
+      "bytes": 3128,
+      "sha256": "482902a9ca3a4b61c76515e75bf0218e72b8c54fd25ccaa539af02424d97e8f3"
+    },
+    {
+      "path": "assets/equipment/band-foot-strap.glb",
+      "role": "artifact",
+      "bytes": 4616,
+      "sha256": "9b4c045ec54a786c5c9a8956b46f6705ecccb3dba35d9d35379e35addc2d46a8"
+    },
+    {
+      "path": "assets/equipment/band-handle.glb",
+      "role": "artifact",
+      "bytes": 1692,
+      "sha256": "0f6e953e634fdf1c0760c4164cdae1353d6c0d52b57b89eae1278c086a321714"
+    },
+    {
+      "path": "assets/equipment/band-knee-strap.glb",
+      "role": "artifact",
+      "bytes": 3860,
+      "sha256": "177f8035e6e0c8772d9cbf2ffecaf0955f643cf8636fa817d9e0f0237793a52f"
+    },
+    {
+      "path": "assets/equipment/band-shin-strap.glb",
+      "role": "artifact",
+      "bytes": 3868,
+      "sha256": "b67b717e884659b361b8869fffcf7c3dbaaf71e3214ecf160fbbb4789cac97b1"
+    },
+    {
+      "path": "assets/equipment/barbell-pad.glb",
+      "role": "artifact",
+      "bytes": 2076,
+      "sha256": "bfeaec04eb3b31372635e85bbbc764c8e8ffa4aa4442fe5c6dd10ce4301c516f"
+    },
+    {
+      "path": "assets/equipment/barbell.glb",
+      "role": "artifact",
+      "bytes": 4272,
+      "sha256": "e1c0ea8cdaba2dc4252f31560d367248f64b371ee942505b966896467c5a5263"
+    },
+    {
+      "path": "assets/equipment/bench.glb",
+      "role": "artifact",
+      "bytes": 4548,
+      "sha256": "7ab42ca98cec3383f5c52cfcec454ed14438932e366f5430f6573c74e50138a7"
+    },
+    {
+      "path": "assets/equipment/box.glb",
+      "role": "artifact",
+      "bytes": 1660,
+      "sha256": "dc63af4571e123e270648c2d6c77750f48411225a85bb1b2bd3e01ba100317db"
+    },
+    {
+      "path": "assets/equipment/dumbbell.glb",
+      "role": "artifact",
+      "bytes": 4308,
+      "sha256": "0d9cc87183a1aa14dd4ad212e016c9247e6649e91ea6471930bb7e3e96b8028b"
+    },
+    {
+      "path": "assets/equipment/flat-bench.glb",
+      "role": "artifact",
+      "bytes": 5284,
+      "sha256": "fc259c6279632eddb70a3fbb440a1df717a900d2bd90105293aef1db06120ca7"
+    },
+    {
+      "path": "assets/equipment/hanging-frame.glb",
+      "role": "artifact",
+      "bytes": 4588,
+      "sha256": "b8da1bc43e481fb9e3e88c2140bec55ffb15ab2dc6a79265520e49ba780bbb4d"
+    },
+    {
+      "path": "assets/equipment/landmine-anchor.glb",
+      "role": "artifact",
+      "bytes": 2408,
+      "sha256": "b8c19a67fd7a088411317fc78015c4040df25bbba1f7dc93603731d95788846f"
+    },
+    {
+      "path": "assets/equipment/landmine-bar.glb",
+      "role": "artifact",
+      "bytes": 3180,
+      "sha256": "9f75109626856a3d6139b8dec7866c927d42abd12aa9c3be9a77acfa48929ebf"
+    },
+    {
+      "path": "assets/equipment/low-frame.glb",
+      "role": "artifact",
+      "bytes": 4564,
+      "sha256": "7fcf09bdcedb909c1862101cff9cbf6a83841fae27fcc7552161293635bc2e55"
+    },
+    {
+      "path": "assets/equipment/pendulum-table.glb",
+      "role": "artifact",
+      "bytes": 3144,
+      "sha256": "67b2da1395a6418ba868371dd3d107d8a416b74c7813723562385db447d8d686"
+    },
+    {
+      "path": "assets/equipment/resistance-band.glb",
+      "role": "artifact",
+      "bytes": 4392,
+      "sha256": "e684a22f5979bdfb96dca8991bc36d3bc36b1cc8bbf8383d5f35e9b03b2a431c"
+    },
+    {
+      "path": "assets/equipment/wall.glb",
+      "role": "artifact",
+      "bytes": 1656,
+      "sha256": "0414381dcfcba343d6d6e7b13c0def1ab0c0f0dfa6067371dda411b1a6744774"
+    },
+    {
+      "path": "assets/exercises/ab-wheel-rollout.glb",
+      "role": "artifact",
+      "bytes": 653700,
+      "sha256": "795d6f865f90ccd1186537c26d751689ca1cb1603b7a1a16b2af2b91470565ca"
+    },
+    {
+      "path": "assets/exercises/ankle-dorsiflexion-rock.glb",
+      "role": "artifact",
+      "bytes": 646532,
+      "sha256": "a2ec0a05059925ab4ccf354d6a751b1365cc0da8eaa4182a7bb02caee75ed4d5"
+    },
+    {
+      "path": "assets/exercises/band-ankle-dorsiflexion.glb",
+      "role": "artifact",
+      "bytes": 672592,
+      "sha256": "822de1742753a86a5e0785f82f2ceee7eb18c0d86d4705c71413944a17feaffd"
+    },
+    {
+      "path": "assets/exercises/band-ankle-plantarflexion.glb",
+      "role": "artifact",
+      "bytes": 672592,
+      "sha256": "4f13d5d9f39fe84d175900b9b7ca491fe95cc027dad966a28649f2299a304113"
+    },
+    {
+      "path": "assets/exercises/band-chest-press.glb",
+      "role": "artifact",
+      "bytes": 647140,
+      "sha256": "5060aea48b75ed5bd98b5ed6b6fd9bbc4791f1876444eddc014b60f047400fae"
+    },
+    {
+      "path": "assets/exercises/band-external-rotation.glb",
+      "role": "artifact",
+      "bytes": 647148,
+      "sha256": "b1370a3c3d375a8efce9ad2905856b61b804e1487fae9fd70dfec561291a56e9"
+    },
+    {
+      "path": "assets/exercises/band-face-pull.glb",
+      "role": "artifact",
+      "bytes": 647140,
+      "sha256": "779c2d1537ff12bea2ae4dda4dfb890b64d8cda4b4590dabe1e2567d3c9209e2"
+    },
+    {
+      "path": "assets/exercises/band-hip-adduction.glb",
+      "role": "artifact",
+      "bytes": 657148,
+      "sha256": "dc2b47095a984eb1fd0b7e87a55e733d50191e8aea2f6719b42b8b0f267ee5c0"
+    },
+    {
+      "path": "assets/exercises/band-internal-rotation.glb",
+      "role": "artifact",
+      "bytes": 647188,
+      "sha256": "9ce7eb78a79bac8d75a9b1bae5aaa0dec2c94db2f34e9dbdb2095179b9cf5c75"
+    },
+    {
+      "path": "assets/exercises/band-pallof-press.glb",
+      "role": "artifact",
+      "bytes": 650292,
+      "sha256": "78b247f7cadd51af874ca5e25842e55a49ace2a7fe462c2f2db59075c01659ea"
+    },
+    {
+      "path": "assets/exercises/band-pull-apart.glb",
+      "role": "artifact",
+      "bytes": 644320,
+      "sha256": "826c6819f0f91ab4cce265fae1fedd92fa301ab88b5946a024bae3225780c907"
+    },
+    {
+      "path": "assets/exercises/band-row.glb",
+      "role": "artifact",
+      "bytes": 647152,
+      "sha256": "3a994b788f23c576d271b8978ea8dcca0b763e520b4d1e7de15610979fd19034"
+    },
+    {
+      "path": "assets/exercises/band-terminal-knee-extension.glb",
+      "role": "artifact",
+      "bytes": 667452,
+      "sha256": "94a1c7319495c1a0d875b9ef0569f049997eaca23991223b461a6cd85a55f2a4"
+    },
+    {
+      "path": "assets/exercises/band-triceps-pushdown.glb",
+      "role": "artifact",
+      "bytes": 647188,
+      "sha256": "efeffbcbefb7e93abc188d8cf846645453e6adc14b6326425beb539838f3819c"
+    },
+    {
+      "path": "assets/exercises/barbell-back-squat.glb",
+      "role": "artifact",
+      "bytes": 654744,
+      "sha256": "accbdd668613c4263d8f75ac6e5dee78682e038267842483f2abf1932817fbb6"
+    },
+    {
+      "path": "assets/exercises/barbell-bench-press.glb",
+      "role": "artifact",
+      "bytes": 659820,
+      "sha256": "c4de31c40941b9c756ba49bbd6abcdf63170b3825dac44415d1266b1ffb6dd5f"
+    },
+    {
+      "path": "assets/exercises/barbell-bent-over-row.glb",
+      "role": "artifact",
+      "bytes": 654716,
+      "sha256": "cd384965daf7f7fbb6af8168cf9ffeb9b96983dd3f74bc31222a7cbf490b5b1f"
+    },
+    {
+      "path": "assets/exercises/barbell-conventional-deadlift.glb",
+      "role": "artifact",
+      "bytes": 654732,
+      "sha256": "6f76f07cce028d93f05e7db033ef9e66f91c5f544d92f79e76ad44df3b43f829"
+    },
+    {
+      "path": "assets/exercises/barbell-front-squat.glb",
+      "role": "artifact",
+      "bytes": 654768,
+      "sha256": "b1b0d959ed7414ef0f965a0408e8aeb2705bca66e79b6c787dcda8bb3bc51882"
+    },
+    {
+      "path": "assets/exercises/barbell-good-morning.glb",
+      "role": "artifact",
+      "bytes": 654752,
+      "sha256": "1a9fa52ac280e85caafa85a5c3b8fd2d0fac97aeff70462080dc4039ecd22c0e"
+    },
+    {
+      "path": "assets/exercises/barbell-overhead-press.glb",
+      "role": "artifact",
+      "bytes": 641400,
+      "sha256": "8ef36c9416d6d99e1df056302ce75a0eb877f6810c1a06c9f5f86f69848f49e2"
+    },
+    {
+      "path": "assets/exercises/bench-dip.glb",
+      "role": "artifact",
+      "bytes": 650912,
+      "sha256": "f3add6f790597a94e93aa87ce15e936a3be6271be5958971a2e06f2671357eef"
+    },
+    {
+      "path": "assets/exercises/bent-over-dumbbell-row.glb",
+      "role": "artifact",
+      "bytes": 646076,
+      "sha256": "5aa36f72be74dc5513ad2723eb3d970de180bc3d18a5ce806005a0c19b208764"
+    },
+    {
+      "path": "assets/exercises/bicycle-crunch.glb",
+      "role": "artifact",
+      "bytes": 646108,
+      "sha256": "b7a7f0a33b976c9f3f893f901baa5512a2c9ac58dc51e1399d7115d26aa4c2b6"
+    },
+    {
+      "path": "assets/exercises/bird-dog.glb",
+      "role": "artifact",
+      "bytes": 641808,
+      "sha256": "1be835a6ac79a6992fcc188276f236d7b7f192e6c8203bf7eb1c1c1eccf3d1bf"
+    },
+    {
+      "path": "assets/exercises/bodyweight-squat.glb",
+      "role": "artifact",
+      "bytes": 637496,
+      "sha256": "b225d7512d484f1e5234dcaed1c45dbfcd59d2ea3a8a8397b6550dbf63ccccd7"
+    },
+    {
+      "path": "assets/exercises/bulgarian-split-squat.glb",
+      "role": "artifact",
+      "bytes": 646208,
+      "sha256": "e8ac5643e4854e2e1187e08a24fb7cff5ae3300ae65ab2db5bc3f3cad8c9e588"
+    },
+    {
+      "path": "assets/exercises/cat-cow.glb",
+      "role": "artifact",
+      "bytes": 648332,
+      "sha256": "bf2e74db53d8873f846024f718c786c3fa75b74c0f30665fa9b253135d4a078e"
+    },
+    {
+      "path": "assets/exercises/cervical-lateral-flexion.glb",
+      "role": "artifact",
+      "bytes": 631884,
+      "sha256": "d7760356b072f8d9367cc43f813352e180be5bc30e18322d59167cf4f528885b"
+    },
+    {
+      "path": "assets/exercises/cervical-rotation.glb",
+      "role": "artifact",
+      "bytes": 631884,
+      "sha256": "b97189e111ff33f051a80b5d20778ef306c1b3a3580d929a3bdaec95de76fa9a"
+    },
+    {
+      "path": "assets/exercises/childs-pose.glb",
+      "role": "artifact",
+      "bytes": 650892,
+      "sha256": "4764fb8762c4372ae2fc9337ed83cd05f8f4b3c22fa8fb342ce772d661cd18fb"
+    },
+    {
+      "path": "assets/exercises/chin-tuck.glb",
+      "role": "artifact",
+      "bytes": 635780,
+      "sha256": "68a5d81aeb74159ea3472fa2a7ca6b4752ee18fd535c82e992964a2f29ce8b57"
+    },
+    {
+      "path": "assets/exercises/curl-up.glb",
+      "role": "artifact",
+      "bytes": 646108,
+      "sha256": "86ac35a00d83aed746bbdc7ee28064488adcbfb47735789ebc91720abc1d68f7"
+    },
+    {
+      "path": "assets/exercises/dead-bug.glb",
+      "role": "artifact",
+      "bytes": 641800,
+      "sha256": "1d2834871515e4f481a397f75c613c4b84f434eac1855008d51eabf5687b5fb1"
+    },
+    {
+      "path": "assets/exercises/dead-hang.glb",
+      "role": "artifact",
+      "bytes": 638224,
+      "sha256": "a3cb9367fcdf796a199a03c5baac15e1cf2a1b802eb53555dade765fe3bfe378"
+    },
+    {
+      "path": "assets/exercises/dumbbell-biceps-curl.glb",
+      "role": "artifact",
+      "bytes": 629288,
+      "sha256": "43689fa4b9db49c039ff129d446abe830657c6ff0a520debdce7696116e3a3fe"
+    },
+    {
+      "path": "assets/exercises/dumbbell-chest-fly.glb",
+      "role": "artifact",
+      "bytes": 646068,
+      "sha256": "64d52e3687eaa5fc941b433ba55fd55c085201cca7ddfba9b55843237d312e8f"
+    },
+    {
+      "path": "assets/exercises/dumbbell-floor-press.glb",
+      "role": "artifact",
+      "bytes": 646068,
+      "sha256": "8627e865ccc6df38ee5fc168511c2085a92d4d145d83c433ea770ab5a01eb742"
+    },
+    {
+      "path": "assets/exercises/dumbbell-front-raise.glb",
+      "role": "artifact",
+      "bytes": 629288,
+      "sha256": "5f7e45f5e0b635fadbfeec8907b51eb73a86c343326f3e5cb0c0e02fccde06d5"
+    },
+    {
+      "path": "assets/exercises/dumbbell-lateral-raise.glb",
+      "role": "artifact",
+      "bytes": 629288,
+      "sha256": "c0d862eb2b9942b4d55ff283d8fd94410d726ef8886761d7188c7a13edf62b5b"
+    },
+    {
+      "path": "assets/exercises/dumbbell-pullover.glb",
+      "role": "artifact",
+      "bytes": 655860,
+      "sha256": "e00193cb7a89ba5eb66162562e8c4923fa2c59645fd4aae69cb057f89bfaf2f1"
+    },
+    {
+      "path": "assets/exercises/dumbbell-reverse-fly.glb",
+      "role": "artifact",
+      "bytes": 654244,
+      "sha256": "68d61e7741115385ea6def7e3447089333f487a0e7c4df842a6a7ed8cd4247b9"
+    },
+    {
+      "path": "assets/exercises/dumbbell-reverse-wrist-curl.glb",
+      "role": "artifact",
+      "bytes": 633908,
+      "sha256": "18293e37c3ac1b743cdd0932f74e8f27ab62bacfdbee303587bb458979007122"
+    },
+    {
+      "path": "assets/exercises/dumbbell-romanian-deadlift.glb",
+      "role": "artifact",
+      "bytes": 646076,
+      "sha256": "5109a49a3b666b2628a4c9aee0b922c370ce5625679e68a67f598e4fd8ec0447"
+    },
+    {
+      "path": "assets/exercises/dumbbell-shoulder-press.glb",
+      "role": "artifact",
+      "bytes": 637396,
+      "sha256": "ff961bce175308c17eea4e30e152623db5abeaefd1378926073eaffc094471f1"
+    },
+    {
+      "path": "assets/exercises/dumbbell-side-bend.glb",
+      "role": "artifact",
+      "bytes": 638124,
+      "sha256": "38832eacd12c25d0ff5421c7ce5da7bac749306a0cbabd6d58e3fc0e3eb4ed54"
+    },
+    {
+      "path": "assets/exercises/dumbbell-triceps-kickback.glb",
+      "role": "artifact",
+      "bytes": 646072,
+      "sha256": "e6aecfbdc5c770a013e439b42597f9c1d9b76d79fbfe4f7455f998b91ffc485c"
+    },
+    {
+      "path": "assets/exercises/dumbbell-wrist-curl.glb",
+      "role": "artifact",
+      "bytes": 633908,
+      "sha256": "075caa589efb15b67dc580b66014718ecc120597732d3816e987464a736d4811"
+    },
+    {
+      "path": "assets/exercises/fire-hydrant.glb",
+      "role": "artifact",
+      "bytes": 641808,
+      "sha256": "a25e488ee30a3ca8ff785d4ae756fe76035ab9c19050b081d574d3062e115435"
+    },
+    {
+      "path": "assets/exercises/forearm-plank.glb",
+      "role": "artifact",
+      "bytes": 633296,
+      "sha256": "53a62fcf59f0bbb8a416f329d22c3b00e26c55be5374e77e73b7bad055c67e84"
+    },
+    {
+      "path": "assets/exercises/forearm-wall-slide.glb",
+      "role": "artifact",
+      "bytes": 631216,
+      "sha256": "6f1f3c37ad2c6763717c1d4c8d926314cbdd09947b7e91523be36783d86b20ea"
+    },
+    {
+      "path": "assets/exercises/glute-bridge.glb",
+      "role": "artifact",
+      "bytes": 631100,
+      "sha256": "cfe5b79282955a8bd49aa9233890986435cc5ca04745ab1dd3bddc56c581d208"
+    },
+    {
+      "path": "assets/exercises/half-kneeling-hip-flexor-stretch.glb",
+      "role": "artifact",
+      "bytes": 646580,
+      "sha256": "eae7fd2208ea83b507248a188f47d47513cfca6c62afb6899ca8421fad3e9dcc"
+    },
+    {
+      "path": "assets/exercises/hanging-knee-raise.glb",
+      "role": "artifact",
+      "bytes": 651108,
+      "sha256": "6d7e4d1e581bd236876ef4c4acdabce56681a1466794ee84ce451e4f6491834b"
+    },
+    {
+      "path": "assets/exercises/hip-thrust.glb",
+      "role": "artifact",
+      "bytes": 663224,
+      "sha256": "09519a52c49fc2b7c3278cf3165a6becdeb343da74e9cb7b77c15d5f0b8e8edb"
+    },
+    {
+      "path": "assets/exercises/hollow-body-hold.glb",
+      "role": "artifact",
+      "bytes": 646148,
+      "sha256": "088dd9c4c24a8190646853c80380aa8d17a2e840a2781b6cbec4420cebff0746"
+    },
+    {
+      "path": "assets/exercises/inverted-row.glb",
+      "role": "artifact",
+      "bytes": 651080,
+      "sha256": "c70c3fe9d6cf09a39d3d582810614503a2e5f155d6cd1a1bc46feae85f42e9b6"
+    },
+    {
+      "path": "assets/exercises/landmine-press.glb",
+      "role": "artifact",
+      "bytes": 655788,
+      "sha256": "d15195299afcfa281b307987bedb3ecf2165a17c52c9a9ebec4b18e93d74fa4d"
+    },
+    {
+      "path": "assets/exercises/landmine-row.glb",
+      "role": "artifact",
+      "bytes": 655792,
+      "sha256": "d95959291c912eead400dee2f795cd49088adad06fafc1070ab18510848afb9d"
+    },
+    {
+      "path": "assets/exercises/lateral-lunge.glb",
+      "role": "artifact",
+      "bytes": 641804,
+      "sha256": "6dbb983b29ddeedac1d2897b11918c9a97c2b2481cb3075b617be20e44df3111"
+    },
+    {
+      "path": "assets/exercises/lying-triceps-extension.glb",
+      "role": "artifact",
+      "bytes": 655860,
+      "sha256": "23df0dff3133bf63f8401b5ad3902e974b57b3b12a8b2333cc93eac3208deca4"
+    },
+    {
+      "path": "assets/exercises/ninety-ninety-hip-rotation.glb",
+      "role": "artifact",
+      "bytes": 646508,
+      "sha256": "481247a04336690fb0ae0789dedda7e5d0c5f14b4f4e81647fb48b55ce1e6ef6"
+    },
+    {
+      "path": "assets/exercises/overhead-triceps-extension.glb",
+      "role": "artifact",
+      "bytes": 633948,
+      "sha256": "3ae6523acab213aee6128fdc162cd1d6ff2b9b72799b6e55160488488cf7cea1"
+    },
+    {
+      "path": "assets/exercises/pike-push-up.glb",
+      "role": "artifact",
+      "bytes": 646512,
+      "sha256": "97367e0b26eb40e711339d929aaab0931b14586a3f7965ecbde49d04e10853a1"
+    },
+    {
+      "path": "assets/exercises/prone-hamstring-curl.glb",
+      "role": "artifact",
+      "bytes": 624568,
+      "sha256": "c7b71b630974134a0770196536380e6e74ee285157687fd3cc4dc4f2cedd4529"
+    },
+    {
+      "path": "assets/exercises/prone-hip-extension.glb",
+      "role": "artifact",
+      "bytes": 628872,
+      "sha256": "0cc528caa0eb8bc33ba718b24a95fa3208cb5cdc98f4457d2524fe4fab1483b2"
+    },
+    {
+      "path": "assets/exercises/pull-up.glb",
+      "role": "artifact",
+      "bytes": 638184,
+      "sha256": "5ad309d6c374b2652223e8692d9b30059fb7d8f171c093bb707a6193e76b0bc7"
+    },
+    {
+      "path": "assets/exercises/push-up.glb",
+      "role": "artifact",
+      "bytes": 633252,
+      "sha256": "1d4b39035b6866d7818a4f97e4bddf6880b55ed71ef028b8f115f3d45bb1ad2f"
+    },
+    {
+      "path": "assets/exercises/quadruped-hip-extension.glb",
+      "role": "artifact",
+      "bytes": 641808,
+      "sha256": "222be17bc03c4742a99cca68aef059dc999106747ca72b639a56a478f3b9f6fa"
+    },
+    {
+      "path": "assets/exercises/quadruped-thoracic-rotation.glb",
+      "role": "artifact",
+      "bytes": 646116,
+      "sha256": "117a18c877a1641ddc94de4b5ee4d7fc1870e67bc653e70d0dc4e98380ddfb0a"
+    },
+    {
+      "path": "assets/exercises/reverse-crunch.glb",
+      "role": "artifact",
+      "bytes": 633252,
+      "sha256": "f0d6146cdf94849f176221e8c86acd657c5273e2471f6fccee51706713a87183"
+    },
+    {
+      "path": "assets/exercises/reverse-lunge.glb",
+      "role": "artifact",
+      "bytes": 641808,
+      "sha256": "37d660a3ce2a27733b77dfe348873eca6a2121fa6bfaa32f3dc8f9f78141637a"
+    },
+    {
+      "path": "assets/exercises/scapular-retraction.glb",
+      "role": "artifact",
+      "bytes": 633228,
+      "sha256": "03ce5c52fc1e5d4e2d02395fe1d4dbc1ec7def5a201748a69f286203971794fc"
+    },
+    {
+      "path": "assets/exercises/seated-band-hamstring-curl.glb",
+      "role": "artifact",
+      "bytes": 671860,
+      "sha256": "e58e5b796d8c547ebb884baca3b65e20b2a0c805d1981bf6187bdb01479030b5"
+    },
+    {
+      "path": "assets/exercises/seated-calf-raise.glb",
+      "role": "artifact",
+      "bytes": 646340,
+      "sha256": "e5a891a322afc73262532b4d6b05c4ec57993f4020139d9a3a7d0a84d48fe08d"
+    },
+    {
+      "path": "assets/exercises/seated-knee-extension.glb",
+      "role": "artifact",
+      "bytes": 646196,
+      "sha256": "1de7ae9154af03aefa9855ac6ab11c861f74275f94d3c1fc6c2dc29f5920503c"
+    },
+    {
+      "path": "assets/exercises/seated-trunk-rotation.glb",
+      "role": "artifact",
+      "bytes": 650504,
+      "sha256": "733c911c11e5634e499887b33c7901283a9ab719099de56630714bef0f424029"
+    },
+    {
+      "path": "assets/exercises/shoulder-pendulum.glb",
+      "role": "artifact",
+      "bytes": 649500,
+      "sha256": "6f633b763764b9f1446c8a1c6005285a2532c7e74ce3f6a59338d1ab9fc6ca69"
+    },
+    {
+      "path": "assets/exercises/side-lying-clamshell.glb",
+      "role": "artifact",
+      "bytes": 641804,
+      "sha256": "72d3e6fc0c214a101825e8f4c6acd15f8aca9ac3945fbcd14cd04bdc4231b0df"
+    },
+    {
+      "path": "assets/exercises/side-lying-dumbbell-external-rotation.glb",
+      "role": "artifact",
+      "bytes": 650604,
+      "sha256": "423e08bdb9db40a112e4e1ebe3af4d9a214cb9b879294a93bd012d67026948a9"
+    },
+    {
+      "path": "assets/exercises/side-lying-hip-abduction.glb",
+      "role": "artifact",
+      "bytes": 635340,
+      "sha256": "908b1ae11f4b446558d604cfd77c43b481964155ceed900962a32b59c2d50b3a"
+    },
+    {
+      "path": "assets/exercises/side-plank.glb",
+      "role": "artifact",
+      "bytes": 641868,
+      "sha256": "4dfc03975511ba96a188dd152c3d9b50a7608ec4d57d18c9d891fdd48dd80dd9"
+    },
+    {
+      "path": "assets/exercises/single-leg-glute-bridge.glb",
+      "role": "artifact",
+      "bytes": 631100,
+      "sha256": "f4e4fde2f92e2d381a9069109e46ff7e051783e1ad4da51011802f1b75716184"
+    },
+    {
+      "path": "assets/exercises/single-leg-romanian-deadlift.glb",
+      "role": "artifact",
+      "bytes": 641812,
+      "sha256": "5fe943c02749f4e48eac15e2e266dd9a31f01b7d084accddcbc35087b8a5b12a"
+    },
+    {
+      "path": "assets/exercises/sit-to-stand.glb",
+      "role": "artifact",
+      "bytes": 646192,
+      "sha256": "ea72107b5b9014f59e5309b423c2f25eee47f2cf4b510eda0ad07cf98488fc72"
+    },
+    {
+      "path": "assets/exercises/split-squat.glb",
+      "role": "artifact",
+      "bytes": 641808,
+      "sha256": "e12ca471b6eefcfa054295e3f41213ac8c5565c4427ba0943cc03419de535952"
+    },
+    {
+      "path": "assets/exercises/standing-calf-raise.glb",
+      "role": "artifact",
+      "bytes": 641992,
+      "sha256": "c9b41a083fdb1244d24e865fadd5e19224a1b3319dde52903ca5357ad6357ab7"
+    },
+    {
+      "path": "assets/exercises/standing-hamstring-stretch.glb",
+      "role": "artifact",
+      "bytes": 641848,
+      "sha256": "487bd8fdeb7e10c5a8f728ab7092a2d1f03f3ad8eedf4e5814f5c10d29e67870"
+    },
+    {
+      "path": "assets/exercises/standing-hip-abduction.glb",
+      "role": "artifact",
+      "bytes": 641808,
+      "sha256": "8ae035a5fe51505dd5f019fe04dba4187c0a78f1cb8d6fcd2e241f3f94eabc5e"
+    },
+    {
+      "path": "assets/exercises/standing-hip-extension.glb",
+      "role": "artifact",
+      "bytes": 641808,
+      "sha256": "5a7df38d047a4f30d8b55fc454e6e80668899f24a83ca0829d8b4350c779873d"
+    },
+    {
+      "path": "assets/exercises/standing-hip-flexion.glb",
+      "role": "artifact",
+      "bytes": 641808,
+      "sha256": "37e3a1eb7e4f531b1598ea3e11d488b6977b619138b2e7404e974ad05707c9c1"
+    },
+    {
+      "path": "assets/exercises/step-up.glb",
+      "role": "artifact",
+      "bytes": 643300,
+      "sha256": "9e9bc2ac8e1664fa6fb17b645892253bdcac30b1535faf12cee5441dc8e7d7fb"
+    },
+    {
+      "path": "assets/exercises/straight-leg-raise.glb",
+      "role": "artifact",
+      "bytes": 628872,
+      "sha256": "0c224fcf3e754f48e35800d2772ce891c1c6cbb89c015dffc1a597fe6b23715d"
+    },
+    {
+      "path": "assets/exercises/superman.glb",
+      "role": "artifact",
+      "bytes": 646108,
+      "sha256": "11b0b6b94e4f99a5bf19118eeab54ddb25759fcffb145fb23cf683f4311e951b"
+    },
+    {
+      "path": "assets/exercises/supine-heel-slide.glb",
+      "role": "artifact",
+      "bytes": 628872,
+      "sha256": "933f07e9af352873f4b89944b9608c5deafbfaf58758c551a8b58a69ad0a0360"
+    },
+    {
+      "path": "assets/exercises/supine-pelvic-tilt.glb",
+      "role": "artifact",
+      "bytes": 633252,
+      "sha256": "42874192229b750b787e0d39c44c674f5f879bbc6a5f8172cd63244ddd03b30d"
+    },
+    {
+      "path": "assets/exercises/supine-serratus-punch.glb",
+      "role": "artifact",
+      "bytes": 649928,
+      "sha256": "3d37afc9ef0f517c4c3633c44b0b1be642dee92a1c11898e31b42530a0fa66a5"
+    },
+    {
+      "path": "assets/exercises/supine-trunk-rotation.glb",
+      "role": "artifact",
+      "bytes": 631140,
+      "sha256": "d04c3386fd1165eed4f90101686ac4397e7ca58094549949d8b57195993301d9"
+    },
+    {
+      "path": "assets/exercises/thoracic-open-book.glb",
+      "role": "artifact",
+      "bytes": 646112,
+      "sha256": "b6a55d1e9f97a7facb1ea0626e69aeef69a6829adeca004f90e973977392074f"
+    },
+    {
+      "path": "assets/exercises/wall-sit.glb",
+      "role": "artifact",
+      "bytes": 643340,
+      "sha256": "d6a2d90ba4cc50a7964cd02046746fb76b72472ba7dd1b7a1bfb2eb6b1b5ef70"
+    },
+    {
+      "path": "assets/thumbnails/ab-wheel-rollout.png",
+      "role": "artifact",
+      "bytes": 19568,
+      "sha256": "e87acde7b084e4632557c1946b7238c54e537458504682d1718491e5393eca42"
+    },
+    {
+      "path": "assets/thumbnails/ankle-dorsiflexion-rock.png",
+      "role": "artifact",
+      "bytes": 23225,
+      "sha256": "1436e4d36f5fc8c781d761819affe43b1f2b6c0dacbf848d82ffa036726cbaee"
+    },
+    {
+      "path": "assets/thumbnails/band-ankle-dorsiflexion.png",
+      "role": "artifact",
+      "bytes": 24257,
+      "sha256": "95e6cdd1b5554f63d191ef837a0ca347ea3ba979090e687af19e9159a630f511"
+    },
+    {
+      "path": "assets/thumbnails/band-ankle-plantarflexion.png",
+      "role": "artifact",
+      "bytes": 25202,
+      "sha256": "5ef3eea13051426632fbe9157241119a20cd67493c9c344d52877249d5aa164a"
+    },
+    {
+      "path": "assets/thumbnails/band-chest-press.png",
+      "role": "artifact",
+      "bytes": 22051,
+      "sha256": "d61ec94a3f563d7071037767d9dfbe53b5b844eb47a9128b89b4b1eb333ea639"
+    },
+    {
+      "path": "assets/thumbnails/band-external-rotation.png",
+      "role": "artifact",
+      "bytes": 21047,
+      "sha256": "401f9ba1fcffd51a99522eb77108d4d03cf62696894b1c006ae929bfc33994dc"
+    },
+    {
+      "path": "assets/thumbnails/band-face-pull.png",
+      "role": "artifact",
+      "bytes": 19953,
+      "sha256": "2d0365301bbf96a93c36e361f56b73f097d26234c111d86265c094d18d79c1d1"
+    },
+    {
+      "path": "assets/thumbnails/band-hip-adduction.png",
+      "role": "artifact",
+      "bytes": 22143,
+      "sha256": "ffe86d899b31a987df40cf4c548cd8ad77f290f041d51d4081b55e1679750ca5"
+    },
+    {
+      "path": "assets/thumbnails/band-internal-rotation.png",
+      "role": "artifact",
+      "bytes": 20377,
+      "sha256": "ce2d4937015e0fd2eba0a47cc3a52e6ffb7c63eb7956a5587675a554d36bc8db"
+    },
+    {
+      "path": "assets/thumbnails/band-pallof-press.png",
+      "role": "artifact",
+      "bytes": 21252,
+      "sha256": "2b8cd5c94861e23662be6af8adde78db91a18f9bd8962ab3d9a9428082228c0b"
+    },
+    {
+      "path": "assets/thumbnails/band-pull-apart.png",
+      "role": "artifact",
+      "bytes": 21756,
+      "sha256": "2b61903b58d487886f69c4105cf37d0c3c87cfee66a7188e5b0efb1e52a02e02"
+    },
+    {
+      "path": "assets/thumbnails/band-row.png",
+      "role": "artifact",
+      "bytes": 19960,
+      "sha256": "92514f5267532094b4615ae4184de69eb7afb2cf0a106b0f397f2e9462850d8f"
+    },
+    {
+      "path": "assets/thumbnails/band-terminal-knee-extension.png",
+      "role": "artifact",
+      "bytes": 21444,
+      "sha256": "27966a5e1615130c1d1a7d9df613ab46534d11cfddbe0948bea3d760377a97f8"
+    },
+    {
+      "path": "assets/thumbnails/band-triceps-pushdown.png",
+      "role": "artifact",
+      "bytes": 22200,
+      "sha256": "8ec944a5039767c0b0b37a1b947b9293d534822f3698a8639dde0bb15cc78c7c"
+    },
+    {
+      "path": "assets/thumbnails/barbell-back-squat.png",
+      "role": "artifact",
+      "bytes": 22213,
+      "sha256": "46853716962b3a37804d27a862b5063394d8f1bd36d35dd1779e162a2a47ce08"
+    },
+    {
+      "path": "assets/thumbnails/barbell-bench-press.png",
+      "role": "artifact",
+      "bytes": 19039,
+      "sha256": "2b2489abc3556f380b1c53ce97ab697e26edc1cb4f81858cc6174b095e5f7b05"
+    },
+    {
+      "path": "assets/thumbnails/barbell-bent-over-row.png",
+      "role": "artifact",
+      "bytes": 25253,
+      "sha256": "e3eea9f1a8f5ae453f3e0b6fea9a999db6870cb55c37affaa752faece0dd498b"
+    },
+    {
+      "path": "assets/thumbnails/barbell-conventional-deadlift.png",
+      "role": "artifact",
+      "bytes": 23695,
+      "sha256": "8dac0731bda98a2a257901b8b662cfa5fbfd9efbea8488a95cf81d24d485265d"
+    },
+    {
+      "path": "assets/thumbnails/barbell-front-squat.png",
+      "role": "artifact",
+      "bytes": 21956,
+      "sha256": "c53cc18018ce0577f748dceec04c0be0250018ddfc606a11b4f76692bd2dd6d9"
+    },
+    {
+      "path": "assets/thumbnails/barbell-good-morning.png",
+      "role": "artifact",
+      "bytes": 22676,
+      "sha256": "16a43faa9fb1c9099cb1603b97185270f59e95bc124e1080a6f196da74e8c75f"
+    },
+    {
+      "path": "assets/thumbnails/barbell-overhead-press.png",
+      "role": "artifact",
+      "bytes": 20680,
+      "sha256": "a3a03aa9f56ce96a7c82a9bffdcc53fdc7b79b7e93c46bd1dd3e120195ca1a9e"
+    },
+    {
+      "path": "assets/thumbnails/bench-dip.png",
+      "role": "artifact",
+      "bytes": 25710,
+      "sha256": "545e95d534cf6fe1358f16ae6ac22113ddbb5373bdbf0c83951c0408ee3847fd"
+    },
+    {
+      "path": "assets/thumbnails/bent-over-dumbbell-row.png",
+      "role": "artifact",
+      "bytes": 27131,
+      "sha256": "4dff5c845b39d8a4374bcb2e75a671c8e5f1e2bb788800043d425559fedb043a"
+    },
+    {
+      "path": "assets/thumbnails/bicycle-crunch.png",
+      "role": "artifact",
+      "bytes": 19168,
+      "sha256": "362e7fc512bb2e9e4cd79aab3ce506fb08009f6224099c25db0e401ee14a9741"
+    },
+    {
+      "path": "assets/thumbnails/bird-dog.png",
+      "role": "artifact",
+      "bytes": 15941,
+      "sha256": "98c4c878356a6195cef0c6cbbd5118129f1f00eb33dbaf28bac6b40337a93a5a"
+    },
+    {
+      "path": "assets/thumbnails/bodyweight-squat.png",
+      "role": "artifact",
+      "bytes": 22336,
+      "sha256": "2424c8ab1c3cbd73410ab4cbc0d8d4ede682a59110aea0d6eeb10f4028c18934"
+    },
+    {
+      "path": "assets/thumbnails/bulgarian-split-squat.png",
+      "role": "artifact",
+      "bytes": 22640,
+      "sha256": "96d553ad0f7353038c43bf7f5bf92e60074658f87a9e48a0bc648cbd6322f2e0"
+    },
+    {
+      "path": "assets/thumbnails/cat-cow.png",
+      "role": "artifact",
+      "bytes": 21878,
+      "sha256": "9dd98971d0d941eedd0f3a91604d4dc7365ef203fc1d345be52861939a7e823e"
+    },
+    {
+      "path": "assets/thumbnails/cervical-lateral-flexion.png",
+      "role": "artifact",
+      "bytes": 20642,
+      "sha256": "3ab7bc02fc3bf175b44bb624e161d465e2c4b065e12acc1e4aa6640d842c6abc"
+    },
+    {
+      "path": "assets/thumbnails/cervical-rotation.png",
+      "role": "artifact",
+      "bytes": 20642,
+      "sha256": "3ab7bc02fc3bf175b44bb624e161d465e2c4b065e12acc1e4aa6640d842c6abc"
+    },
+    {
+      "path": "assets/thumbnails/childs-pose.png",
+      "role": "artifact",
+      "bytes": 22951,
+      "sha256": "0ba020a1b8511f0482dcc1c6110f6e9ffdc8dbe02233742ad83965c3755b2dd4"
+    },
+    {
+      "path": "assets/thumbnails/chin-tuck.png",
+      "role": "artifact",
+      "bytes": 20888,
+      "sha256": "84605aeacd65826d8240f7e4b8c28f4f36910bc4bcc386eb2bf658a6c29bb8bf"
+    },
+    {
+      "path": "assets/thumbnails/curl-up.png",
+      "role": "artifact",
+      "bytes": 23485,
+      "sha256": "5f30e20c2f80e5163db4adff9581cb9aba6dbbada67dae4fb540421c26ece0e7"
+    },
+    {
+      "path": "assets/thumbnails/dead-bug.png",
+      "role": "artifact",
+      "bytes": 17742,
+      "sha256": "470e29a8b0fdbba245ebe797468f74a854f89ef1ababe39c402bff8f3e1944ee"
+    },
+    {
+      "path": "assets/thumbnails/dead-hang.png",
+      "role": "artifact",
+      "bytes": 16675,
+      "sha256": "68d2323050b4687595a395455e9de1b5f7dec7a00d039137a6355dc9e147feb3"
+    },
+    {
+      "path": "assets/thumbnails/dumbbell-biceps-curl.png",
+      "role": "artifact",
+      "bytes": 20939,
+      "sha256": "8855bb9930c0b36582185d3e7ae574cf82fd711eb816cf64f92b0e305cc4d6a1"
+    },
+    {
+      "path": "assets/thumbnails/dumbbell-chest-fly.png",
+      "role": "artifact",
+      "bytes": 17460,
+      "sha256": "3180b0a75c968588d83fea2959340caa97d3eceb7cb4ec225723b237290bc6c4"
+    },
+    {
+      "path": "assets/thumbnails/dumbbell-floor-press.png",
+      "role": "artifact",
+      "bytes": 21063,
+      "sha256": "2293e556549e3085beadabed76b1a993cd419183325e39e60e20652eadd125a2"
+    },
+    {
+      "path": "assets/thumbnails/dumbbell-front-raise.png",
+      "role": "artifact",
+      "bytes": 20974,
+      "sha256": "1a0d80e98e7f396200813603c5e3bc51308a67b3883d6abbd74c7765e955770c"
+    },
+    {
+      "path": "assets/thumbnails/dumbbell-lateral-raise.png",
+      "role": "artifact",
+      "bytes": 22494,
+      "sha256": "7feae7e7def8e2c4c9342e2934c9914b98d8dc615d28cc6a0afc5605b6928e14"
+    },
+    {
+      "path": "assets/thumbnails/dumbbell-pullover.png",
+      "role": "artifact",
+      "bytes": 16921,
+      "sha256": "66ed55b4886691d8cf2645190055e8fc291511618b620a49fc58c96bfd3a8f0f"
+    },
+    {
+      "path": "assets/thumbnails/dumbbell-reverse-fly.png",
+      "role": "artifact",
+      "bytes": 24816,
+      "sha256": "e78d5915ce06f25e0231f8261ecaca7ca87517766b77c925160b05aa00becf42"
+    },
+    {
+      "path": "assets/thumbnails/dumbbell-reverse-wrist-curl.png",
+      "role": "artifact",
+      "bytes": 21672,
+      "sha256": "3fae886fe345e439068ba52718a003e4956a082c67baabcaea6a5909f4c54800"
+    },
+    {
+      "path": "assets/thumbnails/dumbbell-romanian-deadlift.png",
+      "role": "artifact",
+      "bytes": 22829,
+      "sha256": "e473800529392b7afd6469ca0aaade58d31f6dc6b6c2335e76611a7114bbb318"
+    },
+    {
+      "path": "assets/thumbnails/dumbbell-shoulder-press.png",
+      "role": "artifact",
+      "bytes": 19955,
+      "sha256": "02c036bda4374de7e7a6f4d542069599a109996f0aecd86844094d5d662e26c1"
+    },
+    {
+      "path": "assets/thumbnails/dumbbell-side-bend.png",
+      "role": "artifact",
+      "bytes": 22620,
+      "sha256": "d08f9fbe07c0cfc7444556959199d9081b9590627367f87b7384b3dc6716f4e3"
+    },
+    {
+      "path": "assets/thumbnails/dumbbell-triceps-kickback.png",
+      "role": "artifact",
+      "bytes": 25956,
+      "sha256": "74108ed2837bb3c5a4a6bd7362d2ead08fa74cb272429a36a4b0aaa5858f2bb2"
+    },
+    {
+      "path": "assets/thumbnails/dumbbell-wrist-curl.png",
+      "role": "artifact",
+      "bytes": 21541,
+      "sha256": "0d48d6b7f169131d9dd8827c902f8c9561201c32294cc5b357fbf95db9ea0b81"
+    },
+    {
+      "path": "assets/thumbnails/fire-hydrant.png",
+      "role": "artifact",
+      "bytes": 22818,
+      "sha256": "4f4b98fd0c6ca4d477b78a664bb5062559e34df9523ed5e65dc89a8d6e7e8a9b"
+    },
+    {
+      "path": "assets/thumbnails/forearm-plank.png",
+      "role": "artifact",
+      "bytes": 17863,
+      "sha256": "3b5d77e935a47e6afbd8894838af1d1877628645c5aa783c4938e12e114c8cb8"
+    },
+    {
+      "path": "assets/thumbnails/forearm-wall-slide.png",
+      "role": "artifact",
+      "bytes": 23562,
+      "sha256": "ab186d98698cfba2dbd11b687cc90532ba63ca495362e5ef18d78a8484193a17"
+    },
+    {
+      "path": "assets/thumbnails/glute-bridge.png",
+      "role": "artifact",
+      "bytes": 23545,
+      "sha256": "b4f752d75a94dd96eb9ca4215c7228a3009346361ff6710d6461ec026d8820fe"
+    },
+    {
+      "path": "assets/thumbnails/half-kneeling-hip-flexor-stretch.png",
+      "role": "artifact",
+      "bytes": 26522,
+      "sha256": "81a3c6f3aba3e9d1eee363bd895adff5947aa1bdb8e3c773c90a744416fd4e51"
+    },
+    {
+      "path": "assets/thumbnails/hanging-knee-raise.png",
+      "role": "artifact",
+      "bytes": 16396,
+      "sha256": "324383f6ecfe2b469c6b5dcdb930f2f2ecec66e966083c1d0a0c78b464108d94"
+    },
+    {
+      "path": "assets/thumbnails/hip-thrust.png",
+      "role": "artifact",
+      "bytes": 19719,
+      "sha256": "ee902aab4e52b657c9c35f992ac8477d56bb049f3715547934c6209e8e98abfc"
+    },
+    {
+      "path": "assets/thumbnails/hollow-body-hold.png",
+      "role": "artifact",
+      "bytes": 16063,
+      "sha256": "9487c0201d2c6699506aeeedf164d5752991127d63fc871b81aecddf40123e19"
+    },
+    {
+      "path": "assets/thumbnails/inverted-row.png",
+      "role": "artifact",
+      "bytes": 14501,
+      "sha256": "6ffbea3c8302f4de1b828c3f5043102cbd80c9c6e8c380c58f645b358788a2dd"
+    },
+    {
+      "path": "assets/thumbnails/landmine-press.png",
+      "role": "artifact",
+      "bytes": 23039,
+      "sha256": "fc57895169414e33cb54fe218186865dbbe789344cb41d296b1d90e6280cc3a1"
+    },
+    {
+      "path": "assets/thumbnails/landmine-row.png",
+      "role": "artifact",
+      "bytes": 17352,
+      "sha256": "a384730069c010716ab9c5e144a2aa941120db5d850d3822502552626eac0f0a"
+    },
+    {
+      "path": "assets/thumbnails/lateral-lunge.png",
+      "role": "artifact",
+      "bytes": 24623,
+      "sha256": "a545b6f2719b0d0d9f2937138f9517ab6fe775864adc0f535abf707fc81d3bb1"
+    },
+    {
+      "path": "assets/thumbnails/lying-triceps-extension.png",
+      "role": "artifact",
+      "bytes": 17874,
+      "sha256": "14cc9dbac0f55888bacc9b300041ff795912a4cc7ddb4905971e400797ecdf9d"
+    },
+    {
+      "path": "assets/thumbnails/ninety-ninety-hip-rotation.png",
+      "role": "artifact",
+      "bytes": 25923,
+      "sha256": "80c0db4d6e45d5a6c633cfedac00f64085e2a269cc7b5a61a707bbcba34ffb36"
+    },
+    {
+      "path": "assets/thumbnails/overhead-triceps-extension.png",
+      "role": "artifact",
+      "bytes": 19156,
+      "sha256": "e63d66101cf6ef4a55271020a43c23f9cd5c974823d83e3a03ccd0f7326562dd"
+    },
+    {
+      "path": "assets/thumbnails/pike-push-up.png",
+      "role": "artifact",
+      "bytes": 27287,
+      "sha256": "9ded3937d1e4592ce2f9a582a094380a7e7367de667f0cc1fadb0c376af32875"
+    },
+    {
+      "path": "assets/thumbnails/prone-hamstring-curl.png",
+      "role": "artifact",
+      "bytes": 14244,
+      "sha256": "da6c6c0575e2828c9b0e4299f1befe13b478332d49bcd261da6a15f488414989"
+    },
+    {
+      "path": "assets/thumbnails/prone-hip-extension.png",
+      "role": "artifact",
+      "bytes": 15655,
+      "sha256": "d21228441e0248249a7b9942ddfa5eab825466b01c93ee88f96c7b63d508e261"
+    },
+    {
+      "path": "assets/thumbnails/pull-up.png",
+      "role": "artifact",
+      "bytes": 15861,
+      "sha256": "01c0d4a2b2cdbd2e646f1fa18ddc3881a7efd578cfe57a1e0573d836eb2f310c"
+    },
+    {
+      "path": "assets/thumbnails/push-up.png",
+      "role": "artifact",
+      "bytes": 11129,
+      "sha256": "973dea875e7b9e732456d15590c4bfab96b67c3739b4251adf6deb18199a9d7e"
+    },
+    {
+      "path": "assets/thumbnails/quadruped-hip-extension.png",
+      "role": "artifact",
+      "bytes": 20906,
+      "sha256": "efd62e98f7a87d9b8d91324dac3c4a5f62a530e923ca9f6598ebdcef7ac43197"
+    },
+    {
+      "path": "assets/thumbnails/quadruped-thoracic-rotation.png",
+      "role": "artifact",
+      "bytes": 23685,
+      "sha256": "e71ef081f036e76d685f358d1f7bb69c4ddf6641d33fb4895893060a60673948"
+    },
+    {
+      "path": "assets/thumbnails/reverse-crunch.png",
+      "role": "artifact",
+      "bytes": 23805,
+      "sha256": "24ff8179014ab68e887bc1373e7ce0c54053463dd3abb17328ef5da0f871e623"
+    },
+    {
+      "path": "assets/thumbnails/reverse-lunge.png",
+      "role": "artifact",
+      "bytes": 21181,
+      "sha256": "98eae505cc876f52f6f1f42a630e4f58925f3dc95419cd77f3006ef9bf428082"
+    },
+    {
+      "path": "assets/thumbnails/scapular-retraction.png",
+      "role": "artifact",
+      "bytes": 20669,
+      "sha256": "74a9d47956f1e14fe68c3492a0a79cc9c95135acc2b07efcd1f8b279410a8adc"
+    },
+    {
+      "path": "assets/thumbnails/seated-band-hamstring-curl.png",
+      "role": "artifact",
+      "bytes": 20384,
+      "sha256": "b3a49e69b92aba85563fccbe2ae5bd9e314e205d31ba1513a681dab89777de8e"
+    },
+    {
+      "path": "assets/thumbnails/seated-calf-raise.png",
+      "role": "artifact",
+      "bytes": 29596,
+      "sha256": "093f9b92689bd5c4a3e7d6f8bee5cfa50d43f014b6588e9c7399685e4ef754d8"
+    },
+    {
+      "path": "assets/thumbnails/seated-knee-extension.png",
+      "role": "artifact",
+      "bytes": 27407,
+      "sha256": "0a96afc3d5958131617398d1f821cea8fefde7e0cc77adb823f5fd5bf58caf25"
+    },
+    {
+      "path": "assets/thumbnails/seated-trunk-rotation.png",
+      "role": "artifact",
+      "bytes": 28809,
+      "sha256": "05198a40735a7b070fe79b9a2da1e4a098c05673e7738db724d579817cd4d7ec"
+    },
+    {
+      "path": "assets/thumbnails/shoulder-pendulum.png",
+      "role": "artifact",
+      "bytes": 25298,
+      "sha256": "17c213fdb86dc3b4a99824fae9ea079cf6964707b9625f35f75eb920d078e3f2"
+    },
+    {
+      "path": "assets/thumbnails/side-lying-clamshell.png",
+      "role": "artifact",
+      "bytes": 21465,
+      "sha256": "b4c4eabffc84dadacaefb0a305e7b3ec20389db474df0f01516d589dbfd2116b"
+    },
+    {
+      "path": "assets/thumbnails/side-lying-dumbbell-external-rotation.png",
+      "role": "artifact",
+      "bytes": 21934,
+      "sha256": "9d254e9fa4f9236775623a5070486575e920b078959700febea7fb0e8e4f3245"
+    },
+    {
+      "path": "assets/thumbnails/side-lying-hip-abduction.png",
+      "role": "artifact",
+      "bytes": 19036,
+      "sha256": "92879adfaba3427829311d3c7e7bea983aee913e56293fe0f5f9dff2c168c805"
+    },
+    {
+      "path": "assets/thumbnails/side-plank.png",
+      "role": "artifact",
+      "bytes": 21669,
+      "sha256": "8864fef69c1b248a794390a6aef51f32bad2e8ea0c22ee9fb76008b6bcc59c48"
+    },
+    {
+      "path": "assets/thumbnails/single-leg-glute-bridge.png",
+      "role": "artifact",
+      "bytes": 24424,
+      "sha256": "86dff0c020a8230ad944b8a37729f5a353c6892c77bf0521d5c0ec9de3da1d1d"
+    },
+    {
+      "path": "assets/thumbnails/single-leg-romanian-deadlift.png",
+      "role": "artifact",
+      "bytes": 22275,
+      "sha256": "99c657b469d355f4a0fbcfde47e8c6c8ff66b5ba5944ba1bf9b5fca6fa4504ae"
+    },
+    {
+      "path": "assets/thumbnails/sit-to-stand.png",
+      "role": "artifact",
+      "bytes": 24715,
+      "sha256": "8713d116f24fecd4da7077108a0d1a36329f48dea187f6629f1436273655d6a3"
+    },
+    {
+      "path": "assets/thumbnails/split-squat.png",
+      "role": "artifact",
+      "bytes": 22002,
+      "sha256": "0b351c026d57c22c6f786fabd4a6d78e5cee9b77cfd1dd2b01e06d52ea03f1d3"
+    },
+    {
+      "path": "assets/thumbnails/standing-calf-raise.png",
+      "role": "artifact",
+      "bytes": 21348,
+      "sha256": "67a2d4f6ea44e393d3e119610395aebc10d07f393067b88fab905a1724dfb6d8"
+    },
+    {
+      "path": "assets/thumbnails/standing-hamstring-stretch.png",
+      "role": "artifact",
+      "bytes": 25765,
+      "sha256": "e628c28d9f4f3757fa58a4471b6555437c55ca2455d0a640e80a9e161ae626a7"
+    },
+    {
+      "path": "assets/thumbnails/standing-hip-abduction.png",
+      "role": "artifact",
+      "bytes": 23234,
+      "sha256": "248411583ae3608a1306cbf0eaa700b96b357acff72977db26d65bb97e267c14"
+    },
+    {
+      "path": "assets/thumbnails/standing-hip-extension.png",
+      "role": "artifact",
+      "bytes": 21999,
+      "sha256": "727696cf72d3a9c3bce8ff20e6f785542f92fbf89e650e37ce719d7f1b0507e0"
+    },
+    {
+      "path": "assets/thumbnails/standing-hip-flexion.png",
+      "role": "artifact",
+      "bytes": 22971,
+      "sha256": "d61edb2d1fa1b0e3b4a84c6e16ecf09644887a8f6af9c3fe54432e308e655079"
+    },
+    {
+      "path": "assets/thumbnails/step-up.png",
+      "role": "artifact",
+      "bytes": 21627,
+      "sha256": "221a939b00603ab41da9b0eebabd1a956800fef09d64a70e62337039c4630917"
+    },
+    {
+      "path": "assets/thumbnails/straight-leg-raise.png",
+      "role": "artifact",
+      "bytes": 17940,
+      "sha256": "936cfbb0cfbe736f862ae11e493f8d34c70122ab9cf82c49ca70613228fa2647"
+    },
+    {
+      "path": "assets/thumbnails/superman.png",
+      "role": "artifact",
+      "bytes": 14850,
+      "sha256": "134c656c68a6bb6659bf5449f381d4412f788f67718e1090b4d766e3338902a6"
+    },
+    {
+      "path": "assets/thumbnails/supine-heel-slide.png",
+      "role": "artifact",
+      "bytes": 17959,
+      "sha256": "fe280425a86484c83b62e768bda6dff57ff642bee4781985c2e79b0ede9967c3"
+    },
+    {
+      "path": "assets/thumbnails/supine-pelvic-tilt.png",
+      "role": "artifact",
+      "bytes": 22354,
+      "sha256": "33686482a0ee0a58fd43217589bd3887503bc73ee1f30111e7ecbc2ba9f2bc67"
+    },
+    {
+      "path": "assets/thumbnails/supine-serratus-punch.png",
+      "role": "artifact",
+      "bytes": 26384,
+      "sha256": "9729a371e48d7f4929fed9c22adc6937d9216588e8f559ffad07f5d403498fa4"
+    },
+    {
+      "path": "assets/thumbnails/supine-trunk-rotation.png",
+      "role": "artifact",
+      "bytes": 19271,
+      "sha256": "92c7cac3bd2db69dc99c2507c5c75a18947ae66c64dd83062d26d04675b05de6"
+    },
+    {
+      "path": "assets/thumbnails/thoracic-open-book.png",
+      "role": "artifact",
+      "bytes": 23928,
+      "sha256": "df97f6220fa1e4e5f913cb9b1c8ff3005a0a721036aaf71b595f557ffee214c1"
+    },
+    {
+      "path": "assets/thumbnails/wall-sit.png",
+      "role": "artifact",
+      "bytes": 21335,
+      "sha256": "5dedb1bb249bf9196ce76657f74f437915161b97a4b970f50082817f1fbe0424"
+    },
+    {
+      "path": "docs/architecture/skeleton.md",
+      "role": "source",
+      "bytes": 6220,
+      "sha256": "4d167f01136ae5898e8d293c796fea82b36db3212eecc26e2e8606fabed0bc12"
+    },
+    {
+      "path": "docs/asset-license-cc0.md",
+      "role": "source",
+      "bytes": 1885,
+      "sha256": "aab3d1f85a17c043a2eb60bf2539680b17b065c3b02a58605349effa63891710"
+    },
+    {
+      "path": "docs/reviews/ab-wheel-rollout-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 59622,
+      "sha256": "0d46b5209264ca4069e4a4f20741ca1fb7accff93b8b5f824ccd6d6b1102a487"
+    },
+    {
+      "path": "docs/reviews/ab-wheel-rollout-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 60127,
+      "sha256": "d8fd5e07752bd66a47dab4ff2edf806d9e4993054f55abe25b79a414999c8d3d"
+    },
+    {
+      "path": "docs/reviews/ankle-dorsiflexion-rock-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 59051,
+      "sha256": "02d9574df23243c3a4bd3c0c88cc685af0b4c3fef097537ae97b44b18f770434"
+    },
+    {
+      "path": "docs/reviews/ankle-dorsiflexion-rock-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 60243,
+      "sha256": "e42fe7d8115dffb1a9a0ee2657533882c0adc709822565ac0abab01a1d18b9ee"
+    },
+    {
+      "path": "docs/reviews/band-ankle-dorsiflexion-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 42519,
+      "sha256": "6961977da490e3a87710e7d9f13b87822c0a39a81398d1e24beeb10649b86b2f"
+    },
+    {
+      "path": "docs/reviews/band-ankle-dorsiflexion-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 42993,
+      "sha256": "3545489b6daf7e972d0b745232b20d05b939dafa4cfa56a49a2dbdb28ec44359"
+    },
+    {
+      "path": "docs/reviews/band-ankle-plantarflexion-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 44874,
+      "sha256": "9e8b3cbe67cb613be6523f7d622f23504295e37fe05498e5ee179887bf7a02f3"
+    },
+    {
+      "path": "docs/reviews/band-ankle-plantarflexion-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 45174,
+      "sha256": "c26b29c53247b915ebb9300aae51fabc7edcffcb4be58db5b28973b8df7d1695"
+    },
+    {
+      "path": "docs/reviews/band-chest-press-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 35653,
+      "sha256": "fb973fd755d10b4dcdad8b68451722ed7372a8782839912a0079dccc809ddee6"
+    },
+    {
+      "path": "docs/reviews/band-chest-press-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 36305,
+      "sha256": "d1b75e65f8aef567e22a018b5b5b2387ef832a6ff65b129fd5f550a517f68b44"
+    },
+    {
+      "path": "docs/reviews/band-external-rotation-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 35001,
+      "sha256": "ee1f0506ca9bb1a5ab21a86230afaf321facbdc921422f8b17ecc10e238a07e7"
+    },
+    {
+      "path": "docs/reviews/band-external-rotation-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 35379,
+      "sha256": "b0ea751966d146b611e2be26c1cc072aaca0206aacd3fafe74476a62e79bb862"
+    },
+    {
+      "path": "docs/reviews/band-face-pull-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 36383,
+      "sha256": "ecb2ad8bc37fecdd950433303c78687f74c1b1e8bd3580fe199800d4d95c34e1"
+    },
+    {
+      "path": "docs/reviews/band-face-pull-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 37422,
+      "sha256": "9191b3d9af5caeafe615a129c06cf5353e848cd4574a178f1abe8223a51bfff3"
+    },
+    {
+      "path": "docs/reviews/band-hip-adduction-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 48014,
+      "sha256": "223a7fb879fb42d21c706bb8b8ea8e5bb1a0c824948d665d3b97b7d372f97ad7"
+    },
+    {
+      "path": "docs/reviews/band-hip-adduction-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 48997,
+      "sha256": "d8723697e758a39fb626da78081a779fb512b10eb2914053829afe0dc993a848"
+    },
+    {
+      "path": "docs/reviews/band-internal-rotation-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 37122,
+      "sha256": "132bb0f049c4ceef11a8ebe00844f3b7a4b6e5c21c02a166e279f5503d9ea1de"
+    },
+    {
+      "path": "docs/reviews/band-internal-rotation-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 37456,
+      "sha256": "4b986a3a6d2d857b3e4401bb04694863882e0c49de6c8e6c2db518ed1bd258e6"
+    },
+    {
+      "path": "docs/reviews/band-pallof-press-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 43203,
+      "sha256": "b63c318a1886977363cc20b79cbda54d370ea1a430c27152eb3e77ead9288591"
+    },
+    {
+      "path": "docs/reviews/band-pallof-press-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 44206,
+      "sha256": "cec9132ef49c99bfb267fdfb4e67bfd9bfa6f543706b2f2a48326291b87e5af6"
+    },
+    {
+      "path": "docs/reviews/band-pull-apart-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 39089,
+      "sha256": "3b9dedbcb29d8dc4706e6775bcbd98ef97fc7f8e27625104c41bede0613245c2"
+    },
+    {
+      "path": "docs/reviews/band-pull-apart-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 39725,
+      "sha256": "e5cef2218e059e8673ffcb6b3a518e41a0dc201a913a88942eb65c3700dded2d"
+    },
+    {
+      "path": "docs/reviews/band-row-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 36571,
+      "sha256": "39bd11d5eec26a8c6a93b3b0e4d962abb4b3ae063ecc37532f51c781d484a6e0"
+    },
+    {
+      "path": "docs/reviews/band-row-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 37231,
+      "sha256": "0ea926c6b8b5632322df12671907daf058ee4d909cf2ce44e9d1a3caedce4d7b"
+    },
+    {
+      "path": "docs/reviews/band-terminal-knee-extension-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 69581,
+      "sha256": "99a9b47f7de07a2652ff69153dfee90975c2b13451602c5d0e941da47efda612"
+    },
+    {
+      "path": "docs/reviews/band-terminal-knee-extension-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 70425,
+      "sha256": "41e54d3069ff9fefaed1c8c50b03179c5c823ae430dac455af6318e1360e62b8"
+    },
+    {
+      "path": "docs/reviews/band-triceps-pushdown-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 38814,
+      "sha256": "2017869718d714caa33dd88bc46afe749d534fa1d59feca3eeb21751f2a417af"
+    },
+    {
+      "path": "docs/reviews/band-triceps-pushdown-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 39012,
+      "sha256": "fe59fb04f247d46415f5c5e8b9501af40d1a3dd894e684efca07e86e1accc7ed"
+    },
+    {
+      "path": "docs/reviews/barbell-back-squat-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 69889,
+      "sha256": "03916d6d0c1e440e3791b9c49ffd03c28c7de6acb1135443f9c1d5548fb7db29"
+    },
+    {
+      "path": "docs/reviews/barbell-back-squat-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 71109,
+      "sha256": "c99f5d5b9a3d98cd93039f2d18a3ce7fca8d5b2fb6e3fe9bddf4faa39bad250a"
+    },
+    {
+      "path": "docs/reviews/barbell-bench-press-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 36984,
+      "sha256": "318ee9303c71f09a73eac43cef39f4e0734eeccd6d8f4fc86e5d70f341c237c5"
+    },
+    {
+      "path": "docs/reviews/barbell-bench-press-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 37721,
+      "sha256": "9dae3c024afa6359ed653b2caad2cc3ec991ab0981233e456c811ef020e32c4f"
+    },
+    {
+      "path": "docs/reviews/barbell-bent-over-row-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 52650,
+      "sha256": "7643a4ad7269844343165de0dd13748fb2f9915dfe6493919b8b9e2627e09221"
+    },
+    {
+      "path": "docs/reviews/barbell-bent-over-row-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 53653,
+      "sha256": "5bddea269854a52a21449210e82eb38bef51b5f998c2b310124f8b12c725f3ee"
+    },
+    {
+      "path": "docs/reviews/barbell-conventional-deadlift-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 69625,
+      "sha256": "6f5a3f0469d3170b2da52ad1dfb36de86c2b4d3928aa0c23e00c562a1d14c6b7"
+    },
+    {
+      "path": "docs/reviews/barbell-conventional-deadlift-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 71866,
+      "sha256": "77381dbcdf024cb6b2837286c4b91e271d3900baa561eabf3458c095fd487b77"
+    },
+    {
+      "path": "docs/reviews/barbell-front-squat-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 70560,
+      "sha256": "1b2c677cb66aad792c6450a6c65ec79fa7556d24b538ae0753f3f51c2ebc2fd0"
+    },
+    {
+      "path": "docs/reviews/barbell-front-squat-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 72881,
+      "sha256": "3e52937d567a1ea4f0a56af105707ec6fbaded151286abe04497f81ad3851034"
+    },
+    {
+      "path": "docs/reviews/barbell-good-morning-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 70152,
+      "sha256": "560a41703f416980528065bdad1662c135209ae27d37b89de068c5cabf785f73"
+    },
+    {
+      "path": "docs/reviews/barbell-good-morning-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 70701,
+      "sha256": "93a8e227d22da41e3de22c117f17beb70cb76d5f35e80b75b8912e90e162bb32"
+    },
+    {
+      "path": "docs/reviews/barbell-overhead-press-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 38112,
+      "sha256": "68073dcc15030732a16792e65ec5695a079eba74ed82c10acd50b141b6731987"
+    },
+    {
+      "path": "docs/reviews/barbell-overhead-press-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 38826,
+      "sha256": "1a554762d70d3b251e1a8527de880cbe536e5e579a104c1f026cef801919759a"
+    },
+    {
+      "path": "docs/reviews/bench-dip-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 78698,
+      "sha256": "8f189ab35812047efc73ff941c09d6db2c97c126a6b49da6149ca15a609b170a"
+    },
+    {
+      "path": "docs/reviews/bench-dip-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 80014,
+      "sha256": "d29e9da9f8e22c575bb36483c3cf942ddefd40bb444617a599b922e787330cef"
+    },
+    {
+      "path": "docs/reviews/bent-over-dumbbell-row-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 54836,
+      "sha256": "a06a28ee220e40225c92bfc800d6678fdde1461b432c8043c80a354c9a2baafd"
+    },
+    {
+      "path": "docs/reviews/bent-over-dumbbell-row-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 56088,
+      "sha256": "e9522928628b766f3f9ef91c99bd390a6cfbae9d729e635ad11909a1d968ae26"
+    },
+    {
+      "path": "docs/reviews/bicycle-crunch-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 64400,
+      "sha256": "bd66d35b5bfe16ab9db5e1ec2dd42a36c1efc853ebd29153d670598882d92f98"
+    },
+    {
+      "path": "docs/reviews/bicycle-crunch-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 65300,
+      "sha256": "b2a0f40bee61cb3b1dad2ef5584227e70d1312f84f4c48ea9876fc6d858a2f55"
+    },
+    {
+      "path": "docs/reviews/bird-dog-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 33288,
+      "sha256": "c580260faa24ae8f205e159a364e4da6c01a0d9beb2e94ecddad0ab2989591ea"
+    },
+    {
+      "path": "docs/reviews/bird-dog-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 34239,
+      "sha256": "e8c3ab94f28e199dea6f8f5a99ca7db1a228793a48447fac0bfc13d935b8e7cf"
+    },
+    {
+      "path": "docs/reviews/bodyweight-squat-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 71820,
+      "sha256": "2828c86a3043e9fd8415d92be494c953126b4a7fa7ab3a93edb392142d7ffbaa"
+    },
+    {
+      "path": "docs/reviews/bodyweight-squat-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 72522,
+      "sha256": "cb108dc668a278bbc098c5e520bc62530bb601d5671b12cca733a2f1444d6b8b"
+    },
+    {
+      "path": "docs/reviews/bulgarian-split-squat-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 74200,
+      "sha256": "e79387efef48462d7c15921b382b5e807b74e3bddba419b969e6959c1bb9f44e"
+    },
+    {
+      "path": "docs/reviews/bulgarian-split-squat-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 76070,
+      "sha256": "5b884268af97c89a934c8a95015bb52357dd4e8ca56dcc4cfda7f1351130f680"
+    },
+    {
+      "path": "docs/reviews/cat-cow-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 64396,
+      "sha256": "ed6ce94e433510ba3a21e4b27d30449fecd3a256a3348d9fd08abda86308d5bb"
+    },
+    {
+      "path": "docs/reviews/cat-cow-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 65428,
+      "sha256": "4ef93e42b8cea08e2176af19d7a73b6a072de0224b7abf881dc24c972c01f25f"
+    },
+    {
+      "path": "docs/reviews/cervical-lateral-flexion-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 37597,
+      "sha256": "d97ef8b906a5f51c98985290acbab4b8f6362beb8834f472e6d2136a377b8817"
+    },
+    {
+      "path": "docs/reviews/cervical-lateral-flexion-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 38288,
+      "sha256": "dbb5301f65bf24ae38a39c9805b24290d146e195945ec689dcf30dca1f2a6d43"
+    },
+    {
+      "path": "docs/reviews/cervical-rotation-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 37663,
+      "sha256": "9f152e9ee5b4c659e231f1e3f91fda0970bcc58c86cdfae767601814dc2158c0"
+    },
+    {
+      "path": "docs/reviews/cervical-rotation-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 38231,
+      "sha256": "d957a672b9a27b6e79929b873b5da9e8bd10a431bcf668970d90130300d92e17"
+    },
+    {
+      "path": "docs/reviews/childs-pose-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 30805,
+      "sha256": "4a9e3694a23ff664415f2a50c42168910de334220fffb38477997c83afb4a4c6"
+    },
+    {
+      "path": "docs/reviews/childs-pose-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 31126,
+      "sha256": "14c3f81fb5fd9ad27f1d50bddc205f926c27b49597509fcebc4098c09c5a2db9"
+    },
+    {
+      "path": "docs/reviews/chin-tuck-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 36655,
+      "sha256": "336e1cc7f8d647cd9557940887210d6b08539e49e9efeac1a340b332e99920d2"
+    },
+    {
+      "path": "docs/reviews/chin-tuck-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 37040,
+      "sha256": "0325c82677c2daba6cf4c8ae57646906807bb0656de74b24a81572f6c52051e4"
+    },
+    {
+      "path": "docs/reviews/curl-up-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 46206,
+      "sha256": "d1bac4c299bb03905f04db1104bfaa13557f7754b21cc99834025250898db13f"
+    },
+    {
+      "path": "docs/reviews/curl-up-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 46548,
+      "sha256": "214e09428b611b91c0826b1396b34e25edb12e2cf29ecc4320f9d8dba3e2dd53"
+    },
+    {
+      "path": "docs/reviews/dead-bug-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 36245,
+      "sha256": "a6471d579bd6e6574875ad013cd94af1f90f7388a1862070d2742cfa7162f86d"
+    },
+    {
+      "path": "docs/reviews/dead-bug-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 36602,
+      "sha256": "8b3e9b40eb5a8f756bd9dcda669891e8ccf669d450a9a249ef6aadf265b184fe"
+    },
+    {
+      "path": "docs/reviews/dead-hang-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 30018,
+      "sha256": "615f5f443eef405ee00b29f178bdfbff9ee3eddf6d7792a4e37cc48b81e76a5f"
+    },
+    {
+      "path": "docs/reviews/dead-hang-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 30322,
+      "sha256": "68952c15b74b4d941c06ec47fab7a1c9eec4ffa8134927e41d88d98e66473271"
+    },
+    {
+      "path": "docs/reviews/dumbbell-biceps-curl-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 41277,
+      "sha256": "3ccb0eddfe4702a6bd852c11f2ce6b59a1e92c2bd7929eddbed2c6631b6ac096"
+    },
+    {
+      "path": "docs/reviews/dumbbell-biceps-curl-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 41864,
+      "sha256": "4ddad46447a7469e77c97dc585d94aa78d61f607c48cb54c6b4efc5449cf18ed"
+    },
+    {
+      "path": "docs/reviews/dumbbell-chest-fly-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 30202,
+      "sha256": "14ec518d19de4ee3e118a2c015e9a6dec5362d9f7e056402f2a6798180283141"
+    },
+    {
+      "path": "docs/reviews/dumbbell-chest-fly-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 30757,
+      "sha256": "d0c7ffc8741b2c6feef297081a93224b98f11b102d4937e31371d754e2494703"
+    },
+    {
+      "path": "docs/reviews/dumbbell-floor-press-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 35811,
+      "sha256": "eec8116c6b25a1e3bd18156bdf066fcb407d8ea8cb249d4556a2e40877ba1ceb"
+    },
+    {
+      "path": "docs/reviews/dumbbell-floor-press-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 36747,
+      "sha256": "87a446b0ad6077bd6ee336bd2670dfb6355758640531a6bd0d5e1ec2a96432fb"
+    },
+    {
+      "path": "docs/reviews/dumbbell-front-raise-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 44902,
+      "sha256": "efe409580d5c156bbffd9059c2149c66c794b09011650a1cfa38ced5f6c5d350"
+    },
+    {
+      "path": "docs/reviews/dumbbell-front-raise-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 45667,
+      "sha256": "f508bf1df4e8a3dabec6f6db92272c33827919430845ce23c1d6176df5df97ba"
+    },
+    {
+      "path": "docs/reviews/dumbbell-lateral-raise-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 43813,
+      "sha256": "3a631fa3762e4686cc9b12055e6f7f7173751f3b1267089a0adee76ed480bd30"
+    },
+    {
+      "path": "docs/reviews/dumbbell-lateral-raise-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 44533,
+      "sha256": "bf5219dc047dd18c4565ab51dd6bdb4f9e1e896e67f37721027a5c8c60f6a8e1"
+    },
+    {
+      "path": "docs/reviews/dumbbell-pullover-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 38832,
+      "sha256": "5689b6fd829ea64f9bc113cd281364dc70da5e22d140b304f2b60b0393ac0091"
+    },
+    {
+      "path": "docs/reviews/dumbbell-pullover-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 39693,
+      "sha256": "da4f15f50d411933a59718889ed913a3f8a05b20245d16453584d6d3084391ca"
+    },
+    {
+      "path": "docs/reviews/dumbbell-reverse-fly-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 48400,
+      "sha256": "76cfdbe53d3ff6c10d1594fbba12cb507ddc0393a481b8a3bba7db87b3981fc3"
+    },
+    {
+      "path": "docs/reviews/dumbbell-reverse-fly-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 49139,
+      "sha256": "3b5abf479c4c8293f9cc04964cefb2d1c2b1248ed1002cdba77a3478abd23b11"
+    },
+    {
+      "path": "docs/reviews/dumbbell-reverse-wrist-curl-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 35926,
+      "sha256": "8fe390f3a147ded5e823f292d3286338c18518fd76fde95ca583e19ee6e55b6e"
+    },
+    {
+      "path": "docs/reviews/dumbbell-reverse-wrist-curl-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 36303,
+      "sha256": "a27e7617d7f25b71547599f5ba6a6db49196f4319e75b404cef328f5166882ae"
+    },
+    {
+      "path": "docs/reviews/dumbbell-romanian-deadlift-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 69650,
+      "sha256": "bcd0108c41b0c302bf775b7fec9ca10322d729c60382eb51864df6714187daf7"
+    },
+    {
+      "path": "docs/reviews/dumbbell-romanian-deadlift-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 70022,
+      "sha256": "8837107e468762159ed0c91d3b7cced465b0401576e90a41f3d4872d4c7019ed"
+    },
+    {
+      "path": "docs/reviews/dumbbell-shoulder-press-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 37491,
+      "sha256": "d98c0af77bbe87d44f5cc28f6b0922a897f29481afb2db937c27a7e383f5ff3e"
+    },
+    {
+      "path": "docs/reviews/dumbbell-shoulder-press-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 38331,
+      "sha256": "a0589bf7d97746aa3f7791c33290ba31ce6f084f5090f1fd4f74b32b723869fe"
+    },
+    {
+      "path": "docs/reviews/dumbbell-side-bend-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 57328,
+      "sha256": "80dd237759c0bc515923480698e0b68346f611bc54981d6c285f8289e812148c"
+    },
+    {
+      "path": "docs/reviews/dumbbell-side-bend-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 57903,
+      "sha256": "fb684ba910716b333cce3c63ddfd3f18fd881bff00783f4424bed1a216218127"
+    },
+    {
+      "path": "docs/reviews/dumbbell-triceps-kickback-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 43598,
+      "sha256": "8a08f4a13ec5ad552cb2f3202949bf82c1114b5c2c23aa4d75d9078b94deca35"
+    },
+    {
+      "path": "docs/reviews/dumbbell-triceps-kickback-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 43830,
+      "sha256": "d75cfaf5eddabaa1deab5a7ba5dda13941d13dccf8f5e51d5b41cc25cce1f08c"
+    },
+    {
+      "path": "docs/reviews/dumbbell-wrist-curl-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 35529,
+      "sha256": "4ae5d0bc6f9132a6b0ee22b4f9f244e3cc7fc88cbdb6ba9af532a9993784e7fa"
+    },
+    {
+      "path": "docs/reviews/dumbbell-wrist-curl-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 35858,
+      "sha256": "c486e23252d82e9f8d1b52a7dc0de05e9414872f87f14e949d515735f53bfa99"
+    },
+    {
+      "path": "docs/reviews/fire-hydrant-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 38149,
+      "sha256": "1eb20deaa11e99f1b0018c77d109be60fad52cf75fdbb7a5450cb1e280beb498"
+    },
+    {
+      "path": "docs/reviews/fire-hydrant-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 38510,
+      "sha256": "394ab333e760da7c5909b236b3d282b9e546624bf03d3f1c713e7fa30438e0de"
+    },
+    {
+      "path": "docs/reviews/forearm-plank-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 24593,
+      "sha256": "0cf5365d1451ee0e286954809873657cea6f5953632e646d774e4472449090da"
+    },
+    {
+      "path": "docs/reviews/forearm-plank-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 25182,
+      "sha256": "185cf22626a52bf76f20aaf24d2dd5b53789fe79fd8e53cd0602abb2c9847a17"
+    },
+    {
+      "path": "docs/reviews/forearm-wall-slide-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 46218,
+      "sha256": "e29033d8fde47364449f86977f31d890e759da2a52b9aa8e84f9e5aa5fd05699"
+    },
+    {
+      "path": "docs/reviews/forearm-wall-slide-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 46915,
+      "sha256": "7184c2a11a41995eb5867360c85cab9d8d59ed8d526eb48eec006339ff832760"
+    },
+    {
+      "path": "docs/reviews/glute-bridge-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 60798,
+      "sha256": "eb272d35c27a32c43f1acf6d794621c6b188195578c4f6a364714a965f9784bf"
+    },
+    {
+      "path": "docs/reviews/glute-bridge-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 64307,
+      "sha256": "e990371d0d14e57c456d34ebd4a534e800e560d7de0348c899190b8aaf7632c4"
+    },
+    {
+      "path": "docs/reviews/half-kneeling-hip-flexor-stretch-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 37027,
+      "sha256": "61a0414635154ac9091cb900346bf4729c6c2a9637d5317b47df182cf357c3ae"
+    },
+    {
+      "path": "docs/reviews/half-kneeling-hip-flexor-stretch-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 37171,
+      "sha256": "cdc27caa205ad46a748713f87a7343d3d72b9d2f40c15564607f9cc928d6f41b"
+    },
+    {
+      "path": "docs/reviews/hanging-knee-raise-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 44883,
+      "sha256": "6e37bd0cac1800769e7cb4ff32a7cfbfe1ec0a1f3165c8d3383f753e8cf25160"
+    },
+    {
+      "path": "docs/reviews/hanging-knee-raise-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 45515,
+      "sha256": "320ff071bb380890b6695d8faee39b23b5c244b7a0abc4dc7b9e29904062838e"
+    },
+    {
+      "path": "docs/reviews/hip-thrust-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 55903,
+      "sha256": "5ff8bcca976fdc88278041b8239ef4b14bca3c155708679e7a2a66f13c148dbd"
+    },
+    {
+      "path": "docs/reviews/hip-thrust-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 57248,
+      "sha256": "8810b851f168b16693cb5e46e2fd590136ed8a43761e7ec1698f99661b6494ac"
+    },
+    {
+      "path": "docs/reviews/hollow-body-hold-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 21880,
+      "sha256": "2abc0c1713196acab55de34877add3b376af9db2725dfde10c39766361492ba4"
+    },
+    {
+      "path": "docs/reviews/hollow-body-hold-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 22261,
+      "sha256": "e387d5a44e0318adce56c71eef00a4fa084d54bd639ed4e6c412a275dce69b9d"
+    },
+    {
+      "path": "docs/reviews/inverted-row-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 41787,
+      "sha256": "ec87688e081e79c1896ccc8968bbace1f7365bfddb60567254d5ecc91ed4096d"
+    },
+    {
+      "path": "docs/reviews/inverted-row-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 42656,
+      "sha256": "b8210bac103a6f4dbf5e362b78de6ae6cdb0b8295d1a245441298e857c5a20f4"
+    },
+    {
+      "path": "docs/reviews/landmine-press-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 41898,
+      "sha256": "e2eef5cc015187120da6b170ddf250f5013bd14686428be70e534fde48b99456"
+    },
+    {
+      "path": "docs/reviews/landmine-press-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 42510,
+      "sha256": "9d461933a2b6c41e078c43cb8a3761bcda7988b832b99590b41711b4474ed771"
+    },
+    {
+      "path": "docs/reviews/landmine-row-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 30454,
+      "sha256": "8816cea8acc7cc89d7ee705731d29d58583a5f082b693668a2629a2597b387e7"
+    },
+    {
+      "path": "docs/reviews/landmine-row-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 31199,
+      "sha256": "ca030b059ee1026eec025c98942f7c1e2a7137e5fce852ab208f96515bb0ee6c"
+    },
+    {
+      "path": "docs/reviews/lateral-lunge-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 76841,
+      "sha256": "91308831eca76400167bff3c08637ca351f7fd1dd8932da70ac1665b84504ffd"
+    },
+    {
+      "path": "docs/reviews/lateral-lunge-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 77960,
+      "sha256": "ac20fa55849fa1d40910b68b0deb8c0db5a44929baa91a73232f3e56d4b3bda8"
+    },
+    {
+      "path": "docs/reviews/lying-triceps-extension-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 37664,
+      "sha256": "fce3078d585351d032d6dd3c2592bda77848f35d2dca98960a652b34787aeeda"
+    },
+    {
+      "path": "docs/reviews/lying-triceps-extension-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 37969,
+      "sha256": "19907b03d3c8af3e7eba8bb9b1344c21e30e30834b62dfdf5fe63d36685ac862"
+    },
+    {
+      "path": "docs/reviews/ninety-ninety-hip-rotation-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 53577,
+      "sha256": "9d6ad7d1dbd7a48b3e46d2b540a648cab238ee88b5dd19584b280cad3855015d"
+    },
+    {
+      "path": "docs/reviews/ninety-ninety-hip-rotation-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 54818,
+      "sha256": "56a053764ad200d0da638bf775362f6094117341a1cfad9d68aacb45e63a070b"
+    },
+    {
+      "path": "docs/reviews/overhead-triceps-extension-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 36869,
+      "sha256": "0afc6a4b1e827abed16a408af59971582b1af015c25b1fda93327441ad802005"
+    },
+    {
+      "path": "docs/reviews/overhead-triceps-extension-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 37627,
+      "sha256": "7d6797ea0e30a387edff204f533dc73f4f66936f1dc8794269c76a430c1c31fc"
+    },
+    {
+      "path": "docs/reviews/pike-push-up-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 83996,
+      "sha256": "34566e9aef4457b307ec9fe93f1a4662165f4252d182d9833112e2e27b2dcfad"
+    },
+    {
+      "path": "docs/reviews/pike-push-up-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 85953,
+      "sha256": "146d2130b4e324dfd6ea8e8e9b56590a61e2144e55d316a10ad2194f9ecfe58c"
+    },
+    {
+      "path": "docs/reviews/prone-hamstring-curl-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 27207,
+      "sha256": "01cd5dee21bb9496419efb23da09580b148b847fa3c057d9a977b6ce0d8cb712"
+    },
+    {
+      "path": "docs/reviews/prone-hamstring-curl-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 27582,
+      "sha256": "73c67847bd2c1781ace378690d39677954c81d498f16e220eb4bfc81c9b2ef91"
+    },
+    {
+      "path": "docs/reviews/prone-hip-extension-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 23570,
+      "sha256": "f99ea1ac83d4eb22f33baabe9e4819444ee3f7ca7f74513d7bd8ba8845fae4ea"
+    },
+    {
+      "path": "docs/reviews/prone-hip-extension-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 24236,
+      "sha256": "2c25b67696d9b0da5e92ff9db002d83b7cfe290db7142e4e8463eb94a1e8b52f"
+    },
+    {
+      "path": "docs/reviews/pull-up-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 54881,
+      "sha256": "48f4a1bf0789ec895152f5b6655a3b140e712de1e2410ab42c3a5b9cef824bc3"
+    },
+    {
+      "path": "docs/reviews/pull-up-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 55567,
+      "sha256": "67fd996b02af413d39b6d960712dc89d81139965af91f3409ae1af0163a24e76"
+    },
+    {
+      "path": "docs/reviews/push-up-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 38226,
+      "sha256": "279f2166ad65ebbb88b00719a0462ae56658b7384206b4d16ea09c5a581a0b80"
+    },
+    {
+      "path": "docs/reviews/push-up-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 40915,
+      "sha256": "849d8cb220ac859167286aa8c1577aac53da3022e7ec2098fba036da41613a54"
+    },
+    {
+      "path": "docs/reviews/quadruped-hip-extension-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 34781,
+      "sha256": "d2520089a647f48f00e6423b2d2c05610746d72a9c9c263427c85577f9f89253"
+    },
+    {
+      "path": "docs/reviews/quadruped-hip-extension-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 35237,
+      "sha256": "b6001f6a8e4b906c9fd2cb49be94e8bbc8dd6e3a014283e3129d1223e5b9f1ce"
+    },
+    {
+      "path": "docs/reviews/quadruped-thoracic-rotation-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 58561,
+      "sha256": "78e5a5d498d50d262189162840d369458f561b001f303ec2ca711c31e5cd7d86"
+    },
+    {
+      "path": "docs/reviews/quadruped-thoracic-rotation-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 59757,
+      "sha256": "8fdd6cf01a1308997aab94238193214ce8a91a57c58f9295f4a4a0e3bfcce7fa"
+    },
+    {
+      "path": "docs/reviews/reverse-crunch-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 65944,
+      "sha256": "12925d9a028f05a1be3fed9fda1381f2caf5df0bcdc9ff931fcc6a56e5a8acc9"
+    },
+    {
+      "path": "docs/reviews/reverse-crunch-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 66582,
+      "sha256": "ababb0d84bde736d76bc76b61fa51c6da4e78bc00f7887e3fbf134773d5c7767"
+    },
+    {
+      "path": "docs/reviews/reverse-lunge-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 68074,
+      "sha256": "cc451f332023aa72aa9d0741f6e933e3de0240d6d55c2dff6c683eceb82f40ef"
+    },
+    {
+      "path": "docs/reviews/reverse-lunge-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 69910,
+      "sha256": "4e79c5e919f1c0a5e3bc6f3a217d6edf2026acf9394103076a46ae787b32cf22"
+    },
+    {
+      "path": "docs/reviews/scapular-retraction-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 33408,
+      "sha256": "77f61d4f42f3a5361aa5ce7b8b709f25fa5c6f0155b6b29d1a92f0d9228d7d7d"
+    },
+    {
+      "path": "docs/reviews/scapular-retraction-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 33408,
+      "sha256": "77f61d4f42f3a5361aa5ce7b8b709f25fa5c6f0155b6b29d1a92f0d9228d7d7d"
+    },
+    {
+      "path": "docs/reviews/seated-band-hamstring-curl-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 39386,
+      "sha256": "9873d7174525bb1b29c09fe920f4907497d24f51740b5a847e7df5454d69e9e6"
+    },
+    {
+      "path": "docs/reviews/seated-band-hamstring-curl-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 39738,
+      "sha256": "9f6f813b83c8ea3eecbafb769234bfb9a2841b082d6ee14f672dca4a1a01dd8d"
+    },
+    {
+      "path": "docs/reviews/seated-calf-raise-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 66239,
+      "sha256": "d67e7f0302c8f100faef8df8d21c30c295cac77612f3722a30bd36d098190f2b"
+    },
+    {
+      "path": "docs/reviews/seated-calf-raise-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 66643,
+      "sha256": "cef4d14a814e28a0cb5c3c4741684ec176bc48246d034c2aa4cfc38658b75aa7"
+    },
+    {
+      "path": "docs/reviews/seated-knee-extension-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 53560,
+      "sha256": "7501fad7047ffb70dd6aa642af36cd49b49d445953bc9d06e6d0c391b6511127"
+    },
+    {
+      "path": "docs/reviews/seated-knee-extension-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 54445,
+      "sha256": "129ad584b8e88a605155e27679421e138c92bc319d7b8d438bd32c59d907db62"
+    },
+    {
+      "path": "docs/reviews/seated-trunk-rotation-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 65523,
+      "sha256": "39f9cea131502429049e7f06440e18e877d252ba0bbaec2d9498b5aa1a74623b"
+    },
+    {
+      "path": "docs/reviews/seated-trunk-rotation-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 65840,
+      "sha256": "79692005eff6514e5cf42e2ba2eea88c4a86acddeeb59fbae8595f7f85c1bf3c"
+    },
+    {
+      "path": "docs/reviews/shoulder-pendulum-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 43015,
+      "sha256": "d3682a251d7f0a8fde0882c90f5f0152b47120fc12f084b7660c38449abd6034"
+    },
+    {
+      "path": "docs/reviews/shoulder-pendulum-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 43524,
+      "sha256": "b8cbf8786e738d33a026d080d735ea42268d8a0e815ebbfa80ce08342b2b3f58"
+    },
+    {
+      "path": "docs/reviews/side-lying-clamshell-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 38564,
+      "sha256": "39c8f38354fa75f075cb967a7ad8092d13c8dd30875f14576e27433af506a325"
+    },
+    {
+      "path": "docs/reviews/side-lying-clamshell-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 39007,
+      "sha256": "f2ca50aa3fb5f4048509039dd0ccda45ec17f23edf641d85cc0564601336fb68"
+    },
+    {
+      "path": "docs/reviews/side-lying-dumbbell-external-rotation-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 34538,
+      "sha256": "b5f8aa56193518ff7ebef0014baf4696b74cea79e632ceca53a50926be099c7e"
+    },
+    {
+      "path": "docs/reviews/side-lying-dumbbell-external-rotation-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 34920,
+      "sha256": "05e9c41c7d34eb14f11810dc8238adb704b8ff22f548b10184d97dd1623bcbae"
+    },
+    {
+      "path": "docs/reviews/side-lying-hip-abduction-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 34800,
+      "sha256": "46895ca6a36211a745ffed1b51ba71d85dbc8ac1a2800da9bd25961ace8b381d"
+    },
+    {
+      "path": "docs/reviews/side-lying-hip-abduction-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 35271,
+      "sha256": "ce578375ba6b98ad6a9dfc749168c1ade0ea11e38ef8dc8f388713d311b26b56"
+    },
+    {
+      "path": "docs/reviews/side-plank-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 30006,
+      "sha256": "88b65c28f062179618c674a9d9af95b6f62c737a095eff74e0a4b6ce26b08550"
+    },
+    {
+      "path": "docs/reviews/side-plank-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 31061,
+      "sha256": "6064738ee74960b44ab0d6fd0b3f19c43fdbd3d939afa6f455b04f59f1c97754"
+    },
+    {
+      "path": "docs/reviews/single-leg-glute-bridge-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 65825,
+      "sha256": "79aefc688032a823b3ce185715c60798b90eb56674e983ea634b7e964b8fad46"
+    },
+    {
+      "path": "docs/reviews/single-leg-glute-bridge-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 69995,
+      "sha256": "39b34695fdfd9e8316c694568d7152498daf51583c3c654e181adafcf980e319"
+    },
+    {
+      "path": "docs/reviews/single-leg-romanian-deadlift-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 74047,
+      "sha256": "23ca8e3942e55870f7f9ae3ca987b0a6136de3dd7aae652a7c787330e35e92c9"
+    },
+    {
+      "path": "docs/reviews/single-leg-romanian-deadlift-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 74743,
+      "sha256": "05a20d85c7143f279f69b8225ae0e16f86b8890df74b927b6ede6679cc77294d"
+    },
+    {
+      "path": "docs/reviews/sit-to-stand-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 75645,
+      "sha256": "228d9ee44baf3bf8d3c8424dd4225afad4d5ed8cc5fee4571651557b432b279d"
+    },
+    {
+      "path": "docs/reviews/sit-to-stand-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 77139,
+      "sha256": "dbb07c3d79206594b3c0419239ebb3aadf6b227890489f5913180a32d6c2e8a3"
+    },
+    {
+      "path": "docs/reviews/split-squat-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 69445,
+      "sha256": "0bd1670d1a16907e3e25de8aeec940f015311c3fed4724baf962808991e52e36"
+    },
+    {
+      "path": "docs/reviews/split-squat-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 70928,
+      "sha256": "7fe852512dcb74147087cb945fe497bbbb5e3c1f27305d7a82716cdb7375b40f"
+    },
+    {
+      "path": "docs/reviews/standing-calf-raise-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 58520,
+      "sha256": "36dceab7a647afef3a473508abd1cb44b8ab45fab7f21aa9bc2780086068b64b"
+    },
+    {
+      "path": "docs/reviews/standing-calf-raise-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 58629,
+      "sha256": "f0ec733795b93f571d86f29ac97061b0ec235735bc31577a8d7c6ba01c6310f7"
+    },
+    {
+      "path": "docs/reviews/standing-hamstring-stretch-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 35599,
+      "sha256": "efc6fcb2d13bcd7ef08edb3a257ca242d7086af9454f7c652f1c637f6b38aec4"
+    },
+    {
+      "path": "docs/reviews/standing-hamstring-stretch-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 35827,
+      "sha256": "bebd2faed30de3995f585d144e6f1972c1e0b60702e275d095d047246fee3b1b"
+    },
+    {
+      "path": "docs/reviews/standing-hip-abduction-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 45562,
+      "sha256": "1cbc21903cf3bdaa98fbe0fa503a6b3cdd302b1dc5268f1891bd590ed7ca7192"
+    },
+    {
+      "path": "docs/reviews/standing-hip-abduction-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 45830,
+      "sha256": "a8a7b45804a662c3ef5ddaa6daec68d4124fa7d05bb9f019a8c733d0b6b43f41"
+    },
+    {
+      "path": "docs/reviews/standing-hip-extension-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 43034,
+      "sha256": "977bad71878f4b0c7567141590a9246582a44a16f3bea6d341e808d35733e16a"
+    },
+    {
+      "path": "docs/reviews/standing-hip-extension-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 43461,
+      "sha256": "3db2eff6b4b32290e4e7f5ddcab0aa1dccdcdbf9e12a9ecb17a330b9ea8bac3c"
+    },
+    {
+      "path": "docs/reviews/standing-hip-flexion-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 45502,
+      "sha256": "b901b317c03f9baee93f24201881df48db0f5a8b38f639b87fada6d1832e4060"
+    },
+    {
+      "path": "docs/reviews/standing-hip-flexion-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 46274,
+      "sha256": "d3e63ae0ef4563c2bab959eaad7b21e571fbe1723828138098a69bfc7db783d7"
+    },
+    {
+      "path": "docs/reviews/step-up-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 65112,
+      "sha256": "c5c29380f9f1f78461f549602be8f509c44925bd9a22e8a15b63d37c10037e3f"
+    },
+    {
+      "path": "docs/reviews/step-up-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 66524,
+      "sha256": "6657c2488f05fc6a820a51030accaf3e3adf8b989c618300c98897242590e996"
+    },
+    {
+      "path": "docs/reviews/straight-leg-raise-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 37852,
+      "sha256": "92b86868c350e90703048e586865b63933f6a5cdb4bbcca86718ea0c62c2642f"
+    },
+    {
+      "path": "docs/reviews/straight-leg-raise-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 38741,
+      "sha256": "2130114959024f107ea46c0d7673ad63ad999d9a591c61764446297f6fa2654e"
+    },
+    {
+      "path": "docs/reviews/superman-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 42297,
+      "sha256": "0ef94678878ecd3e500e30f0337a8a6dd72f21af0a28072efa1895389f29d127"
+    },
+    {
+      "path": "docs/reviews/superman-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 43816,
+      "sha256": "27cec08128f1d5e3229597278b7dff6235bd3ff3fc3f4230bbbc27770e9173c4"
+    },
+    {
+      "path": "docs/reviews/supine-heel-slide-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 40403,
+      "sha256": "625b734d9cb8be8b0ebce441415d688d7cac16d30f3818f9d8b87dcdb9149085"
+    },
+    {
+      "path": "docs/reviews/supine-heel-slide-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 42178,
+      "sha256": "b5fbbb8eda060d2dd64e4fd5c9c41976ad6ebdfcb5faa699a995dbed72c9093e"
+    },
+    {
+      "path": "docs/reviews/supine-pelvic-tilt-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 59080,
+      "sha256": "2b411b05d4f970e86428bf759de066023ed94ec4eeeedfa8da65d2f3135656b4"
+    },
+    {
+      "path": "docs/reviews/supine-pelvic-tilt-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 60122,
+      "sha256": "93496cc4ca968d8b35d21e5bdfd17497b2cad68e7fe53f46728a936005c60012"
+    },
+    {
+      "path": "docs/reviews/supine-serratus-punch-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 49992,
+      "sha256": "c716cfe7275142a3ed5147ec14cf0bc45b4c77bb639955b4c757f964a364ae6f"
+    },
+    {
+      "path": "docs/reviews/supine-serratus-punch-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 50577,
+      "sha256": "be536f2787a22586bccc3a6cd388dc8c31cba674782a98f158cfdd4a258ee308"
+    },
+    {
+      "path": "docs/reviews/supine-trunk-rotation-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 51899,
+      "sha256": "e52636c4f79d9be3fbc6919f0326c12469931ddb26cc2647ba3e6ca354f0c6ad"
+    },
+    {
+      "path": "docs/reviews/supine-trunk-rotation-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 52530,
+      "sha256": "4a0fb42f882421ef6e209d155b106b8fd52f38a6f0e19ab6a9734401d07d83fc"
+    },
+    {
+      "path": "docs/reviews/thoracic-open-book-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 57164,
+      "sha256": "a92175fe1038cb619c47c5ab0c8cbb73fe2254ac1550ea996011044317529e24"
+    },
+    {
+      "path": "docs/reviews/thoracic-open-book-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 59119,
+      "sha256": "cf68698729eb7a9bf3d3b10cdbceb3c46d2c3e6144cefca561bd6e592d063b85"
+    },
+    {
+      "path": "docs/reviews/wall-sit-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 35486,
+      "sha256": "beb232c2ce2f8d9672197f7ee37c56bf913fb8583cde98eede7691f7e2600f4f"
+    },
+    {
+      "path": "docs/reviews/wall-sit-muscle-contact-sheet.png",
+      "role": "artifact",
+      "bytes": 35850,
+      "sha256": "7364f52a5d96e87e85438c4d2f03aa2d345ff8b082bfc8852cf27b7267b0f613"
+    },
+    {
+      "path": "packages/data/src/asset-review.json",
+      "role": "source",
+      "bytes": 51066,
+      "sha256": "7bb849d0f1b543737d2be8372e7688cdd7520d85f5a36bc32ef68a482a46279c"
+    },
+    {
+      "path": "packages/data/src/exercises.json",
+      "role": "source",
+      "bytes": 178495,
+      "sha256": "84590a353ac4104ad3083c3d7c9884b5237197f422aa3ada151a1009b438d477"
+    },
+    {
+      "path": "packages/schemas/src/muscle-regions-band.json",
+      "role": "source",
+      "bytes": 3266,
+      "sha256": "9065a6014d27b8576689f5ec44562b18dae6e6b39b036c252fdfb9784398be7c"
+    },
+    {
+      "path": "packages/schemas/src/muscle-regions-dumbbell.json",
+      "role": "source",
+      "bytes": 2924,
+      "sha256": "e3bafc900f388deb96f83455aa3a15e97943ed36eb27b731a4b050ad275a1e31"
+    },
+    {
+      "path": "packages/schemas/src/muscle-regions-final.json",
+      "role": "source",
+      "bytes": 3406,
+      "sha256": "1f54406fa43ec755f6d2c8113ac3d49091688c10193d904aa3c531b6a5ee1b58"
+    },
+    {
+      "path": "packages/schemas/src/muscle-regions-upper-quarter.json",
+      "role": "source",
+      "bytes": 2581,
+      "sha256": "e0e118ff39e3cd2a40964fb3a103ad52afed467c72fcdcf5e2a85193d76f55be"
+    },
+    {
+      "path": "packages/schemas/src/muscle-regions.json",
+      "role": "source",
+      "bytes": 2253,
+      "sha256": "8a72f2f83b7cd805e7721e455aae75092b26d0f2d5411659dad91245cf3aa099"
+    },
+    {
+      "path": "pipeline/character/barbell.py",
+      "role": "source",
+      "bytes": 986,
+      "sha256": "33f803aadf343e893119aa13db46202cebccfafc5c55a1b1d4ce844bc09910fa"
+    },
+    {
+      "path": "pipeline/character/build.py",
+      "role": "source",
+      "bytes": 32596,
+      "sha256": "bb61d56fcd181561df259cf78fd10a008e1b668f6c95ca5f1bfd523f58b3cb16"
+    },
+    {
+      "path": "pipeline/character/equipment-profiles.json",
+      "role": "source",
+      "bytes": 3109,
+      "sha256": "fa1448f9580cb6ddc976c359ec8bb01eb489f06a8cdb95f709c2c0d16a5deeee"
+    },
+    {
+      "path": "pipeline/character/export_blender.py",
+      "role": "source",
+      "bytes": 596,
+      "sha256": "3bcd40fcf884cafc996aba519d697c1b5468aac412102d1931efb6f5c3550a1d"
+    },
+    {
+      "path": "pipeline/character/motion_band_lower.py",
+      "role": "source",
+      "bytes": 4121,
+      "sha256": "082b57d1cefa594c65670bb304ad1302969ee9297161072d1bf04e74a6906451"
+    },
+    {
+      "path": "pipeline/character/motion_band.py",
+      "role": "source",
+      "bytes": 4003,
+      "sha256": "721a702af10403d8359a1e400376313f368e537cf5fd61e2d741882ba74adce4"
+    },
+    {
+      "path": "pipeline/character/motion_barbell.py",
+      "role": "source",
+      "bytes": 3938,
+      "sha256": "c179e8f2889c6a3d162a4d3151766a295ba71fd95911bbc3a3a1f2cc8aa5de0a"
+    },
+    {
+      "path": "pipeline/character/motion_dumbbell.py",
+      "role": "source",
+      "bytes": 4318,
+      "sha256": "2fd5296269c1b758440daaced6658a3d2f4d97ea0df0d21c06e8efdd13a910e3"
+    },
+    {
+      "path": "pipeline/character/motion_final.py",
+      "role": "source",
+      "bytes": 6524,
+      "sha256": "c803b377f01391593356793c623f95586a39be458ae4412d94f5919a02cbb315"
+    },
+    {
+      "path": "pipeline/character/motion_floor.py",
+      "role": "source",
+      "bytes": 1868,
+      "sha256": "e755eeb908a6c355f21f6e35ed3c4948c7e8c54880ce1eb2eb23a7656d4bf4bc"
+    },
+    {
+      "path": "pipeline/character/motion_holds.py",
+      "role": "source",
+      "bytes": 1674,
+      "sha256": "1ea7c1d316a879aca98c3a7a934fe972e557edb085756180fc1bbe044ab6cd12"
+    },
+    {
+      "path": "pipeline/character/motion_landmine.py",
+      "role": "source",
+      "bytes": 1370,
+      "sha256": "996e9292719cdfd6bb45382078ba740a5e1b79cdb25f07e4f6a9979ac8afb4de"
+    },
+    {
+      "path": "pipeline/character/motion_legacy.py",
+      "role": "source",
+      "bytes": 6809,
+      "sha256": "0c582317879ba48ad67f4f8b666e37ca403babed21d47ad45cc84cf069018d5f"
+    },
+    {
+      "path": "pipeline/character/motion_mobility.py",
+      "role": "source",
+      "bytes": 6395,
+      "sha256": "f173e94a73b93bf39ad9374a967314c94c2e815ff461a6f12203ab0f488e73f2"
+    },
+    {
+      "path": "pipeline/character/motion_quadruped.py",
+      "role": "source",
+      "bytes": 2351,
+      "sha256": "3756eb383b24ee0a3471bfd6faa47e43045140deb3474fbb8b011a49f117eff9"
+    },
+    {
+      "path": "pipeline/character/motion_seated.py",
+      "role": "source",
+      "bytes": 4000,
+      "sha256": "6610dc510dd38f94baa87cf7a999beef3e23246e3ef2f09ebb68c54bfa1495e7"
+    },
+    {
+      "path": "pipeline/character/motion_standing.py",
+      "role": "source",
+      "bytes": 1101,
+      "sha256": "c2af70ad13e8a3d28cfea5188b0c30b8acf6994d1267566bbb9f6a97b3a6e1e5"
+    },
+    {
+      "path": "pipeline/character/motion_strength.py",
+      "role": "source",
+      "bytes": 2635,
+      "sha256": "c446b1f381e332e110e16fd5665e08dd6b04783dc73765ecb8ff0ca8c69f4841"
+    },
+    {
+      "path": "pipeline/character/motion_upper_quarter.py",
+      "role": "source",
+      "bytes": 2451,
+      "sha256": "e5b484807f6d6188a8470ab8899fc977fdd7c0c9a6a63b3a5aaa072ed2c249f6"
+    },
+    {
+      "path": "pipeline/character/motion-profiles.json",
+      "role": "source",
+      "bytes": 39982,
+      "sha256": "0a88a6f96d0a480e4c5ad54003f8fb5d6b60b63e5f477cfde6ec94f872d804a2"
+    },
+    {
+      "path": "pipeline/character/motions.py",
+      "role": "source",
+      "bytes": 7531,
+      "sha256": "a0cdb6b3adbb4a6266d46c9805ef80ee1a66f7825f907a384708e6291e7b823b"
+    },
+    {
+      "path": "pipeline/character/preview.py",
+      "role": "source",
+      "bytes": 14042,
+      "sha256": "0b1edc1c934f7db0403c1544d8297b5c74dc82b7ff4b406288b2ea1141c8b67e"
+    },
+    {
+      "path": "pipeline/character/props.py",
+      "role": "source",
+      "bytes": 1195,
+      "sha256": "6120bd297c653e4d28609666ff3d402d40c4e65c91c85bee86f3c85657015e6e"
+    }
+  ]
+}

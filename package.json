@@ -24,6 +24,7 @@
     "validate:preview": "pnpm build:packages && node scripts/validate-data.mjs --preview && node scripts/review-manifest.mjs --check",
     "assets:preview": "python3 pipeline/character/preview.py && pnpm assets:hashes",
     "assets:hashes": "node scripts/review-manifest.mjs",
+    "character:check": "node scripts/character-baseline.mjs",
     "test:browser": "pnpm build && vite build --config vite.browser.config.ts && playwright test"
   },
   "devDependencies": {
