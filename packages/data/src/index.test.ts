@@ -1,8 +1,8 @@
 import { expect, it } from 'vitest';
 import { exercises, getExercise, queryExercises } from './index.js';
-it('registers seventy-five real animations through the shared catalog', () => {
-  expect(exercises.length).toBe(75);
-  expect(new Set(exercises.map((e) => e.animation?.file)).size).toBe(75);
+it('registers eighty-three real animations through the shared catalog', () => {
+  expect(exercises.length).toBe(83);
+  expect(new Set(exercises.map((e) => e.animation?.file)).size).toBe(83);
   expect(
     exercises.every(
       (e) =>
@@ -29,6 +29,7 @@ it('registers seventy-five real animations through the shared catalog', () => {
     'barbell-overhead-press',
     'landmine-press',
     'band-chest-press',
+    'band-triceps-pushdown',
   ]);
 });
 

@@ -30,7 +30,11 @@ UPPER_REGION_DEFINITION = json.loads((ROOT/'packages/schemas/src/muscle-regions-
 
 DUMBBELL_REGION_DEFINITION = json.loads((ROOT/'packages/schemas/src/muscle-regions-dumbbell.json').read_text())
 
+BAND_REGION_DEFINITION = json.loads((ROOT/'packages/schemas/src/muscle-regions-band.json').read_text())
+
 def region_definition(exercise):
+    if motions.PROFILES.get(exercise, {}).get('regionVersion') == '1.5.0':
+        return BAND_REGION_DEFINITION
     if motions.PROFILES.get(exercise, {}).get('regionVersion') == '1.4.0':
         return DUMBBELL_REGION_DEFINITION
     return UPPER_REGION_DEFINITION if motions.PROFILES.get(exercise, {}).get('rig') == 'upper-quarter-v2' else REGION_DEFINITION
@@ -416,11 +420,34 @@ def build(output, animated=True, exercise="bodyweight-squat", geometry=None, equ
         document['meshes'].append({'name':'elastic-band','primitives':[{'attributes':attributes,'indices':accessor(bi,5125,'SCALAR'),'material':material}]})
         document['scenes'][0]['nodes'].append(len(document['nodes']))
         document['nodes'].append({'name':'elastic_band','mesh':mesh_index,'skin':skin_index,'extras':{'kimorelElasticBand':1}})
-        for side,joint in (('left',14),('right',17)):
-            if side == 'left' and 'anchor' in motions.PROFILES[exercise]['elasticBand']:continue
-            marker = len(document['nodes'])
-            document['nodes'].append({'name':side+'_hand_band_grip','translation':band.PALM[side]})
-            document['nodes'][joint].setdefault('children',[]).append(marker)
+        attachment_spec = motions.PROFILES[exercise]['elasticBand'].get('attachments')
+        if attachment_spec:
+            for index,attachment in enumerate(attachment_spec):
+                joint = next(i for i,bone in enumerate(bones) if bone[0] == attachment['bone'])
+                marker = len(document['nodes'])
+                document['nodes'].append({'name':f'band_distal_{index}','translation':attachment['local']})
+                document['nodes'][joint].setdefault('children',[]).append(marker)
+                if attachment.get('strap'):
+                    sv,sn,si = props.geometry(attachment['strap']['id'])
+                    mesh = len(document['meshes'])
+                    document['meshes'].append({'name':'band-strap','primitives':[{'attributes':{'POSITION':accessor(sv,5126,'VEC3'),'NORMAL':accessor(sn,5126,'VEC3')},'indices':accessor(si,5125,'SCALAR'),'material':material}]})
+                    node = len(document['nodes'])
+                    document['nodes'].append({'name':f'band_strap_{index}','mesh':mesh,'translation':attachment['strap']['center']})
+                    document['nodes'][joint]['children'].append(node)
+            if len(attachment_spec) == 2:
+                hv,hn,hi = props.geometry('band-handle')
+                mesh = len(document['meshes'])
+                document['meshes'].append({'name':'band-handle','primitives':[{'attributes':{'POSITION':accessor(hv,5126,'VEC3'),'NORMAL':accessor(hn,5126,'VEC3')},'indices':accessor(hi,5125,'SCALAR'),'material':material}]})
+                node = len(document['nodes'])
+                document['nodes'].append({'name':'band_handle','mesh':mesh})
+                document['scenes'][0]['nodes'].append(node)
+                if animated:track(node,'translation',[motions.equipment_pose(bones,t,exercise,pose)['elasticBand']['end'] for t in times],'VEC3')
+        else:
+            for side,joint in (('left',14),('right',17)):
+                if side == 'left' and 'anchor' in motions.PROFILES[exercise]['elasticBand']:continue
+                marker = len(document['nodes'])
+                document['nodes'].append({'name':side+'_hand_band_grip','translation':band.PALM[side]})
+                document['nodes'][joint].setdefault('children',[]).append(marker)
         if animated:
             endpoints = [motions.equipment_pose(bones,t,exercise,pose)['elasticBand'] for t in times]
             rotations = [motions.align((1,0,0),motions.sub(p['end'],p['start'])) for p in endpoints]

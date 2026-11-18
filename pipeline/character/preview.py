@@ -144,6 +144,23 @@ def render(time, width=400, height=480, exercise='bodyweight-squat', geometry=No
         indices = list(indices)
         vertices.extend(project(*p) for p in pv)
         indices.extend(start+i for i in pi)
+    for attachment in character.motions.PROFILES[exercise].get('elasticBand',{}).get('attachments',[]):
+        if attachment.get('strap'):
+            joint = next(i for i,bone in enumerate(character.BONES) if bone[0] == attachment['bone'])
+            pv,_pn,pi = character.props.geometry(attachment['strap']['id'])
+            start = len(vertices)
+            indices = list(indices)
+            for p in pv:
+                point = character.motions.add(world[joint],quaternion_rotate(character.motions.add(p,attachment['strap']['center']),rotations[joint]))
+                vertices.append(project(*point))
+            indices.extend(start+i for i in pi)
+    if len(character.motions.PROFILES[exercise].get('elasticBand',{}).get('attachments',[])) == 2:
+        end = character.motions.equipment_pose(character.BONES,time,exercise,character.pose)['elasticBand']['end']
+        pv,_pn,pi = character.props.geometry('band-handle')
+        start = len(vertices)
+        indices = list(indices)
+        vertices.extend(project(*character.motions.add(p,end)) for p in pv)
+        indices.extend(start+i for i in pi)
     pixels = bytearray([232,237,232]*width*height)
     depths = [-float('inf')]*(width*height)
     for i in range(0,len(indices),3):

@@ -1232,5 +1232,272 @@
         "maxRadians": 0.85
       }
     ]
+  },
+  "band-internal-rotation": {
+    "contacts": ["left_foot", "right_foot"],
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.5.0",
+    "elasticBand": {
+      "anchor": [-1.1, 1.15, 0.35],
+      "attachments": [
+        {
+          "bone": "right_hand",
+          "local": [-0.02, -0.055, 0.005],
+          "skinBounds": [-0.52, -0.39, 0.78, 1.015, -0.1, 0.1]
+        }
+      ],
+      "restLength": 0.4,
+      "minStretch": 1.0,
+      "maxStretch": 2.6,
+      "minExcursion": 0.12
+    },
+    "props": [
+      {
+        "id": "band-anchor",
+        "translation": [-1.1, 0, 0.35]
+      }
+    ]
+  },
+  "band-pallof-press": {
+    "contacts": ["left_foot", "right_foot"],
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.5.0",
+    "elasticBand": {
+      "anchor": [1.0, 1.25, 0.22],
+      "attachments": [
+        {
+          "bone": "left_hand",
+          "local": [0.02, -0.055, 0.005],
+          "skinBounds": [0.39, 0.52, 0.78, 1.015, -0.1, 0.1]
+        },
+        {
+          "bone": "right_hand",
+          "local": [-0.02, -0.055, 0.005],
+          "skinBounds": [-0.52, -0.39, 0.78, 1.015, -0.1, 0.1]
+        }
+      ],
+      "restLength": 0.6,
+      "minStretch": 1.0,
+      "maxStretch": 2.6,
+      "minExcursion": 0.025
+    },
+    "props": [
+      {
+        "id": "band-anchor",
+        "translation": [1.0, 0, 0.22]
+      }
+    ]
+  },
+  "band-triceps-pushdown": {
+    "contacts": ["left_foot", "right_foot"],
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.5.0",
+    "elasticBand": {
+      "anchor": [-0.32, 1.45, 0.45],
+      "attachments": [
+        {
+          "bone": "right_hand",
+          "local": [-0.02, -0.055, 0.005],
+          "skinBounds": [-0.52, -0.39, 0.78, 1.015, -0.1, 0.1]
+        }
+      ],
+      "restLength": 0.35,
+      "minStretch": 1.0,
+      "maxStretch": 2.6,
+      "minExcursion": 0.13
+    },
+    "props": [
+      {
+        "id": "band-anchor",
+        "translation": [-0.32, 0, 0.45]
+      }
+    ]
+  },
+  "seated-band-hamstring-curl": {
+    "contacts": ["pelvis", "left_foot"],
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.5.0",
+    "elasticBand": {
+      "anchor": [-0.4, 0.22, 1.3],
+      "attachments": [
+        {
+          "bone": "right_shin",
+          "local": [-0.085, -0.32, 0.016],
+          "skinBounds": [-0.23, -0.06, 0.14, 0.25, -0.12, 0.12],
+          "strap": {
+            "id": "band-shin-strap",
+            "center": [0, -0.32, 0.016]
+          }
+        }
+      ],
+      "restLength": 0.35,
+      "minStretch": 1.0,
+      "maxStretch": 2.6,
+      "minExcursion": 0.13
+    },
+    "props": [
+      {
+        "id": "band-anchor",
+        "translation": [-0.4, 0, 1.3]
+      },
+      {
+        "id": "bench",
+        "translation": [0, 0, -0.16]
+      }
+    ],
+    "skinPatches": [],
+    "surfaceContacts": [
+      {
+        "prop": "bench",
+        "axis": 1,
+        "from": 0,
+        "to": 1,
+        "skinBounds": [-0.18, 0.18, 0.84, 0.94, -0.18, -0.02]
+      }
+    ]
+  },
+  "band-terminal-knee-extension": {
+    "contacts": ["left_foot", "right_foot"],
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.5.0",
+    "elasticBand": {
+      "anchor": [-0.145, 0.52, 1.0],
+      "attachments": [
+        {
+          "bone": "right_shin",
+          "local": [0, -0.035, 0.1],
+          "skinBounds": [-0.25, -0.04, 0.44, 0.55, -0.12, 0.15],
+          "strap": {
+            "id": "band-knee-strap",
+            "center": [0, -0.035, 0]
+          }
+        }
+      ],
+      "restLength": 0.4,
+      "minStretch": 1.0,
+      "maxStretch": 2.6,
+      "minExcursion": 0.08
+    },
+    "props": [
+      {
+        "id": "band-anchor",
+        "translation": [-0.145, 0, 1.0]
+      }
+    ]
+  },
+  "band-hip-adduction": {
+    "contacts": ["left_foot"],
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.5.0",
+    "elasticBand": {
+      "anchor": [-1.05, 0.22, 0.15],
+      "attachments": [
+        {
+          "bone": "right_shin",
+          "local": [-0.085, -0.32, 0.016],
+          "skinBounds": [-0.23, -0.06, 0.14, 0.25, -0.12, 0.12],
+          "strap": {
+            "id": "band-shin-strap",
+            "center": [0, -0.32, 0.016]
+          }
+        }
+      ],
+      "restLength": 0.4,
+      "minStretch": 1.0,
+      "maxStretch": 2.6,
+      "minExcursion": 0.2
+    },
+    "props": [
+      {
+        "id": "band-anchor",
+        "translation": [-1.05, 0, 0.15]
+      }
+    ]
+  },
+  "band-ankle-dorsiflexion": {
+    "contacts": ["pelvis", "left_foot"],
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.5.0",
+    "elasticBand": {
+      "anchor": [-0.145, 0.2, 1.2],
+      "attachments": [
+        {
+          "bone": "right_foot",
+          "local": [0, 0.034, 0.3],
+          "skinBounds": [-0.23, -0.06, 0.015, 0.12, 0.15, 0.3],
+          "strap": {
+            "id": "band-foot-strap",
+            "center": [0, -0.035, 0.145]
+          }
+        }
+      ],
+      "restLength": 0.25,
+      "minStretch": 1.0,
+      "maxStretch": 2.6,
+      "minExcursion": 0.025
+    },
+    "props": [
+      {
+        "id": "band-anchor",
+        "translation": [-0.145, 0, 1.2]
+      },
+      {
+        "id": "bench",
+        "translation": [0, 0, -0.16]
+      }
+    ],
+    "skinPatches": [],
+    "surfaceContacts": [
+      {
+        "prop": "bench",
+        "axis": 1,
+        "from": 0,
+        "to": 1,
+        "skinBounds": [-0.18, 0.18, 0.84, 0.94, -0.18, -0.02]
+      }
+    ]
+  },
+  "band-ankle-plantarflexion": {
+    "contacts": ["pelvis", "left_foot"],
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.5.0",
+    "elasticBand": {
+      "anchor": [-0.55, 0.75, 0.6],
+      "attachments": [
+        {
+          "bone": "right_foot",
+          "local": [0, 0.034, 0.3],
+          "skinBounds": [-0.23, -0.06, 0.015, 0.12, 0.15, 0.3],
+          "strap": {
+            "id": "band-foot-strap",
+            "center": [0, -0.035, 0.145]
+          }
+        }
+      ],
+      "restLength": 0.4,
+      "minStretch": 1.0,
+      "maxStretch": 2.6,
+      "minExcursion": 0.025
+    },
+    "props": [
+      {
+        "id": "band-anchor",
+        "translation": [-0.55, 0, 0.6]
+      },
+      {
+        "id": "bench",
+        "translation": [0, 0, -0.16]
+      }
+    ],
+    "skinPatches": [],
+    "surfaceContacts": [
+      {
+        "prop": "bench",
+        "axis": 1,
+        "from": 0,
+        "to": 1,
+        "skinBounds": [-0.18, 0.18, 0.84, 0.94, -0.18, -0.02]
+      }
+    ]
   }
 }

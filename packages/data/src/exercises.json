@@ -3973,5 +3973,437 @@
       "creator": "Kimorel contributors",
       "source": "Original Kimorel band motion and independently constrained deforming elastic geometry; pending exact-asset human review."
     }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "band-internal-rotation",
+    "slug": "band-internal-rotation",
+    "name": "Standing Band Internal Rotation",
+    "description": "Original educational elastic-band preview with declared physical hand, leg or forefoot attachment.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "rotation",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["resistance-band"],
+    "difficulty": "intermediate",
+    "laterality": "unilateral",
+    "startingPosition": "Standing with a bent right elbow",
+    "muscles": {
+      "primary": ["pectoralis-major", "latissimus-dorsi"],
+      "secondary": ["rotator-cuff"]
+    },
+    "instructions": [
+      "Use a secure, appropriate band setup; this preview does not model forces.",
+      "Rotate the bent right arm inward while keeping the elbow stationary.",
+      "Return with control within a comfortable range."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "band-internal-rotation-v1",
+      "file": "exercises/band-internal-rotation.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel band action and real strap or handle attachment constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "band-pallof-press",
+    "slug": "band-pallof-press",
+    "name": "Band Pallof Press",
+    "description": "Original educational elastic-band preview with declared physical hand, leg or forefoot attachment.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "push",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["resistance-band"],
+    "difficulty": "intermediate",
+    "laterality": "bilateral",
+    "startingPosition": "Standing beside the anchor",
+    "muscles": {
+      "primary": ["abdominals", "obliques"],
+      "secondary": ["deltoids"]
+    },
+    "instructions": [
+      "Use a secure, appropriate band setup; this preview does not model forces.",
+      "Press the two-hand handle forward without turning the trunk.",
+      "Return with control within a comfortable range."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "band-pallof-press-v1",
+      "file": "exercises/band-pallof-press.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel band action and real strap or handle attachment constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "band-triceps-pushdown",
+    "slug": "band-triceps-pushdown",
+    "name": "Band Triceps Pushdown",
+    "description": "Original educational elastic-band preview with declared physical hand, leg or forefoot attachment.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "push",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["resistance-band"],
+    "difficulty": "intermediate",
+    "laterality": "unilateral",
+    "startingPosition": "Standing below the anchor",
+    "muscles": {
+      "primary": ["triceps"],
+      "secondary": []
+    },
+    "instructions": [
+      "Use a secure, appropriate band setup; this preview does not model forces.",
+      "Extend the right elbow while keeping the upper arm steady.",
+      "Return with control within a comfortable range."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "band-triceps-pushdown-v1",
+      "file": "exercises/band-triceps-pushdown.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel band action and real strap or handle attachment constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "seated-band-hamstring-curl",
+    "slug": "seated-band-hamstring-curl",
+    "name": "Seated Band Hamstring Curl",
+    "description": "Original educational elastic-band preview with declared physical hand, leg or forefoot attachment.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "pull",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["resistance-band", "bench"],
+    "difficulty": "intermediate",
+    "laterality": "unilateral",
+    "startingPosition": "Seated on the bench",
+    "muscles": {
+      "primary": ["hamstrings"],
+      "secondary": []
+    },
+    "instructions": [
+      "Use a secure, appropriate band setup; this preview does not model forces.",
+      "Bend the right knee to draw the strapped lower leg back while keeping the thigh steady.",
+      "Return with control within a comfortable range."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "seated-band-hamstring-curl-v1",
+      "file": "exercises/seated-band-hamstring-curl.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel band action and real strap or handle attachment constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "band-terminal-knee-extension",
+    "slug": "band-terminal-knee-extension",
+    "name": "Band Terminal Knee Extension",
+    "description": "Original educational elastic-band preview with declared physical hand, leg or forefoot attachment.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "push",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["resistance-band"],
+    "difficulty": "intermediate",
+    "laterality": "unilateral",
+    "startingPosition": "Standing with both feet planted",
+    "muscles": {
+      "primary": ["quadriceps"],
+      "secondary": []
+    },
+    "instructions": [
+      "Use a secure, appropriate band setup; this preview does not model forces.",
+      "Straighten the bent knee against the band while keeping both feet planted.",
+      "Return with control within a comfortable range."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "band-terminal-knee-extension-v1",
+      "file": "exercises/band-terminal-knee-extension.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel band action and real strap or handle attachment constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "band-hip-adduction",
+    "slug": "band-hip-adduction",
+    "name": "Standing Band Hip Adduction",
+    "description": "Original educational elastic-band preview with declared physical hand, leg or forefoot attachment.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "rotation",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["resistance-band"],
+    "difficulty": "intermediate",
+    "laterality": "unilateral",
+    "startingPosition": "Standing on the left leg",
+    "muscles": {
+      "primary": ["adductors"],
+      "secondary": ["abdominals"]
+    },
+    "instructions": [
+      "Use a secure, appropriate band setup; this preview does not model forces.",
+      "Move the strapped right leg inward while keeping the left support foot planted.",
+      "Return with control within a comfortable range."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "band-hip-adduction-v1",
+      "file": "exercises/band-hip-adduction.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel band action and real strap or handle attachment constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "band-ankle-dorsiflexion",
+    "slug": "band-ankle-dorsiflexion",
+    "name": "Seated Band Ankle Dorsiflexion",
+    "description": "Original educational elastic-band preview with declared physical hand, leg or forefoot attachment.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "rotation",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["resistance-band", "bench"],
+    "difficulty": "intermediate",
+    "laterality": "unilateral",
+    "startingPosition": "Seated with the right ankle held steady",
+    "muscles": {
+      "primary": ["tibialis-anterior"],
+      "secondary": []
+    },
+    "instructions": [
+      "Use a secure, appropriate band setup; this preview does not model forces.",
+      "Lift the forefoot toward the shin against the forward band attachment.",
+      "Return with control within a comfortable range."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "band-ankle-dorsiflexion-v1",
+      "file": "exercises/band-ankle-dorsiflexion.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel band action and real strap or handle attachment constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "band-ankle-plantarflexion",
+    "slug": "band-ankle-plantarflexion",
+    "name": "Seated Band Ankle Plantarflexion",
+    "description": "Original educational elastic-band preview with declared physical hand, leg or forefoot attachment.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "rotation",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["resistance-band", "bench"],
+    "difficulty": "intermediate",
+    "laterality": "unilateral",
+    "startingPosition": "Seated with the right ankle held steady",
+    "muscles": {
+      "primary": ["calves"],
+      "secondary": []
+    },
+    "instructions": [
+      "Use a secure, appropriate band setup; this preview does not model forces.",
+      "Point the forefoot away while keeping the ankle origin steady.",
+      "Return with control within a comfortable range."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "band-ankle-plantarflexion-v1",
+      "file": "exercises/band-ankle-plantarflexion.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel band action and real strap or handle attachment constraints; pending exact-asset human review."
+    }
   }
 ]

@@ -1,3 +1,4 @@
+import { validateAttachmentEquipment } from './band-attachments-qa.mjs';
 import { createBandChecks, validateBandGeometry } from './band-qa.mjs';
 import { readFile } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
@@ -11,6 +12,7 @@ import { createBarbellChecks, validateBarGeometry } from './barbell-qa.mjs';
 import { createDumbbellChecks } from './dumbbell-clearance.mjs';
 import { createSupportChecks, equipmentDefinitions } from './support-qa.mjs';
 import regionDefinition from '../packages/schemas/src/muscle-regions.json' with { type: 'json' };
+import bandRegionDefinition from '../packages/schemas/src/muscle-regions-band.json' with { type: 'json' };
 import dumbbellRegionDefinition from '../packages/schemas/src/muscle-regions-dumbbell.json' with { type: 'json' };
 import upperRegionDefinition from '../packages/schemas/src/muscle-regions-upper-quarter.json' with { type: 'json' };
 import motionProfiles from '../pipeline/character/motion-profiles.json' with { type: 'json' };
@@ -68,11 +70,13 @@ export async function validateGlb(
   clipName ??= profile.clip ?? 'rep';
   const motionKind = profile.kind ?? 'repetition';
   const expectedRegions =
-    profile.regionVersion === '1.4.0'
-      ? dumbbellRegionDefinition
-      : profile.regionVersion === '1.3.0'
-        ? upperRegionDefinition
-        : regionDefinition;
+    profile.regionVersion === '1.5.0'
+      ? bandRegionDefinition
+      : profile.regionVersion === '1.4.0'
+        ? dumbbellRegionDefinition
+        : profile.regionVersion === '1.3.0'
+          ? upperRegionDefinition
+          : regionDefinition;
   if (!['repetition', 'hold'].includes(motionKind))
     throw new Error('Unknown motion kind');
   const bytes = await readFile(path);
@@ -632,6 +636,18 @@ export async function validateEquipment(
     '',
   );
   const id = String(path).split('/').pop().replace('.glb', '');
+  if (
+    [
+      'band-shin-strap',
+      'band-knee-strap',
+      'band-foot-strap',
+      'band-handle',
+    ].includes(id)
+  )
+    return {
+      bytes: bytes.length,
+      ...validateAttachmentEquipment(loaded.scene.getObjectByName(id), id),
+    };
   if (id === 'resistance-band')
     return {
       bytes: bytes.length,

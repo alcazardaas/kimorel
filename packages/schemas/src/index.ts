@@ -17,6 +17,7 @@ export const muscles = [
   'biceps',
   'hamstrings',
   'calves',
+  'tibialis-anterior',
   'abdominals',
   'latissimus-dorsi',
   'forearms',

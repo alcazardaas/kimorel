@@ -1,3 +1,4 @@
+import { createAttachmentChecks } from './band-attachments-qa.mjs';
 import { Matrix4, Quaternion, Vector3 } from 'three';
 import { triangleDistance } from './barbell-qa.mjs';
 
@@ -5,6 +6,13 @@ const radius = 0.009,
   rings = 8,
   sides = 8;
 const identity = new Quaternion();
+const insideBounds = (p, b) =>
+  p.x >= b[0] &&
+  p.x <= b[1] &&
+  p.y >= b[2] &&
+  p.y <= b[3] &&
+  p.z >= b[4] &&
+  p.z <= b[5];
 const unitScale = (object) =>
   [...object.scale].every((v) => Math.abs(v - 1) < 1e-6);
 const origin = (object) =>
@@ -115,13 +123,16 @@ export function createBandChecks(scene, profile) {
       throw new Error('Band endpoint skin weights mismatch');
   }
   const anchored = specification.anchor !== undefined;
-  const markers = (anchored ? ['right'] : ['left', 'right']).map((side) => {
-    const marker = scene.getObjectByName(`${side}_hand_band_grip`),
-      hand = scene.getObjectByName(`${side}_hand`);
-    if (!marker || marker.parent !== hand)
-      throw new Error('Missing fixed band palm marker');
-    return { side, marker, hand };
-  });
+  const attachmentChecks = createAttachmentChecks(scene, profile, band);
+  const markers =
+    attachmentChecks?.markers ??
+    (anchored ? ['right'] : ['left', 'right']).map((side) => {
+      const marker = scene.getObjectByName(`${side}_hand_band_grip`),
+        hand = scene.getObjectByName(`${side}_hand`);
+      if (!marker || marker.parent !== hand)
+        throw new Error('Missing fixed band palm marker');
+      return { side, marker, hand, local: palmOffset(side) };
+    });
   const anchor = anchored
     ? scene.getObjectByName('equipment_band-anchor')
     : null;
@@ -148,7 +159,10 @@ export function createBandChecks(scene, profile) {
           ? 'left'
           : 'right'
         : null;
-    triangles.push({ ids, hand });
+    const terminal = specification.attachments?.some((a) =>
+      insideBounds(center, a.skinBounds),
+    );
+    triangles.push({ ids, hand, terminal });
   }
   let minLength = Infinity,
     maxLength = 0,
@@ -160,9 +174,9 @@ export function createBandChecks(scene, profile) {
     sample() {
       if (!origin(band) || endpoints.some((node) => !unitScale(node)))
         throw new Error('Band transform or endpoint scale changed');
-      for (const { side, marker } of markers) {
+      for (const { local, marker } of markers) {
         if (
-          marker.position.distanceTo(palmOffset(side)) > 1e-6 ||
+          marker.position.distanceTo(local) > 1e-6 ||
           marker.quaternion.angleTo(identity) > 1e-6 ||
           !unitScale(marker)
         )
@@ -173,7 +187,9 @@ export function createBandChecks(scene, profile) {
       const expectedStart = anchored
         ? new Vector3(...specification.anchor)
         : markers[0].marker.getWorldPosition(new Vector3());
-      const expectedEnd = markers.at(-1).marker.getWorldPosition(new Vector3());
+      const expectedEnd = attachmentChecks
+        ? attachmentChecks.end()
+        : markers.at(-1).marker.getWorldPosition(new Vector3());
       drift = Math.max(
         drift,
         a.distanceTo(expectedStart),
@@ -228,6 +244,8 @@ export function createBandChecks(scene, profile) {
             ),
           );
         const actual = band.applyBoneTransform(i, sourcePoint);
+        if (attachmentChecks && ![...actual].every(Number.isFinite))
+          throw new Error('Non-finite limb-band deformed vertex');
         if (actual.distanceTo(expected) > 0.0001)
           throw new Error('Band skin does not follow stretched centerline');
         if (actual.y < -0.001) throw new Error('Band penetrates ground');
@@ -239,12 +257,18 @@ export function createBandChecks(scene, profile) {
         human.applyBoneTransform(i, p.clone()),
       );
       const direction = b.clone().sub(a).normalize();
-      for (const { ids, hand } of triangles) {
+      attachmentChecks?.sample(points);
+      for (const { ids, hand, terminal } of triangles) {
         // A declared palm can touch only its terminal 10 cm; the rest remains checked.
         const from = a.clone(),
           to = b.clone();
-        if (hand === 'right') to.addScaledVector(direction, -0.1);
-        if (!anchored && hand === 'left') from.addScaledVector(direction, 0.1);
+        if (attachmentChecks ? terminal : hand === 'right')
+          to.addScaledVector(
+            direction,
+            attachmentChecks?.markers.length === 2 ? -0.16 : -0.1,
+          );
+        if (!attachmentChecks && !anchored && hand === 'left')
+          from.addScaledVector(direction, 0.1);
         const d =
           triangleDistance(...ids.map((i) => points[i]), from, to) - radius;
         clearance = Math.min(clearance, d);
@@ -263,6 +287,7 @@ export function createBandChecks(scene, profile) {
           'Band must visibly deform through a distinct excursion',
         );
       return {
+        ...attachmentChecks?.finish(),
         bandAttachmentDriftMeters: drift,
         bandLengthRangeMeters: [minLength, maxLength],
         bandMinimumClearanceMeters: clearance,

@@ -1132,5 +1132,145 @@
     "status": "needs-review",
     "bytes": 4392,
     "sha256": "e684a22f5979bdfb96dca8991bc36d3bc36b1cc8bbf8383d5f35e9b03b2a431c"
+  },
+  {
+    "assetId": "band-internal-rotation-v1",
+    "file": "exercises/band-internal-rotation.glb",
+    "status": "needs-review",
+    "bytes": 647188,
+    "sha256": "9ce7eb78a79bac8d75a9b1bae5aaa0dec2c94db2f34e9dbdb2095179b9cf5c75"
+  },
+  {
+    "assetId": "band-internal-rotation-thumbnail-v1",
+    "file": "thumbnails/band-internal-rotation.png",
+    "status": "needs-review",
+    "bytes": 20377,
+    "sha256": "ce2d4937015e0fd2eba0a47cc3a52e6ffb7c63eb7956a5587675a554d36bc8db"
+  },
+  {
+    "assetId": "band-pallof-press-v1",
+    "file": "exercises/band-pallof-press.glb",
+    "status": "needs-review",
+    "bytes": 650292,
+    "sha256": "78b247f7cadd51af874ca5e25842e55a49ace2a7fe462c2f2db59075c01659ea"
+  },
+  {
+    "assetId": "band-pallof-press-thumbnail-v1",
+    "file": "thumbnails/band-pallof-press.png",
+    "status": "needs-review",
+    "bytes": 21252,
+    "sha256": "2b8cd5c94861e23662be6af8adde78db91a18f9bd8962ab3d9a9428082228c0b"
+  },
+  {
+    "assetId": "band-triceps-pushdown-v1",
+    "file": "exercises/band-triceps-pushdown.glb",
+    "status": "needs-review",
+    "bytes": 647188,
+    "sha256": "efeffbcbefb7e93abc188d8cf846645453e6adc14b6326425beb539838f3819c"
+  },
+  {
+    "assetId": "band-triceps-pushdown-thumbnail-v1",
+    "file": "thumbnails/band-triceps-pushdown.png",
+    "status": "needs-review",
+    "bytes": 22200,
+    "sha256": "8ec944a5039767c0b0b37a1b947b9293d534822f3698a8639dde0bb15cc78c7c"
+  },
+  {
+    "assetId": "seated-band-hamstring-curl-v1",
+    "file": "exercises/seated-band-hamstring-curl.glb",
+    "status": "needs-review",
+    "bytes": 671860,
+    "sha256": "e58e5b796d8c547ebb884baca3b65e20b2a0c805d1981bf6187bdb01479030b5"
+  },
+  {
+    "assetId": "seated-band-hamstring-curl-thumbnail-v1",
+    "file": "thumbnails/seated-band-hamstring-curl.png",
+    "status": "needs-review",
+    "bytes": 20384,
+    "sha256": "b3a49e69b92aba85563fccbe2ae5bd9e314e205d31ba1513a681dab89777de8e"
+  },
+  {
+    "assetId": "band-terminal-knee-extension-v1",
+    "file": "exercises/band-terminal-knee-extension.glb",
+    "status": "needs-review",
+    "bytes": 667452,
+    "sha256": "94a1c7319495c1a0d875b9ef0569f049997eaca23991223b461a6cd85a55f2a4"
+  },
+  {
+    "assetId": "band-terminal-knee-extension-thumbnail-v1",
+    "file": "thumbnails/band-terminal-knee-extension.png",
+    "status": "needs-review",
+    "bytes": 21444,
+    "sha256": "27966a5e1615130c1d1a7d9df613ab46534d11cfddbe0948bea3d760377a97f8"
+  },
+  {
+    "assetId": "band-hip-adduction-v1",
+    "file": "exercises/band-hip-adduction.glb",
+    "status": "needs-review",
+    "bytes": 657148,
+    "sha256": "dc2b47095a984eb1fd0b7e87a55e733d50191e8aea2f6719b42b8b0f267ee5c0"
+  },
+  {
+    "assetId": "band-hip-adduction-thumbnail-v1",
+    "file": "thumbnails/band-hip-adduction.png",
+    "status": "needs-review",
+    "bytes": 22143,
+    "sha256": "ffe86d899b31a987df40cf4c548cd8ad77f290f041d51d4081b55e1679750ca5"
+  },
+  {
+    "assetId": "band-ankle-dorsiflexion-v1",
+    "file": "exercises/band-ankle-dorsiflexion.glb",
+    "status": "needs-review",
+    "bytes": 672592,
+    "sha256": "822de1742753a86a5e0785f82f2ceee7eb18c0d86d4705c71413944a17feaffd"
+  },
+  {
+    "assetId": "band-ankle-dorsiflexion-thumbnail-v1",
+    "file": "thumbnails/band-ankle-dorsiflexion.png",
+    "status": "needs-review",
+    "bytes": 24257,
+    "sha256": "95e6cdd1b5554f63d191ef837a0ca347ea3ba979090e687af19e9159a630f511"
+  },
+  {
+    "assetId": "band-ankle-plantarflexion-v1",
+    "file": "exercises/band-ankle-plantarflexion.glb",
+    "status": "needs-review",
+    "bytes": 672592,
+    "sha256": "4f13d5d9f39fe84d175900b9b7ca491fe95cc027dad966a28649f2299a304113"
+  },
+  {
+    "assetId": "band-ankle-plantarflexion-thumbnail-v1",
+    "file": "thumbnails/band-ankle-plantarflexion.png",
+    "status": "needs-review",
+    "bytes": 25202,
+    "sha256": "5ef3eea13051426632fbe9157241119a20cd67493c9c344d52877249d5aa164a"
+  },
+  {
+    "assetId": "band-shin-strap-v1",
+    "file": "equipment/band-shin-strap.glb",
+    "status": "needs-review",
+    "bytes": 3868,
+    "sha256": "b67b717e884659b361b8869fffcf7c3dbaaf71e3214ecf160fbbb4789cac97b1"
+  },
+  {
+    "assetId": "band-knee-strap-v1",
+    "file": "equipment/band-knee-strap.glb",
+    "status": "needs-review",
+    "bytes": 3860,
+    "sha256": "177f8035e6e0c8772d9cbf2ffecaf0955f643cf8636fa817d9e0f0237793a52f"
+  },
+  {
+    "assetId": "band-foot-strap-v1",
+    "file": "equipment/band-foot-strap.glb",
+    "status": "needs-review",
+    "bytes": 4616,
+    "sha256": "9b4c045ec54a786c5c9a8956b46f6705ecccb3dba35d9d35379e35addc2d46a8"
+  },
+  {
+    "assetId": "band-handle-v1",
+    "file": "equipment/band-handle.glb",
+    "status": "needs-review",
+    "bytes": 1692,
+    "sha256": "0f6e953e634fdf1c0760c4164cdae1353d6c0d52b57b89eae1278c086a321714"
   }
 ]

@@ -80,7 +80,7 @@ class ExpandedMotionTests(unittest.TestCase):
             character.BONES, character.motion_pose(character.BONES, time, exercise, character.pose))
 
     def test_registered_distinct_clips_keep_rigid_segment_lengths(self):
-        self.assertEqual(len(character.motions.EXERCISES), 75)
+        self.assertEqual(len(character.motions.EXERCISES), 83)
         signatures = set()
         for exercise in character.motions.EXERCISES:
             signature = []
@@ -97,7 +97,7 @@ class ExpandedMotionTests(unittest.TestCase):
                 if frame in (0, 30, 60, 90):
                     signature.extend(round(v, 4) for point in points+rotations for v in point)
             signatures.add(tuple(signature))
-        self.assertEqual(len(signatures), 75)
+        self.assertEqual(len(signatures), 83)
 
     def test_raises_hinge_and_row_have_distinct_movement_directions(self):
         for exercise, coordinate in [('dumbbell-lateral-raise', 0), ('dumbbell-front-raise', 2)]:
