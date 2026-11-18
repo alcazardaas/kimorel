@@ -1048,5 +1048,89 @@
     "status": "needs-review",
     "bytes": 3180,
     "sha256": "9f75109626856a3d6139b8dec7866c927d42abd12aa9c3be9a77acfa48929ebf"
+  },
+  {
+    "assetId": "band-row-v1",
+    "file": "exercises/band-row.glb",
+    "status": "needs-review",
+    "bytes": 647152,
+    "sha256": "3a994b788f23c576d271b8978ea8dcca0b763e520b4d1e7de15610979fd19034"
+  },
+  {
+    "assetId": "band-row-thumbnail-v1",
+    "file": "thumbnails/band-row.png",
+    "status": "needs-review",
+    "bytes": 19960,
+    "sha256": "92514f5267532094b4615ae4184de69eb7afb2cf0a106b0f397f2e9462850d8f"
+  },
+  {
+    "assetId": "band-chest-press-v1",
+    "file": "exercises/band-chest-press.glb",
+    "status": "needs-review",
+    "bytes": 647140,
+    "sha256": "5060aea48b75ed5bd98b5ed6b6fd9bbc4791f1876444eddc014b60f047400fae"
+  },
+  {
+    "assetId": "band-chest-press-thumbnail-v1",
+    "file": "thumbnails/band-chest-press.png",
+    "status": "needs-review",
+    "bytes": 22051,
+    "sha256": "d61ec94a3f563d7071037767d9dfbe53b5b844eb47a9128b89b4b1eb333ea639"
+  },
+  {
+    "assetId": "band-pull-apart-v1",
+    "file": "exercises/band-pull-apart.glb",
+    "status": "needs-review",
+    "bytes": 644320,
+    "sha256": "826c6819f0f91ab4cce265fae1fedd92fa301ab88b5946a024bae3225780c907"
+  },
+  {
+    "assetId": "band-pull-apart-thumbnail-v1",
+    "file": "thumbnails/band-pull-apart.png",
+    "status": "needs-review",
+    "bytes": 21756,
+    "sha256": "2b61903b58d487886f69c4105cf37d0c3c87cfee66a7188e5b0efb1e52a02e02"
+  },
+  {
+    "assetId": "band-face-pull-v1",
+    "file": "exercises/band-face-pull.glb",
+    "status": "needs-review",
+    "bytes": 647140,
+    "sha256": "779c2d1537ff12bea2ae4dda4dfb890b64d8cda4b4590dabe1e2567d3c9209e2"
+  },
+  {
+    "assetId": "band-face-pull-thumbnail-v1",
+    "file": "thumbnails/band-face-pull.png",
+    "status": "needs-review",
+    "bytes": 19953,
+    "sha256": "2d0365301bbf96a93c36e361f56b73f097d26234c111d86265c094d18d79c1d1"
+  },
+  {
+    "assetId": "band-external-rotation-v1",
+    "file": "exercises/band-external-rotation.glb",
+    "status": "needs-review",
+    "bytes": 647148,
+    "sha256": "b1370a3c3d375a8efce9ad2905856b61b804e1487fae9fd70dfec561291a56e9"
+  },
+  {
+    "assetId": "band-external-rotation-thumbnail-v1",
+    "file": "thumbnails/band-external-rotation.png",
+    "status": "needs-review",
+    "bytes": 21047,
+    "sha256": "401f9ba1fcffd51a99522eb77108d4d03cf62696894b1c006ae929bfc33994dc"
+  },
+  {
+    "assetId": "band-anchor-v1",
+    "file": "equipment/band-anchor.glb",
+    "status": "needs-review",
+    "bytes": 3128,
+    "sha256": "482902a9ca3a4b61c76515e75bf0218e72b8c54fd25ccaa539af02424d97e8f3"
+  },
+  {
+    "assetId": "resistance-band-v1",
+    "file": "equipment/resistance-band.glb",
+    "status": "needs-review",
+    "bytes": 4392,
+    "sha256": "e684a22f5979bdfb96dca8991bc36d3bc36b1cc8bbf8383d5f35e9b03b2a431c"
   }
 ]

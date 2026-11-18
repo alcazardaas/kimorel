@@ -21,6 +21,7 @@ _bar_spec = importlib.util.spec_from_file_location('kimorel_barbell', Path(__fil
 barbell = importlib.util.module_from_spec(_bar_spec)
 _bar_spec.loader.exec_module(barbell)
 landmine = motions._load_family('motion_landmine')
+band = motions._load_family('motion_band')
 
 ROOT = Path(__file__).resolve().parents[2]
 REGION_DEFINITION = json.loads((ROOT/'packages/schemas/src/muscle-regions.json').read_text())
@@ -397,6 +398,35 @@ def build(output, animated=True, exercise="bodyweight-squat", geometry=None, equ
             load_poses = [motions.equipment_pose(bones,t,exercise,pose)['landmine'] for t in times]
             track(bar_node,'translation',[p['translation'] for p in load_poses],'VEC3')
             track(bar_node,'rotation',[p['rotation'] for p in load_poses],'VEC4')
+    if motions.PROFILES.get(exercise,{}).get('elasticBand'):
+        bv,bn,bi = band.geometry()
+        material = len(document['materials'])
+        document['materials'].append({'name':'elastic-band','pbrMetallicRoughness':{'baseColorFactor':[.12,.30,.56,1],'metallicFactor':0,'roughnessFactor':.85}})
+        endpoint_nodes = [len(document['nodes']),len(document['nodes'])+1]
+        for index in (0,1):
+            document['nodes'].append({'name':f'band_endpoint_{index}','translation':[index,0,0]})
+            document['scenes'][0]['nodes'].append(endpoint_nodes[index])
+        bind = [[1,0,0,0,0,1,0,0,0,0,1,0,-x,0,0,1] for x in (0,1)]
+        skin_index = len(document['skins'])
+        document['skins'].append({'name':'elastic-endpoints-v1','joints':endpoint_nodes,'inverseBindMatrices':accessor(bind,5126,'MAT4')})
+        attributes = {'POSITION':accessor(bv,5126,'VEC3'),'NORMAL':accessor(bn,5126,'VEC3'),
+                      'JOINTS_0':accessor([(0,1,0,0) for _ in bv],5123,'VEC4'),
+                      'WEIGHTS_0':accessor([(1-v[0],v[0],0,0) for v in bv],5126,'VEC4')}
+        mesh_index = len(document['meshes'])
+        document['meshes'].append({'name':'elastic-band','primitives':[{'attributes':attributes,'indices':accessor(bi,5125,'SCALAR'),'material':material}]})
+        document['scenes'][0]['nodes'].append(len(document['nodes']))
+        document['nodes'].append({'name':'elastic_band','mesh':mesh_index,'skin':skin_index,'extras':{'kimorelElasticBand':1}})
+        for side,joint in (('left',14),('right',17)):
+            if side == 'left' and 'anchor' in motions.PROFILES[exercise]['elasticBand']:continue
+            marker = len(document['nodes'])
+            document['nodes'].append({'name':side+'_hand_band_grip','translation':band.PALM[side]})
+            document['nodes'][joint].setdefault('children',[]).append(marker)
+        if animated:
+            endpoints = [motions.equipment_pose(bones,t,exercise,pose)['elasticBand'] for t in times]
+            rotations = [motions.align((1,0,0),motions.sub(p['end'],p['start'])) for p in endpoints]
+            for index,key in enumerate(('start','end')):
+                track(endpoint_nodes[index],'translation',[p[key] for p in endpoints],'VEC3')
+                track(endpoint_nodes[index],'rotation',rotations,'VEC4')
     document['buffers'] = [{'byteLength':len(binary)}]
     encoded = json.dumps(document,separators=(',',':')).encode()
     encoded += b' '*((-len(encoded))%4)
@@ -442,5 +472,6 @@ if __name__=='__main__':
     build_prop(ROOT/'assets/equipment/barbell.glb','barbell',barbell.geometry())
     build_prop(ROOT/'assets/equipment/barbell-pad.glb','barbell-pad',barbell.geometry(barbell.PAD))
     build_prop(ROOT/'assets/equipment/landmine-bar.glb','landmine-bar',barbell.geometry(landmine.SEGMENTS))
+    build_prop(ROOT/'assets/equipment/resistance-band.glb','resistance-band',band.geometry())
     for exercise in motions.EXERCISES:
         build(ROOT/f'assets/exercises/{exercise}.glb',exercise=exercise,geometry=geometry)

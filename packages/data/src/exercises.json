@@ -3703,5 +3703,275 @@
       "creator": "Kimorel contributors",
       "source": "Original Kimorel anchored-landmine motion, fixed pivot and distal palm constraints, original bar and anchor geometry; pending exact-asset human review."
     }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "band-row",
+    "slug": "band-row",
+    "name": "Single-arm Band Row",
+    "description": "Original educational preview with an elastic band and explicit endpoint attachment constraints.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "pull",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["resistance-band"],
+    "difficulty": "intermediate",
+    "laterality": "unilateral",
+    "startingPosition": "Standing with both feet planted",
+    "muscles": {
+      "primary": ["latissimus-dorsi", "upper-back"],
+      "secondary": ["biceps"]
+    },
+    "instructions": [
+      "Use a secure, appropriate band setup and keep both feet planted.",
+      "Pull the band toward the lower chest while keeping the trunk steady.",
+      "Return with control; the preview does not model resistance forces."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "band-row-v1",
+      "file": "exercises/band-row.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel band motion and independently constrained deforming elastic geometry; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "band-chest-press",
+    "slug": "band-chest-press",
+    "name": "Single-arm Band Chest Press",
+    "description": "Original educational preview with an elastic band and explicit endpoint attachment constraints.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "push",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["resistance-band"],
+    "difficulty": "intermediate",
+    "laterality": "unilateral",
+    "startingPosition": "Standing with both feet planted",
+    "muscles": {
+      "primary": ["pectoralis-major", "deltoids"],
+      "secondary": ["triceps"]
+    },
+    "instructions": [
+      "Use a secure, appropriate band setup and keep both feet planted.",
+      "Press the right hand forward while the band stays attached behind the body.",
+      "Return with control; the preview does not model resistance forces."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "band-chest-press-v1",
+      "file": "exercises/band-chest-press.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel band motion and independently constrained deforming elastic geometry; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "band-pull-apart",
+    "slug": "band-pull-apart",
+    "name": "Band Pull-apart",
+    "description": "Original educational preview with an elastic band and explicit endpoint attachment constraints.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "pull",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["resistance-band"],
+    "difficulty": "intermediate",
+    "laterality": "bilateral",
+    "startingPosition": "Standing with both feet planted",
+    "muscles": {
+      "primary": ["upper-back", "deltoids"],
+      "secondary": ["rotator-cuff"]
+    },
+    "instructions": [
+      "Use a secure, appropriate band setup and keep both feet planted.",
+      "Move both hands apart at chest height while keeping the band in front of the torso.",
+      "Return with control; the preview does not model resistance forces."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "band-pull-apart-v1",
+      "file": "exercises/band-pull-apart.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel band motion and independently constrained deforming elastic geometry; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "band-face-pull",
+    "slug": "band-face-pull",
+    "name": "Single-arm Band Face Pull",
+    "description": "Original educational preview with an elastic band and explicit endpoint attachment constraints.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "pull",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["resistance-band"],
+    "difficulty": "intermediate",
+    "laterality": "unilateral",
+    "startingPosition": "Standing with both feet planted",
+    "muscles": {
+      "primary": ["upper-back", "deltoids"],
+      "secondary": ["rotator-cuff", "biceps"]
+    },
+    "instructions": [
+      "Use a secure, appropriate band setup and keep both feet planted.",
+      "Pull the right hand toward face height with the elbow moving outward.",
+      "Return with control; the preview does not model resistance forces."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "band-face-pull-v1",
+      "file": "exercises/band-face-pull.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel band motion and independently constrained deforming elastic geometry; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "band-external-rotation",
+    "slug": "band-external-rotation",
+    "name": "Standing Band External Rotation",
+    "description": "Original educational preview with an elastic band and explicit endpoint attachment constraints.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "rotation",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["resistance-band"],
+    "difficulty": "intermediate",
+    "laterality": "unilateral",
+    "startingPosition": "Standing with both feet planted",
+    "muscles": {
+      "primary": ["rotator-cuff"],
+      "secondary": ["deltoids"]
+    },
+    "instructions": [
+      "Use a secure, appropriate band setup and keep both feet planted.",
+      "Rotate the bent right arm outward without moving the elbow.",
+      "Return with control; the preview does not model resistance forces."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "band-external-rotation-v1",
+      "file": "exercises/band-external-rotation.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel band motion and independently constrained deforming elastic geometry; pending exact-asset human review."
+    }
   }
 ]

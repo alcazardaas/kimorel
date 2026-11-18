@@ -1142,5 +1142,95 @@
         "maxMeters": 0.36
       }
     ]
+  },
+  "band-row": {
+    "contacts": ["left_foot", "right_foot"],
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.4.0",
+    "elasticBand": {
+      "restLength": 0.65,
+      "minStretch": 1.0,
+      "maxStretch": 2.6,
+      "minExcursion": 0.15,
+      "anchor": [-0.4, 1.17, 1.35]
+    },
+    "props": [
+      {
+        "id": "band-anchor",
+        "translation": [-0.4, 0, 1.35]
+      }
+    ]
+  },
+  "band-chest-press": {
+    "contacts": ["left_foot", "right_foot"],
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.4.0",
+    "elasticBand": {
+      "restLength": 0.65,
+      "minStretch": 1.0,
+      "maxStretch": 2.6,
+      "minExcursion": 0.15,
+      "anchor": [-1.1, 1.28, -1.0]
+    },
+    "props": [
+      {
+        "id": "band-anchor",
+        "translation": [-1.1, 0, -1.0]
+      }
+    ]
+  },
+  "band-pull-apart": {
+    "contacts": ["left_foot", "right_foot"],
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.4.0",
+    "elasticBand": {
+      "restLength": 0.45,
+      "minStretch": 1.0,
+      "maxStretch": 3.3,
+      "minExcursion": 0.15
+    }
+  },
+  "band-face-pull": {
+    "contacts": ["left_foot", "right_foot"],
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.4.0",
+    "elasticBand": {
+      "restLength": 0.65,
+      "minStretch": 1.0,
+      "maxStretch": 2.6,
+      "minExcursion": 0.15,
+      "anchor": [-0.44, 1.45, 1.35]
+    },
+    "props": [
+      {
+        "id": "band-anchor",
+        "translation": [-0.44, 0, 1.35]
+      }
+    ]
+  },
+  "band-external-rotation": {
+    "contacts": ["left_foot", "right_foot"],
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.4.0",
+    "elasticBand": {
+      "restLength": 0.65,
+      "minStretch": 1.0,
+      "maxStretch": 2.6,
+      "minExcursion": 0.15,
+      "anchor": [0.7, 1.15, 0.35]
+    },
+    "props": [
+      {
+        "id": "band-anchor",
+        "translation": [0.7, 0, 0.35]
+      }
+    ],
+    "articulations": [
+      {
+        "bone": "right_upper_arm",
+        "minRadians": 0.75,
+        "maxRadians": 0.85
+      }
+    ]
   }
 }

@@ -1,3 +1,4 @@
+import { createBandChecks, validateBandGeometry } from './band-qa.mjs';
 import { readFile } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
@@ -156,7 +157,7 @@ export async function validateGlb(
       throw new Error('Non-finite vertex');
     const index = object.geometry.index;
     if (!index) throw new Error('Expected indexed human surface');
-    if (!object.isSkinnedMesh) return;
+    if (!object.isSkinnedMesh || object.name === 'elastic_band') return;
     const parent = Array.from({ length: position.count }, (_, i) => i);
     const find = (i) => {
       while (parent[i] !== i) {
@@ -226,6 +227,7 @@ export async function validateGlb(
   const dumbbellChecks = createDumbbellChecks(loaded.scene, profile);
   const landmineChecks = createLandmineChecks(loaded.scene, profile);
   const barbellChecks = createBarbellChecks(loaded.scene, profile);
+  const bandChecks = createBandChecks(loaded.scene, profile);
   const mixer = new AnimationMixer(loaded.scene);
   const action = mixer.clipAction(clip).play();
   const contactBones = [...profile.contacts, ...(profile.pivots ?? [])].map(
@@ -320,7 +322,7 @@ export async function validateGlb(
   const skinContacts = [];
   const skins = [];
   loaded.scene.traverse((object) => {
-    if (!object.isSkinnedMesh) return;
+    if (!object.isSkinnedMesh || object.name === 'elastic_band') return;
     skins.push(object);
     object.skeleton.update();
     const positions = object.geometry.getAttribute('position');
@@ -536,6 +538,7 @@ export async function validateGlb(
     }
     barbellChecks.sample(i / 120);
     landmineChecks.sample(i / 120);
+    bandChecks.sample();
     rootDrift = Math.max(
       rootDrift,
       loaded.scene
@@ -590,6 +593,7 @@ export async function validateGlb(
     ...dumbbellChecks.finish(),
     ...barbellChecks.finish(),
     ...landmineChecks.finish(),
+    ...bandChecks.finish(),
     bytes: bytes.length,
     vertexCount,
     bones: document.skins[0].joints.length,
@@ -628,6 +632,11 @@ export async function validateEquipment(
     '',
   );
   const id = String(path).split('/').pop().replace('.glb', '');
+  if (id === 'resistance-band')
+    return {
+      bytes: bytes.length,
+      ...validateBandGeometry(loaded.scene.getObjectByName(id)),
+    };
   if (id === 'landmine-bar')
     return {
       bytes: bytes.length,
@@ -695,6 +704,7 @@ if (
       'barbell',
       'barbell-pad',
       'landmine-bar',
+      'resistance-band',
     ])
       console.log(
         JSON.stringify(
