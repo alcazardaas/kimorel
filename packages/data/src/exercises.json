@@ -3595,5 +3595,113 @@
       "creator": "Kimorel contributors",
       "source": "Original Kimorel shared-rigid-bar motion, two-hand constraints and generated original equipment; pending exact-asset human review."
     }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "landmine-press",
+    "slug": "landmine-press",
+    "name": "Single-arm Landmine Press",
+    "description": "An original unilateral push movement with a rigid shaft pivoting in a grounded landmine anchor.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "push",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["barbell", "weight-plate"],
+    "difficulty": "intermediate",
+    "laterality": "unilateral",
+    "startingPosition": "Standing beside the bar",
+    "muscles": {
+      "primary": ["deltoids", "pectoralis-major"],
+      "secondary": ["triceps", "serratus-anterior"]
+    },
+    "instructions": [
+      "Stand beside the anchored bar with the distal shaft held in the right hand.",
+      "Press the distal end upward along its fixed-pivot arc.",
+      "Return with control without moving the anchor or feet."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "landmine-press-v1",
+      "file": "exercises/landmine-press.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0.5],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel anchored-landmine motion, fixed pivot and distal palm constraints, original bar and anchor geometry; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "landmine-row",
+    "slug": "landmine-row",
+    "name": "Single-arm Landmine Row",
+    "description": "An original unilateral pull movement with a rigid shaft pivoting in a grounded landmine anchor.",
+    "locale": "en",
+    "example": false,
+    "categories": ["gym", "home"],
+    "movementPattern": "pull",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["barbell", "weight-plate"],
+    "difficulty": "intermediate",
+    "laterality": "unilateral",
+    "startingPosition": "Standing hip hinge",
+    "muscles": {
+      "primary": ["latissimus-dorsi", "upper-back"],
+      "secondary": ["biceps"]
+    },
+    "instructions": [
+      "Hold a steady hip hinge beside the anchored bar with the distal shaft in the right hand.",
+      "Bend the elbow to pull the distal end along its fixed-pivot arc.",
+      "Lower the load while keeping the trunk and anchor steady."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "landmine-row-v1",
+      "file": "exercises/landmine-row.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.9, 0.5],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel anchored-landmine motion, fixed pivot and distal palm constraints, original bar and anchor geometry; pending exact-asset human review."
+    }
   }
 ]

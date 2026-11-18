@@ -2591,6 +2591,108 @@
       "redistribution": true,
       "attribution": "Not required; see docs/asset-license-cc0.md.",
       "status": "needs-review"
+    },
+    {
+      "assetId": "landmine-press-v1",
+      "file": "exercises/landmine-press.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original fixed-pivot unilateral press and original bar/anchor geometry."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "landmine-press-thumbnail-v1",
+      "file": "thumbnails/landmine-press.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU preview of actual skinned press and anchored load."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "landmine-row-v1",
+      "file": "exercises/landmine-row.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original fixed-pivot unilateral hinged row and original bar/anchor geometry."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "landmine-row-thumbnail-v1",
+      "file": "thumbnails/landmine-row.png",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original CPU preview of actual skinned row and anchored load."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "landmine-anchor-v1",
+      "file": "equipment/landmine-anchor.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original grounded base and pivot housing, generated from meter-scaled closed boxes."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
+    },
+    {
+      "assetId": "landmine-bar-v1",
+      "file": "equipment/landmine-bar.glb",
+      "origin": "original",
+      "sourceUrl": null,
+      "creator": "Kimorel contributors",
+      "license": "CC0-1.0",
+      "licenseEvidenceUrl": null,
+      "downloadDate": null,
+      "modifications": [
+        "Original closed twelve-sided shaft and distal plate for the anchored load."
+      ],
+      "commercialUse": true,
+      "redistribution": true,
+      "attribution": "Not required; see docs/asset-license-cc0.md.",
+      "status": "needs-review"
     }
   ]
 }

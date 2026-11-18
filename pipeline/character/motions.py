@@ -190,7 +190,7 @@ _API = SimpleNamespace(
 )
 _FAMILIES = [_load_family(name) for name in (
     'motion_legacy', 'motion_standing', 'motion_holds', 'motion_quadruped', 'motion_floor',
-    'motion_mobility', 'motion_seated', 'motion_strength', 'motion_upper_quarter', 'motion_dumbbell', 'motion_barbell'
+    'motion_mobility', 'motion_seated', 'motion_strength', 'motion_upper_quarter', 'motion_dumbbell', 'motion_barbell', 'motion_landmine'
 )]
 _REGISTRY = {}
 _EQUIPMENT_REGISTRY = {}

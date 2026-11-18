@@ -113,7 +113,7 @@ test('rejects missing or invalid exported muscle-region labels', async () => {
 });
 
 test('all registered original clips pass their declared contact, pivot and equipment profiles', async () => {
-  assert.equal(Object.keys(qaProfiles).length, 68);
+  assert.equal(Object.keys(qaProfiles).length, 70);
   const fingerprints = new Set();
   for (const id of Object.keys(qaProfiles)) {
     const bytes = await readFile(`assets/exercises/${id}.glb`);
@@ -140,7 +140,7 @@ test('all registered original clips pass their declared contact, pivot and equip
   }
   assert.equal(
     fingerprints.size,
-    68,
+    70,
     'Every exported clip must contain distinct animation data',
   );
 });

@@ -20,6 +20,7 @@ _props_spec.loader.exec_module(props)
 _bar_spec = importlib.util.spec_from_file_location('kimorel_barbell', Path(__file__).with_name('barbell.py'))
 barbell = importlib.util.module_from_spec(_bar_spec)
 _bar_spec.loader.exec_module(barbell)
+landmine = motions._load_family('motion_landmine')
 
 ROOT = Path(__file__).resolve().parents[2]
 REGION_DEFINITION = json.loads((ROOT/'packages/schemas/src/muscle-regions.json').read_text())
@@ -378,6 +379,24 @@ def build(output, animated=True, exercise="bodyweight-squat", geometry=None, equ
             bar_poses=[motions.equipment_pose(bones,t,exercise,pose)['barbell'] for t in times]
             track(bar_node,'translation',[p['translation'] for p in bar_poses],'VEC3')
             track(bar_node,'rotation',[p['rotation'] for p in bar_poses],'VEC4')
+    if motions.PROFILES.get(exercise, {}).get('landminePivot'):
+        lv, ln, li = barbell.geometry(landmine.SEGMENTS)
+        material = len(document['materials'])
+        document['materials'].append({'name':'landmine-metal','pbrMetallicRoughness':{'baseColorFactor':[.12,.15,.18,1],'metallicFactor':.6,'roughnessFactor':.45}})
+        mesh_index = len(document['meshes'])
+        document['meshes'].append({'name':'landmine','primitives':[{'attributes':{'POSITION':accessor(lv,5126,'VEC3'),'NORMAL':accessor(ln,5126,'VEC3')},'indices':accessor(li,5125,'SCALAR'),'material':material}]})
+        bar_node = len(document['nodes'])
+        initial = motions.equipment_pose(bones,0,exercise,pose)['landmine']
+        document['nodes'].append({'name':'landmine','mesh':mesh_index,**initial,'children':[bar_node+1]})
+        document['scenes'][0]['nodes'].append(bar_node)
+        document['nodes'].append({'name':'landmine_distal_grip','translation':landmine.GRIP})
+        hand_marker = len(document['nodes'])
+        document['nodes'].append({'name':'right_hand_landmine_grip','translation':[-.02,-.055,.005]})
+        document['nodes'][17].setdefault('children',[]).append(hand_marker)
+        if animated:
+            load_poses = [motions.equipment_pose(bones,t,exercise,pose)['landmine'] for t in times]
+            track(bar_node,'translation',[p['translation'] for p in load_poses],'VEC3')
+            track(bar_node,'rotation',[p['rotation'] for p in load_poses],'VEC4')
     document['buffers'] = [{'byteLength':len(binary)}]
     encoded = json.dumps(document,separators=(',',':')).encode()
     encoded += b' '*((-len(encoded))%4)
@@ -422,5 +441,6 @@ if __name__=='__main__':
         build_prop(ROOT/f'assets/equipment/{kind}.glb', kind)
     build_prop(ROOT/'assets/equipment/barbell.glb','barbell',barbell.geometry())
     build_prop(ROOT/'assets/equipment/barbell-pad.glb','barbell-pad',barbell.geometry(barbell.PAD))
+    build_prop(ROOT/'assets/equipment/landmine-bar.glb','landmine-bar',barbell.geometry(landmine.SEGMENTS))
     for exercise in motions.EXERCISES:
         build(ROOT/f'assets/exercises/{exercise}.glb',exercise=exercise,geometry=geometry)

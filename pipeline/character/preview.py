@@ -39,6 +39,11 @@ def view_frame(exercise, positions, width, height):
                 for point in character.barbell.geometry()[0]:
                     x,y,z=character.motions.add(character.motions.rotate(point,transform['rotation']),transform['translation'])
                     projected.append((.8*x-.6*z,y))
+            if character.motions.PROFILES[exercise].get('landminePivot'):
+                transform = character.motions.equipment_pose(character.BONES,time,exercise,character.pose)['landmine']
+                for point in character.barbell.geometry(character.landmine.SEGMENTS)[0]:
+                    x,y,z = character.motions.add(character.motions.rotate(point,transform['rotation']),transform['translation'])
+                    projected.append((.8*x-.6*z,y))
             if character.motions.PROFILES[exercise].get('equipment'):
                 for joint in (14, 17):
                     if character.BONES[joint][0].split('_')[0] not in character.motions.PROFILES[exercise].get('equipmentHands', ['left','right']):
@@ -120,6 +125,14 @@ def render(time, width=400, height=480, exercise='bodyweight-squat', geometry=No
             for point in pv:
                 vertices.append(project(*character.motions.add(character.motions.rotate(point,transform['rotation']),transform['translation'])))
             indices.extend(start+i for i in pi)
+    if character.motions.PROFILES[exercise].get('landminePivot'):
+        transform = character.motions.equipment_pose(character.BONES,time,exercise,character.pose)['landmine']
+        pv,_pn,pi = character.barbell.geometry(character.landmine.SEGMENTS)
+        start = len(vertices)
+        indices = list(indices)
+        for point in pv:
+            vertices.append(project(*character.motions.add(character.motions.rotate(point,transform['rotation']),transform['translation'])))
+        indices.extend(start+i for i in pi)
     pixels = bytearray([232,237,232]*width*height)
     depths = [-float('inf')]*(width*height)
     for i in range(0,len(indices),3):

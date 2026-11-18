@@ -1006,5 +1006,47 @@
     "status": "needs-review",
     "bytes": 2076,
     "sha256": "bfeaec04eb3b31372635e85bbbc764c8e8ffa4aa4442fe5c6dd10ce4301c516f"
+  },
+  {
+    "assetId": "landmine-press-v1",
+    "file": "exercises/landmine-press.glb",
+    "status": "needs-review",
+    "bytes": 655788,
+    "sha256": "d15195299afcfa281b307987bedb3ecf2165a17c52c9a9ebec4b18e93d74fa4d"
+  },
+  {
+    "assetId": "landmine-press-thumbnail-v1",
+    "file": "thumbnails/landmine-press.png",
+    "status": "needs-review",
+    "bytes": 23039,
+    "sha256": "fc57895169414e33cb54fe218186865dbbe789344cb41d296b1d90e6280cc3a1"
+  },
+  {
+    "assetId": "landmine-row-v1",
+    "file": "exercises/landmine-row.glb",
+    "status": "needs-review",
+    "bytes": 655792,
+    "sha256": "d95959291c912eead400dee2f795cd49088adad06fafc1070ab18510848afb9d"
+  },
+  {
+    "assetId": "landmine-row-thumbnail-v1",
+    "file": "thumbnails/landmine-row.png",
+    "status": "needs-review",
+    "bytes": 17352,
+    "sha256": "a384730069c010716ab9c5e144a2aa941120db5d850d3822502552626eac0f0a"
+  },
+  {
+    "assetId": "landmine-anchor-v1",
+    "file": "equipment/landmine-anchor.glb",
+    "status": "needs-review",
+    "bytes": 2408,
+    "sha256": "b8c19a67fd7a088411317fc78015c4040df25bbba1f7dc93603731d95788846f"
+  },
+  {
+    "assetId": "landmine-bar-v1",
+    "file": "equipment/landmine-bar.glb",
+    "status": "needs-review",
+    "bytes": 3180,
+    "sha256": "9f75109626856a3d6139b8dec7866c927d42abd12aa9c3be9a77acfa48929ebf"
   }
 ]

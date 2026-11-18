@@ -1102,5 +1102,45 @@
         "maxMeters": 0.24
       }
     ]
+  },
+  "landmine-press": {
+    "contacts": ["left_foot", "right_foot"],
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.4.0",
+    "landminePivot": [-0.4, 0.12, 1.15],
+    "props": [
+      {
+        "id": "landmine-anchor",
+        "translation": [-0.4, 0, 1.15]
+      }
+    ],
+    "jointTravel": [
+      {
+        "bone": "right_hand_landmine_grip",
+        "axis": 1,
+        "minMeters": 0.3,
+        "maxMeters": 0.36
+      }
+    ]
+  },
+  "landmine-row": {
+    "contacts": ["left_foot", "right_foot"],
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.4.0",
+    "landminePivot": [-0.5, 0.12, 1.8],
+    "props": [
+      {
+        "id": "landmine-anchor",
+        "translation": [-0.5, 0, 1.8]
+      }
+    ],
+    "jointTravel": [
+      {
+        "bone": "right_hand_landmine_grip",
+        "axis": 1,
+        "minMeters": 0.3,
+        "maxMeters": 0.36
+      }
+    ]
   }
 }

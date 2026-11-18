@@ -2,6 +2,10 @@ import { readFile } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { AnimationMixer, Vector3 } from 'three';
+import {
+  createLandmineChecks,
+  validateLandmineGeometry,
+} from './landmine-qa.mjs';
 import { createBarbellChecks, validateBarGeometry } from './barbell-qa.mjs';
 import { createDumbbellChecks } from './dumbbell-clearance.mjs';
 import { createSupportChecks, equipmentDefinitions } from './support-qa.mjs';
@@ -220,6 +224,7 @@ export async function validateGlb(
   });
   const supportChecks = createSupportChecks(loaded.scene, profile);
   const dumbbellChecks = createDumbbellChecks(loaded.scene, profile);
+  const landmineChecks = createLandmineChecks(loaded.scene, profile);
   const barbellChecks = createBarbellChecks(loaded.scene, profile);
   const mixer = new AnimationMixer(loaded.scene);
   const action = mixer.clipAction(clip).play();
@@ -530,6 +535,7 @@ export async function validateGlb(
       dumbbellChecks.sample();
     }
     barbellChecks.sample(i / 120);
+    landmineChecks.sample(i / 120);
     rootDrift = Math.max(
       rootDrift,
       loaded.scene
@@ -583,6 +589,7 @@ export async function validateGlb(
     ...supportReport,
     ...dumbbellChecks.finish(),
     ...barbellChecks.finish(),
+    ...landmineChecks.finish(),
     bytes: bytes.length,
     vertexCount,
     bones: document.skins[0].joints.length,
@@ -621,6 +628,11 @@ export async function validateEquipment(
     '',
   );
   const id = String(path).split('/').pop().replace('.glb', '');
+  if (id === 'landmine-bar')
+    return {
+      bytes: bytes.length,
+      ...validateLandmineGeometry(loaded.scene.getObjectByName(id)),
+    };
   if (id === 'barbell' || id === 'barbell-pad')
     return {
       bytes: bytes.length,
@@ -682,6 +694,7 @@ if (
       ...Object.keys(equipmentDefinitions),
       'barbell',
       'barbell-pad',
+      'landmine-bar',
     ])
       console.log(
         JSON.stringify(

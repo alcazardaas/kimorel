@@ -34,6 +34,8 @@ describe('exercise utilities', () => {
       'barbell-overhead-press',
       'barbell-bent-over-row',
       'hip-thrust',
+      'landmine-press',
+      'landmine-row',
     ]);
   });
   it('searches trimmed case-insensitive name substrings without mutating inputs', () => {

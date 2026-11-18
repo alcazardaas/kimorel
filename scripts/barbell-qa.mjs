@@ -94,7 +94,7 @@ function segmentDistance(p, q, a, b) {
     .distanceTo(a.clone().addScaledVector(e, t));
 }
 
-function triangleDistance(a, b, c, p, q) {
+export function triangleDistance(a, b, c, p, q) {
   const direction = q.clone().sub(p),
     edge = b.clone().sub(a),
     other = c.clone().sub(a);
