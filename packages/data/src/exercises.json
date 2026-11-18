@@ -4405,5 +4405,923 @@
       "creator": "Kimorel contributors",
       "source": "Original Kimorel band action and real strap or handle attachment constraints; pending exact-asset human review."
     }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "pull-up",
+    "slug": "pull-up",
+    "name": "Pull-Up",
+    "description": "Original educational movement preview with sampled physical support and articulation checks; not clinical guidance.",
+    "locale": "en",
+    "example": false,
+    "categories": ["home", "gym"],
+    "movementPattern": "pull",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["pull-up-bar"],
+    "difficulty": "advanced",
+    "laterality": "bilateral",
+    "startingPosition": "Suspended below a secure overhead bar",
+    "muscles": {
+      "primary": ["latissimus-dorsi"],
+      "secondary": ["biceps", "upper-back"]
+    },
+    "instructions": [
+      "Use a secure setup and a comfortable range; stop if the movement causes discomfort.",
+      "Pull the body upward while both hands remain on the bar.",
+      "Return with control or release the hold safely."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "pull-up-v1",
+      "file": "exercises/pull-up.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 1.25, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel final catalog motion, physical support and articulation constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "inverted-row",
+    "slug": "inverted-row",
+    "name": "Inverted Row",
+    "description": "Original educational movement preview with sampled physical support and articulation checks; not clinical guidance.",
+    "locale": "en",
+    "example": false,
+    "categories": ["home", "gym"],
+    "movementPattern": "pull",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["pull-up-bar"],
+    "difficulty": "intermediate",
+    "laterality": "bilateral",
+    "startingPosition": "Reclined beneath a low secure bar with feet supported",
+    "muscles": {
+      "primary": ["upper-back"],
+      "secondary": ["biceps", "latissimus-dorsi"]
+    },
+    "instructions": [
+      "Use a secure setup and a comfortable range; stop if the movement causes discomfort.",
+      "Draw the trunk toward the bar without moving the hand contacts.",
+      "Return with control or release the hold safely."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "inverted-row-v1",
+      "file": "exercises/inverted-row.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.8, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel final catalog motion, physical support and articulation constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "dead-hang",
+    "slug": "dead-hang",
+    "name": "Dead Hang",
+    "description": "Original educational movement preview with sampled physical support and articulation checks; not clinical guidance.",
+    "locale": "en",
+    "example": false,
+    "categories": ["home", "gym"],
+    "movementPattern": "isometric",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["pull-up-bar"],
+    "difficulty": "intermediate",
+    "laterality": "bilateral",
+    "startingPosition": "Suspended from a secure overhead bar",
+    "muscles": {
+      "primary": ["forearms"],
+      "secondary": ["latissimus-dorsi"]
+    },
+    "instructions": [
+      "Use a secure setup and a comfortable range; stop if the movement causes discomfort.",
+      "Hold a steady supported hang without adding artificial oscillation.",
+      "Return with control or release the hold safely."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "dead-hang-v1",
+      "file": "exercises/dead-hang.glb",
+      "clip": "hold",
+      "kind": "hold",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 1.25, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel final catalog motion, physical support and articulation constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "hanging-knee-raise",
+    "slug": "hanging-knee-raise",
+    "name": "Hanging Knee Raise",
+    "description": "Original educational movement preview with sampled physical support and articulation checks; not clinical guidance.",
+    "locale": "en",
+    "example": false,
+    "categories": ["home", "gym"],
+    "movementPattern": "pull",
+    "bodyRegions": ["core"],
+    "equipment": ["pull-up-bar"],
+    "difficulty": "intermediate",
+    "laterality": "bilateral",
+    "startingPosition": "Suspended from a secure overhead bar",
+    "muscles": {
+      "primary": ["abdominals", "hip-flexors"],
+      "secondary": ["forearms"]
+    },
+    "instructions": [
+      "Use a secure setup and a comfortable range; stop if the movement causes discomfort.",
+      "Raise the bent knees while keeping both hands fixed.",
+      "Return with control or release the hold safely."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "hanging-knee-raise-v1",
+      "file": "exercises/hanging-knee-raise.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 1.25, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel final catalog motion, physical support and articulation constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "bench-dip",
+    "slug": "bench-dip",
+    "name": "Bench Dip",
+    "description": "Original educational movement preview with sampled physical support and articulation checks; not clinical guidance.",
+    "locale": "en",
+    "example": false,
+    "categories": ["home", "gym"],
+    "movementPattern": "push",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["bench"],
+    "difficulty": "intermediate",
+    "laterality": "bilateral",
+    "startingPosition": "Hands on a stable bench with feet on the floor",
+    "muscles": {
+      "primary": ["triceps"],
+      "secondary": ["deltoids"]
+    },
+    "instructions": [
+      "Use a secure setup and a comfortable range; stop if the movement causes discomfort.",
+      "Bend and straighten the elbows within a comfortable supported range.",
+      "Return with control or release the hold safely."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "bench-dip-v1",
+      "file": "exercises/bench-dip.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.8, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel final catalog motion, physical support and articulation constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "pike-push-up",
+    "slug": "pike-push-up",
+    "name": "Pike Push-Up",
+    "description": "Original educational movement preview with sampled physical support and articulation checks; not clinical guidance.",
+    "locale": "en",
+    "example": false,
+    "categories": ["home", "gym"],
+    "movementPattern": "push",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["bodyweight"],
+    "difficulty": "advanced",
+    "laterality": "bilateral",
+    "startingPosition": "Hands and feet grounded with the hips elevated",
+    "muscles": {
+      "primary": ["deltoids"],
+      "secondary": ["triceps"]
+    },
+    "instructions": [
+      "Use a secure setup and a comfortable range; stop if the movement causes discomfort.",
+      "Lower and raise the upper body while retaining the pike position.",
+      "Return with control or release the hold safely."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "pike-push-up-v1",
+      "file": "exercises/pike-push-up.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.8, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel final catalog motion, physical support and articulation constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "ab-wheel-rollout",
+    "slug": "ab-wheel-rollout",
+    "name": "Kneeling Ab-Wheel Rollout",
+    "description": "Original educational movement preview with sampled physical support and articulation checks; not clinical guidance.",
+    "locale": "en",
+    "example": false,
+    "categories": ["home", "gym"],
+    "movementPattern": "hinge",
+    "bodyRegions": ["core"],
+    "equipment": ["ab-wheel", "exercise-mat"],
+    "difficulty": "advanced",
+    "laterality": "bilateral",
+    "startingPosition": "Kneeling with both hands on the wheel axle",
+    "muscles": {
+      "primary": ["abdominals"],
+      "secondary": ["latissimus-dorsi", "serratus-anterior"]
+    },
+    "instructions": [
+      "Use a secure setup and a comfortable range; stop if the movement causes discomfort.",
+      "Roll the wheel forward and return while the knees remain planted.",
+      "Return with control or release the hold safely."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "ab-wheel-rollout-v1",
+      "file": "exercises/ab-wheel-rollout.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.8, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel final catalog motion, physical support and articulation constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "shoulder-pendulum",
+    "slug": "shoulder-pendulum",
+    "name": "Supported Shoulder Pendulum",
+    "description": "Original educational movement preview with sampled physical support and articulation checks; not clinical guidance.",
+    "locale": "en",
+    "example": false,
+    "categories": ["home", "physiotherapy"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["table"],
+    "difficulty": "beginner",
+    "laterality": "unilateral",
+    "startingPosition": "Hinged forward with one hand supported",
+    "muscles": {
+      "primary": ["rotator-cuff"],
+      "secondary": ["deltoids"]
+    },
+    "instructions": [
+      "Use a secure setup and a comfortable range; stop if the movement causes discomfort.",
+      "Let the opposite arm follow a small controlled pendulum path.",
+      "Return with control or release the hold safely."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "shoulder-pendulum-v1",
+      "file": "exercises/shoulder-pendulum.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.8, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel final catalog motion, physical support and articulation constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "forearm-wall-slide",
+    "slug": "forearm-wall-slide",
+    "name": "Forearm Wall Slide",
+    "description": "Original educational movement preview with sampled physical support and articulation checks; not clinical guidance.",
+    "locale": "en",
+    "example": false,
+    "categories": ["home", "physiotherapy"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["wall"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "Standing with both forearms contacting a wall",
+    "muscles": {
+      "primary": ["serratus-anterior"],
+      "secondary": ["deltoids", "upper-back"]
+    },
+    "instructions": [
+      "Use a secure setup and a comfortable range; stop if the movement causes discomfort.",
+      "Slide both forearms upward and return with controlled shoulder motion.",
+      "Return with control or release the hold safely."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "forearm-wall-slide-v1",
+      "file": "exercises/forearm-wall-slide.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "back",
+      "target": [0, 0.8, 0],
+      "position": [2.5, 1.7, -3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel final catalog motion, physical support and articulation constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "scapular-retraction",
+    "slug": "scapular-retraction",
+    "name": "Scapular Retraction",
+    "description": "Original educational movement preview with sampled physical support and articulation checks; not clinical guidance.",
+    "locale": "en",
+    "example": false,
+    "categories": ["home", "physiotherapy"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "Standing with the arms resting by the sides",
+    "muscles": {
+      "primary": ["upper-back"],
+      "secondary": []
+    },
+    "instructions": [
+      "Use a secure setup and a comfortable range; stop if the movement causes discomfort.",
+      "Draw the shoulder girdle backward without moving the trunk.",
+      "Return with control or release the hold safely."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "scapular-retraction-v1",
+      "file": "exercises/scapular-retraction.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.8, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel final catalog motion, physical support and articulation constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "chin-tuck",
+    "slug": "chin-tuck",
+    "name": "Chin Tuck",
+    "description": "Original educational movement preview with sampled physical support and articulation checks; not clinical guidance.",
+    "locale": "en",
+    "example": false,
+    "categories": ["home", "physiotherapy"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "laterality": "bilateral",
+    "startingPosition": "Standing with the trunk steady",
+    "muscles": {
+      "primary": ["neck"],
+      "secondary": []
+    },
+    "instructions": [
+      "Use a secure setup and a comfortable range; stop if the movement causes discomfort.",
+      "Translate the head gently backward while keeping the gaze approximately level.",
+      "Return with control or release the hold safely."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "chin-tuck-v1",
+      "file": "exercises/chin-tuck.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.8, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel final catalog motion, physical support and articulation constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "cervical-rotation",
+    "slug": "cervical-rotation",
+    "name": "Cervical Rotation",
+    "description": "Original educational movement preview with sampled physical support and articulation checks; not clinical guidance.",
+    "locale": "en",
+    "example": false,
+    "categories": ["home", "physiotherapy"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "laterality": "alternating",
+    "startingPosition": "Standing with the shoulders steady",
+    "muscles": {
+      "primary": ["neck"],
+      "secondary": []
+    },
+    "instructions": [
+      "Use a secure setup and a comfortable range; stop if the movement causes discomfort.",
+      "Turn the head gently from side to side without rotating the trunk.",
+      "Return with control or release the hold safely."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "cervical-rotation-v1",
+      "file": "exercises/cervical-rotation.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.8, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel final catalog motion, physical support and articulation constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "cervical-lateral-flexion",
+    "slug": "cervical-lateral-flexion",
+    "name": "Cervical Lateral Flexion",
+    "description": "Original educational movement preview with sampled physical support and articulation checks; not clinical guidance.",
+    "locale": "en",
+    "example": false,
+    "categories": ["home", "physiotherapy"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["upper-body"],
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "laterality": "alternating",
+    "startingPosition": "Standing with the shoulders steady",
+    "muscles": {
+      "primary": ["neck"],
+      "secondary": []
+    },
+    "instructions": [
+      "Use a secure setup and a comfortable range; stop if the movement causes discomfort.",
+      "Tilt the head gently toward either shoulder without lifting the shoulders.",
+      "Return with control or release the hold safely."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "cervical-lateral-flexion-v1",
+      "file": "exercises/cervical-lateral-flexion.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.8, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel final catalog motion, physical support and articulation constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "ankle-dorsiflexion-rock",
+    "slug": "ankle-dorsiflexion-rock",
+    "name": "Ankle Dorsiflexion Rock",
+    "description": "Original educational movement preview with sampled physical support and articulation checks; not clinical guidance.",
+    "locale": "en",
+    "example": false,
+    "categories": ["home", "physiotherapy"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["lower-body"],
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "laterality": "unilateral",
+    "startingPosition": "Standing in a short split stance with both feet grounded",
+    "muscles": {
+      "primary": ["calves"],
+      "secondary": ["tibialis-anterior"]
+    },
+    "instructions": [
+      "Use a secure setup and a comfortable range; stop if the movement causes discomfort.",
+      "Shift the front knee forward while keeping the foot on its support.",
+      "Return with control or release the hold safely."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "ankle-dorsiflexion-rock-v1",
+      "file": "exercises/ankle-dorsiflexion-rock.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.8, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel final catalog motion, physical support and articulation constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "ninety-ninety-hip-rotation",
+    "slug": "ninety-ninety-hip-rotation",
+    "name": "Seated Ninety-Ninety Hip Rotation",
+    "description": "Original educational movement preview with sampled physical support and articulation checks; not clinical guidance.",
+    "locale": "en",
+    "example": false,
+    "categories": ["home", "physiotherapy"],
+    "movementPattern": "mobility",
+    "bodyRegions": ["lower-body"],
+    "equipment": ["exercise-mat"],
+    "difficulty": "beginner",
+    "laterality": "alternating",
+    "startingPosition": "Seated with bent hips and knees and hands supported",
+    "muscles": {
+      "primary": ["hip-abductors", "adductors"],
+      "secondary": ["gluteus-maximus"]
+    },
+    "instructions": [
+      "Use a secure setup and a comfortable range; stop if the movement causes discomfort.",
+      "Rotate the bent hips from side to side while keeping the feet grounded.",
+      "Return with control or release the hold safely."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "ninety-ninety-hip-rotation-v1",
+      "file": "exercises/ninety-ninety-hip-rotation.glb",
+      "clip": "rep",
+      "kind": "repetition",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.8, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel final catalog motion, physical support and articulation constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "half-kneeling-hip-flexor-stretch",
+    "slug": "half-kneeling-hip-flexor-stretch",
+    "name": "Half-Kneeling Hip Flexor Stretch",
+    "description": "Original educational movement preview with sampled physical support and articulation checks; not clinical guidance.",
+    "locale": "en",
+    "example": false,
+    "categories": ["home", "gym"],
+    "movementPattern": "isometric",
+    "bodyRegions": ["lower-body"],
+    "equipment": ["exercise-mat"],
+    "difficulty": "intermediate",
+    "laterality": "unilateral",
+    "startingPosition": "Half kneeling with the front foot and rear knee supported",
+    "muscles": {
+      "primary": ["hip-flexors"],
+      "secondary": []
+    },
+    "instructions": [
+      "Use a secure setup and a comfortable range; stop if the movement causes discomfort.",
+      "Hold a comfortable upright half-kneeling position without a forced range.",
+      "Return with control or release the hold safely."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "half-kneeling-hip-flexor-stretch-v1",
+      "file": "exercises/half-kneeling-hip-flexor-stretch.glb",
+      "clip": "hold",
+      "kind": "hold",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.8, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel final catalog motion, physical support and articulation constraints; pending exact-asset human review."
+    }
+  },
+  {
+    "schemaVersion": "1.0.0",
+    "id": "childs-pose",
+    "slug": "childs-pose",
+    "name": "Child's Pose",
+    "description": "Original educational movement preview with sampled physical support and articulation checks; not clinical guidance.",
+    "locale": "en",
+    "example": false,
+    "categories": ["home", "gym"],
+    "movementPattern": "isometric",
+    "bodyRegions": ["full-body"],
+    "equipment": ["exercise-mat"],
+    "difficulty": "intermediate",
+    "laterality": "bilateral",
+    "startingPosition": "Kneeling with the hips back and hands supported forward",
+    "muscles": {
+      "primary": ["latissimus-dorsi"],
+      "secondary": ["erector-spinae"]
+    },
+    "instructions": [
+      "Use a secure setup and a comfortable range; stop if the movement causes discomfort.",
+      "Hold the folded kneeling position without forcing the shoulders or hips.",
+      "Return with control or release the hold safely."
+    ],
+    "techniqueCues": [
+      "Use controlled movement within a comfortable range.",
+      "This stylized preview has not been clinically validated."
+    ],
+    "commonMistakes": [
+      "Forcing the demonstrated position or moving without control."
+    ],
+    "animation": {
+      "assetId": "childs-pose-v1",
+      "file": "exercises/childs-pose.glb",
+      "clip": "hold",
+      "kind": "hold",
+      "loop": true,
+      "defaultPlaybackSpeed": 1
+    },
+    "camera": {
+      "preset": "three-quarter",
+      "target": [0, 0.8, 0],
+      "position": [2.5, 1.7, 3.5]
+    },
+    "review": {
+      "status": "pending",
+      "clinicalReviewRequired": false
+    },
+    "license": "CC0-1.0",
+    "provenance": {
+      "creator": "Kimorel contributors",
+      "source": "Original Kimorel final catalog motion, physical support and articulation constraints; pending exact-asset human review."
+    }
   }
 ]

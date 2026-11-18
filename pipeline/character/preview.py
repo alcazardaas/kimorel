@@ -20,6 +20,7 @@ _FRAMES = {}
 
 def view_frame(exercise, positions, width, height):
     """One stable orthographic fit over the entire new clip, never per-frame zoom."""
+    az = -1 if character.motions.PROFILES[exercise].get('previewBack') else 1
     key = (exercise, width, height)
     if key not in _FRAMES:
         projected = []
@@ -33,31 +34,36 @@ def view_frame(exercise, positions, width, height):
                     relative = character.motions.rotate(character.sub(point, character.BONES[joint][2]), rotations[joint])
                     for k in range(3):
                         p[k] += (world[joint][k]+relative[k])*weight
-                projected.append((.8*p[0]-.6*p[2], p[1]))
+                projected.append((.8*p[0]-.6*p[2]*az, p[1]))
+            if character.motions.PROFILES[exercise].get('wheelSupport'):
+                transform=character.motions.equipment_pose(character.BONES,time,exercise,character.pose)['wheel']
+                for point in character.barbell.geometry(character.final.WHEEL_SEGMENTS)[0]:
+                    x,y,z=character.motions.add(character.motions.rotate(point,transform['rotation']),transform['translation'])
+                    projected.append((.8*x-.6*z*az,y))
             if character.motions.PROFILES[exercise].get('sharedBar'):
                 transform=character.motions.equipment_pose(character.BONES,time,exercise,character.pose)['barbell']
                 for point in character.barbell.geometry()[0]:
                     x,y,z=character.motions.add(character.motions.rotate(point,transform['rotation']),transform['translation'])
-                    projected.append((.8*x-.6*z,y))
+                    projected.append((.8*x-.6*z*az,y))
             if character.motions.PROFILES[exercise].get('landminePivot'):
                 transform = character.motions.equipment_pose(character.BONES,time,exercise,character.pose)['landmine']
                 for point in character.barbell.geometry(character.landmine.SEGMENTS)[0]:
                     x,y,z = character.motions.add(character.motions.rotate(point,transform['rotation']),transform['translation'])
-                    projected.append((.8*x-.6*z,y))
+                    projected.append((.8*x-.6*z*az,y))
             if character.motions.PROFILES[exercise].get('elasticBand'):
                 endpoints = character.motions.equipment_pose(character.BONES,time,exercise,character.pose)['elasticBand']
                 for x,y,z in character.band.deformed_geometry(endpoints,character.motions)[0]:
-                    projected.append((.8*x-.6*z,y))
+                    projected.append((.8*x-.6*z*az,y))
             if character.motions.PROFILES[exercise].get('equipment'):
                 for joint in (14, 17):
                     if character.BONES[joint][0].split('_')[0] not in character.motions.PROFILES[exercise].get('equipmentHands', ['left','right']):
                         continue
                     x, y, z = world[joint]
-                    projected.extend([(.8*x-.6*z-.2, y-.2), (.8*x-.6*z+.2, y+.2)])
+                    projected.extend([(.8*x-.6*z*az-.2, y-.2), (.8*x-.6*z*az+.2, y+.2)])
         for instance in character.motions.PROFILES[exercise].get('props', []):
             for point in character.props.geometry(instance['id'])[0]:
                 x,y,z = character.motions.add(point, instance['translation'])
-                projected.append((.8*x-.6*z, y))
+                projected.append((.8*x-.6*z*az, y))
         lo = [min(p[i] for p in projected) for i in range(2)]
         hi = [max(p[i] for p in projected) for i in range(2)]
         scale = min((width-60)/(hi[0]-lo[0]), (height-70)/(hi[1]-lo[1]))
@@ -66,13 +72,14 @@ def view_frame(exercise, positions, width, height):
 
 
 def render(time, width=400, height=480, exercise='bodyweight-squat', geometry=None, highlights=False):
+    az = -1 if character.motions.PROFILES[exercise].get('previewBack') else 1
     positions, _normals, indices = geometry or character.mesh()
     frame = None if 'previewScale' in character.motions.PROFILES[exercise] else view_frame(exercise, positions, width, height)
     def project(x, y, z):
         if frame:
             cx, cy, scale = frame
-            return (width/2+(.8*x-.6*z-cx)*scale, height/2-(y-cy)*scale, (.6*x+.8*z)*scale)
-        return (width/2+(.8*x-.6*z)*character.motions.PROFILES[exercise]['previewScale'], height-70-y*220, (.6*x+.8*z)*220)
+            return (width/2+(.8*x-.6*z*az-cx)*scale, height/2-(y-cy)*scale, (.6*x+.8*z*az)*scale)
+        return (width/2+(.8*x-.6*z*az)*character.motions.PROFILES[exercise]['previewScale'], height-70-y*220, (.6*x+.8*z*az)*220)
     pose = character.motion_pose(character.BONES,time,exercise,character.pose)
     forward,quaternion_rotate = character.motions.forward,character.motions.rotate
     world, rotations = forward(character.BONES,pose)
@@ -117,6 +124,13 @@ def render(time, width=400, height=480, exercise='bodyweight-squat', geometry=No
         indices = list(indices)
         for point in pv:
             vertices.append(project(*character.motions.add(point, instance['translation'])))
+        indices.extend(start+i for i in pi)
+    if character.motions.PROFILES[exercise].get('wheelSupport'):
+        pv,_pn,pi=character.barbell.geometry(character.final.WHEEL_SEGMENTS)
+        transform=character.motions.equipment_pose(character.BONES,time,exercise,character.pose)['wheel']
+        start=len(vertices);indices=list(indices)
+        for point in pv:
+            vertices.append(project(*character.motions.add(quaternion_rotate(point,transform['rotation']),transform['translation'])))
         indices.extend(start+i for i in pi)
     if character.motions.PROFILES[exercise].get('sharedBar'):
         transform=character.motions.equipment_pose(character.BONES,time,exercise,character.pose)['barbell']

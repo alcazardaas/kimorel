@@ -80,24 +80,25 @@ class ExpandedMotionTests(unittest.TestCase):
             character.BONES, character.motion_pose(character.BONES, time, exercise, character.pose))
 
     def test_registered_distinct_clips_keep_rigid_segment_lengths(self):
-        self.assertEqual(len(character.motions.EXERCISES), 83)
+        self.assertEqual(len(character.motions.EXERCISES), 100)
         signatures = set()
         for exercise in character.motions.EXERCISES:
             signature = []
             for frame in range(121):
                 points, rotations = self.pose(exercise, frame/30)
                 bones = character.motions.enhanced_bones(character.BONES) if character.motions.PROFILES[exercise].get('rig') else character.BONES
+                translated = {next(i for i,b in enumerate(bones) if b[0] == entry['bone']) for entry in character.motions.PROFILES[exercise].get('translations', [])}
                 for index, (_, parent, rest) in enumerate(bones):
                     self.assertTrue(all(math.isfinite(v) for v in (*points[index], *rotations[index])))
                     self.assertAlmostEqual(sum(v*v for v in rotations[index]), 1, places=6)
-                    if parent is not None and index not in (1,18,19):
+                    if parent is not None and index not in (1,18,19) and index not in translated:
                         self.assertAlmostEqual(
                             character.length(character.sub(points[index], points[parent])),
                             character.length(character.sub(rest, bones[parent][2])), places=6)
                 if frame in (0, 30, 60, 90):
                     signature.extend(round(v, 4) for point in points+rotations for v in point)
             signatures.add(tuple(signature))
-        self.assertEqual(len(signatures), 83)
+        self.assertEqual(len(signatures), 100)
 
     def test_raises_hinge_and_row_have_distinct_movement_directions(self):
         for exercise, coordinate in [('dumbbell-lateral-raise', 0), ('dumbbell-front-raise', 2)]:

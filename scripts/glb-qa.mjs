@@ -1,3 +1,10 @@
+import {
+  createFinalMotionChecks,
+  createWallSlideChecks,
+  validateWheelGeometry,
+  validateFinalPropTopology,
+} from './final-motion-qa.mjs';
+import finalRegionDefinition from '../packages/schemas/src/muscle-regions-final.json' with { type: 'json' };
 import { validateAttachmentEquipment } from './band-attachments-qa.mjs';
 import { createBandChecks, validateBandGeometry } from './band-qa.mjs';
 import { readFile } from 'node:fs/promises';
@@ -70,13 +77,15 @@ export async function validateGlb(
   clipName ??= profile.clip ?? 'rep';
   const motionKind = profile.kind ?? 'repetition';
   const expectedRegions =
-    profile.regionVersion === '1.5.0'
-      ? bandRegionDefinition
-      : profile.regionVersion === '1.4.0'
-        ? dumbbellRegionDefinition
-        : profile.regionVersion === '1.3.0'
-          ? upperRegionDefinition
-          : regionDefinition;
+    profile.regionVersion === '1.6.0'
+      ? finalRegionDefinition
+      : profile.regionVersion === '1.5.0'
+        ? bandRegionDefinition
+        : profile.regionVersion === '1.4.0'
+          ? dumbbellRegionDefinition
+          : profile.regionVersion === '1.3.0'
+            ? upperRegionDefinition
+            : regionDefinition;
   if (!['repetition', 'hold'].includes(motionKind))
     throw new Error('Unknown motion kind');
   const bytes = await readFile(path);
@@ -227,6 +236,8 @@ export async function validateGlb(
         throw new Error('Invalid skin weights');
     }
   });
+  const finalChecks = createFinalMotionChecks(loaded.scene, profile);
+  const wallSlideChecks = createWallSlideChecks(loaded.scene, profile);
   const supportChecks = createSupportChecks(loaded.scene, profile);
   const dumbbellChecks = createDumbbellChecks(loaded.scene, profile);
   const landmineChecks = createLandmineChecks(loaded.scene, profile);
@@ -540,6 +551,8 @@ export async function validateGlb(
       supportChecks.sample(i / 120, skins);
       dumbbellChecks.sample();
     }
+    finalChecks.sample();
+    wallSlideChecks.sample();
     barbellChecks.sample(i / 120);
     landmineChecks.sample(i / 120);
     bandChecks.sample();
@@ -586,7 +599,7 @@ export async function validateGlb(
     soleDrift > 0.007 ||
     penetration > 0.015 ||
     attachmentDrift > 0.001 ||
-    maximumGroundGap > 0.035
+    (!profile.hangingSupport && maximumGroundGap > 0.035)
   )
     throw new Error(
       `Contact/root/skin/ground/equipment drift: ${footDrift}/${handDrift}/${rootDrift}/${soleDrift}/${penetration}/${attachmentDrift}/${maximumGroundGap}/${supportDrift}`,
@@ -594,6 +607,8 @@ export async function validateGlb(
   const supportReport = supportChecks.finish();
   return {
     ...supportReport,
+    ...finalChecks.finish(),
+    ...wallSlideChecks.finish(),
     ...dumbbellChecks.finish(),
     ...barbellChecks.finish(),
     ...landmineChecks.finish(),
@@ -652,6 +667,13 @@ export async function validateEquipment(
     return {
       bytes: bytes.length,
       ...validateBandGeometry(loaded.scene.getObjectByName(id)),
+    };
+  if (['hanging-frame', 'low-frame', 'pendulum-table'].includes(id))
+    validateFinalPropTopology(loaded.scene.getObjectByName(id), id);
+  if (id === 'ab-wheel')
+    return {
+      bytes: bytes.length,
+      ...validateWheelGeometry(loaded.scene.getObjectByName(id)),
     };
   if (id === 'landmine-bar')
     return {
@@ -720,6 +742,7 @@ if (
       'barbell',
       'barbell-pad',
       'landmine-bar',
+      'ab-wheel',
       'resistance-band',
     ])
       console.log(

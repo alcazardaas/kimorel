@@ -1,8 +1,6 @@
 # Kimorel
 
-**Human movement, openly animated.** An open-source foundation for reusable 3D exercise visualization, with no CMS, backend, account, paid API or subscription.
-
-Fifty original exercise previews share one rigged human and metadata-driven playback, including standing, seated, dumbbell and floor movements with reusable bench, box and wall props. **Visual/browser approval is pending; no clinical validation is claimed.** The long-term goal is 100 unique validated movements; 50 technical previews are implemented, with 75/100 staged targets.
+**Human movement, openly animated.** An open-source foundation for reusable 3D exercise visualization.
 
 ## Local setup
 

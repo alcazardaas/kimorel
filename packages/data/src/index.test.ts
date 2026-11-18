@@ -1,8 +1,8 @@
 import { expect, it } from 'vitest';
 import { exercises, getExercise, queryExercises } from './index.js';
-it('registers eighty-three real animations through the shared catalog', () => {
-  expect(exercises.length).toBe(83);
-  expect(new Set(exercises.map((e) => e.animation?.file)).size).toBe(83);
+it('registers one hundred real animations through the shared catalog', () => {
+  expect(exercises.length).toBe(100);
+  expect(new Set(exercises.map((e) => e.animation?.file)).size).toBe(100);
   expect(
     exercises.every(
       (e) =>
@@ -30,6 +30,8 @@ it('registers eighty-three real animations through the shared catalog', () => {
     'landmine-press',
     'band-chest-press',
     'band-triceps-pushdown',
+    'bench-dip',
+    'pike-push-up',
   ]);
 });
 
@@ -44,4 +46,20 @@ it('maps every registered primary muscle to an explicit broad surface region', a
     for (const muscle of exercise.muscles.primary)
       expect(mapped.has(muscle), `${exercise.id}: ${muscle}`).toBe(true);
   }
+});
+
+it('classifies the final movement families and exposes real mobility queries', () => {
+  expect(queryExercises({ muscle: 'neck' }).map((e) => e.id)).toEqual([
+    'chin-tuck',
+    'cervical-rotation',
+    'cervical-lateral-flexion',
+  ]);
+  for (const id of [
+    'ankle-dorsiflexion-rock',
+    'ninety-ninety-hip-rotation',
+    'half-kneeling-hip-flexor-stretch',
+  ])
+    expect(getExercise(id)?.bodyRegions).toContain('lower-body');
+  expect(getExercise('ab-wheel-rollout')?.equipment).toContain('ab-wheel');
+  expect(getExercise('dead-hang')?.animation?.kind).toBe('hold');
 });

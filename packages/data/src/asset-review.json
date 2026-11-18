@@ -1272,5 +1272,271 @@
     "status": "needs-review",
     "bytes": 1692,
     "sha256": "0f6e953e634fdf1c0760c4164cdae1353d6c0d52b57b89eae1278c086a321714"
+  },
+  {
+    "assetId": "pull-up-v1",
+    "file": "exercises/pull-up.glb",
+    "status": "needs-review",
+    "bytes": 638184,
+    "sha256": "5ad309d6c374b2652223e8692d9b30059fb7d8f171c093bb707a6193e76b0bc7"
+  },
+  {
+    "assetId": "pull-up-thumbnail-v1",
+    "file": "thumbnails/pull-up.png",
+    "status": "needs-review",
+    "bytes": 15861,
+    "sha256": "01c0d4a2b2cdbd2e646f1fa18ddc3881a7efd578cfe57a1e0573d836eb2f310c"
+  },
+  {
+    "assetId": "inverted-row-v1",
+    "file": "exercises/inverted-row.glb",
+    "status": "needs-review",
+    "bytes": 651080,
+    "sha256": "c70c3fe9d6cf09a39d3d582810614503a2e5f155d6cd1a1bc46feae85f42e9b6"
+  },
+  {
+    "assetId": "inverted-row-thumbnail-v1",
+    "file": "thumbnails/inverted-row.png",
+    "status": "needs-review",
+    "bytes": 14501,
+    "sha256": "6ffbea3c8302f4de1b828c3f5043102cbd80c9c6e8c380c58f645b358788a2dd"
+  },
+  {
+    "assetId": "dead-hang-v1",
+    "file": "exercises/dead-hang.glb",
+    "status": "needs-review",
+    "bytes": 638224,
+    "sha256": "a3cb9367fcdf796a199a03c5baac15e1cf2a1b802eb53555dade765fe3bfe378"
+  },
+  {
+    "assetId": "dead-hang-thumbnail-v1",
+    "file": "thumbnails/dead-hang.png",
+    "status": "needs-review",
+    "bytes": 16675,
+    "sha256": "68d2323050b4687595a395455e9de1b5f7dec7a00d039137a6355dc9e147feb3"
+  },
+  {
+    "assetId": "hanging-knee-raise-v1",
+    "file": "exercises/hanging-knee-raise.glb",
+    "status": "needs-review",
+    "bytes": 651108,
+    "sha256": "6d7e4d1e581bd236876ef4c4acdabce56681a1466794ee84ce451e4f6491834b"
+  },
+  {
+    "assetId": "hanging-knee-raise-thumbnail-v1",
+    "file": "thumbnails/hanging-knee-raise.png",
+    "status": "needs-review",
+    "bytes": 16396,
+    "sha256": "324383f6ecfe2b469c6b5dcdb930f2f2ecec66e966083c1d0a0c78b464108d94"
+  },
+  {
+    "assetId": "bench-dip-v1",
+    "file": "exercises/bench-dip.glb",
+    "status": "needs-review",
+    "bytes": 650912,
+    "sha256": "f3add6f790597a94e93aa87ce15e936a3be6271be5958971a2e06f2671357eef"
+  },
+  {
+    "assetId": "bench-dip-thumbnail-v1",
+    "file": "thumbnails/bench-dip.png",
+    "status": "needs-review",
+    "bytes": 25710,
+    "sha256": "545e95d534cf6fe1358f16ae6ac22113ddbb5373bdbf0c83951c0408ee3847fd"
+  },
+  {
+    "assetId": "pike-push-up-v1",
+    "file": "exercises/pike-push-up.glb",
+    "status": "needs-review",
+    "bytes": 646512,
+    "sha256": "97367e0b26eb40e711339d929aaab0931b14586a3f7965ecbde49d04e10853a1"
+  },
+  {
+    "assetId": "pike-push-up-thumbnail-v1",
+    "file": "thumbnails/pike-push-up.png",
+    "status": "needs-review",
+    "bytes": 27287,
+    "sha256": "9ded3937d1e4592ce2f9a582a094380a7e7367de667f0cc1fadb0c376af32875"
+  },
+  {
+    "assetId": "ab-wheel-rollout-v1",
+    "file": "exercises/ab-wheel-rollout.glb",
+    "status": "needs-review",
+    "bytes": 653700,
+    "sha256": "795d6f865f90ccd1186537c26d751689ca1cb1603b7a1a16b2af2b91470565ca"
+  },
+  {
+    "assetId": "ab-wheel-rollout-thumbnail-v1",
+    "file": "thumbnails/ab-wheel-rollout.png",
+    "status": "needs-review",
+    "bytes": 19568,
+    "sha256": "e87acde7b084e4632557c1946b7238c54e537458504682d1718491e5393eca42"
+  },
+  {
+    "assetId": "shoulder-pendulum-v1",
+    "file": "exercises/shoulder-pendulum.glb",
+    "status": "needs-review",
+    "bytes": 649500,
+    "sha256": "6f633b763764b9f1446c8a1c6005285a2532c7e74ce3f6a59338d1ab9fc6ca69"
+  },
+  {
+    "assetId": "shoulder-pendulum-thumbnail-v1",
+    "file": "thumbnails/shoulder-pendulum.png",
+    "status": "needs-review",
+    "bytes": 25298,
+    "sha256": "17c213fdb86dc3b4a99824fae9ea079cf6964707b9625f35f75eb920d078e3f2"
+  },
+  {
+    "assetId": "forearm-wall-slide-v1",
+    "file": "exercises/forearm-wall-slide.glb",
+    "status": "needs-review",
+    "bytes": 631216,
+    "sha256": "6f1f3c37ad2c6763717c1d4c8d926314cbdd09947b7e91523be36783d86b20ea"
+  },
+  {
+    "assetId": "forearm-wall-slide-thumbnail-v1",
+    "file": "thumbnails/forearm-wall-slide.png",
+    "status": "needs-review",
+    "bytes": 23562,
+    "sha256": "ab186d98698cfba2dbd11b687cc90532ba63ca495362e5ef18d78a8484193a17"
+  },
+  {
+    "assetId": "scapular-retraction-v1",
+    "file": "exercises/scapular-retraction.glb",
+    "status": "needs-review",
+    "bytes": 633228,
+    "sha256": "03ce5c52fc1e5d4e2d02395fe1d4dbc1ec7def5a201748a69f286203971794fc"
+  },
+  {
+    "assetId": "scapular-retraction-thumbnail-v1",
+    "file": "thumbnails/scapular-retraction.png",
+    "status": "needs-review",
+    "bytes": 20669,
+    "sha256": "74a9d47956f1e14fe68c3492a0a79cc9c95135acc2b07efcd1f8b279410a8adc"
+  },
+  {
+    "assetId": "chin-tuck-v1",
+    "file": "exercises/chin-tuck.glb",
+    "status": "needs-review",
+    "bytes": 635780,
+    "sha256": "68a5d81aeb74159ea3472fa2a7ca6b4752ee18fd535c82e992964a2f29ce8b57"
+  },
+  {
+    "assetId": "chin-tuck-thumbnail-v1",
+    "file": "thumbnails/chin-tuck.png",
+    "status": "needs-review",
+    "bytes": 20888,
+    "sha256": "84605aeacd65826d8240f7e4b8c28f4f36910bc4bcc386eb2bf658a6c29bb8bf"
+  },
+  {
+    "assetId": "cervical-rotation-v1",
+    "file": "exercises/cervical-rotation.glb",
+    "status": "needs-review",
+    "bytes": 631884,
+    "sha256": "b97189e111ff33f051a80b5d20778ef306c1b3a3580d929a3bdaec95de76fa9a"
+  },
+  {
+    "assetId": "cervical-rotation-thumbnail-v1",
+    "file": "thumbnails/cervical-rotation.png",
+    "status": "needs-review",
+    "bytes": 20642,
+    "sha256": "3ab7bc02fc3bf175b44bb624e161d465e2c4b065e12acc1e4aa6640d842c6abc"
+  },
+  {
+    "assetId": "cervical-lateral-flexion-v1",
+    "file": "exercises/cervical-lateral-flexion.glb",
+    "status": "needs-review",
+    "bytes": 631884,
+    "sha256": "d7760356b072f8d9367cc43f813352e180be5bc30e18322d59167cf4f528885b"
+  },
+  {
+    "assetId": "cervical-lateral-flexion-thumbnail-v1",
+    "file": "thumbnails/cervical-lateral-flexion.png",
+    "status": "needs-review",
+    "bytes": 20642,
+    "sha256": "3ab7bc02fc3bf175b44bb624e161d465e2c4b065e12acc1e4aa6640d842c6abc"
+  },
+  {
+    "assetId": "ankle-dorsiflexion-rock-v1",
+    "file": "exercises/ankle-dorsiflexion-rock.glb",
+    "status": "needs-review",
+    "bytes": 646532,
+    "sha256": "a2ec0a05059925ab4ccf354d6a751b1365cc0da8eaa4182a7bb02caee75ed4d5"
+  },
+  {
+    "assetId": "ankle-dorsiflexion-rock-thumbnail-v1",
+    "file": "thumbnails/ankle-dorsiflexion-rock.png",
+    "status": "needs-review",
+    "bytes": 23225,
+    "sha256": "1436e4d36f5fc8c781d761819affe43b1f2b6c0dacbf848d82ffa036726cbaee"
+  },
+  {
+    "assetId": "ninety-ninety-hip-rotation-v1",
+    "file": "exercises/ninety-ninety-hip-rotation.glb",
+    "status": "needs-review",
+    "bytes": 646508,
+    "sha256": "481247a04336690fb0ae0789dedda7e5d0c5f14b4f4e81647fb48b55ce1e6ef6"
+  },
+  {
+    "assetId": "ninety-ninety-hip-rotation-thumbnail-v1",
+    "file": "thumbnails/ninety-ninety-hip-rotation.png",
+    "status": "needs-review",
+    "bytes": 25923,
+    "sha256": "80c0db4d6e45d5a6c633cfedac00f64085e2a269cc7b5a61a707bbcba34ffb36"
+  },
+  {
+    "assetId": "half-kneeling-hip-flexor-stretch-v1",
+    "file": "exercises/half-kneeling-hip-flexor-stretch.glb",
+    "status": "needs-review",
+    "bytes": 646580,
+    "sha256": "eae7fd2208ea83b507248a188f47d47513cfca6c62afb6899ca8421fad3e9dcc"
+  },
+  {
+    "assetId": "half-kneeling-hip-flexor-stretch-thumbnail-v1",
+    "file": "thumbnails/half-kneeling-hip-flexor-stretch.png",
+    "status": "needs-review",
+    "bytes": 26522,
+    "sha256": "81a3c6f3aba3e9d1eee363bd895adff5947aa1bdb8e3c773c90a744416fd4e51"
+  },
+  {
+    "assetId": "childs-pose-v1",
+    "file": "exercises/childs-pose.glb",
+    "status": "needs-review",
+    "bytes": 650892,
+    "sha256": "4764fb8762c4372ae2fc9337ed83cd05f8f4b3c22fa8fb342ce772d661cd18fb"
+  },
+  {
+    "assetId": "childs-pose-thumbnail-v1",
+    "file": "thumbnails/childs-pose.png",
+    "status": "needs-review",
+    "bytes": 22951,
+    "sha256": "0ba020a1b8511f0482dcc1c6110f6e9ffdc8dbe02233742ad83965c3755b2dd4"
+  },
+  {
+    "assetId": "hanging-frame-v1",
+    "file": "equipment/hanging-frame.glb",
+    "status": "needs-review",
+    "bytes": 4588,
+    "sha256": "b8da1bc43e481fb9e3e88c2140bec55ffb15ab2dc6a79265520e49ba780bbb4d"
+  },
+  {
+    "assetId": "low-frame-v1",
+    "file": "equipment/low-frame.glb",
+    "status": "needs-review",
+    "bytes": 4564,
+    "sha256": "7fcf09bdcedb909c1862101cff9cbf6a83841fae27fcc7552161293635bc2e55"
+  },
+  {
+    "assetId": "pendulum-table-v1",
+    "file": "equipment/pendulum-table.glb",
+    "status": "needs-review",
+    "bytes": 3144,
+    "sha256": "67b2da1395a6418ba868371dd3d107d8a416b74c7813723562385db447d8d686"
+  },
+  {
+    "assetId": "ab-wheel-v1",
+    "file": "equipment/ab-wheel.glb",
+    "status": "needs-review",
+    "bytes": 3172,
+    "sha256": "0385ab34c615c037b0259dbe8e0d1bb2ff4c99468dc07cadd827cdbe9f04fba9"
   }
 ]

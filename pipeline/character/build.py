@@ -22,6 +22,7 @@ barbell = importlib.util.module_from_spec(_bar_spec)
 _bar_spec.loader.exec_module(barbell)
 landmine = motions._load_family('motion_landmine')
 band = motions._load_family('motion_band')
+final = motions._load_family('motion_final')
 
 ROOT = Path(__file__).resolve().parents[2]
 REGION_DEFINITION = json.loads((ROOT/'packages/schemas/src/muscle-regions.json').read_text())
@@ -32,7 +33,11 @@ DUMBBELL_REGION_DEFINITION = json.loads((ROOT/'packages/schemas/src/muscle-regio
 
 BAND_REGION_DEFINITION = json.loads((ROOT/'packages/schemas/src/muscle-regions-band.json').read_text())
 
+FINAL_REGION_DEFINITION = json.loads((ROOT/'packages/schemas/src/muscle-regions-final.json').read_text())
+
 def region_definition(exercise):
+    if motions.PROFILES.get(exercise, {}).get('regionVersion') == '1.6.0':
+        return FINAL_REGION_DEFINITION
     if motions.PROFILES.get(exercise, {}).get('regionVersion') == '1.5.0':
         return BAND_REGION_DEFINITION
     if motions.PROFILES.get(exercise, {}).get('regionVersion') == '1.4.0':
@@ -354,6 +359,32 @@ def build(output, animated=True, exercise="bodyweight-squat", geometry=None, equ
             node_index = len(document['nodes'])
             document['nodes'].append({'name':'equipment_'+kind,'mesh':mesh_index,'translation':instance['translation'],'extras':{'kimorelRigidEquipment':kind}})
             document['scenes'][0]['nodes'].append(node_index)
+    if motions.PROFILES.get(exercise,{}).get('hangingSupport'):
+        for hand,sign in ((14,1),(17,-1)):
+            marker=len(document['nodes'])
+            document['nodes'].append({'name':bones[hand][0]+'_support_grip','translation':[sign*.02,-.055,.005]})
+            document['nodes'][hand].setdefault('children',[]).append(marker)
+    if motions.PROFILES.get(exercise,{}).get('wheelSupport'):
+        wv,wn,wi=barbell.geometry(final.WHEEL_SEGMENTS)
+        material=len(document['materials'])
+        document['materials'].append({'name':'wheel-rubber','pbrMetallicRoughness':{'baseColorFactor':[.12,.20,.24,1],'metallicFactor':0,'roughnessFactor':.9}})
+        mesh_index=len(document['meshes'])
+        document['meshes'].append({'name':'ab-wheel','primitives':[{'attributes':{'POSITION':accessor(wv,5126,'VEC3'),'NORMAL':accessor(wn,5126,'VEC3')},'indices':accessor(wi,5125,'SCALAR'),'material':material}]})
+        wheel_node=len(document['nodes'])
+        transform=motions.equipment_pose(bones,0,exercise,pose)['wheel']
+        document['nodes'].append({'name':'ab_wheel','mesh':mesh_index,**transform,'children':[]})
+        document['scenes'][0]['nodes'].append(wheel_node)
+        for hand,sign in ((14,1),(17,-1)):
+            marker=len(document['nodes'])
+            document['nodes'].append({'name':bones[hand][0]+'_support_grip','translation':[sign*.02,-.055,.005]})
+            document['nodes'][hand].setdefault('children',[]).append(marker)
+            marker=len(document['nodes'])
+            document['nodes'].append({'name':('left' if sign==1 else 'right')+'_wheel_grip','translation':[sign*.18,0,0]})
+            document['nodes'][wheel_node]['children'].append(marker)
+        if animated:
+            transforms=[motions.equipment_pose(bones,t,exercise,pose)['wheel'] for t in times]
+            track(wheel_node,'translation',[p['translation'] for p in transforms],'VEC3')
+            track(wheel_node,'rotation',[p['rotation'] for p in transforms],'VEC4')
     if motions.PROFILES.get(exercise,{}).get('sharedBar'):
         bv,bn,bi=barbell.geometry()
         material=len(document['materials'])
@@ -500,5 +531,6 @@ if __name__=='__main__':
     build_prop(ROOT/'assets/equipment/barbell-pad.glb','barbell-pad',barbell.geometry(barbell.PAD))
     build_prop(ROOT/'assets/equipment/landmine-bar.glb','landmine-bar',barbell.geometry(landmine.SEGMENTS))
     build_prop(ROOT/'assets/equipment/resistance-band.glb','resistance-band',band.geometry())
+    build_prop(ROOT/'assets/equipment/ab-wheel.glb','ab-wheel',barbell.geometry(final.WHEEL_SEGMENTS))
     for exercise in motions.EXERCISES:
         build(ROOT/f'assets/exercises/{exercise}.glb',exercise=exercise,geometry=geometry)

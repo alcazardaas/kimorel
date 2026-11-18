@@ -27,6 +27,7 @@ export const muscles = [
   'upper-back',
   'hip-abductors',
   'hip-flexors',
+  'neck',
 ] as const;
 export const equipment = [
   'bodyweight',
@@ -38,6 +39,9 @@ export const equipment = [
   'resistance-band',
   'box',
   'wall',
+  'pull-up-bar',
+  'ab-wheel',
+  'table',
 ] as const;
 export const cameraPresets = [
   'front',

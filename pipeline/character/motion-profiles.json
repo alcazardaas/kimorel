@@ -1499,5 +1499,358 @@
         "skinBounds": [-0.18, 0.18, 0.84, 0.94, -0.18, -0.02]
       }
     ]
+  },
+  "pull-up": {
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.5.0",
+    "contacts": ["left_hand", "right_hand"],
+    "skinPatches": [],
+    "hangingSupport": {
+      "prop": "hanging-frame",
+      "height": 2.3,
+      "z": 0.22,
+      "span": 0.3
+    },
+    "props": [
+      {
+        "id": "hanging-frame",
+        "translation": [0, 0, 0]
+      }
+    ],
+    "jointTravel": [
+      {
+        "bone": "pelvis",
+        "axis": 1,
+        "minMeters": 0.33,
+        "maxMeters": 0.37
+      }
+    ],
+    "finalMotion": true
+  },
+  "inverted-row": {
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.5.0",
+    "contacts": ["left_hand", "right_hand", "left_foot", "right_foot"],
+    "skinPatches": [],
+    "hangingSupport": {
+      "prop": "low-frame",
+      "height": 1.05,
+      "z": 0.05,
+      "span": 0.3
+    },
+    "props": [
+      {
+        "id": "low-frame",
+        "translation": [0, 0, 0]
+      }
+    ],
+    "jointTravel": [
+      {
+        "bone": "pelvis",
+        "axis": 1,
+        "minMeters": 0.14,
+        "maxMeters": 0.16
+      }
+    ],
+    "finalMotion": true
+  },
+  "dead-hang": {
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.5.0",
+    "contacts": ["left_hand", "right_hand"],
+    "skinPatches": [],
+    "hangingSupport": {
+      "prop": "hanging-frame",
+      "height": 2.3,
+      "z": 0.22,
+      "span": 0.3
+    },
+    "props": [
+      {
+        "id": "hanging-frame",
+        "translation": [0, 0, 0]
+      }
+    ],
+    "kind": "hold",
+    "clip": "hold",
+    "finalMotion": true
+  },
+  "hanging-knee-raise": {
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.5.0",
+    "contacts": ["left_hand", "right_hand"],
+    "skinPatches": [],
+    "hangingSupport": {
+      "prop": "hanging-frame",
+      "height": 2.3,
+      "z": 0.22,
+      "span": 0.3
+    },
+    "props": [
+      {
+        "id": "hanging-frame",
+        "translation": [0, 0, 0]
+      }
+    ],
+    "jointTravel": [
+      {
+        "bone": "left_foot",
+        "axis": 1,
+        "minMeters": 0.48,
+        "maxMeters": 0.52
+      }
+    ],
+    "finalMotion": true
+  },
+  "bench-dip": {
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.5.0",
+    "contacts": ["left_foot", "right_foot", "left_hand", "right_hand"],
+    "skinPatches": [],
+    "props": [
+      {
+        "id": "bench",
+        "translation": [0, 0, -0.1]
+      }
+    ],
+    "jointTravel": [
+      {
+        "bone": "pelvis",
+        "axis": 1,
+        "minMeters": 0.14,
+        "maxMeters": 0.16
+      }
+    ],
+    "surfaceContacts": [
+      {
+        "prop": "bench",
+        "axis": 1,
+        "from": 0,
+        "to": 1,
+        "skinBounds": [-0.55, -0.37, 0.81, 1.05, -0.12, 0.12]
+      },
+      {
+        "prop": "bench",
+        "axis": 1,
+        "from": 0,
+        "to": 1,
+        "skinBounds": [0.37, 0.55, 0.81, 1.05, -0.12, 0.12]
+      }
+    ],
+    "finalMotion": true
+  },
+  "pike-push-up": {
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.5.0",
+    "contacts": ["left_foot", "right_foot", "left_hand", "right_hand"],
+    "skinPatches": [],
+    "jointTravel": [
+      {
+        "bone": "pelvis",
+        "axis": 1,
+        "minMeters": 0.11,
+        "maxMeters": 0.13
+      }
+    ],
+    "finalMotion": true
+  },
+  "ab-wheel-rollout": {
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.5.0",
+    "contacts": ["left_foot", "right_foot", "left_shin", "right_shin"],
+    "skinPatches": [],
+    "wheelSupport": true,
+    "jointTravel": [
+      {
+        "bone": "left_hand",
+        "axis": 2,
+        "minMeters": 0.43,
+        "maxMeters": 0.45
+      }
+    ],
+    "groundSkinContacts": [
+      {
+        "bounds": [-0.24, -0.06, 0.45, 0.55, -0.15, 0.15]
+      },
+      {
+        "bounds": [0.06, 0.24, 0.45, 0.55, -0.15, 0.15]
+      }
+    ],
+    "finalMotion": true
+  },
+  "shoulder-pendulum": {
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.5.0",
+    "contacts": ["left_foot", "right_foot", "left_hand"],
+    "skinPatches": [],
+    "props": [
+      {
+        "id": "pendulum-table",
+        "translation": [0, 0, 0]
+      }
+    ],
+    "jointTravel": [
+      {
+        "bone": "right_hand",
+        "axis": 0,
+        "minMeters": 0.05,
+        "maxMeters": 0.07
+      }
+    ],
+    "surfaceContacts": [
+      {
+        "prop": "pendulum-table",
+        "axis": 1,
+        "from": 0,
+        "to": 1,
+        "skinBounds": [0.37, 0.55, 0.81, 1.05, -0.12, 0.12]
+      }
+    ],
+    "finalMotion": true
+  },
+  "forearm-wall-slide": {
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.5.0",
+    "contacts": ["left_foot", "right_foot"],
+    "skinPatches": [],
+    "props": [
+      {
+        "id": "wall",
+        "translation": [0, 0, 0.35]
+      }
+    ],
+    "jointTravel": [
+      {
+        "bone": "left_hand",
+        "axis": 1,
+        "minMeters": 0.19,
+        "maxMeters": 0.21
+      }
+    ],
+    "wallForearmSupport": true,
+    "previewBack": true,
+    "finalMotion": true
+  },
+  "scapular-retraction": {
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.5.0",
+    "contacts": ["left_foot", "right_foot"],
+    "skinPatches": [],
+    "translations": [
+      {
+        "bone": "left_clavicle",
+        "axis": 2,
+        "minMeters": 0.04,
+        "maxMeters": 0.05
+      }
+    ],
+    "finalMotion": true
+  },
+  "chin-tuck": {
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.6.0",
+    "contacts": ["left_foot", "right_foot"],
+    "skinPatches": [],
+    "translations": [
+      {
+        "bone": "neck",
+        "axis": 2,
+        "minMeters": 0.03,
+        "maxMeters": 0.05
+      }
+    ],
+    "finalMotion": true
+  },
+  "cervical-rotation": {
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.6.0",
+    "contacts": ["left_foot", "right_foot"],
+    "skinPatches": [],
+    "articulations": [
+      {
+        "bone": "neck",
+        "minRadians": 0.4
+      }
+    ],
+    "finalMotion": true
+  },
+  "cervical-lateral-flexion": {
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.6.0",
+    "contacts": ["left_foot", "right_foot"],
+    "skinPatches": [],
+    "articulations": [
+      {
+        "bone": "neck",
+        "minRadians": 0.2
+      }
+    ],
+    "finalMotion": true
+  },
+  "ankle-dorsiflexion-rock": {
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.5.0",
+    "contacts": ["left_foot", "right_foot"],
+    "skinPatches": [],
+    "jointTravel": [
+      {
+        "bone": "pelvis",
+        "axis": 2,
+        "minMeters": 0.11,
+        "maxMeters": 0.13
+      }
+    ],
+    "finalMotion": true
+  },
+  "ninety-ninety-hip-rotation": {
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.5.0",
+    "contacts": ["left_foot", "right_foot", "left_hand", "right_hand"],
+    "skinPatches": [],
+    "articulations": [
+      {
+        "bone": "left_thigh",
+        "minRadians": 0.3
+      }
+    ],
+    "finalMotion": true
+  },
+  "half-kneeling-hip-flexor-stretch": {
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.5.0",
+    "contacts": ["left_foot", "right_foot"],
+    "skinPatches": [],
+    "kind": "hold",
+    "clip": "hold",
+    "groundSkinContacts": [
+      {
+        "bounds": [-0.24, -0.06, 0.45, 0.55, -0.15, 0.15]
+      }
+    ],
+    "finalMotion": true
+  },
+  "childs-pose": {
+    "rig": "upper-quarter-v2",
+    "regionVersion": "1.5.0",
+    "contacts": [
+      "left_foot",
+      "right_foot",
+      "left_hand",
+      "right_hand",
+      "left_shin",
+      "right_shin"
+    ],
+    "skinPatches": [],
+    "kind": "hold",
+    "clip": "hold",
+    "groundSkinContacts": [
+      {
+        "bounds": [-0.24, -0.06, 0.45, 0.55, -0.15, 0.15]
+      },
+      {
+        "bounds": [0.06, 0.24, 0.45, 0.55, -0.15, 0.15]
+      }
+    ],
+    "finalMotion": true
   }
 }
