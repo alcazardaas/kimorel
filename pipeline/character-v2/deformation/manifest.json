@@ -1,0 +1,118 @@
+{
+  "status": "engineering-draft-needs-review",
+  "clinicalValidation": false,
+  "license": "CC0-1.0",
+  "humanApproval": false,
+  "inputSource": {
+    "path": "pipeline/character-v2/prototype/character-v2.blend",
+    "sha256": "e9e6a55e8c5182a69166b96706dec9f1d8255be934a30ace9dec28e360b2c27a"
+  },
+  "generatorSha256": "1196f939df601f28efe77004f07c120ed99365d4ad19a3b714fa9f52657a7aa1",
+  "weightsSha256": "23b1d0c6f477403267275778bbd89479076d7a78cdfc8dd5a2bd6ad246ba271e",
+  "blender": "5.2.4 LTS",
+  "buildHash": "cd5dc428cce1",
+  "trianglesBeforeExport": 53086,
+  "methods": [
+    "Separate body/hand collapse budgets; hand radius bounded by semantic mid-shaft spacing minus4mm gap",
+    "Exact welded wrist Boolean unions",
+    "Generated smooth regional linear weights",
+    "Seven neutral-return engineering stress clips; no clinical ROM claim"
+  ],
+  "limitations": [
+    "Automatic triangle topology, not production anatomical edgeflow",
+    "Generated weights, no painted corrections or twist helper bones",
+    "No collision/contact or clinical validation",
+    "Device performance acceptance pending"
+  ],
+  "stressClips": [
+    "shoulder-elevation",
+    "elbow-flexion",
+    "forearm-twist",
+    "wrist-flexion",
+    "hip-flexion",
+    "knee-flexion",
+    "hand-closure"
+  ],
+  "files": {
+    "back.png": {
+      "bytes": 273923,
+      "sha256": "803303fc82460496348087683eb744922df4bba77503eacea2f8ea28bc22eec3"
+    },
+    "baseline-front.png": {
+      "bytes": 271583,
+      "sha256": "f177e1df3702b71a006c0b70222d5f6b76cc7bf8c081ca83ec8962135598e1ef"
+    },
+    "baseline-wrist.png": {
+      "bytes": 259582,
+      "sha256": "f42c098e733163f366f3914f26081908d2f2eed9507de72852056b8f0bec22c7"
+    },
+    "character-v2-deformation.glb": {
+      "bytes": 1920224,
+      "sha256": "449d87fdf613c0d86704062ea1ed235f23bfe3bff7ed85b5201f150477ac4a11"
+    },
+    "comparison-sheet.png": {
+      "bytes": 880074,
+      "sha256": "e28e1d0fe229adc18dfb5c68bf1e8e45d3ec4c72254f5f8cce20711f8228371f"
+    },
+    "elbow-flexion.png": {
+      "bytes": 269411,
+      "sha256": "ecb6149cb08e228301782b7c367eb33131abdf2dd08e2b845d6c3c5e73403460"
+    },
+    "forearm-twist.png": {
+      "bytes": 270860,
+      "sha256": "92dca23bfb8433f29cb67e31f7e942b6c5dc24c2ff40c261244b3b4f47871e34"
+    },
+    "front.png": {
+      "bytes": 271892,
+      "sha256": "6a30352e6f210366ea1690bd2fdf0878ab87867968e2e9052c744a09c9c7b41e"
+    },
+    "hand-closed.png": {
+      "bytes": 260486,
+      "sha256": "71ae3d1abc64968ee01bd72fa5b528a08fa7aaefad63203c5e0fabe34c3c5413"
+    },
+    "hand-closure.png": {
+      "bytes": 271413,
+      "sha256": "1f7a13fbcfcc12fd8238b09bc36be8a3bfa740b54ea044be771b82add07da1a4"
+    },
+    "hip-flexion.png": {
+      "bytes": 275482,
+      "sha256": "ee1de1615567bfc3d09dc71cfbd4a0e107116812e3d6cde819235e5e149c5f67"
+    },
+    "knee-flexion.png": {
+      "bytes": 271068,
+      "sha256": "a623c82418147130a838826be3abb6dce1104ef727e9406d754a5caf39b5df33"
+    },
+    "knee-side.png": {
+      "bytes": 251542,
+      "sha256": "40eac4e7d25a40afb77f753f917d27ddf3ed5fd8a34b25294b980112f9029201"
+    },
+    "shoulder-elevation.png": {
+      "bytes": 270657,
+      "sha256": "51a40724ffb0c572f39a33454c36698a87191ac61f878517e5e7c4eb83917667"
+    },
+    "side.png": {
+      "bytes": 251102,
+      "sha256": "ff2b1935aa47adecde7ce5bed1b67d33e073a0557d0ff8b9f182987bce8eb314"
+    },
+    "source.blend": {
+      "bytes": 2270985,
+      "sha256": "f06c1912b78b41012cff88899d01ff4edd5a0e96005ca4affa6ccceafbf2f9b4"
+    },
+    "stress-sheet.png": {
+      "bytes": 3466839,
+      "sha256": "68b96e192c2532b3a662150014a03fb05a45dbaa0211b0ef417a161cf380e5cf"
+    },
+    "wrist-flexed.png": {
+      "bytes": 253662,
+      "sha256": "a28071f88518b1b3ad891645b2c21960aab9c19302c43f10111c96486d02dbcc"
+    },
+    "wrist-flexion.png": {
+      "bytes": 271834,
+      "sha256": "65241f1594e34a1bf21a74fd950d715e041aa575fbe41d1f55e490d33d0f899f"
+    },
+    "wrist-neutral.png": {
+      "bytes": 262250,
+      "sha256": "43640d8f2145523424b119e0ffa7143dd720cb21fe7399266b5459153795be82"
+    }
+  }
+}
