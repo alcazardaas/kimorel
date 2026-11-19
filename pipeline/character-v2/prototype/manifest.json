@@ -1,0 +1,88 @@
+{
+  "status": "draft-needs-human-anatomy-review",
+  "clinicalValidation": false,
+  "direction": "Preserve legacy joint centers and overall proportions; refine the surface and articulate hands.",
+  "reference": {
+    "boundsMeters": [
+      [-0.4895729124546051, 0.48955467343330383],
+      [0.005324999801814556, 1.8535082340240479],
+      [-0.14952987432479858, 0.2639442980289459]
+    ],
+    "jointCentersMeters": {
+      "root": [0, 0, 0],
+      "pelvis": [0, 0.98, 0],
+      "spine": [0, 1.15, 0],
+      "chest": [0, 1.38, 0],
+      "neck": [0, 1.53, 0],
+      "head": [0, 1.65, 0],
+      "left_upper_arm": [0.22, 1.43, 0],
+      "left_forearm": [0.36, 1.17, 0],
+      "left_hand": [0.43, 0.94, 0],
+      "right_upper_arm": [-0.22, 1.43, 0],
+      "right_forearm": [-0.36, 1.17, 0],
+      "right_hand": [-0.43, 0.94, 0],
+      "left_thigh": [0.145, 0.94, 0],
+      "left_shin": [0.145, 0.51, 0.015],
+      "left_foot": [0.145, 0.09999999999999998, 0.035],
+      "right_thigh": [-0.145, 0.94, 0],
+      "right_shin": [-0.145, 0.51, 0.015],
+      "right_foot": [-0.145, 0.09999999999999998, 0.035]
+    },
+    "heightMeters": 1.8481832342222333,
+    "source": "assets/characters/neutral-human.glb"
+  },
+  "exportSkeletonJoints": 50,
+  "animation": "hand-articulation-smoke",
+  "toolchain": {
+    "blender": "5.2.4 LTS",
+    "buildHash": "cd5dc428cce1",
+    "export": "GLB, linear skinning, four influences, +Y up"
+  },
+  "sourceLicense": "CC0-1.0",
+  "approval": "needs-review",
+  "limitations": [
+    "Procedural volume-remeshed blockout, not production quad retopology.",
+    "Three intersecting closed components: body plus separately rigged hands; wrist seams need artist review.",
+    "Nearest-segment draft weights are not painted production weights.",
+    "No anatomical muscle segmentation, corrective shapes, full body exercise retargeting or clinical validation.",
+    "Finger smoke animation proves joint deformation, not contact or realistic grip mechanics."
+  ],
+  "files": {
+    "back.png": {
+      "bytes": 468419,
+      "sha256": "67af64ad0b14703d3d8c691aaa0da4e1c119a6315237c34740d3e75cf0d7c444"
+    },
+    "character-v2.blend": {
+      "bytes": 7636415,
+      "sha256": "e9e6a55e8c5182a69166b96706dec9f1d8255be934a30ace9dec28e360b2c27a"
+    },
+    "character-v2.glb": {
+      "bytes": 10659916,
+      "sha256": "fe14639850746fe0831122bc3348d284e2e67e502acd1df79feea8c021ab24cf"
+    },
+    "front.png": {
+      "bytes": 466060,
+      "sha256": "052e57a5ffb1a1d7e9e3c764f87ace2d1e11941c163b24d78b8aa14407de236e"
+    },
+    "hand-closed.png": {
+      "bytes": 446241,
+      "sha256": "e3d9ee54cea4804a6a8808a2bfb441b99cf74aee3c6d2ef96595511fd823b98c"
+    },
+    "hand-open.png": {
+      "bytes": 449473,
+      "sha256": "3155276262ba0423fb37f335287db47314b61c7719e5f8164596a070c780f800"
+    },
+    "inspection-sheet.png": {
+      "bytes": 2338364,
+      "sha256": "1bbbb1de32e890ee923e0e9437c4651d1b39fe3621d2a3bc767c873543bea73e"
+    },
+    "quarter.png": {
+      "bytes": 469516,
+      "sha256": "b820cb848686ea873e5d39f65c2be85d11a023e7bdda5f5a9ce5b49102d46283"
+    },
+    "side.png": {
+      "bytes": 437134,
+      "sha256": "b03ea621cb591f99fd233e67d129ae6c35e2e6dace7299d15fa4aec0c42a9354"
+    }
+  }
+}

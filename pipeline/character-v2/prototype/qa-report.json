@@ -1,0 +1,11 @@
+{
+  "vertices": 141192,
+  "triangles": 282372,
+  "meshes": 3,
+  "joints": 50,
+  "heightMeters": 1.8435872508531597,
+  "handSkinTravelMeters": 0.11536989299655352,
+  "loopErrorMeters": 0,
+  "status": "draft-needs-review",
+  "clinicalValidation": false
+}
