@@ -1,0 +1,106 @@
+{
+  "status": "automated-corrective-proposal-needs-review",
+  "humanApproval": false,
+  "clinicalValidation": false,
+  "sourceLicense": "CC0-1.0",
+  "input": {
+    "path": "pipeline/character-v2/deformation/source.blend",
+    "sha256": "f06c1912b78b41012cff88899d01ff4edd5a0e96005ca4affa6ccceafbf2f9b4"
+  },
+  "generatorSha256": "93effc561df17ddfdfe683d904f3530bad2f84d288b944526ddbf34516f82ba1",
+  "helperSha256": "521783c344a8dab5abe1f2c2d4cb99212600e474013b7711286a0a0f2647d8c5",
+  "toolchain": {
+    "blender": "5.2.4 LTS",
+    "buildHash": "cd5dc428cce1"
+  },
+  "method": "Compact semantic posed-space relaxation, inverse linear skin delta, baked shared-action morph weights; no drivers",
+  "shapes": {
+    "shoulder-elevation": {
+      "verticesChanged": 4359,
+      "maxRestDeltaMeters": 0.03319743249146144,
+      "maxPosedDeltaMeters": 0.02800004091117125,
+      "parameters": {
+        "joint": "upper_arm",
+        "radiusMeters": 0.21,
+        "iterations": 32,
+        "step": 0.65,
+        "maxPosedDeltaMeters": 0.028,
+        "maxRestDeltaMeters": 0.055,
+        "activationDegrees": [0, 25, 65]
+      }
+    },
+    "hip-flexion": {
+      "verticesChanged": 3194,
+      "maxRestDeltaMeters": 0.031313300486510445,
+      "maxPosedDeltaMeters": 0.028000022866451497,
+      "parameters": {
+        "joint": "thigh",
+        "radiusMeters": 0.2,
+        "iterations": 32,
+        "step": 0.65,
+        "maxPosedDeltaMeters": 0.028,
+        "maxRestDeltaMeters": 0.055,
+        "activationDegrees": [0, 20, 55]
+      }
+    }
+  },
+  "limitations": [
+    "Automated targets, not artist-approved corrections",
+    "Known stress poses only, not general motion correctness",
+    "No anatomical/clinical/contact or performance acceptance"
+  ],
+  "files": {
+    "character-v2-correctives.glb": {
+      "bytes": 2274412,
+      "sha256": "61e83ec439d3e04deeec2cd5da771181044bfaae3e75dcea75ec3b8342c9c587"
+    },
+    "context-sheet.png": {
+      "bytes": 691146,
+      "sha256": "d00e607bb3462e14be8969da37309289de0f207fee7f8cacaa63810ea5f418cf"
+    },
+    "corrective-ablation-sheet.png": {
+      "bytes": 1284202,
+      "sha256": "182b46a949312483b8625a7d317e09cad014a4005c95d4e4a98325fbc969748e"
+    },
+    "hip-flexion-off.png": {
+      "bytes": 306475,
+      "sha256": "9f7cd97ad259183847bc1834f8af9ab27f20766c1aa97a911d2023814dbb5cfe"
+    },
+    "hip-flexion-old.png": {
+      "bytes": 305315,
+      "sha256": "247dcaedb90729c28e2f2a42c86b560bf1bfb57afb80c595ae88c7f9a44919c5"
+    },
+    "hip-flexion-on.png": {
+      "bytes": 301301,
+      "sha256": "e21f88a3ccaf44b691dc4c108c246f0205f2c352278f2a8bfec0da402034472c"
+    },
+    "hip-flexion-whole.png": {
+      "bytes": 274020,
+      "sha256": "4ee9bb298825ce6e27fdedebf7d054a26c0475da3d74d91452e13172da50c803"
+    },
+    "neutral-front.png": {
+      "bytes": 270287,
+      "sha256": "be52276f8625a995d49abbea4178f9768b2121d694f2a8f4a176303de19e4d23"
+    },
+    "shoulder-elevation-off.png": {
+      "bytes": 285044,
+      "sha256": "37aa64c2db89be7cba11c195b5c1285cb0fecc77d48e4372d913d5cd6f70fe14"
+    },
+    "shoulder-elevation-old.png": {
+      "bytes": 282286,
+      "sha256": "1d273218c0a951d6a98db1a472df1087fbab11cf89af9c65b2744624ecb239a2"
+    },
+    "shoulder-elevation-on.png": {
+      "bytes": 282408,
+      "sha256": "08bd01da6619b2a6bd497f2d1ab828f357cf98d8f5291b0c7b9d94e810240059"
+    },
+    "shoulder-elevation-whole.png": {
+      "bytes": 268808,
+      "sha256": "153fe6a8e3f5fa84cd50a6c1473e6c51a85ad3a703d426f7ccd8d283cd5317ef"
+    },
+    "source.blend": {
+      "bytes": 2692103,
+      "sha256": "ac96917e81e38c25e9acac9126cc654bc6ed631e574f6e003270dd8c2a681f98"
+    }
+  }
+}
