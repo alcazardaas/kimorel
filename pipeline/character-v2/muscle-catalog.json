@@ -1,0 +1,255 @@
+{
+  "schemaVersion": "kimorel.muscle-semantics/v2-draft-1",
+  "catalogVersion": "muscle-catalog-draft-1",
+  "surfaceMapVersion": "muscle-map-draft-1",
+  "status": "draft-needs-review",
+  "character": {
+    "id": "kimorel-correctives-draft",
+    "version": "correctives-a9e0ad8",
+    "file": "pipeline/character-v2/correctives/character-v2-correctives.glb",
+    "sha256": "61e83ec439d3e04deeec2cd5da771181044bfaae3e75dcea75ec3b8342c9c587"
+  },
+  "sources": [
+    {
+      "id": "legacy-muscle-enum",
+      "kind": "project-metadata",
+      "locator": "packages/schemas/src/index.ts"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "legacy-quadriceps",
+      "legacyId": "quadriceps",
+      "label": "Quadriceps",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": ["legacy-muscle-enum"]
+    },
+    {
+      "id": "legacy-gluteus-maximus",
+      "legacyId": "gluteus-maximus",
+      "label": "Gluteus maximus",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": ["legacy-muscle-enum"]
+    },
+    {
+      "id": "legacy-adductors",
+      "legacyId": "adductors",
+      "label": "Adductors",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": ["legacy-muscle-enum"]
+    },
+    {
+      "id": "legacy-erector-spinae",
+      "legacyId": "erector-spinae",
+      "label": "Erector spinae",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": ["legacy-muscle-enum"]
+    },
+    {
+      "id": "legacy-pectoralis-major",
+      "legacyId": "pectoralis-major",
+      "label": "Pectoralis major",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": ["legacy-muscle-enum"]
+    },
+    {
+      "id": "legacy-deltoids",
+      "legacyId": "deltoids",
+      "label": "Deltoids",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": ["legacy-muscle-enum"]
+    },
+    {
+      "id": "legacy-triceps",
+      "legacyId": "triceps",
+      "label": "Triceps",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": ["legacy-muscle-enum"]
+    },
+    {
+      "id": "legacy-biceps",
+      "legacyId": "biceps",
+      "label": "Biceps",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": ["legacy-muscle-enum"]
+    },
+    {
+      "id": "legacy-hamstrings",
+      "legacyId": "hamstrings",
+      "label": "Hamstrings",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": ["legacy-muscle-enum"]
+    },
+    {
+      "id": "legacy-calves",
+      "legacyId": "calves",
+      "label": "Calves",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": ["legacy-muscle-enum"]
+    },
+    {
+      "id": "legacy-tibialis-anterior",
+      "legacyId": "tibialis-anterior",
+      "label": "Tibialis anterior",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": ["legacy-muscle-enum"]
+    },
+    {
+      "id": "legacy-abdominals",
+      "legacyId": "abdominals",
+      "label": "Abdominals",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": ["legacy-muscle-enum"]
+    },
+    {
+      "id": "legacy-latissimus-dorsi",
+      "legacyId": "latissimus-dorsi",
+      "label": "Latissimus dorsi",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": ["legacy-muscle-enum"]
+    },
+    {
+      "id": "legacy-forearms",
+      "legacyId": "forearms",
+      "label": "Forearms",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": ["legacy-muscle-enum"]
+    },
+    {
+      "id": "legacy-serratus-anterior",
+      "legacyId": "serratus-anterior",
+      "label": "Serratus anterior",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": ["legacy-muscle-enum"]
+    },
+    {
+      "id": "legacy-rotator-cuff",
+      "legacyId": "rotator-cuff",
+      "label": "Rotator cuff",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": ["legacy-muscle-enum"]
+    },
+    {
+      "id": "legacy-obliques",
+      "legacyId": "obliques",
+      "label": "Obliques",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": ["legacy-muscle-enum"]
+    },
+    {
+      "id": "legacy-upper-back",
+      "legacyId": "upper-back",
+      "label": "Upper back",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": ["legacy-muscle-enum"]
+    },
+    {
+      "id": "legacy-hip-abductors",
+      "legacyId": "hip-abductors",
+      "label": "Hip abductors",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": ["legacy-muscle-enum"]
+    },
+    {
+      "id": "legacy-hip-flexors",
+      "legacyId": "hip-flexors",
+      "label": "Hip flexors",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": ["legacy-muscle-enum"]
+    },
+    {
+      "id": "legacy-neck",
+      "legacyId": "neck",
+      "label": "Neck",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": ["legacy-muscle-enum"]
+    }
+  ],
+  "identities": [],
+  "surfaceMappings": [],
+  "exerciseRoles": []
+}
