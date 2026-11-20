@@ -193,3 +193,6 @@ export const muscleCatalogV2Schema = z
   });
 
 export type MuscleCatalogV2 = z.infer<typeof muscleCatalogV2Schema>;
+
+/** Internal payload binding reuse; not a public v1 export or approval mechanism. */
+export { mapping as muscleSurfaceMappingV2Schema };

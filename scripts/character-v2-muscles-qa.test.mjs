@@ -31,6 +31,8 @@ test('real draft catalog and read-only CLI report zero masks and zero new anatom
   assert.equal(report.surfaceMappingProposals, 0);
   assert.equal(report.qualitativeRoleProposals, 0);
   assert.equal(report.humanApproval, false);
+  assert.equal(report.maskPayloadValidation, true);
+  assert.equal(report.validatedMaskPayloads, 0);
   const cli = JSON.parse(
     execFileSync(process.execPath, ['scripts/character-v2-muscles-qa.mjs'], {
       cwd: projectRoot,
@@ -120,7 +122,7 @@ test('reject unknown exercise references and wrong real vertex domains', async (
   await assert.rejects(validateMuscleCatalog(value), /vertex domain mismatch/);
 });
 
-test('binds fictional mask bytes to the real vertex domain without claiming payload approval', async () => {
+test('rejects arbitrary mask bytes even when declared file hash and vertex domain match', async () => {
   const value = await seed();
   const folder = await mkdtemp(join(tmpdir(), 'kimorel-muscle-binding-'));
   try {
@@ -170,10 +172,7 @@ test('binds fictional mask bytes to the real vertex domain without claiming payl
       review: 'pending',
     });
     const root = pathToFileURL(folder + '/');
-    const report = await validateMuscleCatalog(value, root);
-    assert.equal(report.surfaceMappingProposals, 1);
-    assert.equal(report.maskPayloadValidation, false);
-    assert.equal(report.humanApproval, false);
+    await assert.rejects(validateMuscleCatalog(value, root), SyntaxError);
     await writeFile(
       join(folder, 'fixture', 'mask.txt'),
       'Changed fixture bytes',
