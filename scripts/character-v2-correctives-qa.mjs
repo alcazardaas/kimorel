@@ -237,7 +237,8 @@ function assertRigidLinear(elements, offset = 0) {
     }
 }
 
-function playbackTimes(bytes, doc, name, duration, targetCount) {
+/** Exported for focused schedule regressions; no alternate runtime algorithm. */
+export function playbackTimes(bytes, doc, name, duration, targetCount) {
   const times = new Set([0, duration / 2, duration]);
   const animation = doc.animations.find((a) => a.name === name);
   for (const channel of animation.channels.filter(

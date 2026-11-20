@@ -2,9 +2,11 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { Buffer } from 'node:buffer';
+import { readGlb } from './glb-qa.mjs';
 import {
   correctivesFile,
   floatAccessor,
+  playbackTimes,
   validateCorrectives,
 } from './character-v2-correctives-qa.mjs';
 
@@ -245,5 +247,56 @@ test('reject unrelated cubic interpolation pulse between zero-valued keys', asyn
   await assert.rejects(
     validateCorrectives(await wristWeightFixture(times, values, 'CUBICSPLINE')),
     /Unrelated morph activation/,
+  );
+});
+
+test('analytical extrema expose positive off-midpoint overshoot that keys/midpoint miss', async () => {
+  // Unit interval Hermite: p0=.9, p1=.1, out0=2, in1=0.
+  // w'(t)=10.8(t-5/27)(t-1): minimum is .1, so no negative-weight failure.
+  const upperBound = 1;
+  const keyAndMidpointTimes = [0, 0.5, 1];
+  const bytes = await wristWeightFixture(
+    [0, 1],
+    [0, 0, 0.9, 0, 2, 0, 0, 0, 0.1, 0, 0, 0],
+    'CUBICSPLINE',
+  );
+  const doc = readGlb(bytes);
+  const animation = doc.animations.find((a) => a.name === 'wrist-flexion');
+  const channel = animation.channels.find((c) => c.target.path === 'weights');
+  const values = floatAccessor(
+    bytes,
+    doc,
+    animation.samplers[channel.sampler].output,
+  );
+  // Evaluate the ACTUAL encoded float32 curve using the Hermite basis, separate
+  // from production's derivative-root calculation. Target two stays zero.
+  const weight = (t) =>
+    (2 * t ** 3 - 3 * t ** 2 + 1) * values[2] +
+    (t ** 3 - 2 * t ** 2 + t) * values[4] +
+    (-2 * t ** 3 + 3 * t ** 2) * values[8] +
+    (t ** 3 - t ** 2) * values[6];
+  assert(keyAndMidpointTimes.every((t) => weight(t) < upperBound));
+  assert(Math.min(weight(0), weight(5 / 27), weight(1)) > 0);
+  assert(weight(5 / 27) > upperBound);
+  // Exercise only the real scheduling helper: full GLB validation would reject
+  // unrelated activation/nonzero endpoints first and would not isolate extrema.
+  const probes = playbackTimes(bytes, doc, 'wrist-flexion', 1, 2);
+  assert(
+    probes.some((t) => Math.abs(t - 5 / 27) < 1e-6),
+    'Missing analytical extremum',
+  );
+  const detectsOvershoot = (times) =>
+    assert(
+      times.some((t) => weight(t) > upperBound),
+      'Off-midpoint bound crossing not detected',
+    );
+  detectsOvershoot(probes);
+  // Read-only mutation control: disable analytical-root probes, retaining every
+  // key/segment midpoint. The SAME acceptance assertion must now fail.
+  const withoutExtrema = probes.filter((t) => keyAndMidpointTimes.includes(t));
+  assert.deepEqual(withoutExtrema, keyAndMidpointTimes);
+  assert.throws(
+    () => detectsOvershoot(withoutExtrema),
+    /Off-midpoint bound crossing not detected/,
   );
 });
