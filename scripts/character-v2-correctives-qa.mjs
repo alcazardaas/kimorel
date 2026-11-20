@@ -101,16 +101,23 @@ function player(loaded) {
       active.paused = false;
       active.enabled = true;
       mixer.setTime(time);
-      if (off) mesh.morphTargetInfluences?.fill(0);
+      const saved = off ? mesh.morphTargetInfluences?.slice() : undefined;
+      if (saved) mesh.morphTargetInfluences.fill(0);
       loaded.scene.updateMatrixWorld(true);
       mesh.skeleton.update();
-      return Array.from(
+      const positions = Array.from(
         { length: mesh.geometry.getAttribute('position').count },
         (_, i) =>
           mesh
             .getVertexPosition(i, new Vector3())
             .applyMatrix4(mesh.matrixWorld),
       );
+      // Ablation must not leave a manual zero that PropertyMixer can mistake
+      // for an unchanged animated value at the next (possibly plateau) key.
+      saved?.forEach((value, i) => {
+        mesh.morphTargetInfluences[i] = value;
+      });
+      return positions;
     },
     stop() {
       mixer.stopAllAction();
@@ -217,6 +224,76 @@ function patchChange(before, after, triangles, allowed) {
   };
 }
 
+function assertRigidLinear(elements, offset = 0) {
+  for (let a = 0; a < 3; a++)
+    for (let b = 0; b < 3; b++) {
+      let dot = 0;
+      for (let row = 0; row < 3; row++)
+        dot += elements[offset + a * 4 + row] * elements[offset + b * 4 + row];
+      assert(
+        Number.isFinite(dot) && Math.abs(dot - (a === b ? 1 : 0)) < 1e-5,
+        'Rest-delta envelope requires rigid linear skin transforms',
+      );
+    }
+}
+
+function playbackTimes(bytes, doc, name, duration, targetCount) {
+  const times = new Set([0, duration / 2, duration]);
+  const animation = doc.animations.find((a) => a.name === name);
+  for (const channel of animation.channels.filter(
+    (c) => c.target.path === 'weights',
+  )) {
+    const sampler = animation.samplers[channel.sampler];
+    const keys = floatAccessor(bytes, doc, sampler.input);
+    const values = floatAccessor(bytes, doc, sampler.output);
+    const mode = sampler.interpolation ?? 'LINEAR';
+    assert(
+      ['LINEAR', 'STEP', 'CUBICSPLINE'].includes(mode),
+      'Unsupported morph interpolation',
+    );
+    assert(
+      keys.length > 0 &&
+        values.length ===
+          keys.length * targetCount * (mode === 'CUBICSPLINE' ? 3 : 1),
+      'Invalid morph sampler shape',
+    );
+    for (let i = 0; i < keys.length; i++) {
+      assert(
+        keys[i] >= 0 && keys[i] <= duration && (!i || keys[i] > keys[i - 1]),
+        'Invalid morph key times',
+      );
+      times.add(keys[i]);
+      if (!i || mode === 'STEP') continue;
+      const start = keys[i - 1],
+        dt = keys[i] - start;
+      times.add(start + dt / 2);
+      if (mode !== 'CUBICSPLINE') continue;
+      // glTF Hermite tangents are per second. Inspect exact component extrema,
+      // not only zero endpoints/midpoints that can hide an interpolation pulse.
+      for (let k = 0; k < targetCount; k++) {
+        const p0 = values[((i - 1) * 3 + 1) * targetCount + k];
+        const p1 = values[(i * 3 + 1) * targetCount + k];
+        const m0 = values[((i - 1) * 3 + 2) * targetCount + k] * dt;
+        const m1 = values[i * 3 * targetCount + k] * dt;
+        const a = 3 * (2 * p0 - 2 * p1 + m0 + m1);
+        const b = 2 * (-3 * p0 + 3 * p1 - 2 * m0 - m1),
+          c = m0;
+        const roots = [];
+        if (Math.abs(a) < 1e-12) {
+          if (Math.abs(b) >= 1e-12) roots.push(-c / b);
+        } else {
+          const discriminant = b * b - 4 * a * c;
+          if (discriminant >= 0)
+            for (const sign of [-1, 1])
+              roots.push((-b + sign * Math.sqrt(discriminant)) / (2 * a));
+        }
+        for (const t of roots) if (t > 0 && t < 1) times.add(start + dt * t);
+      }
+    }
+  }
+  return [...times].sort((a, b) => a - b);
+}
+
 export async function validateCorrectives(bytes) {
   const doc = readGlb(bytes),
     primitive = doc.meshes[0].primitives[0];
@@ -242,8 +319,12 @@ export async function validateCorrectives(bytes) {
       (c) => c.target.path === 'weights',
     );
     assert(weights, `Missing baked morph track: ${name}`);
-    const sampler = animation.samplers[weights.sampler],
-      values = floatAccessor(bytes, doc, sampler.output);
+    const sampler = animation.samplers[weights.sampler];
+    const raw = floatAccessor(bytes, doc, sampler.output);
+    const values =
+      sampler.interpolation === 'CUBICSPLINE'
+        ? raw.filter((_, i) => Math.floor(i / names.length) % 3 === 1)
+        : raw;
     assert(
       values.some((v) => v > 0.9),
       `Frozen morph track: ${name}`,
@@ -355,7 +436,112 @@ export async function validateCorrectives(bytes) {
     assert(offError < 2e-5, 'Morph OFF does not match frozen skin/bones');
     assert(loop < 1e-5, 'Corrective loop does not close');
     assert(remote < 1e-6, 'Morph changes unrelated skin');
+    const playback = {
+      samples: 0,
+      maxSkinCorrectionMeters: 0,
+      maxRemoteCorrectionMeters: 0,
+      maxEndpointCorrectionMeters: 0,
+      maxEndpointBaselineErrorMeters: 0,
+      maxRestDerivedEnvelopeMeters: 0,
+    };
+    const expectedTarget = names.findIndex(
+      (target) => definitions[target].clip === name,
+    );
+    for (const time of playbackTimes(
+      bytes,
+      doc,
+      name,
+      clip.duration,
+      names.length,
+    )) {
+      const posed = candidate.sample(time);
+      const influences = candidate.mesh.morphTargetInfluences;
+      assert(
+        influences.every((v) => Number.isFinite(v) && v >= 0 && v <= 1),
+        'Invalid sampled morph influence',
+      );
+      const endpoint = time === 0 || time === clip.duration;
+      if (endpoint)
+        assert(
+          influences.every((v) => Math.abs(v) < 1e-7),
+          'Nonzero morph influence at neutral endpoint',
+        );
+      assert(
+        influences.every((v, i) => i === expectedTarget || Math.abs(v) < 1e-7),
+        'Unrelated morph activation',
+      );
+      // Raw weights were already proven normalized/nonnegative by the reused
+      // validator. Verify all actual skin/bind/world linear transforms are rigid:
+      // their convex combination cannot enlarge a morph displacement's norm.
+      for (const matrix of [
+        candidate.mesh.bindMatrix,
+        candidate.mesh.bindMatrixInverse,
+        candidate.mesh.matrixWorld,
+      ])
+        assertRigidLinear(matrix.elements);
+      const matrices = candidate.mesh.skeleton.boneMatrices;
+      for (let offset = 0; offset < matrices.length; offset += 16)
+        assertRigidLinear(matrices, offset);
+      const envelope = influences.reduce(
+        (sum, weight, i) => sum + weight * support[names[i]].maxRestDeltaMeters,
+        0,
+      );
+      playback.maxRestDerivedEnvelopeMeters = Math.max(
+        playback.maxRestDerivedEnvelopeMeters,
+        envelope,
+      );
+      const ablated = candidate.sample(time, true);
+      const frozen = endpoint ? baseline.sample(time) : null;
+      for (let i = 0; i < posed.length; i++) {
+        assert(
+          posed[i].toArray().every(Number.isFinite) &&
+            ablated[i].toArray().every(Number.isFinite),
+          'Non-finite playback surface',
+        );
+        const distance = posed[i].distanceTo(ablated[i]);
+        assert(
+          distance <= envelope + 1e-6,
+          'Playback exceeds rigid-skin rest-delta envelope',
+        );
+        playback.maxSkinCorrectionMeters = Math.max(
+          playback.maxSkinCorrectionMeters,
+          distance,
+        );
+        const p = neutral[i];
+        const within =
+          definition &&
+          Math.hypot(Math.abs(p.x) - definition.x, p.y - definition.y, p.z) <
+            definition.radius + 1e-5;
+        if (!within)
+          playback.maxRemoteCorrectionMeters = Math.max(
+            playback.maxRemoteCorrectionMeters,
+            distance,
+          );
+        if (endpoint) {
+          playback.maxEndpointCorrectionMeters = Math.max(
+            playback.maxEndpointCorrectionMeters,
+            distance,
+          );
+          playback.maxEndpointBaselineErrorMeters = Math.max(
+            playback.maxEndpointBaselineErrorMeters,
+            posed[i].distanceTo(frozen[mapping[i]]),
+            ablated[i].distanceTo(frozen[mapping[i]]),
+          );
+        }
+      }
+      playback.samples++;
+    }
+    assert(
+      playback.maxEndpointCorrectionMeters < 1e-6 &&
+        playback.maxEndpointBaselineErrorMeters < 2e-5,
+      'Neutral endpoint differs from morph OFF/frozen baseline',
+    );
+    assert(
+      playback.maxRemoteCorrectionMeters < 1e-6,
+      'Playback changes unrelated skin',
+    );
     const report = {
+      playback,
       durationSeconds: clip.duration,
       peakMorphWeights: weights,
       maxSkinCorrectionMeters: correction,

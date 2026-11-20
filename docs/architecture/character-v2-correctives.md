@@ -48,6 +48,10 @@ Independent QA reuses the previous read-only connected-draft validator for finit
 - Exact neutral-coordinate correspondence and morph-OFF equality to the frozen bone-skinned baseline, within declared floating-point tolerances.
 - Bounded support and actual posed skin change in the intended shoulder/hip regions, with no remote hand/leg/torso corrections.
 - Local neighbor-residual and triangle-normal-turn comparisons at the same exported stress pose, plus neutral return.
+- Both neutral endpoints compared against morph OFF **and** the frozen baseline, so equal nonzero endpoint corrections cannot pass.
+- Every weight key, linear segment interior and cubic Hermite component extrema sampled across all clips; unrelated target activation rejected away from the midpoint too. Temporary morph-OFF samples restore animated weights to avoid contaminating subsequent plateau samples.
+
+The authored 28 mm posed cap and existing 28.1 mm check apply at the sampled peak pose, not uniformly across interpolation. Whole-playback displacement uses the independently measured rest-delta envelope: nonnegative normalized weights and actual orthonormal skin/bind/world matrices are verified before applying the convex rigid-blend norm bound. Interior maxima are reported separately; they are not hidden by increasing the peak tolerance. The frozen shoulder asset reaches approximately 28.112 mm at an interior sample. Its independently checked rest-delta envelope is approximately 33.197 mm. The committed `qa-report.json` remains the prior unit's historical midpoint receipt; run the QA CLI without redirecting over that file for current extended playback diagnostics.
 
 Neighbor residual is the distance from a vertex to its adjacent-vertex mean. Normal turn is the angle between adjacent triangle normals. These are same-topology artifact diagnostics, **not** anatomical quality, cross-section volume, no-collapse or clinical proof. Natural joint folds are not inherently defects; visual review must judge whether the proposed change actually helps.
 

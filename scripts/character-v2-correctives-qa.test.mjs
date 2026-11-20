@@ -45,6 +45,24 @@ test('exported corrective morphs play with skin and improve local sharp residual
     assert(report.clips[name].maxSkinCorrectionMeters > 0.001);
   }
   assert.equal(report.engineering.preservedLegacyCenters, 18);
+  for (const clip of Object.values(report.clips)) {
+    assert(clip.playback.samples >= 4);
+    assert.equal(clip.playback.maxEndpointCorrectionMeters, 0);
+    assert.equal(clip.playback.maxEndpointBaselineErrorMeters, 0);
+  }
+  assert(report.clips['shoulder-elevation'].playback.samples > 60);
+  const originalMetrics = JSON.parse(JSON.stringify(report));
+  for (const clip of Object.values(originalMetrics.clips)) delete clip.playback;
+  assert.deepEqual(
+    originalMetrics,
+    JSON.parse(
+      await readFile(
+        'pipeline/character-v2/correctives/qa-report.json',
+        'utf8',
+      ),
+    ),
+    'Existing midpoint metrics changed',
+  );
 });
 
 test('reject missing and frozen baked morph channels', async () => {
@@ -158,5 +176,74 @@ test('reject morph neutral-return failure', async () => {
       }),
     ),
     /loop does not close|neutral|Legacy joint|Height tolerance|silhouette/i,
+  );
+});
+
+// Replace only an unrelated clip's weight sampler; all asset mutations stay in memory.
+async function wristWeightFixture(times, values, interpolation = 'LINEAR') {
+  return mutate((doc, binary) => {
+    const clip = doc.animations.find((a) => a.name === 'wrist-flexion');
+    const channel = clip.channels.find((c) => c.target.path === 'weights');
+    const sampler = clip.samplers[channel.sampler];
+    const chunks = [];
+    for (const [field, data] of [
+      ['input', times],
+      ['output', values],
+    ]) {
+      const bytes = Buffer.from(new Float32Array(data).buffer);
+      const view = doc.bufferViews.length;
+      doc.bufferViews.push({
+        buffer: 0,
+        byteOffset: binary.length + chunks.reduce((n, b) => n + b.length, 0),
+        byteLength: bytes.length,
+      });
+      sampler[field] = doc.accessors.length;
+      doc.accessors.push({
+        bufferView: view,
+        componentType: 5126,
+        count: data.length,
+        type: 'SCALAR',
+        ...(field === 'input' ? { min: [times[0]], max: [times.at(-1)] } : {}),
+      });
+      chunks.push(bytes);
+    }
+    sampler.interpolation = interpolation;
+    const result = Buffer.concat([binary, ...chunks]);
+    doc.buffers[0].byteLength = result.length;
+    return result;
+  });
+}
+
+test('reject matching nonzero morph corrections at both neutral endpoints', async () => {
+  await assert.rejects(
+    validateCorrectives(
+      await mutate((doc, bin, offset) => {
+        const a = weights(doc, 'shoulder-elevation'),
+          start = offset(a);
+        bin.writeFloatLE(0.2, start);
+        bin.writeFloatLE(0.2, start + (a.count - 2) * 4);
+      }),
+    ),
+    /endpoint/,
+  );
+});
+
+test('reject unrelated corrective activation away from the midpoint', async () => {
+  const times = [1 / 30, 0.5, 61 / 60, 1.5, 61 / 30];
+  await assert.rejects(
+    validateCorrectives(
+      await wristWeightFixture(times, [0, 0, 0.2, 0, 0, 0, 0, 0, 0, 0]),
+    ),
+    /Unrelated morph activation/,
+  );
+});
+
+test('reject unrelated cubic interpolation pulse between zero-valued keys', async () => {
+  const times = [1 / 30, 0.45, 61 / 60, 61 / 30];
+  // glTF triples: in-tangent, value, out-tangent; both target values stay zero.
+  const values = [0, 0, 0, 0, 4, 0, -4, 0, 0, 0, 0, 0, ...Array(12).fill(0)];
+  await assert.rejects(
+    validateCorrectives(await wristWeightFixture(times, values, 'CUBICSPLINE')),
+    /Unrelated morph activation/,
   );
 });
