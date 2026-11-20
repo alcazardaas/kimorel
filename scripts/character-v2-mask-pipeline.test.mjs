@@ -269,3 +269,64 @@ test('rejects symlinked output parents and existing symlink leaves', () =>
       { code: 'EEXIST' },
     );
   }));
+
+test('underflow proposals fail actual inspect/write/catalog CLIs without creating output', () =>
+  fixture(async (f) => {
+    for (const weight of [1e-50, Number.MIN_VALUE, 2 ** -150]) {
+      for (const mixed of [false, true]) {
+        f.proposal.weights = [{ vertexIndex: 0, weight }];
+        if (mixed) f.proposal.weights.push({ vertexIndex: 1, weight: 0.5 });
+        // Raw JSON deliberately bypasses the now-rejecting canonical serializer.
+        const bytes = JSON.stringify(f.proposal);
+        f.mapping.mask.sha256 = hash(bytes);
+        await writeFile(join(f.folder, 'draft/proposal.json'), bytes);
+        await writeFile(
+          join(f.folder, 'draft/catalog.json'),
+          JSON.stringify(f.catalog),
+        );
+        const args = [
+          'draft/catalog.json',
+          'draft/proposal.json',
+          '--root',
+          f.folder,
+        ];
+        for (const flags of [[], ['--write', output]]) {
+          assert.throws(
+            () =>
+              execFileSync(
+                process.execPath,
+                [
+                  resolve('scripts/character-v2-mask-pipeline.mjs'),
+                  ...args,
+                  ...flags,
+                ],
+                { encoding: 'utf8', stdio: 'pipe' },
+              ),
+            /Float32/,
+          );
+          await assert.rejects(stat(join(f.folder, output)), {
+            code: 'ENOENT',
+          });
+        }
+        await writeFile(join(f.folder, output), bytes);
+        try {
+          assert.throws(
+            () =>
+              execFileSync(
+                process.execPath,
+                [
+                  resolve('scripts/character-v2-muscles-qa.mjs'),
+                  'draft/catalog.json',
+                  '--root',
+                  f.folder,
+                ],
+                { encoding: 'utf8', stdio: 'pipe' },
+              ),
+            /Float32/,
+          );
+        } finally {
+          await rm(join(f.folder, output));
+        }
+      }
+    }
+  }));

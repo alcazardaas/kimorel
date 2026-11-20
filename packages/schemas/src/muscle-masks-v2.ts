@@ -16,7 +16,15 @@ export const sparseMuscleMaskV1Schema = z
       .array(
         z.strictObject({
           vertexIndex: z.int().nonnegative(),
-          weight: z.number().finite().gt(0).max(1),
+          weight: z
+            .number()
+            .finite()
+            .gt(0)
+            .max(1)
+            .refine(
+              (weight) => Math.fround(weight) > 0,
+              'Weight must retain positive support in Float32',
+            ),
         }),
       )
       .min(1),

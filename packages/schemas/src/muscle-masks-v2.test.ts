@@ -145,3 +145,31 @@ it('bounds dense allocation before allocating untrusted declared domains', () =>
   value.binding.vertexCount = maxMaskVertices + 1;
   expect(() => materializeSparseMask(value)).toThrow(/allocation limit/);
 });
+
+it.each([1e-50, Number.MIN_VALUE, 2 ** -150])(
+  'rejects Float32-zero support %s consistently, including mixed support',
+  (weight) => {
+    for (const mixed of [false, true]) {
+      const value = proposed();
+      value.weights = [{ vertexIndex: 0, weight }];
+      if (mixed) value.weights.push({ vertexIndex: 1, weight: 0.5 });
+      expect(() => sparseMuscleMaskV1Schema.parse(value)).toThrow(/Float32/);
+      expect(() => parseBoundSparseMask(value, mapping)).toThrow(/Float32/);
+      expect(() => serializeSparseMask(value)).toThrow(/Float32/);
+      expect(() => materializeSparseMask(value)).toThrow(/Float32/);
+    }
+  },
+);
+it('preserves minimum Float32 subnormal and just-above-half rounding without changing JSON weights', () => {
+  const minimum = 2 ** -149;
+  for (const weight of [minimum, 2 ** -150 * (1 + Number.EPSILON)]) {
+    const value = proposed();
+    value.weights = [{ vertexIndex: 0, weight }];
+    const parsed = parseBoundSparseMask(value, mapping);
+    expect(parsed.weights[0]!.weight).toBe(weight);
+    expect(JSON.parse(serializeSparseMask(value)).weights[0].weight).toBe(
+      weight,
+    );
+    expect(materializeSparseMask(value)[0]).toBe(minimum);
+  }
+});
