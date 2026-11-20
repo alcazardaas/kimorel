@@ -8,3 +8,9 @@ node_modules/
 odd/
 .venv/
 .atl/
+# Canonical generated payloads: shared serializer bytes are the bound SHA contract.
+pipeline/character-v2/masks/upper-arm-draft/left-deltoid.json
+pipeline/character-v2/masks/upper-arm-draft/right-deltoid.json
+pipeline/character-v2/masks/upper-arm-draft/left-biceps-brachii.json
+pipeline/character-v2/masks/upper-arm-draft/right-biceps-brachii.json
+pipeline/character-v2/muscles-upper-arm-draft/catalog.json

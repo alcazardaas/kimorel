@@ -1,0 +1,706 @@
+{
+  "schemaVersion": "kimorel.sparse-muscle-mask/v1",
+  "status": "draft-needs-review",
+  "purpose": "authoring-proposal",
+  "anatomicalValidation": false,
+  "binding": {
+    "id": "right-biceps-brachii",
+    "characterId": "kimorel-correctives-draft",
+    "characterVersion": "correctives-a9e0ad8",
+    "geometrySha256": "61e83ec439d3e04deeec2cd5da771181044bfaae3e75dcea75ec3b8342c9c587",
+    "catalogVersion": "upper-arm-surface-draft-1",
+    "surfaceMapVersion": "muscle-map-draft-1",
+    "meshIndex": 0,
+    "primitiveIndex": 0,
+    "vertexCount": 26939,
+    "identityIds": [
+      "right-biceps-brachii"
+    ],
+    "side": "right",
+    "representation": "external-region",
+    "approximation": "Conservative anterior belly only; excludes covered proximal tendons and distal elbow/forearm. Not complete muscle anatomy.",
+    "sourceIds": [
+      "elsevier-biceps",
+      "manipal-arm"
+    ],
+    "review": "pending"
+  },
+  "weights": [
+    {
+      "vertexIndex": 15997,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 15998,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 15999,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16000,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16001,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16002,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16003,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16004,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16005,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16006,
+      "weight": 0.6131135859436073
+    },
+    {
+      "vertexIndex": 16007,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16008,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16011,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16012,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16013,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16014,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16015,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16016,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16017,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16018,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16019,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16020,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16021,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16022,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16023,
+      "weight": 0.8142673312469048
+    },
+    {
+      "vertexIndex": 16024,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16025,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16026,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16027,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16028,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16029,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16031,
+      "weight": 0.541546635016876
+    },
+    {
+      "vertexIndex": 16040,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16041,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16042,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16043,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16044,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16045,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16046,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16047,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16048,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16049,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16073,
+      "weight": 0.42586120585866977
+    },
+    {
+      "vertexIndex": 16074,
+      "weight": 0.651102036664799
+    },
+    {
+      "vertexIndex": 16075,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16076,
+      "weight": 0.03699524193946354
+    },
+    {
+      "vertexIndex": 16087,
+      "weight": 0.2865725869538889
+    },
+    {
+      "vertexIndex": 16209,
+      "weight": 0.7932692569003674
+    },
+    {
+      "vertexIndex": 16226,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16227,
+      "weight": 0.8794031707328915
+    },
+    {
+      "vertexIndex": 16228,
+      "weight": 0.18546120040031655
+    },
+    {
+      "vertexIndex": 16230,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16231,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16232,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16233,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16234,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16235,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16236,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16237,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16238,
+      "weight": 0.2389790165664008
+    },
+    {
+      "vertexIndex": 16241,
+      "weight": 0.6376469551764345
+    },
+    {
+      "vertexIndex": 16242,
+      "weight": 0.2645018171676427
+    },
+    {
+      "vertexIndex": 16245,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16246,
+      "weight": 0.848284367065314
+    },
+    {
+      "vertexIndex": 16247,
+      "weight": 0.15996366905362744
+    },
+    {
+      "vertexIndex": 16250,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16251,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16252,
+      "weight": 0.01556970283901363
+    },
+    {
+      "vertexIndex": 16254,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16255,
+      "weight": 0.4023123807887753
+    },
+    {
+      "vertexIndex": 16256,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16257,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16288,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16289,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16290,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16291,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16292,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16293,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16294,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16295,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16296,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16297,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16298,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16299,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16300,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16301,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16302,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16303,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16304,
+      "weight": 0.3533466607126724
+    },
+    {
+      "vertexIndex": 16305,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16306,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16387,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16388,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16389,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16390,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16391,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16396,
+      "weight": 0.47975459435336093
+    },
+    {
+      "vertexIndex": 16403,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16404,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16405,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16406,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16407,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16408,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16409,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16410,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16411,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16412,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16413,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16414,
+      "weight": 0.5004417446265094
+    },
+    {
+      "vertexIndex": 16416,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16417,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16418,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16419,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16420,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16421,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16422,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16423,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16424,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16425,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16446,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16448,
+      "weight": 0.35796540725432446
+    },
+    {
+      "vertexIndex": 16449,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16450,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16451,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16452,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16453,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16454,
+      "weight": 0.8393262604589572
+    },
+    {
+      "vertexIndex": 16456,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16457,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16458,
+      "weight": 0.9760311588845312
+    },
+    {
+      "vertexIndex": 16481,
+      "weight": 0.35824455305988134
+    },
+    {
+      "vertexIndex": 16621,
+      "weight": 0.2517339829828873
+    },
+    {
+      "vertexIndex": 16622,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16623,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16624,
+      "weight": 0.6095893123557866
+    },
+    {
+      "vertexIndex": 16625,
+      "weight": 0.9088340141888019
+    },
+    {
+      "vertexIndex": 16628,
+      "weight": 0.047495417864395956
+    },
+    {
+      "vertexIndex": 16630,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16631,
+      "weight": 0.9524455187345009
+    },
+    {
+      "vertexIndex": 16660,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16661,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16665,
+      "weight": 0.26638942638002344
+    },
+    {
+      "vertexIndex": 16666,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16671,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16674,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16675,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16676,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16677,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16678,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16679,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16680,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16681,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16682,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16683,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16684,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16685,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16686,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16687,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16688,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16689,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16690,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16691,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16692,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16693,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16694,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16695,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16696,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16697,
+      "weight": 1
+    },
+    {
+      "vertexIndex": 16698,
+      "weight": 1
+    }
+  ]
+}

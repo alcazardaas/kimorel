@@ -1,0 +1,36 @@
+{
+  "status": "anatomical-surface-proposal-needs-review",
+  "humanApproval": false,
+  "anatomicalValidation": false,
+  "originalAuthoredDataLicense": "CC0-1.0",
+  "referenceArtworkCopied": false,
+  "sources": [
+    {
+      "id": "elsevier-deltoid",
+      "url": "https://www.elsevier.com/resources/anatomy/muscular-system/muscles-of-upper-limb-left/deltoid-muscle-left/19926",
+      "supports": "Deltoid triangular rounded shoulder contour, superficial relation, broad clavicular/acromial/scapular origins and humeral insertion. Does not specify this mesh's boundary."
+    },
+    {
+      "id": "elsevier-biceps",
+      "url": "https://www.elsevier.com/resources/anatomy/muscular-system/muscles-of-upper-limb-left/biceps-brachii-muscle-left/22937",
+      "supports": "Biceps brachii anterior arm and superficial relation to brachialis; belly proposal is not entire tendon/attachment anatomy."
+    },
+    {
+      "id": "manipal-arm",
+      "url": "https://mapkmc.manipal.edu/specimen/anat145/",
+      "supports": "Institutional dissection identifies deltoid shoulder and biceps front of arm, two heads and broad attachments."
+    }
+  ],
+  "authoredNotSourced": [
+    "Contour knots, angle widths, radial guards and feather widths",
+    "Transfer of anatomical regions to simplified unapproved body geometry",
+    "Mirroring initial left/right controls"
+  ],
+  "limitations": [
+    "No verified bony attachment landmarks on mesh",
+    "Skin surface is not a dissected muscle boundary",
+    "No separate deltoid heads or biceps heads/tendons",
+    "Existing underarm web artifact remains visible",
+    "No activation roles, recruitment estimates or clinical acceptance"
+  ]
+}
