@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "noEmit": true,
+    "types": ["vite/client", "node", "vitest/globals"],
+    "resolveJsonModule": true
+  },
+  "include": [
+    "src",
+    "../../vite.mask-preview.config.ts",
+    "../../playwright.mask-preview.config.ts",
+    "../../tests/mask-preview"
+  ]
+}

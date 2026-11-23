@@ -1,0 +1,179 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #16313d;
+  background: #f3f6f7;
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1360px;
+  margin: auto;
+  padding: 24px;
+}
+header {
+  max-width: 960px;
+}
+h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0.3em 0;
+}
+h2 {
+  font-size: 1.25rem;
+  margin-top: 0;
+}
+p {
+  line-height: 1.5;
+}
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.13em;
+  font-weight: 700;
+}
+.badge {
+  background: #fff1cc;
+  border: 1px solid #c98f12;
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 650;
+}
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 350px;
+  gap: 24px;
+}
+.stage,
+.controls {
+  border: 1px solid #becfd4;
+  border-radius: 12px;
+  background: white;
+  overflow: hidden;
+}
+.canvas {
+  height: 620px;
+  min-height: 360px;
+  touch-action: none;
+}
+.canvas canvas {
+  display: block;
+}
+.stage > p {
+  margin: 12px 20px;
+}
+.controls {
+  padding: 20px;
+}
+fieldset {
+  margin: 14px 0;
+  padding: 12px;
+  border: 1px solid #cbd5db;
+  border-radius: 6px;
+}
+legend {
+  font-weight: 650;
+}
+label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+select,
+button,
+input {
+  font: inherit;
+}
+select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #8aa0aa;
+  border-radius: 5px;
+  background: white;
+  color: inherit;
+}
+input[type='range'] {
+  display: block;
+  width: 100%;
+  margin: 12px 0;
+}
+.buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+button {
+  padding: 10px 16px;
+  background: #143f51;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #e38b13;
+  outline-offset: 3px;
+}
+.legend {
+  padding: 0;
+  list-style: none;
+  font-size: 0.8rem;
+}
+.legend li {
+  display: flex;
+  gap: 8px;
+  margin: 8px 0;
+  align-items: center;
+}
+.legend span {
+  height: 14px;
+  width: 14px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.limits,
+details {
+  font-size: 0.82rem;
+  color: #405c68;
+}
+code {
+  overflow-wrap: anywhere;
+  font-size: 0.7rem;
+}
+summary {
+  cursor: pointer;
+  font-weight: 650;
+}
+[role='alert'] {
+  color: #9b2020;
+}
+output {
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 780px) {
+  main {
+    padding: 14px;
+  }
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .canvas {
+    height: 440px;
+  }
+  .controls {
+    padding: 16px;
+  }
+  .badge {
+    font-size: 0.85rem;
+  }
+}
