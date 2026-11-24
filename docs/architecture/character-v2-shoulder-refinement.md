@@ -18,16 +18,15 @@ The shoulder target is rebuilt in posed space under the **new** skin matrices, t
 
 ## Reproduce and inspect
 
-The pinned native Blender5.2.4 execution requires parent/user approval; sandbox background execution is known to fail before useful processing. Do not download another toolchain or bypass quarantine.
+The committed generated variant is a historical snapshot built at `6c21116`. The later collar/source stabilization below has NOT been applied to that GLB, blend file, images or masks. Its manifest intentionally records the historical generator/helper hashes, not the latest helper source. A separately approved new variant and native Blender run are required before claiming the corrected source changes visible deformation. The current builder refuses to overwrite the existing frozen GLB. No regeneration is part of source stabilization.
 
 ```sh
-/Applications/Blender.app/Contents/MacOS/Blender --background --factory-startup --python-exit-code 1 --python pipeline/character-v2/build_shoulder_refinement.py
 node scripts/character-v2-shoulder-qa.mjs
 ```
 
 Inspect `pipeline/character-v2/shoulder-refinement/comparison.png`: matched old morph OFF, old morph ON and new weights/rebuilt morph ON closeups, followed by neutral and whole-body context. These are renders of actual exported GLBs reimported into Blender, not source-only viewport images or AI illustrations. Underarm shape limitations remain visible.
 
-Only after independent exported vertex/index equality and all shoulder gates pass may `node scripts/character-v2-shoulder-qa.mjs --bind-masks` exclusively create four separate mask copies and `muscle-catalog.json`. Sparse coverage values remain the old proposals; character/hash/catalog bindings change. The original masks and catalog are never rewritten. Anatomy review remains pending and activation roles stay empty.
+For an approved fresh output set, only after independent exported vertex/index equality and all shoulder gates pass may `node scripts/character-v2-shoulder-qa.mjs --bind-masks` stage and validate four separate mask copies and `muscle-catalog.json`, then exclusively publish them. The existing historical output paths deliberately refuse republication. Sparse coverage values remain the old proposals; character/hash/catalog bindings change. The original masks and catalog are never rewritten. Anatomy review remains pending and activation roles stay empty.
 
 ## Engineering gates
 
@@ -48,3 +47,15 @@ Remove only the new shoulder generator/helper/tests/doc, variant outputs and reb
 The completed first export retains exact neutral/index/normal bytes and reduces aggregate bilateral peak patch edge expansion from p95=2.531/max=5.453 to2.450/4.885; normal-turn p95 falls from0.218 to0.190radians. This is modest artifact reduction, not a resolved underarm: broad webbing, pinching and an outer-arm fold remain visible. The comparison received engineering visual readback only. Four rebound masks retain exactly their previous coverage values with new hash/version bindings and remain pending anatomical review.
 
 The five new canonical generated JSON paths are narrowly excluded from Prettier to preserve shared serializer/hash bytes; authored parameters, source, tests, provenance and documentation remain formatted normally.
+
+## Source stabilization after the historical build
+
+The earlier projection had a collar bug: any positive support replaced original torso identities with chest, even as support approached zero. The corrected helper now starts from the **original** distribution. A three-stage sparse handoff collapses only within original support, exchanges an original anchor for chest, then expands into the four local target names. This avoids pruning a five-to-eight-influence union into a discontinuous top-four result. At most four positive influences exist at each stage; zero support preserves the original dictionary exactly. Floating-point sum error remains bounded by normalized input rounding tolerance.
+
+Continuity is proven in the collar factor for fixed endpoint distributions, including the two phase boundaries. This does not prove global spatial continuity when original distributions or chosen anchors change across vertices. The graph-smoothed local target remains an engineering proposal, not anatomical weight painting. Existing historical strict QA gates remain unchanged; they validate the historical exported file, not the newly corrected helper. A future artifact needs collar-aware gates and full new deformation/export evidence rather than inheriting historical metrics.
+
+Shoulder mask rebinding now validates a private temporary bundle first, including the actual staged catalog and all four mask hashes/domains. Publication uses exclusive file creation and writes the catalog last. Ordinary write/validation/readback failures remove only files this attempt created, with device/inode ownership checks; preexisting files and exclusive-create collisions are never deleted or overwritten. A clean retry follows successful rollback. Temporary staging is removed on both success and failure.
+
+This is **recoverable ordinary-failure publication**, not crash-atomic multi-file storage. Concurrent readers can observe intermediate mask files before the final catalog; process termination/power loss, malicious path replacement and filesystem cleanup failures are not atomicity guarantees. Cleanup ownership/IO failures are surfaced, not silently retried. The underlying single-file writer remains a primitive; bundle behavior is provided by the new publication wrapper.
+
+Focused regressions cover zero/epsilon collar behavior, four-influence phase continuity, normalized weights and unchanged remote support. Publication tests inject a failure after every exclusive open, corrupt staged catalogs/masks, fail final readback, retry after rollback and protect every preexisting target plus a concurrent exclusive-create collision. No historical artifact is rewritten by these tests. Retargeted pilot work has not started.

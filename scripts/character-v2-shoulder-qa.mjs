@@ -1,6 +1,6 @@
 /** Independent exported shoulder engineering proof, never anatomy approval. */
 import assert from 'node:assert/strict';
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { Buffer } from 'node:buffer';
 import { resolve } from 'node:path';
@@ -20,8 +20,7 @@ import {
   maskBinding,
   serializeSparseMask,
 } from '../packages/schemas/dist/muscle-masks-v2.js';
-import { writeSparseMask } from './character-v2-mask-pipeline.mjs';
-import { validateMuscleCatalog } from './character-v2-muscles-qa.mjs';
+import { publishMaskBundle } from './character-v2-mask-publication.mjs';
 
 export const shoulderFile =
   'pipeline/character-v2/shoulder-refinement/character.glb';
@@ -390,14 +389,11 @@ export async function rebindMasks(bytes) {
     mapping.mask.sha256 = hash(serializeSparseMask(payload));
     proposed.push({ mapping, payload });
   }
-  for (const { mapping, payload } of proposed)
-    await writeSparseMask(catalog, payload, mapping.mask.file);
-  await writeFile(
-    folder + 'muscle-catalog.json',
-    JSON.stringify(catalog, null, 2) + '\n',
-    { flag: 'wx' },
-  );
-  await validateMuscleCatalog(catalog);
+  await publishMaskBundle({
+    catalog,
+    proposed,
+    catalogFile: folder + 'muscle-catalog.json',
+  });
   return proof;
 }
 if (

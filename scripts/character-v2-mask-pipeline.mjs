@@ -19,7 +19,7 @@ const projectRoot = new URL('../', import.meta.url);
 export const sparseMaskOutputPrefix = 'pipeline/character-v2/masks/';
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');
 
-async function checkedParents(root, file) {
+export async function checkedParents(root, file) {
   assetPathSchema.parse(file);
   const rootStat = await lstat(resolve(fileURLToPath(root)));
   assert(

@@ -158,6 +158,8 @@ def render_proof():
 def main():
     if bpy.app.version[:3] != (5, 2, 4):
         raise RuntimeError('Pinned Blender5.2.4 LTS required')
+    if (OUT / 'character.glb').exists():
+        raise RuntimeError('Frozen shoulder snapshot exists; corrected weights require a separately approved new variant, not overwrite')
     frozen = {str(p.relative_to(HERE)): digest(p) for name in ('correctives', 'deformation', 'prototype', 'muscles-upper-arm-draft', 'masks/upper-arm-draft') for p in (HERE/name).iterdir() if p.is_file()}
     source = HERE / 'correctives/source.blend'
     bpy.ops.wm.open_mainfile(filepath=str(source))
