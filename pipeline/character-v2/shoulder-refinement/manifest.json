@@ -1,0 +1,66 @@
+{
+  "status": "engineering-proposal-needs-review",
+  "humanApproval": false,
+  "anatomicalValidation": false,
+  "sourceLicense": "CC0-1.0",
+  "input": {
+    "path": "pipeline/character-v2/correctives/source.blend",
+    "sha256": "ac96917e81e38c25e9acac9126cc654bc6ed631e574f6e003270dd8c2a681f98"
+  },
+  "method": "Same topology local four-influence field smoothing; rebuilt posed-space shoulder corrective; original hip target preserved",
+  "changedWeightVertices": 4434,
+  "correction": {
+    "verticesChanged": 4358,
+    "maxPosedDeltaMeters": 0.027582045370810198
+  },
+  "generatorSha256": "f5a396f34eb6846828e12046ea62890c63f585076dc839cfe76733788c903c8c",
+  "helperSha256": "37c5bf7696dd9d061c6945b838c9d27437102eeb69d30f8f02dc3775273316d0",
+  "parametersSha256": "2325f6b0cec1bec8758518105741752e5d09968343979f7ca6f200b24dbb63bf",
+  "toolchain": {
+    "blender": "5.2.4 LTS",
+    "buildHash": "cd5dc428cce1"
+  },
+  "limitations": [
+    "Not anatomy/artist/device approved",
+    "Existing seven stress clips only",
+    "Neutral shoulder topology and silhouette unchanged"
+  ],
+  "files": {
+    "character.glb": {
+      "bytes": 2274428,
+      "sha256": "34269acc9eb9f6dba6c33740291bbae9772d4d647d0b22b367d6a5965d507d97"
+    },
+    "comparison.png": {
+      "bytes": 1274677,
+      "sha256": "5dded2b71e88c90d4d6dd4f54f900fde52a32b6c951fcc2b1a95e35d9a635a21"
+    },
+    "neutral-whole.png": {
+      "bytes": 268762,
+      "sha256": "f850e08235a581436b005ffd20f20e32e6999039f3a4b9c5d58c43d89d2cb76e"
+    },
+    "new-on.png": {
+      "bytes": 283695,
+      "sha256": "f88a94bd600f55494df37c6988984d6b4b567768b421eb78ac813174f2abe6c7"
+    },
+    "new-whole.png": {
+      "bytes": 264815,
+      "sha256": "124aa0d1dca9ed0e1e83f478fa1377e7049e69744715d1418bf87275da87438e"
+    },
+    "old-off.png": {
+      "bytes": 285155,
+      "sha256": "315ba0ffb1188d063da610e86e3b8888822cffed98cd440a003c1e874dadffa0"
+    },
+    "old-on.png": {
+      "bytes": 282983,
+      "sha256": "0ead6219d4a3cac772173276ad2d53827b1c97d424a836bdeac81bfe5b66d034"
+    },
+    "old-whole.png": {
+      "bytes": 264816,
+      "sha256": "1011ca99d182f3d45f5aa29c7453a0aad69e079259421c2d3665275218e261c1"
+    },
+    "source.blend": {
+      "bytes": 2695509,
+      "sha256": "d2984757b81ffbe1138a6630fc3e30a4d1fb7808618b7097c6378dc6b2ffe3c6"
+    }
+  }
+}

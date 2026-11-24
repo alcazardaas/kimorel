@@ -1,0 +1,18 @@
+{
+  "status": "engineering-proposal-needs-review",
+  "iterations": 16,
+  "step": 0.45,
+  "measuredPatch": {
+    "absoluteX": [0.15, 0.33],
+    "y": [1.25, 1.44],
+    "absoluteZMax": 0.09,
+    "minimumEdgeMeters": 0.001
+  },
+  "claims": "Local smoothing parameters are engineering choices, not population anatomy or clinical ranges.",
+  "limitations": [
+    "No topology/neutral silhouette correction",
+    "Torso influence projection is verified only for existing seven stress clips",
+    "Not artist-painted or anatomically approved weights",
+    "Existing draft masks remain pending anatomical review"
+  ]
+}

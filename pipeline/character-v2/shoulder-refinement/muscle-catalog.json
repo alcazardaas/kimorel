@@ -1,0 +1,482 @@
+{
+  "schemaVersion": "kimorel.muscle-semantics/v2-draft-1",
+  "catalogVersion": "shoulder-refinement-mask-draft-1",
+  "surfaceMapVersion": "muscle-map-draft-1",
+  "status": "draft-needs-review",
+  "character": {
+    "id": "kimorel-shoulder-refinement-draft",
+    "version": "shoulder-refinement-draft-1",
+    "file": "pipeline/character-v2/shoulder-refinement/character.glb",
+    "sha256": "34269acc9eb9f6dba6c33740291bbae9772d4d647d0b22b367d6a5965d507d97"
+  },
+  "sources": [
+    {
+      "id": "legacy-muscle-enum",
+      "kind": "project-metadata",
+      "locator": "packages/schemas/src/index.ts"
+    },
+    {
+      "id": "elsevier-deltoid",
+      "kind": "anatomy-reference",
+      "locator": "https://www.elsevier.com/resources/anatomy/muscular-system/muscles-of-upper-limb-left/deltoid-muscle-left/19926"
+    },
+    {
+      "id": "elsevier-biceps",
+      "kind": "anatomy-reference",
+      "locator": "https://www.elsevier.com/resources/anatomy/muscular-system/muscles-of-upper-limb-left/biceps-brachii-muscle-left/22937"
+    },
+    {
+      "id": "manipal-arm",
+      "kind": "anatomy-reference",
+      "locator": "https://mapkmc.manipal.edu/specimen/anat145/"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "legacy-quadriceps",
+      "legacyId": "quadriceps",
+      "label": "Quadriceps",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": [
+        "legacy-muscle-enum"
+      ]
+    },
+    {
+      "id": "legacy-gluteus-maximus",
+      "legacyId": "gluteus-maximus",
+      "label": "Gluteus maximus",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": [
+        "legacy-muscle-enum"
+      ]
+    },
+    {
+      "id": "legacy-adductors",
+      "legacyId": "adductors",
+      "label": "Adductors",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": [
+        "legacy-muscle-enum"
+      ]
+    },
+    {
+      "id": "legacy-erector-spinae",
+      "legacyId": "erector-spinae",
+      "label": "Erector spinae",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": [
+        "legacy-muscle-enum"
+      ]
+    },
+    {
+      "id": "legacy-pectoralis-major",
+      "legacyId": "pectoralis-major",
+      "label": "Pectoralis major",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": [
+        "legacy-muscle-enum"
+      ]
+    },
+    {
+      "id": "legacy-deltoids",
+      "legacyId": "deltoids",
+      "label": "Deltoids",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": [
+        "legacy-muscle-enum"
+      ]
+    },
+    {
+      "id": "legacy-triceps",
+      "legacyId": "triceps",
+      "label": "Triceps",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": [
+        "legacy-muscle-enum"
+      ]
+    },
+    {
+      "id": "legacy-biceps",
+      "legacyId": "biceps",
+      "label": "Biceps",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": [
+        "legacy-muscle-enum"
+      ]
+    },
+    {
+      "id": "legacy-hamstrings",
+      "legacyId": "hamstrings",
+      "label": "Hamstrings",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": [
+        "legacy-muscle-enum"
+      ]
+    },
+    {
+      "id": "legacy-calves",
+      "legacyId": "calves",
+      "label": "Calves",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": [
+        "legacy-muscle-enum"
+      ]
+    },
+    {
+      "id": "legacy-tibialis-anterior",
+      "legacyId": "tibialis-anterior",
+      "label": "Tibialis anterior",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": [
+        "legacy-muscle-enum"
+      ]
+    },
+    {
+      "id": "legacy-abdominals",
+      "legacyId": "abdominals",
+      "label": "Abdominals",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": [
+        "legacy-muscle-enum"
+      ]
+    },
+    {
+      "id": "legacy-latissimus-dorsi",
+      "legacyId": "latissimus-dorsi",
+      "label": "Latissimus dorsi",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": [
+        "legacy-muscle-enum"
+      ]
+    },
+    {
+      "id": "legacy-forearms",
+      "legacyId": "forearms",
+      "label": "Forearms",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": [
+        "legacy-muscle-enum"
+      ]
+    },
+    {
+      "id": "legacy-serratus-anterior",
+      "legacyId": "serratus-anterior",
+      "label": "Serratus anterior",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": [
+        "legacy-muscle-enum"
+      ]
+    },
+    {
+      "id": "legacy-rotator-cuff",
+      "legacyId": "rotator-cuff",
+      "label": "Rotator cuff",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": [
+        "legacy-muscle-enum"
+      ]
+    },
+    {
+      "id": "legacy-obliques",
+      "legacyId": "obliques",
+      "label": "Obliques",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": [
+        "legacy-muscle-enum"
+      ]
+    },
+    {
+      "id": "legacy-upper-back",
+      "legacyId": "upper-back",
+      "label": "Upper back",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": [
+        "legacy-muscle-enum"
+      ]
+    },
+    {
+      "id": "legacy-hip-abductors",
+      "legacyId": "hip-abductors",
+      "label": "Hip abductors",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": [
+        "legacy-muscle-enum"
+      ]
+    },
+    {
+      "id": "legacy-hip-flexors",
+      "legacyId": "hip-flexors",
+      "label": "Hip flexors",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": [
+        "legacy-muscle-enum"
+      ]
+    },
+    {
+      "id": "legacy-neck",
+      "legacyId": "neck",
+      "label": "Neck",
+      "kind": "legacy-concept",
+      "side": "unknown",
+      "depth": "unknown",
+      "representation": "semantic-only",
+      "review": "pending",
+      "sourceIds": [
+        "legacy-muscle-enum"
+      ]
+    }
+  ],
+  "identities": [
+    {
+      "id": "left-deltoid",
+      "label": "left deltoid — draft",
+      "kind": "muscle",
+      "side": "left",
+      "depth": "superficial",
+      "visibility": "external-region-candidate",
+      "legacyConceptIds": [
+        "legacy-deltoids"
+      ],
+      "sourceIds": [
+        "elsevier-deltoid",
+        "manipal-arm"
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "left-biceps-brachii",
+      "label": "left biceps-brachii — draft",
+      "kind": "muscle",
+      "side": "left",
+      "depth": "superficial",
+      "visibility": "external-region-candidate",
+      "legacyConceptIds": [
+        "legacy-biceps"
+      ],
+      "sourceIds": [
+        "elsevier-biceps",
+        "manipal-arm"
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "right-deltoid",
+      "label": "right deltoid — draft",
+      "kind": "muscle",
+      "side": "right",
+      "depth": "superficial",
+      "visibility": "external-region-candidate",
+      "legacyConceptIds": [
+        "legacy-deltoids"
+      ],
+      "sourceIds": [
+        "elsevier-deltoid",
+        "manipal-arm"
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "right-biceps-brachii",
+      "label": "right biceps-brachii — draft",
+      "kind": "muscle",
+      "side": "right",
+      "depth": "superficial",
+      "visibility": "external-region-candidate",
+      "legacyConceptIds": [
+        "legacy-biceps"
+      ],
+      "sourceIds": [
+        "elsevier-biceps",
+        "manipal-arm"
+      ],
+      "review": "pending"
+    }
+  ],
+  "surfaceMappings": [
+    {
+      "id": "left-deltoid",
+      "characterId": "kimorel-shoulder-refinement-draft",
+      "characterVersion": "shoulder-refinement-draft-1",
+      "geometrySha256": "34269acc9eb9f6dba6c33740291bbae9772d4d647d0b22b367d6a5965d507d97",
+      "catalogVersion": "shoulder-refinement-mask-draft-1",
+      "surfaceMapVersion": "muscle-map-draft-1",
+      "meshIndex": 0,
+      "primitiveIndex": 0,
+      "vertexCount": 26939,
+      "mask": {
+        "file": "pipeline/character-v2/masks/shoulder-refinement/left-deltoid.json",
+        "sha256": "7fd2111fe47df666cae682cd27c4ce8ba1b820712f4040d310eefef120328a61"
+      },
+      "identityIds": [
+        "left-deltoid"
+      ],
+      "side": "left",
+      "representation": "external-region",
+      "approximation": "Authored shoulder cap taper; angular extent spans anterior/lateral/posterior cap, excludes medial axilla. Not measured attachment landmarks.",
+      "sourceIds": [
+        "elsevier-deltoid",
+        "manipal-arm"
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "left-biceps-brachii",
+      "characterId": "kimorel-shoulder-refinement-draft",
+      "characterVersion": "shoulder-refinement-draft-1",
+      "geometrySha256": "34269acc9eb9f6dba6c33740291bbae9772d4d647d0b22b367d6a5965d507d97",
+      "catalogVersion": "shoulder-refinement-mask-draft-1",
+      "surfaceMapVersion": "muscle-map-draft-1",
+      "meshIndex": 0,
+      "primitiveIndex": 0,
+      "vertexCount": 26939,
+      "mask": {
+        "file": "pipeline/character-v2/masks/shoulder-refinement/left-biceps-brachii.json",
+        "sha256": "76df349d8b54b481202a9b4e742468fe1a00121c528d0f4347282bca639becbd"
+      },
+      "identityIds": [
+        "left-biceps-brachii"
+      ],
+      "side": "left",
+      "representation": "external-region",
+      "approximation": "Conservative anterior belly only; excludes covered proximal tendons and distal elbow/forearm. Not complete muscle anatomy.",
+      "sourceIds": [
+        "elsevier-biceps",
+        "manipal-arm"
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "right-deltoid",
+      "characterId": "kimorel-shoulder-refinement-draft",
+      "characterVersion": "shoulder-refinement-draft-1",
+      "geometrySha256": "34269acc9eb9f6dba6c33740291bbae9772d4d647d0b22b367d6a5965d507d97",
+      "catalogVersion": "shoulder-refinement-mask-draft-1",
+      "surfaceMapVersion": "muscle-map-draft-1",
+      "meshIndex": 0,
+      "primitiveIndex": 0,
+      "vertexCount": 26939,
+      "mask": {
+        "file": "pipeline/character-v2/masks/shoulder-refinement/right-deltoid.json",
+        "sha256": "f2d8dd987603a51441a8cc64cb46ad4528282ee197417cf38955ddf2e01416ae"
+      },
+      "identityIds": [
+        "right-deltoid"
+      ],
+      "side": "right",
+      "representation": "external-region",
+      "approximation": "Authored shoulder cap taper; angular extent spans anterior/lateral/posterior cap, excludes medial axilla. Not measured attachment landmarks.",
+      "sourceIds": [
+        "elsevier-deltoid",
+        "manipal-arm"
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "right-biceps-brachii",
+      "characterId": "kimorel-shoulder-refinement-draft",
+      "characterVersion": "shoulder-refinement-draft-1",
+      "geometrySha256": "34269acc9eb9f6dba6c33740291bbae9772d4d647d0b22b367d6a5965d507d97",
+      "catalogVersion": "shoulder-refinement-mask-draft-1",
+      "surfaceMapVersion": "muscle-map-draft-1",
+      "meshIndex": 0,
+      "primitiveIndex": 0,
+      "vertexCount": 26939,
+      "mask": {
+        "file": "pipeline/character-v2/masks/shoulder-refinement/right-biceps-brachii.json",
+        "sha256": "0320fbd04323fd65f2ec4c107cbc70c2c7ad81bccd0e7b8be452dae9b281c85b"
+      },
+      "identityIds": [
+        "right-biceps-brachii"
+      ],
+      "side": "right",
+      "representation": "external-region",
+      "approximation": "Conservative anterior belly only; excludes covered proximal tendons and distal elbow/forearm. Not complete muscle anatomy.",
+      "sourceIds": [
+        "elsevier-biceps",
+        "manipal-arm"
+      ],
+      "review": "pending"
+    }
+  ],
+  "exerciseRoles": []
+}

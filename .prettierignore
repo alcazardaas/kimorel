@@ -14,3 +14,9 @@ pipeline/character-v2/masks/upper-arm-draft/right-deltoid.json
 pipeline/character-v2/masks/upper-arm-draft/left-biceps-brachii.json
 pipeline/character-v2/masks/upper-arm-draft/right-biceps-brachii.json
 pipeline/character-v2/muscles-upper-arm-draft/catalog.json
+# Same-topology shoulder variant: canonical generated JSON remains SHA-bound.
+pipeline/character-v2/masks/shoulder-refinement/left-deltoid.json
+pipeline/character-v2/masks/shoulder-refinement/right-deltoid.json
+pipeline/character-v2/masks/shoulder-refinement/left-biceps-brachii.json
+pipeline/character-v2/masks/shoulder-refinement/right-biceps-brachii.json
+pipeline/character-v2/shoulder-refinement/muscle-catalog.json
