@@ -1,0 +1,134 @@
+{
+  "status": "experimental-pilot-needs-review",
+  "humanApproval": false,
+  "anatomicalValidation": false,
+  "sourceLicense": "CC0-1.0",
+  "changedWeightVertices": 10644,
+  "shoulderCorrection": {
+    "verticesChanged": 4359,
+    "maxPosedDeltaMeters": 0.028000026007368818
+  },
+  "generatorSha256": "fce5fc9c8f00d41f103386c1bf159ce2c6f3056e15a814c7296af592ec840553",
+  "helperSha256": "3601bf07303f5b0290042475308946fafc2979d5b6a624e7c5fcb9ffe646b9f9",
+  "weightHelperSha256": "36d9d5d21ee0f7fe7529c3fe105b54980239b5b26934bc0e56d65f6138480bbf",
+  "toolchain": {
+    "blender": "5.2.4 LTS",
+    "buildHash": "cd5dc428cce1"
+  },
+  "inputSource": {
+    "file": "correctives/source.blend",
+    "sha256": "ac96917e81e38c25e9acac9126cc654bc6ed631e574f6e003270dd8c2a681f98"
+  },
+  "limitations": [
+    "Draft anatomy/topology and combined-pose correctives not accepted",
+    "No physical device acceptance",
+    "No default viewer or v1 registry replacement"
+  ],
+  "files": {
+    "bodyweight-squat-comparison.png": {
+      "bytes": 1115779,
+      "sha256": "9683f39655b9b18c789bd53d888e713b2715a97d448758be7a8850c425fc12cc"
+    },
+    "bodyweight-squat-v1-front.png": {
+      "bytes": 209705,
+      "sha256": "c9ccd18073d17b0cda2174b4983e142af75c3981f4f416ef50801e71450d100e"
+    },
+    "bodyweight-squat-v1-quarter.png": {
+      "bytes": 244268,
+      "sha256": "38aa04a04e1ed681f4b1b4d45aabcfb6947c9615ccd61cf779105e24108d2016"
+    },
+    "bodyweight-squat-v1-side.png": {
+      "bytes": 211027,
+      "sha256": "6fe858d2ca0177c6005b7588062c74464a9b65142e53217e07fe841494c5636d"
+    },
+    "bodyweight-squat-v2-front.png": {
+      "bytes": 210916,
+      "sha256": "d967a1b3f27dd5346fc9b4870eb98814bcf2a252d14f32876cf31cd561e920fd"
+    },
+    "bodyweight-squat-v2-quarter.png": {
+      "bytes": 244922,
+      "sha256": "04df8b01a84c8e86329ad8dab59019163762b1ed4a3cbdb45f4cf7133221cdc4"
+    },
+    "bodyweight-squat-v2-side.png": {
+      "bytes": 211835,
+      "sha256": "9ca8c8c57c45cb156e9a1ec46c849c24aa8e258724a7fdc5c94f4feab5128972"
+    },
+    "bodyweight-squat.glb": {
+      "bytes": 2136660,
+      "sha256": "aa4d75481e1681078b6ba0122d2962937dc1b8515653091f4650c3f58f3b89c4"
+    },
+    "character.glb": {
+      "bytes": 2086164,
+      "sha256": "c7b0bcd52e36f0f281cd13e990c65db9907e3a27ee162a1790837d7236a50571"
+    },
+    "dumbbell-shoulder-press-comparison.png": {
+      "bytes": 1087574,
+      "sha256": "bdcb7d68009aeef3037f47a15611ea34eecfb7c4169e9c30dab6aa988540c9c4"
+    },
+    "dumbbell-shoulder-press-v1-front.png": {
+      "bytes": 208968,
+      "sha256": "00a9f983087c88542c3fadf26b4e4945602979a81f793217a8210fc455d6ab92"
+    },
+    "dumbbell-shoulder-press-v1-quarter.png": {
+      "bytes": 231533,
+      "sha256": "745719c7ca44355b799d8b7c11771ad95f610762fbdaab5267a42479660cade1"
+    },
+    "dumbbell-shoulder-press-v1-side.png": {
+      "bytes": 202789,
+      "sha256": "294f3370bffb914f13627366245e3d14fc5b21f173d7adee286fdb7330a11d20"
+    },
+    "dumbbell-shoulder-press-v2-front.png": {
+      "bytes": 210413,
+      "sha256": "ff427badb3700cc5cea9cbf9616110e0aa685f71cdf2a7fb4b9ba9510558c2e1"
+    },
+    "dumbbell-shoulder-press-v2-quarter.png": {
+      "bytes": 232758,
+      "sha256": "c85940deb9f55353d629560c0b0fb842febc45af9a8a3b4474d10ce7ebc248ac"
+    },
+    "dumbbell-shoulder-press-v2-side.png": {
+      "bytes": 203387,
+      "sha256": "018f558c729b94912a6f8499e18b5370a480a1aa3a74f3e6bdd4faf6075cd9e0"
+    },
+    "dumbbell-shoulder-press.glb": {
+      "bytes": 2149004,
+      "sha256": "1013c7f16017c34e50df2288291b4458f9d91f171d62cd6649f4434dcc614c42"
+    },
+    "push-up-comparison.png": {
+      "bytes": 1074304,
+      "sha256": "07d0d4c92ad95aa8468e8edbe6f5912cb3089f7052c8e70f749c051b17e9846e"
+    },
+    "push-up-v1-front.png": {
+      "bytes": 207554,
+      "sha256": "966af055f40b6da8bfb8996a2aabd5d42f336b58d7b8fdaf13c7aa7ffd514157"
+    },
+    "push-up-v1-quarter.png": {
+      "bytes": 239575,
+      "sha256": "727c29f0eb7a26d52fde6e56fe0c6b5346eadaed1acc692fcc0b496e992f16b6"
+    },
+    "push-up-v1-side.png": {
+      "bytes": 201503,
+      "sha256": "a23d2937984627204921b37e33ccd54712e2066ab4266cb6af539fed25336a11"
+    },
+    "push-up-v2-front.png": {
+      "bytes": 208172,
+      "sha256": "61a63ecd95dd983cd47d05f0f84a37bc68339b4f211ce350697bdbc1dd74eecc"
+    },
+    "push-up-v2-quarter.png": {
+      "bytes": 240090,
+      "sha256": "cdfeab4f63a4c00dacc154aa631652bc7ce416c4b3489bba02feb534d5fe1017"
+    },
+    "push-up-v2-side.png": {
+      "bytes": 202929,
+      "sha256": "f9c6492c8c2123b212a720b98f8e9987d7944915bafcf5165d0d5131902e3ca0"
+    },
+    "push-up.glb": {
+      "bytes": 2136116,
+      "sha256": "96b075f4a9868b8ea6e1d74cd2db347138f1363363d4953f98107d6f48170484"
+    },
+    "source.blend": {
+      "bytes": 2574713,
+      "sha256": "18ad766419af8d78a799925932db71af9613f42ed82d7ee621cefb9b04c691af"
+    }
+  },
+  "nativeWeightProofSha256": "eb625a1cd87b5ba652b2d9204d6b225f5db0f93a0556a53e5de8f0ff6940800a"
+}

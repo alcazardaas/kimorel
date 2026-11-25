@@ -20,3 +20,26 @@ pipeline/character-v2/masks/shoulder-refinement/right-deltoid.json
 pipeline/character-v2/masks/shoulder-refinement/left-biceps-brachii.json
 pipeline/character-v2/masks/shoulder-refinement/right-biceps-brachii.json
 pipeline/character-v2/shoulder-refinement/muscle-catalog.json
+
+# Canonical generated exercise reference retains generator bytes.
+pipeline/character-v2/exercise-pilot/retarget-contract.json
+
+# Canonical generated native skin provenance retains source-bound bytes.
+pipeline/character-v2/exercise-pilot/native-weight-proof.json
+
+# Canonical hash-bound exercise pilot draft masks and catalogs.
+pipeline/character-v2/masks/exercise-pilot/bodyweight-squat/left-biceps-brachii.json
+pipeline/character-v2/masks/exercise-pilot/bodyweight-squat/left-deltoid.json
+pipeline/character-v2/masks/exercise-pilot/bodyweight-squat/right-biceps-brachii.json
+pipeline/character-v2/masks/exercise-pilot/bodyweight-squat/right-deltoid.json
+pipeline/character-v2/masks/exercise-pilot/dumbbell-shoulder-press/left-biceps-brachii.json
+pipeline/character-v2/masks/exercise-pilot/dumbbell-shoulder-press/left-deltoid.json
+pipeline/character-v2/masks/exercise-pilot/dumbbell-shoulder-press/right-biceps-brachii.json
+pipeline/character-v2/masks/exercise-pilot/dumbbell-shoulder-press/right-deltoid.json
+pipeline/character-v2/masks/exercise-pilot/push-up/left-biceps-brachii.json
+pipeline/character-v2/masks/exercise-pilot/push-up/left-deltoid.json
+pipeline/character-v2/masks/exercise-pilot/push-up/right-biceps-brachii.json
+pipeline/character-v2/masks/exercise-pilot/push-up/right-deltoid.json
+pipeline/character-v2/exercise-pilot/bodyweight-squat-muscle-catalog.json
+pipeline/character-v2/exercise-pilot/dumbbell-shoulder-press-muscle-catalog.json
+pipeline/character-v2/exercise-pilot/push-up-muscle-catalog.json

@@ -42,7 +42,7 @@ def sparse_handoff(original, target, amount):
         left, right, t = {'chest': 1.}, target, smoothstep(2/3, 1., amount)
     # Do not normalize the original endpoint away at infinitesimal support.
     # Sum error stays bounded by normalized input Float32 rounding tolerance.
-    value = {name: (1-t)*left.get(name, 0.)+t*right.get(name, 0.) for name in set(left) | set(right)}
+    value = {name: (1-t)*left.get(name, 0.)+t*right.get(name, 0.) for name in sorted(set(left) | set(right))}
     return {name: weight for name, weight in value.items() if weight > 0}
 
 
