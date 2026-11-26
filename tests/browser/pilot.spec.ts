@@ -81,7 +81,17 @@ test('three exact pilot exports play opt-in; v1 stays default and unsupported fa
     await controls(page)
       .getByRole('button', { name: 'Play', exact: true })
       .click();
-    await page.waitForTimeout(350);
+    await expect
+      .poll(async () =>
+        Number(
+          (
+            await page
+              .getByRole('timer', { name: 'Animation time' })
+              .innerText()
+          ).split(' / ')[0],
+        ),
+      )
+      .toBeGreaterThan(2.05);
     await expect(page.locator('canvas')).toHaveCount(1);
     const response = await page.request.get(
       `/kimorel/assets/character-v2/${id}.glb`,
@@ -136,4 +146,54 @@ test('failed v2 load restores a usable v1 viewer and allows retry', async ({
   await expect(
     controls(page).getByRole('button', { name: 'Pause', exact: true }),
   ).toBeEnabled();
+});
+
+test('v2 clock advances at half speed relative to normal speed and stops when paused', async ({
+  page,
+}) => {
+  // Install before navigation; let loading run normally before taking control.
+  await page.clock.install();
+  await page.goto('/kimorel/');
+  await choose(page, 'Bodyweight squat');
+  await page.getByRole('checkbox', { name: toggleName }).check();
+  const play = controls(page).getByRole('button', {
+    name: 'Play',
+    exact: true,
+  });
+  const pause = controls(page).getByRole('button', {
+    name: 'Pause',
+    exact: true,
+  });
+  const timer = page.getByRole('timer', { name: 'Animation time' });
+  await expect(pause).toBeEnabled();
+  await pause.click();
+  await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
+  const time = async () => Number((await timer.innerText()).split(' / ')[0]);
+  const elapsed: number[] = [];
+  for (const speed of ['0.5', '1']) {
+    await controls(page)
+      .getByRole('combobox', { name: 'Playback speed' })
+      .selectOption(speed);
+    // The page clock is stopped: dispatch events without waiting for actionability rAFs.
+    await controls(page)
+      .getByRole('button', { name: 'Restart', exact: true })
+      .dispatchEvent('click');
+    await expect(timer).toHaveText('0.000 / 4.000 s');
+    await page.clock.runFor(32); // Drain paused demand-render frames before measuring.
+    await play.dispatchEvent('click');
+    await expect(pause).toBeEnabled();
+    await page.clock.runFor(1500); // Every scheduled rAF runs; no wall-clock sleep or skipped frames.
+    const advanced = await time();
+    expect(advanced).toBeGreaterThan(0.5); // Frozen playback cannot pass either rate.
+    expect(Math.abs(advanced - Number(speed) * 1.5)).toBeLessThan(0.12);
+    elapsed.push(advanced);
+    await pause.dispatchEvent('click');
+    await expect(play).toBeEnabled();
+    const stopped = await timer.innerText();
+    await page.clock.runFor(1000);
+    await expect(timer).toHaveText(stopped);
+  }
+  // Allow the viewer's 100ms timeline-report cadence, not a timing-insensitive DOM assertion.
+  expect(elapsed[1]! / elapsed[0]!).toBeGreaterThan(1.7);
+  expect(elapsed[1]! / elapsed[0]!).toBeLessThan(2.3);
 });
