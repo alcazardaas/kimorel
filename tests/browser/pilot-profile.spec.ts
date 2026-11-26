@@ -7,6 +7,7 @@ import {
   installProfileProbe,
   sampleDraws,
   profileProvenance,
+  profileContextOptions,
 } from './profile-metrics';
 import type { ProfileProbe } from './profile-metrics';
 
@@ -25,6 +26,12 @@ test('collect opt-in local pilot performance observations', async ({
   browser,
   headless,
   browserName,
+  viewport,
+  deviceScaleFactor,
+  isMobile,
+  hasTouch,
+  screen,
+  userAgent,
 }, info) => {
   test.skip(
     process.env.KIMOREL_PROFILE !== '1',
@@ -39,6 +46,14 @@ test('collect opt-in local pilot performance observations', async ({
   } finally {
     await session.detach();
   }
+  const contextOptions = profileContextOptions({
+    viewport,
+    deviceScaleFactor,
+    isMobile,
+    hasTouch,
+    screen,
+    userAgent,
+  });
   const samples = [];
   for (const [id, name] of [
     ['bodyweight-squat', 'Bodyweight squat'],
@@ -47,8 +62,7 @@ test('collect opt-in local pilot performance observations', async ({
   ]) {
     for (const variant of ['v1', 'v2']) {
       const context = await browser.newContext({
-        viewport: { width: 1280, height: 900 },
-        deviceScaleFactor: 1,
+        ...contextOptions,
         reducedMotion: 'no-preference',
         serviceWorkers: 'block',
       });
@@ -118,6 +132,21 @@ test('collect opt-in local pilot performance observations', async ({
           'The actual animation must advance during sampling',
         ).toBeGreaterThan(5);
         const draws = sampleDraws(observation.before, observation.after);
+        expect(page.viewportSize()).toEqual(contextOptions.viewport);
+        expect(observation.viewport).toEqual({
+          ...contextOptions.viewport,
+          dpr: contextOptions.deviceScaleFactor,
+        });
+        expect(observation.emulationObserved.screen).toEqual(
+          contextOptions.screen,
+        );
+        expect(observation.emulationObserved.touchPoints > 0).toBe(
+          contextOptions.hasTouch,
+        );
+        if (contextOptions.userAgent !== undefined)
+          expect(observation.emulationObserved.userAgent).toBe(
+            contextOptions.userAgent,
+          );
         const resource = await page.evaluate((url) => {
           const entries = performance.getEntriesByName(
             url,
@@ -155,6 +184,9 @@ test('collect opt-in local pilot performance observations', async ({
     project: info.project.name,
     environment: {
       ...environment,
+      emulationInput: contextOptions,
+      emulationLimitation:
+        'Project mobile/touch settings are browser emulation, not a physical device',
       physicalDevice: false,
       unmaskedHardwareIdentity: 'Not queried (privacy)',
       warmupMs: 1000,

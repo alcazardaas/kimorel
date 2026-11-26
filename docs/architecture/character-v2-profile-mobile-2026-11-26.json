@@ -1,0 +1,1042 @@
+{
+  "schema": "kimorel.local-pilot-profile/v1",
+  "browserVersion": "159.0.8154.6",
+  "project": "mobile-chromium",
+  "environment": {
+    "headless": true,
+    "renderingBackend": "Requested ANGLE SwiftShader (verified actual Chromium launch switches)",
+    "provenance": "Effective Playwright headless fixture matched actual Chromium command line; no raw argv retained",
+    "backendLimitation": "Launch request is verified; unmasked GPU identity and GPU completion are not queried",
+    "emulationInput": {
+      "viewport": {
+        "width": 412,
+        "height": 839
+      },
+      "screen": {
+        "width": 412,
+        "height": 915
+      },
+      "deviceScaleFactor": 2.625,
+      "isMobile": true,
+      "hasTouch": true,
+      "userAgent": "Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/159.0.8154.6 Mobile Safari/537.36"
+    },
+    "emulationLimitation": "Project mobile/touch settings are browser emulation, not a physical device",
+    "physicalDevice": false,
+    "unmaskedHardwareIdentity": "Not queried (privacy)",
+    "warmupMs": 1000,
+    "sampleTargetMs": 5000,
+    "cache": "Fresh browser context per sample; local loopback/OS caches may be warm"
+  },
+  "limitations": [
+    "Scheduling FPS is requestAnimationFrame cadence, NOT GPU completion or display presentation",
+    "WebGL counters are live API objects/draw invocations, NOT byte sizes or Three.js geometries; injection adds overhead",
+    "Only five common core draw methods counted; extension multi-draw is not instrumented",
+    "Selection-to-ready includes UI/load/parse; ready control is not shader-completion proof",
+    "No performance acceptance thresholds or physical-phone acceptance"
+  ],
+  "threeGeometryMemory": {
+    "available": false,
+    "reason": "No renderer.info hook added to the shipping viewer"
+  },
+  "gpuMemory": {
+    "available": false,
+    "reason": "No portable GPU-memory measurement API"
+  },
+  "processMemory": {
+    "available": false,
+    "reason": "Not sampled; JS heap does not represent browser process memory"
+  },
+  "samples": [
+    {
+      "exercise": "bodyweight-squat",
+      "variant": "v1",
+      "readyMs": 462.90000009536743,
+      "asset": {
+        "bytes": 637496,
+        "sha256": "b225d7512d484f1e5234dcaed1c45dbfcd59d2ea3a8a8397b6550dbf63ccccd7",
+        "loopbackResourceTiming": [
+          {
+            "durationMs": 3.0999999046325684,
+            "transferBytes": 637796,
+            "encodedBodyBytes": 637496,
+            "decodedBodyBytes": 637496
+          }
+        ]
+      },
+      "elapsedMs": 5004.400000095367,
+      "timelineUpdates": 46,
+      "before": [
+        {
+          "drawingBuffer": {
+            "width": 0,
+            "height": 0
+          },
+          "cssSize": {
+            "width": 0,
+            "height": 0
+          },
+          "contextId": 1,
+          "lossEvents": 1,
+          "attached": false,
+          "contextLost": true,
+          "draws": 9,
+          "liveBuffers": 0,
+          "liveTextures": 4,
+          "livePrograms": 1,
+          "renderer": "null",
+          "vendor": "null",
+          "version": "null"
+        },
+        {
+          "drawingBuffer": {
+            "width": 549,
+            "height": 660
+          },
+          "cssSize": {
+            "width": 366,
+            "height": 440
+          },
+          "contextId": 2,
+          "lossEvents": 0,
+          "attached": true,
+          "contextLost": false,
+          "draws": 93,
+          "liveBuffers": 9,
+          "liveTextures": 6,
+          "livePrograms": 2,
+          "renderer": "WebKit WebGL",
+          "vendor": "WebKit",
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+        }
+      ],
+      "after": [
+        {
+          "drawingBuffer": {
+            "width": 0,
+            "height": 0
+          },
+          "cssSize": {
+            "width": 0,
+            "height": 0
+          },
+          "contextId": 1,
+          "lossEvents": 1,
+          "attached": false,
+          "contextLost": true,
+          "draws": 9,
+          "liveBuffers": 0,
+          "liveTextures": 4,
+          "livePrograms": 1,
+          "renderer": "null",
+          "vendor": "null",
+          "version": "null"
+        },
+        {
+          "drawingBuffer": {
+            "width": 549,
+            "height": 660
+          },
+          "cssSize": {
+            "width": 366,
+            "height": 440
+          },
+          "contextId": 2,
+          "lossEvents": 0,
+          "attached": true,
+          "contextLost": false,
+          "draws": 691,
+          "liveBuffers": 9,
+          "liveTextures": 6,
+          "livePrograms": 2,
+          "renderer": "WebKit WebGL",
+          "vendor": "WebKit",
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+        }
+      ],
+      "emulationObserved": {
+        "touchPoints": 1,
+        "coarsePointer": true,
+        "userAgent": "Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/159.0.8154.6 Mobile Safari/537.36",
+        "screen": {
+          "width": 412,
+          "height": 915
+        }
+      },
+      "viewport": {
+        "width": 412,
+        "height": 839,
+        "dpr": 2.625
+      },
+      "draws": {
+        "contextId": 2,
+        "drawInvocations": 598
+      },
+      "scheduling": {
+        "available": true,
+        "samples": 298,
+        "meanMs": 16.77818791946309,
+        "medianMs": 16.699999999999818,
+        "p95Ms": 16.700000000000728,
+        "p99Ms": 16.800000000000182,
+        "maxMs": 33.30000000000018,
+        "schedulingFps": 59.60119202384047
+      },
+      "jsHeap": {
+        "available": true,
+        "bytes": {
+          "used": 21700000,
+          "allocated": 29400000,
+          "limit": 3760000000
+        },
+        "limitation": "Coarse Chromium JS heap only; not GPU or process memory"
+      }
+    },
+    {
+      "exercise": "bodyweight-squat",
+      "variant": "v2",
+      "readyMs": 590.6999998092651,
+      "asset": {
+        "bytes": 2136660,
+        "sha256": "aa4d75481e1681078b6ba0122d2962937dc1b8515653091f4650c3f58f3b89c4",
+        "loopbackResourceTiming": [
+          {
+            "durationMs": 6.5,
+            "transferBytes": 2136960,
+            "encodedBodyBytes": 2136660,
+            "decodedBodyBytes": 2136660
+          }
+        ]
+      },
+      "elapsedMs": 5011.5,
+      "timelineUpdates": 44,
+      "before": [
+        {
+          "drawingBuffer": {
+            "width": 0,
+            "height": 0
+          },
+          "cssSize": {
+            "width": 0,
+            "height": 0
+          },
+          "contextId": 1,
+          "lossEvents": 1,
+          "attached": false,
+          "contextLost": true,
+          "draws": 10,
+          "liveBuffers": 0,
+          "liveTextures": 4,
+          "livePrograms": 1,
+          "renderer": "null",
+          "vendor": "null",
+          "version": "null"
+        },
+        {
+          "drawingBuffer": {
+            "width": 0,
+            "height": 0
+          },
+          "cssSize": {
+            "width": 0,
+            "height": 0
+          },
+          "contextId": 2,
+          "lossEvents": 1,
+          "attached": false,
+          "contextLost": true,
+          "draws": 3,
+          "liveBuffers": 0,
+          "liveTextures": 4,
+          "livePrograms": 1,
+          "renderer": "null",
+          "vendor": "null",
+          "version": "null"
+        },
+        {
+          "drawingBuffer": {
+            "width": 549,
+            "height": 660
+          },
+          "cssSize": {
+            "width": 366,
+            "height": 440
+          },
+          "contextId": 3,
+          "lossEvents": 0,
+          "attached": true,
+          "contextLost": false,
+          "draws": 79,
+          "liveBuffers": 8,
+          "liveTextures": 7,
+          "livePrograms": 2,
+          "renderer": "WebKit WebGL",
+          "vendor": "WebKit",
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+        }
+      ],
+      "after": [
+        {
+          "drawingBuffer": {
+            "width": 0,
+            "height": 0
+          },
+          "cssSize": {
+            "width": 0,
+            "height": 0
+          },
+          "contextId": 1,
+          "lossEvents": 1,
+          "attached": false,
+          "contextLost": true,
+          "draws": 10,
+          "liveBuffers": 0,
+          "liveTextures": 4,
+          "livePrograms": 1,
+          "renderer": "null",
+          "vendor": "null",
+          "version": "null"
+        },
+        {
+          "drawingBuffer": {
+            "width": 0,
+            "height": 0
+          },
+          "cssSize": {
+            "width": 0,
+            "height": 0
+          },
+          "contextId": 2,
+          "lossEvents": 1,
+          "attached": false,
+          "contextLost": true,
+          "draws": 3,
+          "liveBuffers": 0,
+          "liveTextures": 4,
+          "livePrograms": 1,
+          "renderer": "null",
+          "vendor": "null",
+          "version": "null"
+        },
+        {
+          "drawingBuffer": {
+            "width": 549,
+            "height": 660
+          },
+          "cssSize": {
+            "width": 366,
+            "height": 440
+          },
+          "contextId": 3,
+          "lossEvents": 0,
+          "attached": true,
+          "contextLost": false,
+          "draws": 429,
+          "liveBuffers": 8,
+          "liveTextures": 7,
+          "livePrograms": 2,
+          "renderer": "WebKit WebGL",
+          "vendor": "WebKit",
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+        }
+      ],
+      "emulationObserved": {
+        "touchPoints": 1,
+        "coarsePointer": true,
+        "userAgent": "Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/159.0.8154.6 Mobile Safari/537.36",
+        "screen": {
+          "width": 412,
+          "height": 915
+        }
+      },
+      "viewport": {
+        "width": 412,
+        "height": 839,
+        "dpr": 2.625
+      },
+      "draws": {
+        "contextId": 3,
+        "drawInvocations": 350
+      },
+      "scheduling": {
+        "available": true,
+        "samples": 174,
+        "meanMs": 28.54367816091954,
+        "medianMs": 33.30000000000018,
+        "p95Ms": 33.400000000000546,
+        "p99Ms": 50.09999999999991,
+        "maxMs": 50.100000000000364,
+        "schedulingFps": 35.0340273023799
+      },
+      "jsHeap": {
+        "available": true,
+        "bytes": {
+          "used": 26000000,
+          "allocated": 37300000,
+          "limit": 3760000000
+        },
+        "limitation": "Coarse Chromium JS heap only; not GPU or process memory"
+      }
+    },
+    {
+      "exercise": "push-up",
+      "variant": "v1",
+      "readyMs": 429.80000019073486,
+      "asset": {
+        "bytes": 633252,
+        "sha256": "1d4b39035b6866d7818a4f97e4bddf6880b55ed71ef028b8f115f3d45bb1ad2f",
+        "loopbackResourceTiming": [
+          {
+            "durationMs": 3.8000001907348633,
+            "transferBytes": 633552,
+            "encodedBodyBytes": 633252,
+            "decodedBodyBytes": 633252
+          }
+        ]
+      },
+      "elapsedMs": 5002.900000095367,
+      "timelineUpdates": 44,
+      "before": [
+        {
+          "drawingBuffer": {
+            "width": 0,
+            "height": 0
+          },
+          "cssSize": {
+            "width": 0,
+            "height": 0
+          },
+          "contextId": 1,
+          "lossEvents": 1,
+          "attached": false,
+          "contextLost": true,
+          "draws": 5,
+          "liveBuffers": 0,
+          "liveTextures": 4,
+          "livePrograms": 1,
+          "renderer": "null",
+          "vendor": "null",
+          "version": "null"
+        },
+        {
+          "drawingBuffer": {
+            "width": 549,
+            "height": 660
+          },
+          "cssSize": {
+            "width": 366,
+            "height": 440
+          },
+          "contextId": 2,
+          "lossEvents": 0,
+          "attached": true,
+          "contextLost": false,
+          "draws": 111,
+          "liveBuffers": 9,
+          "liveTextures": 6,
+          "livePrograms": 2,
+          "renderer": "WebKit WebGL",
+          "vendor": "WebKit",
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+        }
+      ],
+      "after": [
+        {
+          "drawingBuffer": {
+            "width": 0,
+            "height": 0
+          },
+          "cssSize": {
+            "width": 0,
+            "height": 0
+          },
+          "contextId": 1,
+          "lossEvents": 1,
+          "attached": false,
+          "contextLost": true,
+          "draws": 5,
+          "liveBuffers": 0,
+          "liveTextures": 4,
+          "livePrograms": 1,
+          "renderer": "null",
+          "vendor": "null",
+          "version": "null"
+        },
+        {
+          "drawingBuffer": {
+            "width": 549,
+            "height": 660
+          },
+          "cssSize": {
+            "width": 366,
+            "height": 440
+          },
+          "contextId": 2,
+          "lossEvents": 0,
+          "attached": true,
+          "contextLost": false,
+          "draws": 713,
+          "liveBuffers": 9,
+          "liveTextures": 6,
+          "livePrograms": 2,
+          "renderer": "WebKit WebGL",
+          "vendor": "WebKit",
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+        }
+      ],
+      "emulationObserved": {
+        "touchPoints": 1,
+        "coarsePointer": true,
+        "userAgent": "Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/159.0.8154.6 Mobile Safari/537.36",
+        "screen": {
+          "width": 412,
+          "height": 915
+        }
+      },
+      "viewport": {
+        "width": 412,
+        "height": 839,
+        "dpr": 2.625
+      },
+      "draws": {
+        "contextId": 2,
+        "drawInvocations": 602
+      },
+      "scheduling": {
+        "available": true,
+        "samples": 300,
+        "meanMs": 16.665999999999997,
+        "medianMs": 16.699999999999818,
+        "p95Ms": 16.799999999999727,
+        "p99Ms": 16.800000000000182,
+        "maxMs": 16.800000000000182,
+        "schedulingFps": 60.00240009600385
+      },
+      "jsHeap": {
+        "available": true,
+        "bytes": {
+          "used": 21700000,
+          "allocated": 29400000,
+          "limit": 3760000000
+        },
+        "limitation": "Coarse Chromium JS heap only; not GPU or process memory"
+      }
+    },
+    {
+      "exercise": "push-up",
+      "variant": "v2",
+      "readyMs": 587.2000002861023,
+      "asset": {
+        "bytes": 2136116,
+        "sha256": "96b075f4a9868b8ea6e1d74cd2db347138f1363363d4953f98107d6f48170484",
+        "loopbackResourceTiming": [
+          {
+            "durationMs": 5.799999713897705,
+            "transferBytes": 2136416,
+            "encodedBodyBytes": 2136116,
+            "decodedBodyBytes": 2136116
+          }
+        ]
+      },
+      "elapsedMs": 5021.400000095367,
+      "timelineUpdates": 42,
+      "before": [
+        {
+          "drawingBuffer": {
+            "width": 0,
+            "height": 0
+          },
+          "cssSize": {
+            "width": 0,
+            "height": 0
+          },
+          "contextId": 1,
+          "lossEvents": 1,
+          "attached": false,
+          "contextLost": true,
+          "draws": 9,
+          "liveBuffers": 0,
+          "liveTextures": 4,
+          "livePrograms": 1,
+          "renderer": "null",
+          "vendor": "null",
+          "version": "null"
+        },
+        {
+          "drawingBuffer": {
+            "width": 0,
+            "height": 0
+          },
+          "cssSize": {
+            "width": 0,
+            "height": 0
+          },
+          "contextId": 2,
+          "lossEvents": 1,
+          "attached": false,
+          "contextLost": true,
+          "draws": 3,
+          "liveBuffers": 0,
+          "liveTextures": 4,
+          "livePrograms": 1,
+          "renderer": "null",
+          "vendor": "null",
+          "version": "null"
+        },
+        {
+          "drawingBuffer": {
+            "width": 549,
+            "height": 660
+          },
+          "cssSize": {
+            "width": 366,
+            "height": 440
+          },
+          "contextId": 3,
+          "lossEvents": 0,
+          "attached": true,
+          "contextLost": false,
+          "draws": 80,
+          "liveBuffers": 8,
+          "liveTextures": 7,
+          "livePrograms": 2,
+          "renderer": "WebKit WebGL",
+          "vendor": "WebKit",
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+        }
+      ],
+      "after": [
+        {
+          "drawingBuffer": {
+            "width": 0,
+            "height": 0
+          },
+          "cssSize": {
+            "width": 0,
+            "height": 0
+          },
+          "contextId": 1,
+          "lossEvents": 1,
+          "attached": false,
+          "contextLost": true,
+          "draws": 9,
+          "liveBuffers": 0,
+          "liveTextures": 4,
+          "livePrograms": 1,
+          "renderer": "null",
+          "vendor": "null",
+          "version": "null"
+        },
+        {
+          "drawingBuffer": {
+            "width": 0,
+            "height": 0
+          },
+          "cssSize": {
+            "width": 0,
+            "height": 0
+          },
+          "contextId": 2,
+          "lossEvents": 1,
+          "attached": false,
+          "contextLost": true,
+          "draws": 3,
+          "liveBuffers": 0,
+          "liveTextures": 4,
+          "livePrograms": 1,
+          "renderer": "null",
+          "vendor": "null",
+          "version": "null"
+        },
+        {
+          "drawingBuffer": {
+            "width": 549,
+            "height": 660
+          },
+          "cssSize": {
+            "width": 366,
+            "height": 440
+          },
+          "contextId": 3,
+          "lossEvents": 0,
+          "attached": true,
+          "contextLost": false,
+          "draws": 418,
+          "liveBuffers": 8,
+          "liveTextures": 7,
+          "livePrograms": 2,
+          "renderer": "WebKit WebGL",
+          "vendor": "WebKit",
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+        }
+      ],
+      "emulationObserved": {
+        "touchPoints": 1,
+        "coarsePointer": true,
+        "userAgent": "Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/159.0.8154.6 Mobile Safari/537.36",
+        "screen": {
+          "width": 412,
+          "height": 915
+        }
+      },
+      "viewport": {
+        "width": 412,
+        "height": 839,
+        "dpr": 2.625
+      },
+      "draws": {
+        "contextId": 3,
+        "drawInvocations": 338
+      },
+      "scheduling": {
+        "available": true,
+        "samples": 168,
+        "meanMs": 29.661309523809525,
+        "medianMs": 33.30000000000018,
+        "p95Ms": 33.400000000000546,
+        "p99Ms": 99.90000000000055,
+        "maxMs": 116.69999999999982,
+        "schedulingFps": 33.7139531616865
+      },
+      "jsHeap": {
+        "available": true,
+        "bytes": {
+          "used": 23100000,
+          "allocated": 35100000,
+          "limit": 3760000000
+        },
+        "limitation": "Coarse Chromium JS heap only; not GPU or process memory"
+      }
+    },
+    {
+      "exercise": "dumbbell-shoulder-press",
+      "variant": "v1",
+      "readyMs": 451.80000019073486,
+      "asset": {
+        "bytes": 637396,
+        "sha256": "ff961bce175308c17eea4e30e152623db5abeaefd1378926073eaffc094471f1",
+        "loopbackResourceTiming": [
+          {
+            "durationMs": 3.3999996185302734,
+            "transferBytes": 637696,
+            "encodedBodyBytes": 637396,
+            "decodedBodyBytes": 637396
+          }
+        ]
+      },
+      "elapsedMs": 5016.400000095367,
+      "timelineUpdates": 46,
+      "before": [
+        {
+          "drawingBuffer": {
+            "width": 0,
+            "height": 0
+          },
+          "cssSize": {
+            "width": 0,
+            "height": 0
+          },
+          "contextId": 1,
+          "lossEvents": 1,
+          "attached": false,
+          "contextLost": true,
+          "draws": 9,
+          "liveBuffers": 0,
+          "liveTextures": 4,
+          "livePrograms": 1,
+          "renderer": "null",
+          "vendor": "null",
+          "version": "null"
+        },
+        {
+          "drawingBuffer": {
+            "width": 549,
+            "height": 660
+          },
+          "cssSize": {
+            "width": 366,
+            "height": 440
+          },
+          "contextId": 2,
+          "lossEvents": 0,
+          "attached": true,
+          "contextLost": false,
+          "draws": 209,
+          "liveBuffers": 12,
+          "liveTextures": 6,
+          "livePrograms": 3,
+          "renderer": "WebKit WebGL",
+          "vendor": "WebKit",
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+        }
+      ],
+      "after": [
+        {
+          "drawingBuffer": {
+            "width": 0,
+            "height": 0
+          },
+          "cssSize": {
+            "width": 0,
+            "height": 0
+          },
+          "contextId": 1,
+          "lossEvents": 1,
+          "attached": false,
+          "contextLost": true,
+          "draws": 9,
+          "liveBuffers": 0,
+          "liveTextures": 4,
+          "livePrograms": 1,
+          "renderer": "null",
+          "vendor": "null",
+          "version": "null"
+        },
+        {
+          "drawingBuffer": {
+            "width": 549,
+            "height": 660
+          },
+          "cssSize": {
+            "width": 366,
+            "height": 440
+          },
+          "contextId": 2,
+          "lossEvents": 0,
+          "attached": true,
+          "contextLost": false,
+          "draws": 1353,
+          "liveBuffers": 12,
+          "liveTextures": 6,
+          "livePrograms": 3,
+          "renderer": "WebKit WebGL",
+          "vendor": "WebKit",
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+        }
+      ],
+      "emulationObserved": {
+        "touchPoints": 1,
+        "coarsePointer": true,
+        "userAgent": "Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/159.0.8154.6 Mobile Safari/537.36",
+        "screen": {
+          "width": 412,
+          "height": 915
+        }
+      },
+      "viewport": {
+        "width": 412,
+        "height": 839,
+        "dpr": 2.625
+      },
+      "draws": {
+        "contextId": 2,
+        "drawInvocations": 1144
+      },
+      "scheduling": {
+        "available": true,
+        "samples": 285,
+        "meanMs": 17.543157894736844,
+        "medianMs": 16.699999999999818,
+        "p95Ms": 16.800000000000182,
+        "p99Ms": 33.399999999999636,
+        "maxMs": 50,
+        "schedulingFps": 57.002280091203644
+      },
+      "jsHeap": {
+        "available": true,
+        "bytes": {
+          "used": 19300000,
+          "allocated": 29400000,
+          "limit": 3760000000
+        },
+        "limitation": "Coarse Chromium JS heap only; not GPU or process memory"
+      }
+    },
+    {
+      "exercise": "dumbbell-shoulder-press",
+      "variant": "v2",
+      "readyMs": 798.2999997138977,
+      "asset": {
+        "bytes": 2149004,
+        "sha256": "1013c7f16017c34e50df2288291b4458f9d91f171d62cd6649f4434dcc614c42",
+        "loopbackResourceTiming": [
+          {
+            "durationMs": 13.200000286102295,
+            "transferBytes": 2149304,
+            "encodedBodyBytes": 2149004,
+            "decodedBodyBytes": 2149004
+          }
+        ]
+      },
+      "elapsedMs": 5028.5,
+      "timelineUpdates": 40,
+      "before": [
+        {
+          "drawingBuffer": {
+            "width": 0,
+            "height": 0
+          },
+          "cssSize": {
+            "width": 0,
+            "height": 0
+          },
+          "contextId": 1,
+          "lossEvents": 1,
+          "attached": false,
+          "contextLost": true,
+          "draws": 10,
+          "liveBuffers": 0,
+          "liveTextures": 4,
+          "livePrograms": 1,
+          "renderer": "null",
+          "vendor": "null",
+          "version": "null"
+        },
+        {
+          "drawingBuffer": {
+            "width": 0,
+            "height": 0
+          },
+          "cssSize": {
+            "width": 0,
+            "height": 0
+          },
+          "contextId": 2,
+          "lossEvents": 1,
+          "attached": false,
+          "contextLost": true,
+          "draws": 5,
+          "liveBuffers": 0,
+          "liveTextures": 4,
+          "livePrograms": 1,
+          "renderer": "null",
+          "vendor": "null",
+          "version": "null"
+        },
+        {
+          "drawingBuffer": {
+            "width": 549,
+            "height": 660
+          },
+          "cssSize": {
+            "width": 366,
+            "height": 440
+          },
+          "contextId": 3,
+          "lossEvents": 0,
+          "attached": true,
+          "contextLost": false,
+          "draws": 122,
+          "liveBuffers": 11,
+          "liveTextures": 7,
+          "livePrograms": 3,
+          "renderer": "WebKit WebGL",
+          "vendor": "WebKit",
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+        }
+      ],
+      "after": [
+        {
+          "drawingBuffer": {
+            "width": 0,
+            "height": 0
+          },
+          "cssSize": {
+            "width": 0,
+            "height": 0
+          },
+          "contextId": 1,
+          "lossEvents": 1,
+          "attached": false,
+          "contextLost": true,
+          "draws": 10,
+          "liveBuffers": 0,
+          "liveTextures": 4,
+          "livePrograms": 1,
+          "renderer": "null",
+          "vendor": "null",
+          "version": "null"
+        },
+        {
+          "drawingBuffer": {
+            "width": 0,
+            "height": 0
+          },
+          "cssSize": {
+            "width": 0,
+            "height": 0
+          },
+          "contextId": 2,
+          "lossEvents": 1,
+          "attached": false,
+          "contextLost": true,
+          "draws": 5,
+          "liveBuffers": 0,
+          "liveTextures": 4,
+          "livePrograms": 1,
+          "renderer": "null",
+          "vendor": "null",
+          "version": "null"
+        },
+        {
+          "drawingBuffer": {
+            "width": 549,
+            "height": 660
+          },
+          "cssSize": {
+            "width": 366,
+            "height": 440
+          },
+          "contextId": 3,
+          "lossEvents": 0,
+          "attached": true,
+          "contextLost": false,
+          "draws": 622,
+          "liveBuffers": 11,
+          "liveTextures": 7,
+          "livePrograms": 3,
+          "renderer": "WebKit WebGL",
+          "vendor": "WebKit",
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+        }
+      ],
+      "emulationObserved": {
+        "touchPoints": 1,
+        "coarsePointer": true,
+        "userAgent": "Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/159.0.8154.6 Mobile Safari/537.36",
+        "screen": {
+          "width": 412,
+          "height": 915
+        }
+      },
+      "viewport": {
+        "width": 412,
+        "height": 839,
+        "dpr": 2.625
+      },
+      "draws": {
+        "contextId": 3,
+        "drawInvocations": 500
+      },
+      "scheduling": {
+        "available": true,
+        "samples": 124,
+        "meanMs": 40.18629032258064,
+        "medianMs": 33.399999999999636,
+        "p95Ms": 66.69999999999982,
+        "p99Ms": 83.39999999999964,
+        "maxMs": 133.29999999999927,
+        "schedulingFps": 24.884108286006708
+      },
+      "jsHeap": {
+        "available": true,
+        "bytes": {
+          "used": 24500000,
+          "allocated": 35100000,
+          "limit": 3760000000
+        },
+        "limitation": "Coarse Chromium JS heap only; not GPU or process memory"
+      }
+    }
+  ]
+}

@@ -137,6 +137,53 @@ export function profileProvenance(
   };
 }
 
+/** Preserve effective project emulation options in every explicitly created context. */
+export function profileContextOptions(options: {
+  viewport?: { width: number; height: number } | null | undefined;
+  screen?: { width: number; height: number } | undefined;
+  deviceScaleFactor?: number | undefined;
+  isMobile?: boolean | undefined;
+  hasTouch?: boolean | undefined;
+  userAgent?: string | undefined;
+}) {
+  const size = (
+    value: { width: number; height: number } | null | undefined,
+  ) => {
+    if (
+      !value ||
+      ![value.width, value.height].every(
+        (n) => Number.isSafeInteger(n) && n > 0,
+      )
+    )
+      throw new Error(
+        'Profiling requires an explicit positive project viewport/screen',
+      );
+    return { width: value.width, height: value.height };
+  };
+  const viewport = size(options.viewport);
+  const deviceScaleFactor = options.deviceScaleFactor ?? 1;
+  if (
+    !Number.isFinite(deviceScaleFactor) ||
+    deviceScaleFactor <= 0 ||
+    [options.isMobile, options.hasTouch].some(
+      (value) => value !== undefined && typeof value !== 'boolean',
+    ) ||
+    (options.userAgent !== undefined &&
+      (typeof options.userAgent !== 'string' || !options.userAgent))
+  )
+    throw new Error('Invalid effective project emulation options');
+  return {
+    viewport,
+    screen: size(options.screen ?? viewport),
+    deviceScaleFactor,
+    isMobile: options.isMobile ?? false,
+    hasTouch: options.hasTouch ?? false,
+    ...(options.userAgent === undefined
+      ? {}
+      : { userAgent: options.userAgent }),
+  };
+}
+
 export type ProfileProbe = ReturnType<typeof installProfileProbe>;
 /** Injected ONLY by the opt-in harness, never shipped in the application. */
 export function installProfileProbe() {
@@ -224,6 +271,14 @@ export function installProfileProbe() {
   });
   const snapshot = () =>
     contexts.map((entry) => ({
+      drawingBuffer: {
+        width: entry.gl.drawingBufferWidth,
+        height: entry.gl.drawingBufferHeight,
+      },
+      cssSize: {
+        width: entry.canvas.clientWidth,
+        height: entry.canvas.clientHeight,
+      },
       contextId: entry.contextId,
       lossEvents: entry.lossEvents,
       attached: entry.canvas.isConnected,
@@ -288,6 +343,12 @@ export function installProfileProbe() {
               jsHeapSizeLimit: memory.jsHeapSizeLimit,
             }
           : null,
+        emulationObserved: {
+          touchPoints: navigator.maxTouchPoints,
+          coarsePointer: matchMedia('(pointer: coarse)').matches,
+          userAgent: navigator.userAgent,
+          screen: { width: screen.width, height: screen.height },
+        },
         viewport: {
           width: innerWidth,
           height: innerHeight,

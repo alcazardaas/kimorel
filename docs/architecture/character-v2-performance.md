@@ -6,12 +6,12 @@ The opt-in harness observes the actual catalog viewer for all three pilot exerci
 
 ```sh
 pnpm build
-KIMOREL_PROFILE=1 pnpm exec playwright test tests/browser/pilot-profile.spec.ts --config playwright.config.ts --project desktop-chromium
+KIMOREL_PROFILE=1 pnpm exec playwright test tests/browser/pilot-profile.spec.ts --config playwright.config.ts
 ```
 
-The explicit opt-in prevents profiling during ordinary browser tests. Budget roughly 45–75 seconds: six fresh contexts, each with a one-second real-time warmup and five-second real-time sample, plus loads. Do not use an artificial clock, CPU/network throttling or concurrent workloads for the baseline. The existing config runs **headless Chromium with forced ANGLE SwiftShader**, so these are software-renderer observations, not hardware-GPU measurements. The harness fixes 1280×900/DPR1; selecting a mobile-named project does not turn it into a phone measurement.
+The explicit opt-in prevents profiling during ordinary browser tests. Budget roughly 100–130 seconds for both Chromium projects: twelve fresh contexts, each with a one-second real-time warmup and five-second real-time sample, plus loads. Do not use an artificial clock, CPU/network throttling or concurrent workloads for the baseline. The existing config runs **headless Chromium with forced ANGLE SwiftShader**, so these are software-renderer observations, not hardware-GPU measurements. Fresh contexts honor each project’s effective viewport, DPR, mobile/touch, screen and configured user-agent settings. Browser-observed dimensions/DPR/touch/screen are checked against those inputs. Mobile emulation does not turn Chromium into a physical-phone measurement.
 
-Find raw JSON at `.cache/character-v2-profile/desktop-chromium.json` and in the Playwright attachment. It records browser version, rendering conditions, exact loaded asset SHA256/bytes, viewport/DPR and masked WebGL strings. It intentionally does not query unmasked hardware identifiers, hostnames, user identity or external telemetry.
+Find raw JSON at `.cache/character-v2-profile/<project-name>.json` and in each Playwright attachment. It records browser version, rendering conditions, exact loaded asset SHA256/bytes, viewport/DPR and masked WebGL strings. It intentionally does not query unmasked hardware identifiers, hostnames, user identity or external telemetry.
 
 | Metric                                       | What it means / limitation                                                                                                                                       |
 | -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -77,3 +77,44 @@ New collection runs assign page-local context IDs and require positive **during-
 The opt-in test alone supplies `--enable-automation` so Chromium can expose its command-line verification capability; ordinary browser tests and app settings are unchanged. If that capability is unavailable, collection stops before sampling. The harness checks the effective Playwright headless fixture against the actual Chromium launch switches via CDP. It verifies the supported ANGLE SwiftShader **launch request**, rejecting unknown/conflicting graphics overrides; it does not query unmasked GPU identity or claim the requested backend proves hardware identity. Headed overrides are reported as headed when their effective fixture and actual launch agree. Only the verified condition summary is retained, never raw command-line arguments or profile paths. An unavailable verification fails collection rather than emitting an assumed label.
 
 The dated baseline and raw JSON above remain unchanged historical observations from the known headless software configuration. New checks strengthen subsequent collection; they do not retrospectively relabel that baseline or grant device acceptance.
+
+## Desktop and mobile-sized Chromium coverage
+
+The default command above now runs both existing Chromium projects. Report `emulationInput` records the effective project options, while each sample records actual inner dimensions, DPR, touch points, pointer mode and configured user agent. Drawing-buffer and canvas CSS sizes are captured separately: window DPR is not assumed to equal the viewer’s rendering scale. Actual same-context interval draws and launch provenance remain required.
+
+This responsive/emulated coverage is not a physical Pixel device, mobile GPU, thermal/battery test or deployment authorization. The dated baseline above retains its original 1280×900/DPR1 conditions; it is not silently relabeled as this expanded coverage.
+
+## Observed desktop/mobile-emulated pair — 2026-11-26
+
+Both Chromium projects completed: two collection tests, twelve actual samples, about 1.7 minutes (desktop 50.8s, mobile 49.6s). This pair uses the same current harness and unchanged shipping viewer; compare these two runs with each other, **not the older 900px-high baseline**. Chromium 159.0.8154.6, effective headless=true, actual launch request verified as ANGLE SwiftShader; masked renderer remains WebKit WebGL. No raw argv or unmasked hardware identity is recorded. All twelve response SHA256/byte counts independently match the six source GLBs and exact asset identities above.
+
+| Project emulation | Requested / observed viewport | Window DPR | Screen    | Mobile / touch | Actual touch points / coarse pointer | Canvas CSS / drawing buffer |
+| ----------------- | ----------------------------- | ---------: | --------- | -------------- | ------------------------------------ | --------------------------- |
+| desktop           | 1280×720                      |          1 | 1920×1080 | false / false  | 0 / false                            | 828×440 / 828×440           |
+| mobile            | 412×839                       |      2.625 | 412×915   | true / true    | 1 / true                             | 366×440 / 549×660           |
+
+The mobile user-agent string is a **configured Pixel 7 browser-emulation descriptor**, not a detected physical Pixel. Actual viewport/DPR/screen/touch/UA matched project inputs for every sample. The mobile drawing buffer is 1.5× its CSS size despite window DPR 2.625; these are different metrics.
+
+| Project | Exercise / variant         | Ready ms | Scheduling events/s | p95 / max RAF ms | During-sample draws | Used JS heap MB |
+| ------- | -------------------------- | -------: | ------------------: | ---------------- | ------------------: | --------------: |
+| desktop | bodyweight-squat v1        |    779.6 |                47.6 | 33.4 / 83.4      |                 478 |            21.7 |
+| desktop | bodyweight-squat v2        |    570.3 |                30.5 | 33.4 / 66.7      |                 308 |            26.0 |
+| desktop | push-up v1                 |    823.6 |                50.4 | 33.4 / 66.8      |                 506 |            21.7 |
+| desktop | push-up v2                 |    646.7 |                30.4 | 33.4 / 83.4      |                 306 |            27.6 |
+| desktop | dumbbell-shoulder-press v1 |   1126.2 |                49.2 | 33.4 / 33.4      |                 984 |            19.3 |
+| desktop | dumbbell-shoulder-press v2 |    560.6 |                30.7 | 33.4 / 66.6      |                 612 |            26.0 |
+| mobile  | bodyweight-squat v1        |    462.9 |                59.6 | 16.7 / 33.3      |                 598 |            21.7 |
+| mobile  | bodyweight-squat v2        |    590.7 |                35.0 | 33.4 / 50.1      |                 350 |            26.0 |
+| mobile  | push-up v1                 |    429.8 |                60.0 | 16.8 / 16.8      |                 602 |            21.7 |
+| mobile  | push-up v2                 |    587.2 |                33.7 | 33.4 / 116.7     |                 338 |            23.1 |
+| mobile  | dumbbell-shoulder-press v1 |    451.8 |                57.0 | 16.8 / 50.0      |                1144 |            19.3 |
+| mobile  | dumbbell-shoulder-press v2 |    798.3 |                24.9 | 66.7 / 133.3     |                 500 |            24.5 |
+
+Every sample retained one attached, non-lost context with matching IDs and positive draw delta; context loss counters remained zero and actual timeline updates 40–46 proved animation progression. These are CPU API submissions and scheduling cadence, not GPU duration, rendered/presented FPS or performance acceptance. JS heap was available but remains coarse and affected by setup/GC/probe references. GPU/process memory remain unavailable.
+
+| Exact raw report                                                      | SHA256                                                             |
+| --------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| [desktop observation](./character-v2-profile-desktop-2026-11-26.json) | `40840b9b3736841b420328c7ef0ffac691990de286c149c7ed975af0bc9bed39` |
+| [mobile observation](./character-v2-profile-mobile-2026-11-26.json)   | `c9643648c39fc16ea0cc416c5c2ba4016699a354ac23eb683f3757514a299317` |
+
+Mobile-emulated v2 shoulder press showed 24.9 scheduling events/s with 66.7ms p95 in this single software run. That is a useful follow-up observation, not an identified bottleneck, hardware-phone result or pass/fail threshold. Different viewport, raster scale, emulation and run noise prevent attributing differences to a device GPU. Repeated measurements and separately authorized named physical-device testing remain necessary; no phone, anatomical, clinical or v2-overlay acceptance is granted.

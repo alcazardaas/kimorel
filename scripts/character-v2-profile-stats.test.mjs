@@ -5,6 +5,7 @@ import {
   heapMetric,
   sampleDraws,
   profileProvenance,
+  profileContextOptions,
 } from '../tests/browser/profile-metrics.ts';
 
 test('frame distribution uses nearest-rank percentiles without mutating samples', () => {
@@ -100,4 +101,42 @@ test('provenance derives headed/headless from effective fixture and actual launc
     profileProvenance('chromium', true, [...args, '--user-data-dir=<private>']),
   );
   assert.equal(result.includes('<private>'), false);
+});
+
+test('fresh profiling contexts preserve desktop and mobile project settings without mutating them', () => {
+  const desktop = { viewport: { width: 1280, height: 720 } };
+  assert.deepEqual(profileContextOptions(desktop), {
+    ...desktop,
+    screen: { ...desktop.viewport },
+    deviceScaleFactor: 1,
+    isMobile: false,
+    hasTouch: false,
+  });
+  const mobile = {
+    viewport: { width: 412, height: 839 },
+    screen: { width: 412, height: 915 },
+    deviceScaleFactor: 2.625,
+    isMobile: true,
+    hasTouch: true,
+    userAgent: 'configured mobile emulation',
+  };
+  const result = profileContextOptions(mobile);
+  assert.deepEqual(result, mobile);
+  result.viewport.width = 999;
+  assert.equal(mobile.viewport.width, 412);
+});
+test('unsupported or malformed project emulation settings fail rather than silently using desktop', () => {
+  for (const options of [
+    {},
+    { viewport: null },
+    { viewport: { width: 0, height: 839 } },
+    { viewport: { width: 412, height: 839 }, deviceScaleFactor: NaN },
+    { viewport: { width: 412, height: 839 }, deviceScaleFactor: -1 },
+    { viewport: { width: 412, height: 839 }, hasTouch: 'yes' },
+    {
+      viewport: { width: 412, height: 839 },
+      screen: { width: Infinity, height: 915 },
+    },
+  ])
+    assert.throws(() => profileContextOptions(options));
 });
