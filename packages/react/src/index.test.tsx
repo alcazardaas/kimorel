@@ -465,3 +465,25 @@ it('does not autoplay when reduced motion is requested, while allowing explicit 
     vi.unstubAllGlobals();
   }
 });
+
+it('disables both muscle controls and scene highlighting for incompatible variants', async () => {
+  const view = render(
+    <ExerciseViewer
+      exercise={exercises[0]!}
+      showMuscles
+      muscleHighlights={false}
+    />,
+  );
+  await screen.findByRole('button', { name: 'Load mock GLB' });
+  expect(
+    screen.queryByRole('checkbox', { name: 'Muscle highlights' }),
+  ).toBeNull();
+  expect(observed.props?.showMuscles).toBe(false);
+  view.rerender(
+    <ExerciseViewer exercise={exercises[0]!} showMuscles muscleHighlights />,
+  );
+  expect(
+    screen.getByRole('checkbox', { name: 'Muscle highlights' }),
+  ).toBeTruthy();
+  expect(observed.props?.showMuscles).toBe(true);
+});

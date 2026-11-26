@@ -1,7 +1,7 @@
 import { StrictMode, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { exercises, assetReviewRecords } from '@kimorel/data';
-import { ExerciseViewer } from '@kimorel/react';
+import { ExercisePreview } from './ExercisePreview';
 import './style.css';
 import { Catalog } from './Catalog';
 import { ExerciseDetails } from './ExerciseDetails';
@@ -95,9 +95,9 @@ function App() {
             {review && (
               <section
                 className="review-notes"
-                aria-label="Asset review identity"
+                aria-label="Original v1 asset review identity"
               >
-                <h3>Review this exact asset</h3>
+                <h3>Original v1 asset identity</h3>
                 <p>
                   {identity?.file} · {identity?.bytes} bytes ·{' '}
                   {identity?.status}
@@ -125,13 +125,10 @@ function App() {
                 </p>
               </section>
             )}
-            <ExerciseViewer
+            <ExercisePreview
+              key={selected.id}
               exercise={selected}
-              assetBaseUrl="./assets"
-              autoPlay={!review}
               review={review}
-              loop
-              controls
             />
             <ExerciseDetails exercise={selected} />
           </article>

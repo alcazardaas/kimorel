@@ -122,3 +122,11 @@ The saved blend binary and provenance hashes change between recovery and normal 
 ## Verification handoff
 
 Final checks pass: 137 Vitest tests, 105 Node tests, 105 Python tests, lint, typecheck, build, format check, character check, preview validation and `git diff --check`. The focused pilot suite passes all thirteen cases after repeat. Historical tracked assets and seed masks/catalogs remain unchanged. This verified export unit is ready for its parent-owned work-unit commit; no commit, review, UI integration or default change was performed by the implementation worker.
+
+## Try the opt-in catalog viewer
+
+Run `pnpm dev`, select **Bodyweight squat**, **Push-up** or **Dumbbell shoulder press**, then enable **Experimental character v2**. V1 remains the initial/default character for every selection. Unsupported exercises stay on v1; a failed v2 load automatically returns to v1 with a notice. Uncheck and check again to retry. Playback uses the actual four-second `rep` clip, not a stress-pose alias.
+
+The demo serves/builds only the three allowlisted, SHA256-pinned GLBs under `assets/character-v2/`. Source blends, masks and unrelated pipeline files are not copied. No v1 catalog or asset bytes are replaced. The selector resets when changing exercise; no preference is persisted. The existing viewer owns loading, late-load disposal, animation cleanup and renderer teardown when switching variants.
+
+V2 reuses play/pause, restart, loop, speed, timeline and camera controls. Legacy muscle-region highlighting is explicitly disabled for v2 through the viewer’s default-preserving `muscleHighlights` opt-out; it is not a v2 surface-mask implementation. The original-v1 identity block is labeled separately; the experimental viewer exposes its own exact hash. V2 muscle overlays, anatomical/clinical approval and physical-device acceptance remain pending. To roll back, remove the demo adapter, its allowlisted serving/copy step and accompanying tests; retain the verified pilot exports and all v1 assets.

@@ -16,6 +16,8 @@ export interface ExerciseViewerProps {
   /** Enable inspection controls without creating a second renderer. */
   review?: boolean;
   showMuscles?: boolean;
+  /** Hide and disable legacy region highlighting for incompatible character variants. */
+  muscleHighlights?: boolean;
   onReady?: () => void;
   onError?: (error: Error) => void;
 }
@@ -52,6 +54,7 @@ function AnimatedViewer({
   playbackSpeed,
   review = false,
   showMuscles = false,
+  muscleHighlights = true,
   onReady,
   onError,
 }: Omit<ExerciseViewerProps, 'exercise'> & { exercise: Exercise }) {
@@ -160,7 +163,7 @@ function AnimatedViewer({
                 cameraPreset={preset}
                 showSkeleton={skeleton}
                 showGrid={grid}
-                showMuscles={highlights}
+                showMuscles={muscleHighlights && highlights}
                 muscles={exercise.muscles}
                 seek={seek}
                 onTimeline={(time, duration) => {
@@ -237,20 +240,24 @@ function AnimatedViewer({
             />{' '}
             Loop
           </label>
-          <label>
-            <input
-              type="checkbox"
-              checked={highlights}
-              onChange={(event) => setHighlights(event.target.checked)}
-            />
-            Muscle highlights
-          </label>
-          {highlights && (
-            <p>
-              Primary: strong coral · Secondary: pale amber. Broad educational
-              regions, not measured activation. Unmapped muscles are not
-              colored.
-            </p>
+          {muscleHighlights && (
+            <>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={highlights}
+                  onChange={(event) => setHighlights(event.target.checked)}
+                />
+                Muscle highlights
+              </label>
+              {highlights && (
+                <p>
+                  Primary: strong coral · Secondary: pale amber. Broad
+                  educational regions, not measured activation. Unmapped muscles
+                  are not colored.
+                </p>
+              )}
+            </>
           )}
           <fieldset disabled={!ready || !!error}>
             <legend>Playback and camera</legend>
