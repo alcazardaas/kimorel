@@ -1,17 +1,44 @@
 import { test, expect } from '@playwright/test';
 import { createHash } from 'node:crypto';
 import { mkdir, writeFile } from 'node:fs/promises';
-import { frameStats, heapMetric, installProfileProbe } from './profile-metrics';
+import {
+  frameStats,
+  heapMetric,
+  installProfileProbe,
+  sampleDraws,
+  profileProvenance,
+} from './profile-metrics';
 import type { ProfileProbe } from './profile-metrics';
+
+// Profiling-only CDP capability: ordinary browser tests and app settings are unchanged.
+test.use({
+  launchOptions: {
+    args: [
+      '--enable-automation',
+      '--use-angle=swiftshader',
+      '--enable-unsafe-swiftshader',
+    ],
+  },
+});
 
 test('collect opt-in local pilot performance observations', async ({
   browser,
+  headless,
+  browserName,
 }, info) => {
   test.skip(
     process.env.KIMOREL_PROFILE !== '1',
     'Explicit local profiling opt-in required',
   );
   test.setTimeout(120000);
+  const session = await browser.newBrowserCDPSession();
+  let environment;
+  try {
+    const command = await session.send('Browser.getBrowserCommandLine');
+    environment = profileProvenance(browserName, headless, command.arguments);
+  } finally {
+    await session.detach();
+  }
   const samples = [];
   for (const [id, name] of [
     ['bodyweight-squat', 'Bodyweight squat'],
@@ -90,11 +117,7 @@ test('collect opt-in local pilot performance observations', async ({
           observation.timelineUpdates,
           'The actual animation must advance during sampling',
         ).toBeGreaterThan(5);
-        expect(
-          observation.after.some(
-            (entry) => entry.attached && !entry.contextLost && entry.draws > 0,
-          ),
-        ).toBe(true);
+        const draws = sampleDraws(observation.before, observation.after);
         const resource = await page.evaluate((url) => {
           const entries = performance.getEntriesByName(
             url,
@@ -117,6 +140,7 @@ test('collect opt-in local pilot performance observations', async ({
             loopbackResourceTiming: resource,
           },
           ...details,
+          draws,
           scheduling: frameStats(intervals),
           jsHeap: heapMetric(heap),
         });
@@ -130,9 +154,7 @@ test('collect opt-in local pilot performance observations', async ({
     browserVersion: browser.version(),
     project: info.project.name,
     environment: {
-      headless: true,
-      renderingBackend:
-        'Forced ANGLE SwiftShader software renderer from playwright.config.ts',
+      ...environment,
       physicalDevice: false,
       unmaskedHardwareIdentity: 'Not queried (privacy)',
       warmupMs: 1000,

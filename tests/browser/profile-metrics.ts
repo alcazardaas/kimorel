@@ -51,10 +51,98 @@ export function heapMetric(value: unknown) {
   };
 }
 
+type ContextCount = {
+  contextId: number;
+  attached: boolean;
+  contextLost: boolean;
+  lossEvents: number;
+  draws: number;
+};
+/** Counts only work submitted during the interval, never cumulative warmup draws. */
+export function sampleDraws(before: ContextCount[], after: ContextCount[]) {
+  for (const snapshot of [before, after]) {
+    if (
+      new Set(snapshot.map((entry) => entry.contextId)).size !==
+        snapshot.length ||
+      snapshot.some(
+        (entry) =>
+          !Number.isSafeInteger(entry.contextId) ||
+          entry.contextId < 1 ||
+          !Number.isSafeInteger(entry.draws) ||
+          entry.draws < 0 ||
+          !Number.isSafeInteger(entry.lossEvents) ||
+          entry.lossEvents < 0,
+      )
+    )
+      throw new Error('Invalid or duplicate context counters');
+  }
+  const start = before.filter((entry) => entry.attached && !entry.contextLost);
+  const end = after.filter((entry) => entry.attached && !entry.contextLost);
+  if (
+    start.length !== 1 ||
+    end.length !== 1 ||
+    start[0]!.contextId !== end[0]!.contextId ||
+    start[0]!.lossEvents !== end[0]!.lossEvents
+  )
+    throw new Error(
+      'Sampling requires the same single attached context without loss',
+    );
+  const drawInvocations = end[0]!.draws - start[0]!.draws;
+  if (drawInvocations <= 0)
+    throw new Error('No draw invocations during sample');
+  return { contextId: start[0]!.contextId, drawInvocations };
+}
+/** Verify only supported effective launch conditions; never persist the raw command line. */
+export function profileProvenance(
+  browserName: string,
+  headless: boolean,
+  args: string[],
+) {
+  if (browserName !== 'chromium' || typeof headless !== 'boolean')
+    throw new Error('Only verified Chromium launch conditions are supported');
+  if (!args.includes('--enable-automation'))
+    throw new Error(
+      'Profiling requires explicit command-line verification capability',
+    );
+  const headlessSwitches = args.filter((arg) => /^--headless(?:=|$)/.test(arg));
+  if (
+    headlessSwitches.some(
+      (arg) => !['--headless', '--headless=new'].includes(arg),
+    ) ||
+    Boolean(headlessSwitches.length) !== headless
+  )
+    throw new Error('Effective headless fixture and browser launch disagree');
+  const angle = args.filter((arg) => arg.startsWith('--use-angle'));
+  const gl = args.filter((arg) => arg.startsWith('--use-gl'));
+  if (
+    angle.at(-1) !== '--use-angle=swiftshader' ||
+    angle.some((arg) => !arg.startsWith('--use-angle=')) ||
+    gl.some((arg) => arg !== '--use-gl=angle') ||
+    !args.includes('--enable-unsafe-swiftshader') ||
+    args.some((arg) =>
+      /^--(?:disable-gpu|disable-webgl2?|disable-software-rasterizer)(?:=|$)/.test(
+        arg,
+      ),
+    )
+  )
+    throw new Error('Unsupported or unverified rendering launch override');
+  return {
+    headless,
+    renderingBackend:
+      'Requested ANGLE SwiftShader (verified actual Chromium launch switches)',
+    provenance:
+      'Effective Playwright headless fixture matched actual Chromium command line; no raw argv retained',
+    backendLimitation:
+      'Launch request is verified; unmasked GPU identity and GPU completion are not queried',
+  };
+}
+
 export type ProfileProbe = ReturnType<typeof installProfileProbe>;
 /** Injected ONLY by the opt-in harness, never shipped in the application. */
 export function installProfileProbe() {
   const contexts: {
+    contextId: number;
+    lossEvents: number;
     canvas: HTMLCanvasElement;
     gl: WebGLRenderingContext;
     draws: number;
@@ -76,6 +164,8 @@ export function installProfileProbe() {
         return result;
       const gl = result as WebGLRenderingContext;
       const entry = {
+        contextId: contexts.length + 1,
+        lossEvents: 0,
         canvas: this,
         gl,
         draws: 0,
@@ -84,6 +174,9 @@ export function installProfileProbe() {
         programs: new Set<object>(),
       };
       contexts.push(entry);
+      this.addEventListener('webglcontextlost', () => {
+        entry.lossEvents++;
+      });
       for (const [create, remove, objects] of [
         ['createBuffer', 'deleteBuffer', entry.buffers],
         ['createTexture', 'deleteTexture', entry.textures],
@@ -131,6 +224,8 @@ export function installProfileProbe() {
   });
   const snapshot = () =>
     contexts.map((entry) => ({
+      contextId: entry.contextId,
+      lossEvents: entry.lossEvents,
       attached: entry.canvas.isConnected,
       contextLost: entry.gl.isContextLost(),
       draws: entry.draws,
