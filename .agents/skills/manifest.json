@@ -142,7 +142,7 @@
     }
   ],
   "files": {
-    ".agents/skills/AUDIT.md": "5cb297dcb90addfc94838e41b9037327ae1f7b3ad7929a4d03d799c8fcb64703",
+    ".agents/skills/AUDIT.md": "5276403a2da756a32593e95ca6096176e26f9aba5d3a393913cde07247f1145f",
     ".agents/skills/README.md": "abf0084455a558a10887ee3889aafb944bb8e08ae7a327640f4206384362f933",
     ".agents/skills/_sources/blender-api-changes-5x.txt": "e34f2e39a97833d75b6177c2e281ff9481405efd88bfd2d67003560f0c421fe1",
     ".agents/skills/_sources/blender-asset-qa.txt": "968e4435eeba040f0952cc335c8e9e7182e1d7008aa4295f202ddb836fa49ec9",

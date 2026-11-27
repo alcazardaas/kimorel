@@ -27,7 +27,7 @@ Full pins, original paths, exact SHA-256 values and local file hashes are in `ma
 ## Verification
 
 - Offline integrity/structure checker: all seven skills, six upstream skill records; hashes cover every local skill/reference/license/policy file and AGENTS.md, excluding the manifest itself.
-- Eleven focused tests cover actual installation, tampered bytes, missing/unexpected files, symlinks, escaping manifest paths, invalid commit pins, source-hash inconsistency, missing registration/provenance, executable permissions, missing sections and external instruction references.
+- Fourteen focused tests cover actual installation, tampered bytes, missing/unexpected files, symlinks, escaping manifest paths, invalid commit pins, source-hash inconsistency, missing registration/provenance, executable permissions, missing sections and external instruction references.
 - Active frontmatter, ordered sections, concise body, local references, source pins and license evidence checked; no upstream executable files or executable file modes admitted.
 - Scoped ESLint, Prettier checks, and Git whitespace checks run. Existing read-only v1 checker preserved all 100 exercises, 420 artifacts and 34 source inputs; no assets were regenerated.
 - Registry refreshed: 20 total skills, including all seven project skills. `.atl/` and ODD recovery notes remain ignored by existing policy.
@@ -36,4 +36,8 @@ Full pins, original paths, exact SHA-256 values and local file hashes are in `ma
 
 No Blender authoring, export, render, browser/device test or application-runtime change occurred. Actual Blender binary identity is a documented execution-time gate, not newly measured by this adoption. Upstream references include APIs outside this project/version; not every tutorial snippet is dynamically validated. No malware scanner, external analysis upload or optional dependency was run.
 
-The checker is a local change-detection baseline, not a signed trust root: anyone changing both files and hashes can bypass content integrity. Review Git diffs and source provenance before accepting updates. Static safeguards are instructions, not an OS sandbox. Native independent review is parent-owned and pending; this report does not claim its approval.
+The checker is a local change-detection baseline, not a signed trust root: anyone changing both files and hashes can bypass content integrity. Review Git diffs and source provenance before accepting updates. Static safeguards are instructions, not an OS sandbox. Prior candidate through `5314746` received native approval and exact acknowledgement burned authority `review-36d864d2f320ae2d` (parent-confirmed). The later checker follow-up is a separate candidate; its native review remains parent-owned and is not covered by that prior approval.
+
+## Checker follow-up
+
+Three advisory follow-ups were reproduced before correction: an unknown source path with omitted digest compared `undefined` to `undefined`; AGENTS.md could be omitted from integrity coverage; and URL.pathname left percent-encoded spaces in the installed-skill test path. The checker now requires an own inventoried source entry, a valid source SHA-256, and an own valid AGENTS routing hash. Tests convert file URLs with fileURLToPath and execute the installed-skill test in an isolated checkout containing spaces. Fourteen focused tests include missing/malformed digests and routing hashes. No skill instructions, upstream references, assets or application behavior changed.

@@ -66,6 +66,15 @@ export async function checkProjectSkills(root) {
     manifest.skills.length,
     'Duplicate skills',
   );
+  assert(
+    Object.hasOwn(manifest.files, 'AGENTS.md'),
+    'Missing AGENTS routing hash',
+  );
+  assert.match(
+    manifest.files['AGENTS.md'],
+    /^[a-f0-9]{64}$/,
+    'Invalid AGENTS routing hash',
+  );
   const expected = Object.keys(manifest.files).sort();
   assert.deepEqual(
     (await inventory(root)).filter((p) => p !== manifestPath),
@@ -153,6 +162,11 @@ export async function checkProjectSkills(root) {
     );
     assert(Array.isArray(source.files) && source.files.length > 0);
     for (const file of source.files) {
+      assert(Object.hasOwn(manifest.files, file.path), 'Untracked source file');
+      assert(
+        typeof file.sha256 === 'string' && /^[a-f0-9]{64}$/.test(file.sha256),
+        'Invalid source digest',
+      );
       assert.equal(
         file.sha256,
         manifest.files[file.path],

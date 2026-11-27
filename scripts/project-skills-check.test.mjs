@@ -1,7 +1,9 @@
 import assert from 'node:assert/strict';
+import { execFile } from 'node:child_process';
 import {
   chmod,
   cp,
+  mkdir,
   mkdtemp,
   readFile,
   rm,
@@ -10,14 +12,16 @@ import {
 } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import test from 'node:test';
+import { promisify } from 'node:util';
 import { checkProjectSkills } from './project-skills-check.mjs';
 
 const source = new URL('../', import.meta.url);
 const manifestPath = '.agents/skills/manifest.json';
 
-async function fixture(t) {
-  const root = await mkdtemp(join(tmpdir(), 'kimorel-skills-'));
+async function fixture(t, prefix = 'kimorel-skills-') {
+  const root = await mkdtemp(join(tmpdir(), prefix));
   t.after(() => rm(root, { recursive: true, force: true }));
   await cp(new URL('.agents', source), join(root, '.agents'), {
     recursive: true,
@@ -34,7 +38,7 @@ async function editManifest(root, edit) {
 }
 
 test('actual installed skills pass offline integrity and structure checks', async () => {
-  const result = await checkProjectSkills(source.pathname);
+  const result = await checkProjectSkills(fileURLToPath(source));
   assert.equal(result.skills, 7);
   assert.equal(result.sources, 6);
 });
@@ -143,4 +147,75 @@ test('external instruction references fail even with updated file hashes', async
     m.files[path] = createHash('sha256').update(content).digest('hex');
   });
   await assert.rejects(checkProjectSkills(root), /Nonlocal reference/);
+});
+
+test('source records need an inventoried path and a valid SHA-256 digest', async (t) => {
+  const unknownPath = '.agents/skills/_sources/not-in-inventory.txt';
+  for (const mutate of [
+    (file) => {
+      file.path = unknownPath;
+      delete file.sha256;
+    },
+    (file) => {
+      file.path = unknownPath;
+    },
+    (file) => {
+      delete file.sha256;
+    },
+    (file) => {
+      file.sha256 = 'not-a-digest';
+    },
+  ]) {
+    const root = await fixture(t);
+    await editManifest(root, (m) => {
+      mutate(m.sources[0].files[0]);
+    });
+    await assert.rejects(
+      checkProjectSkills(root),
+      /Untracked source file|Invalid source digest/,
+    );
+  }
+});
+
+test('AGENTS routing must have its own valid integrity entry', async (t) => {
+  for (const mutate of [
+    (files) => {
+      delete files['AGENTS.md'];
+    },
+    (files) => {
+      files['AGENTS.md'] = 'not-a-digest';
+    },
+  ]) {
+    const root = await fixture(t);
+    await editManifest(root, (m) => {
+      mutate(m.files);
+    });
+    await assert.rejects(
+      checkProjectSkills(root),
+      /(?:Missing|Invalid) AGENTS routing hash/,
+    );
+  }
+});
+
+test('installed-skill test works from a checkout containing spaces', async (t) => {
+  const root = await fixture(t, 'kimorel skills ');
+  await mkdir(join(root, 'scripts'));
+  for (const name of [
+    'project-skills-check.mjs',
+    'project-skills-check.test.mjs',
+  ])
+    await cp(new URL(`scripts/${name}`, source), join(root, 'scripts', name));
+  const env = { ...process.env };
+  delete env.NODE_TEST_CONTEXT;
+  const { stdout } = await promisify(execFile)(
+    process.execPath,
+    [
+      '--test',
+      '--test-reporter=tap',
+      '--test-name-pattern=^actual installed skills',
+      'scripts/project-skills-check.test.mjs',
+    ],
+    { cwd: root, env },
+  );
+  assert.match(stdout, /actual installed skills/);
 });
