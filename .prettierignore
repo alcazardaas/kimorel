@@ -43,3 +43,10 @@ pipeline/character-v2/masks/exercise-pilot/push-up/right-deltoid.json
 pipeline/character-v2/exercise-pilot/bodyweight-squat-muscle-catalog.json
 pipeline/character-v2/exercise-pilot/dumbbell-shoulder-press-muscle-catalog.json
 pipeline/character-v2/exercise-pilot/push-up-muscle-catalog.json
+
+# Canonical cached-body catalog inventory retains generator-bound bytes.
+pipeline/character-v2/catalog-v2/manifest.json
+
+# Derived compact groin candidate retains canonical native provenance bytes.
+pipeline/character-v2/catalog-v2-groin-1/manifest.json
+pipeline/character-v2/catalog-v2-groin-1/native-weight-proof.json

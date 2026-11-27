@@ -32,3 +32,8 @@ __pycache__/
 *~
 playwright-report/
 test-results/
+
+# Retain rejected catalog diagnostics locally; commit only manifest + regression fixture.
+/pipeline/character-v2/catalog-v2/*.png
+/pipeline/character-v2/catalog-v2/standing-calf-raise.glb
+/pipeline/character-v2/catalog-v2/lateral-lunge.glb
