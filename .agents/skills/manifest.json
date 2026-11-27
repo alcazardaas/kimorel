@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-11-27",
+  "skills": [
+    "threejs-animation",
+    "threejs-loaders",
+    "threejs-performance",
+    "web-design-guidelines"
+  ],
+  "sources": [
+    {
+      "skill": "threejs-animation",
+      "repository": "CloudAI-X/threejs-skills",
+      "commit": "0e181866f095b5f06d005133876e926515390d95",
+      "license": "MIT",
+      "licenseEvidence": ".agents/skills/_sources/cloudai-x-LICENSE.txt",
+      "files": [
+        {
+          "upstreamPath": "skills/threejs-animation/SKILL.md",
+          "path": ".agents/skills/_sources/threejs-animation.txt",
+          "sha256": "0ab1b79cb977a1b5b03b247f9ef677acc76c3ee80d42904afb1b66838a19c481"
+        }
+      ]
+    },
+    {
+      "skill": "threejs-loaders",
+      "repository": "CloudAI-X/threejs-skills",
+      "commit": "0e181866f095b5f06d005133876e926515390d95",
+      "license": "MIT",
+      "licenseEvidence": ".agents/skills/_sources/cloudai-x-LICENSE.txt",
+      "files": [
+        {
+          "upstreamPath": "skills/threejs-loaders/SKILL.md",
+          "path": ".agents/skills/_sources/threejs-loaders.txt",
+          "sha256": "ddf6ed2d7dfc809ce722482541fe88af7d349cd8066a4617fabaea865a2a831d"
+        }
+      ]
+    },
+    {
+      "skill": "threejs-performance",
+      "repository": "CloudAI-X/threejs-skills",
+      "commit": "0e181866f095b5f06d005133876e926515390d95",
+      "license": "MIT",
+      "licenseEvidence": ".agents/skills/_sources/cloudai-x-LICENSE.txt",
+      "files": [
+        {
+          "upstreamPath": "skills/threejs-performance/SKILL.md",
+          "path": ".agents/skills/_sources/threejs-performance.txt",
+          "sha256": "dacbf6a43ed280bdfcda2ce9fcf7a3f0ae54c25ed264e62f6e9a0117d6534285"
+        }
+      ]
+    },
+    {
+      "skill": "web-design-guidelines",
+      "repository": "vercel-labs/agent-skills",
+      "commit": "5a37a6329fbad3666c3207392a6a7c0110e92efb",
+      "license": "MIT",
+      "licenseEvidence": ".agents/skills/_sources/vercel-README.txt",
+      "files": [
+        {
+          "upstreamPath": "skills/web-design-guidelines/SKILL.md",
+          "path": ".agents/skills/_sources/web-design-guidelines.txt",
+          "sha256": "360b1240acfffa95e76373db9f837a1f28aba8f6d4c361e3d588be0eaefaa070"
+        },
+        {
+          "upstreamPath": "skills/web-design-guidelines/references/command.md",
+          "path": ".agents/skills/_sources/web-interface-guidelines.txt",
+          "sha256": "d246b026f4f29b5823a9cc857f9edf3d2507002e055e32040cadeaf3b38e0234"
+        }
+      ]
+    }
+  ],
+  "files": {
+    ".agents/skills/README.md": "abf0084455a558a10887ee3889aafb944bb8e08ae7a327640f4206384362f933",
+    ".agents/skills/_sources/cloudai-x-LICENSE.txt": "d26f12fa1a0e03fd5aa4d3cbf05262a9f1c684672d0864abac78b3bbb12b268c",
+    ".agents/skills/_sources/threejs-animation.txt": "0ab1b79cb977a1b5b03b247f9ef677acc76c3ee80d42904afb1b66838a19c481",
+    ".agents/skills/_sources/threejs-loaders.txt": "ddf6ed2d7dfc809ce722482541fe88af7d349cd8066a4617fabaea865a2a831d",
+    ".agents/skills/_sources/threejs-performance.txt": "dacbf6a43ed280bdfcda2ce9fcf7a3f0ae54c25ed264e62f6e9a0117d6534285",
+    ".agents/skills/_sources/vercel-README.txt": "9429e781e3fb2f005e619b96fe18cdc59f8db38b619a4c98f0c46c86357e56a0",
+    ".agents/skills/_sources/web-design-guidelines.txt": "360b1240acfffa95e76373db9f837a1f28aba8f6d4c361e3d588be0eaefaa070",
+    ".agents/skills/_sources/web-interface-guidelines.txt": "d246b026f4f29b5823a9cc857f9edf3d2507002e055e32040cadeaf3b38e0234",
+    ".agents/skills/threejs-animation/SKILL.md": "cac4faf168d68b7eb339288d7045ff511265cdcb06235015025129bea93f246a",
+    ".agents/skills/threejs-loaders/SKILL.md": "3a0e8d9a48661b2be12615414e52264cf9951e33f1c3fb4b4b2d54c6098b4e74",
+    ".agents/skills/threejs-performance/SKILL.md": "a82ce0feabaea44db878a56723023ca92a8c9abf36f64cdecbbae980873fe7c4",
+    ".agents/skills/web-design-guidelines/SKILL.md": "752c87d16a0304a11c6c1ef8228aec62f86e0cfce5b112ef69feff613b84c7b8",
+    "AGENTS.md": "564675b5f7b1795060f7d48402ffd8d0e86c9689b28db8a408863397da687a1c"
+  }
+}
