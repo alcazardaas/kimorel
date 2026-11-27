@@ -4,6 +4,7 @@
   "skills": [
     "blender-asset-qa",
     "blender-core",
+    "kimorel-character-pipeline",
     "threejs-animation",
     "threejs-loaders",
     "threejs-performance",
@@ -21,6 +22,11 @@
           "upstreamPath": "skills/blender-asset-qa/SKILL.md",
           "path": ".agents/skills/_sources/blender-asset-qa.txt",
           "sha256": "968e4435eeba040f0952cc335c8e9e7182e1d7008aa4295f202ddb836fa49ec9"
+        },
+        {
+          "upstreamPath": "LICENSE",
+          "path": ".agents/skills/_sources/el4cteo-LICENSE.txt",
+          "sha256": "d81d0037e3a29a01ccfefaae420d5ba73e905cabf3995700e9075c7205c06cc5"
         }
       ]
     },
@@ -45,6 +51,11 @@
           "upstreamPath": "skills/blender-core/references/bpy-patterns.md",
           "path": ".agents/skills/_sources/blender-bpy-patterns.txt",
           "sha256": "ba7bbc708bf198bdcdfa59d9d41d830a4ae119c24ae9457830b73d9e818e2af8"
+        },
+        {
+          "upstreamPath": "LICENSE",
+          "path": ".agents/skills/_sources/el4cteo-LICENSE.txt",
+          "sha256": "d81d0037e3a29a01ccfefaae420d5ba73e905cabf3995700e9075c7205c06cc5"
         }
       ]
     },
@@ -59,6 +70,11 @@
           "upstreamPath": "skills/threejs-animation/SKILL.md",
           "path": ".agents/skills/_sources/threejs-animation.txt",
           "sha256": "0ab1b79cb977a1b5b03b247f9ef677acc76c3ee80d42904afb1b66838a19c481"
+        },
+        {
+          "upstreamPath": "LICENSE",
+          "path": ".agents/skills/_sources/cloudai-x-LICENSE.txt",
+          "sha256": "d26f12fa1a0e03fd5aa4d3cbf05262a9f1c684672d0864abac78b3bbb12b268c"
         }
       ]
     },
@@ -73,6 +89,11 @@
           "upstreamPath": "skills/threejs-loaders/SKILL.md",
           "path": ".agents/skills/_sources/threejs-loaders.txt",
           "sha256": "ddf6ed2d7dfc809ce722482541fe88af7d349cd8066a4617fabaea865a2a831d"
+        },
+        {
+          "upstreamPath": "LICENSE",
+          "path": ".agents/skills/_sources/cloudai-x-LICENSE.txt",
+          "sha256": "d26f12fa1a0e03fd5aa4d3cbf05262a9f1c684672d0864abac78b3bbb12b268c"
         }
       ]
     },
@@ -87,6 +108,11 @@
           "upstreamPath": "skills/threejs-performance/SKILL.md",
           "path": ".agents/skills/_sources/threejs-performance.txt",
           "sha256": "dacbf6a43ed280bdfcda2ce9fcf7a3f0ae54c25ed264e62f6e9a0117d6534285"
+        },
+        {
+          "upstreamPath": "LICENSE",
+          "path": ".agents/skills/_sources/cloudai-x-LICENSE.txt",
+          "sha256": "d26f12fa1a0e03fd5aa4d3cbf05262a9f1c684672d0864abac78b3bbb12b268c"
         }
       ]
     },
@@ -106,11 +132,17 @@
           "upstreamPath": "skills/web-design-guidelines/references/command.md",
           "path": ".agents/skills/_sources/web-interface-guidelines.txt",
           "sha256": "d246b026f4f29b5823a9cc857f9edf3d2507002e055e32040cadeaf3b38e0234"
+        },
+        {
+          "upstreamPath": "README.md",
+          "path": ".agents/skills/_sources/vercel-README.txt",
+          "sha256": "9429e781e3fb2f005e619b96fe18cdc59f8db38b619a4c98f0c46c86357e56a0"
         }
       ]
     }
   ],
   "files": {
+    ".agents/skills/AUDIT.md": "5cb297dcb90addfc94838e41b9037327ae1f7b3ad7929a4d03d799c8fcb64703",
     ".agents/skills/README.md": "abf0084455a558a10887ee3889aafb944bb8e08ae7a327640f4206384362f933",
     ".agents/skills/_sources/blender-api-changes-5x.txt": "e34f2e39a97833d75b6177c2e281ff9481405efd88bfd2d67003560f0c421fe1",
     ".agents/skills/_sources/blender-asset-qa.txt": "968e4435eeba040f0952cc335c8e9e7182e1d7008aa4295f202ddb836fa49ec9",
@@ -126,10 +158,12 @@
     ".agents/skills/_sources/web-interface-guidelines.txt": "d246b026f4f29b5823a9cc857f9edf3d2507002e055e32040cadeaf3b38e0234",
     ".agents/skills/blender-asset-qa/SKILL.md": "d516bd62949269f9028b3bb750ae014537afe60394ce3800da7fa8a381bea575",
     ".agents/skills/blender-core/SKILL.md": "c6f52da04a28684260d0fa8b3f25ec984e49588eba8a79df37354d8b001f4134",
+    ".agents/skills/kimorel-character-pipeline/SKILL.md": "3a98275b4b716208713407d3d6015a4427b2345a192bdf718721ca4aa4db55c9",
+    ".agents/skills/kimorel-character-pipeline/references/project-contract.md": "41220719ee24c04e6cf716372067be3be11a6b3364de40dca7ca320a2453d811",
     ".agents/skills/threejs-animation/SKILL.md": "cac4faf168d68b7eb339288d7045ff511265cdcb06235015025129bea93f246a",
     ".agents/skills/threejs-loaders/SKILL.md": "3a0e8d9a48661b2be12615414e52264cf9951e33f1c3fb4b4b2d54c6098b4e74",
     ".agents/skills/threejs-performance/SKILL.md": "a82ce0feabaea44db878a56723023ca92a8c9abf36f64cdecbbae980873fe7c4",
     ".agents/skills/web-design-guidelines/SKILL.md": "752c87d16a0304a11c6c1ef8228aec62f86e0cfce5b112ef69feff613b84c7b8",
-    "AGENTS.md": "214b6d9ca04595ce358ed707be4e9d41ea98e740d950b7f24931a5ae8b3919ac"
+    "AGENTS.md": "55aeb464f97e2844c3b0499f6c16c9601a381c3f4d1b4fb1d92c1bf976535aad"
   }
 }

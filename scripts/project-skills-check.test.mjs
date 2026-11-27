@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import {
+  chmod,
   cp,
   mkdtemp,
   readFile,
@@ -34,8 +35,8 @@ async function editManifest(root, edit) {
 
 test('actual installed skills pass offline integrity and structure checks', async () => {
   const result = await checkProjectSkills(source.pathname);
-  assert(result.skills >= 4);
-  assert(result.sources >= 4);
+  assert.equal(result.skills, 7);
+  assert.equal(result.sources, 6);
 });
 
 test('changed skill bytes fail without refreshing hashes', async (t) => {
@@ -95,4 +96,51 @@ test('removed routing registration fails even with updated AGENTS hash', async (
       .digest('hex');
   });
   await assert.rejects(checkProjectSkills(root), /Unregistered skill/);
+});
+
+test('executable permissions are rejected even when bytes match', async (t) => {
+  const root = await fixture(t);
+  await chmod(
+    join(root, '.agents/skills/_sources/threejs-animation.txt'),
+    0o755,
+  );
+  await assert.rejects(checkProjectSkills(root), /Executable skill file/);
+});
+
+test('missing provenance cannot be hidden by dropping the source record', async (t) => {
+  const root = await fixture(t);
+  await editManifest(root, (m) => {
+    m.sources.pop();
+  });
+  await assert.rejects(checkProjectSkills(root), /Missing upstream provenance/);
+});
+
+test('skill structure is checked independently of content hashes', async (t) => {
+  const root = await fixture(t);
+  const path = '.agents/skills/threejs-animation/SKILL.md';
+  const content = (await readFile(join(root, path), 'utf8')).replace(
+    '## Hard Rules',
+    '## Notes',
+  );
+  const { createHash } = await import('node:crypto');
+  await writeFile(join(root, path), content);
+  await editManifest(root, (m) => {
+    m.files[path] = createHash('sha256').update(content).digest('hex');
+  });
+  await assert.rejects(checkProjectSkills(root), /Missing\/unordered section/);
+});
+
+test('external instruction references fail even with updated file hashes', async (t) => {
+  const root = await fixture(t);
+  const path = '.agents/skills/threejs-animation/SKILL.md';
+  const content = (await readFile(join(root, path), 'utf8')).replace(
+    '../README.md',
+    'https://example.invalid/instructions',
+  );
+  const { createHash } = await import('node:crypto');
+  await writeFile(join(root, path), content);
+  await editManifest(root, (m) => {
+    m.files[path] = createHash('sha256').update(content).digest('hex');
+  });
+  await assert.rejects(checkProjectSkills(root), /Nonlocal reference/);
 });

@@ -30,6 +30,8 @@ async function regular(root, path) {
     assert(
       index === path.split('/').length - 1 ? stat.isFile() : stat.isDirectory(),
     );
+    if (index === path.split('/').length - 1)
+      assert.equal(stat.mode & 0o111, 0, `Executable skill file: ${path}`);
   }
   return readFile(current);
 }
@@ -81,10 +83,7 @@ export async function checkProjectSkills(root) {
       manifest.files[path],
       `Hash mismatch: ${path}`,
     );
-    assert(
-      !/\.(?:py|sh|js|mjs|exe|blend|glb)$/.test(path),
-      'Executable/asset in skills',
-    );
+    assert(/\.(?:md|txt|json)$/.test(path), 'Non-document file in skills');
   }
   const agents = (await regular(root, 'AGENTS.md')).toString();
   for (const name of manifest.skills) {
