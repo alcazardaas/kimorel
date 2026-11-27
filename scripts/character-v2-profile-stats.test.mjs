@@ -140,3 +140,43 @@ test('unsupported or malformed project emulation settings fail rather than silen
   ])
     assert.throws(() => profileContextOptions(options));
 });
+
+test('every ANGLE switch must be the exact supported request regardless of order', () => {
+  const required = [
+    '--headless',
+    '--enable-automation',
+    '--enable-unsafe-swiftshader',
+  ];
+  const supported = '--use-angle=swiftshader';
+  assert.equal(
+    profileProvenance('chromium', true, [...required, supported, supported])
+      .headless,
+    true,
+  );
+  for (const conflicting of [
+    '--use-angle=default',
+    '--use-angle=metal',
+    '--use-angle=',
+    '--use-angle',
+    '--use-angle swiftshader',
+    '--use-angle=SwiftShader',
+    '--use-angle=swiftshader ',
+    '--use-angle-extra=swiftshader',
+  ]) {
+    assert.throws(() =>
+      profileProvenance('chromium', true, [
+        ...required,
+        conflicting,
+        supported,
+      ]),
+    );
+    assert.throws(() =>
+      profileProvenance('chromium', true, [
+        ...required,
+        supported,
+        conflicting,
+      ]),
+    );
+  }
+  assert.throws(() => profileProvenance('chromium', true, required));
+});

@@ -115,8 +115,8 @@ export function profileProvenance(
   const angle = args.filter((arg) => arg.startsWith('--use-angle'));
   const gl = args.filter((arg) => arg.startsWith('--use-gl'));
   if (
-    angle.at(-1) !== '--use-angle=swiftshader' ||
-    angle.some((arg) => !arg.startsWith('--use-angle=')) ||
+    angle.length === 0 ||
+    angle.some((arg) => arg !== '--use-angle=swiftshader') ||
     gl.some((arg) => arg !== '--use-gl=angle') ||
     !args.includes('--enable-unsafe-swiftshader') ||
     args.some((arg) =>
